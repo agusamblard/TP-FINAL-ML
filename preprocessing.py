@@ -1,4 +1,4 @@
-import unidecode
+
 import pandas as pd
 from difflib import get_close_matches
 from collections import Counter
@@ -104,7 +104,31 @@ marca_por_modelo = {
 # Lista de modelos válidos
 modelos_validos = list(marca_por_modelo.keys())
 
-# Función principal
+def quitar_tildes(texto):
+    
+    if not isinstance(texto, str):
+        return texto
+
+    reemplazos = {
+        'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
+        'Á': 'A', 'É': 'E', 'Í': 'I', 'Ó': 'O', 'Ú': 'U',
+        'ñ': 'n', 'Ñ': 'N',
+        'ü': 'u', 'Ü': 'U',
+        'ç': 'c', 'Ç': 'C',
+        'ö': 'o', 'Ö': 'O',
+        'ë': 'e', 'Ë': 'E',
+        'ä': 'a', 'Ä': 'A',
+        'ï': 'i', 'Ï': 'I'
+    }
+    for c in texto:
+        if c not in reemplazos.keys():
+            continue
+        # Reemplazar caracteres con tilde por su versión sin tilde
+        texto = texto.replace(c, reemplazos[c])
+
+    return texto
+
+
 def corregir_modelo(df):
     df = df.copy()
     nuevos_modelos = []
@@ -117,8 +141,11 @@ def corregir_modelo(df):
             nuevos_modelos.append('Otros')
             continue
 
-        modelo_clean = unidecode.unidecode(str(modelo)).lower().strip()
-        marca_clean = unidecode.unidecode(str(marca)).lower().strip()
+        modelo_clean = quitar_tildes(str(modelo).lower())
+        marca_clean = quitar_tildes(str(marca).lower())
+
+
+
 
         if modelo_clean in modelos_validos and marca_clean == marca_por_modelo[modelo_clean]:
             nuevos_modelos.append(modelo.title())
@@ -132,6 +159,7 @@ def corregir_modelo(df):
 
     df['Modelo'] = nuevos_modelos
     return df
+
 
 
 
@@ -230,10 +258,6 @@ def extraer_transmision(df):
 
 
 
-def quitar_tildes(texto):
-    tildes = {'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
-              'Á': 'a', 'É': 'e', 'Í': 'i', 'Ó': 'o', 'Ú': 'u'}
-    return ''.join(tildes.get(c, c) for c in texto)
 
 
 def limpiar_version(df):
