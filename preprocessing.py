@@ -1,11 +1,12 @@
-import numpy as np
-import pandas as pd
-
+import unidecode
 import pandas as pd
 from difflib import get_close_matches
-
-import pandas as pd
 from collections import Counter
+import re
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_distances
+from sklearn.cluster import DBSCAN
+
 
 # Lista de marcas válidas
 marcas_validas = [
@@ -52,60 +53,87 @@ def corregir_marcas(df):
     return df
 
 
-from difflib import get_close_matches
-import unidecode
-import numpy as np
-import pandas as pd
 
-# Diccionario de modelos válidos → marcas (deberías completar las asignaciones reales)
-marca_por_modelo = {
-    'ecosport': 'ford', 'tracker': 'chevrolet', '2008': 'peugeot', 'duster': 'renault',
-    'compass': 'jeep', 'kicks': 'nissan', 'taos': 'volkswagen', 'renegade': 'jeep',
-    't-cross': 'volkswagen', 'corolla cross': 'toyota', 'c4 cactus': 'citroen',
-    'nivus': 'volkswagen', 'tucson': 'hyundai', 'pulse': 'fiat', 'hr-v': 'honda',
-    'hilux sw4': 'toyota', 'territory': 'ford', 'x1': 'bmw', 'cr-v': 'honda',
-    'captur': 'renault', 'c3 aircross': 'citroen', 'sw4': 'toyota', 'tiguan': 'volkswagen',
-    'q5': 'audi', 'grand cherokee': 'jeep', 'journey': 'dodge', 'kuga': 'ford',
-    # ... (continuar completando según tu dataset)
+# Diccionario agrupado por marca
+modelos_por_marca = {
+    'ford': ['ecosport', 'territory', 'kuga', 'bronco sport', 'explorer', 'bronco'],
+    'chevrolet': ['tracker', 'trailblazer', 'equinox', 'spin', 'blazer', 'grand blazer'],
+    'peugeot': ['2008', '3008', '4008'],
+    'renault': ['duster', 'captur', 'duster oroch', 'koleos', 'sandero stepway'],
+    'jeep': ['compass', 'renegade', 'grand cherokee', 'commander', 'wrangler', 'cherokee', 'patriot'],
+    'nissan': ['kicks', 'x-trail', 'murano', 'pathfinder', 'x-terra', 'terrano ii'],
+    'volkswagen': ['taos', 't-cross', 'tiguan', 'tiguan allspace', 'touareg'],
+    'toyota': ['corolla cross', 'hilux sw4', 'sw4', 'rav4', 'land cruiser', '4runner'],
+    'citroen': ['c4 cactus', 'c3 aircross', 'c5 aircross', 'c3', 'c4 aircross'],
+    'hyundai': ['tucson', 'santa fe', 'creta', 'x35', 'galloper', 'kona', 'grand santa fé'],
+    'fiat': ['pulse', '500x'],
+    'honda': ['hr-v', 'cr-v', 'pilot'],
+    'bmw': ['x1', 'x3', 'x5', 'x6', 'x4', 'x2', 'serie 4'],
+    'audi': ['q5', 'q3', 'q2', 'q7', 'q3 sportback', 'q8', 'sq5', 'q5 sportback'],
+    'kia': ['sportage', 'soul', 'sorento', 'seltos', 'mohave'],
+    'baic': ['x55', 'x25'],
+    'mercedes-benz': ['clase glc', 'clase gla', 'clase gle', 'clase glk', 'clase ml', 'clase gl', 'ml'],
+    'chery': ['tiggo', 'tiggo 3', 'tiggo 4 pro', 'tiggo 5', 'tiggo 2', 'tiggo 4', 'tiggo 8 pro', 's2'],
+    'dodge': ['journey'],
+    'land rover': ['evoque', 'range rover sport', 'discovery', 'range rover', 'freelander', 'defender'],
+    'suzuki': ['grand vitara', 'vitara', 'jimny', 'samurai'],
+    'porsche': ['cayenne', 'macan', 'panamera'],
+    'volvo': ['xc60', 'xc40'],
+    'd.s.': ['ds7 crossback', 'ds7', 'ds3'],
+    'ssangyong': ['musso', 'actyon'],
+    'alfa romeo': ['stelvio'],
+    'jetour': ['x70'],
+    'gwm': ['jolion'],
+    'isuzu': ['trooper'],
+    'lifan': ['myway'],
+    'lexus': ['ux', 'nx'],
+    'subaru': ['outback'],
+    'daihatsu': ['terios'],
+    'mini': ['cooper countryman'],
+    'mitsubishi': ['outlander', 'montero', 'nativa'],
+    'jaguar': ['f-pace']
 }
 
+# Plano: modelo → marca
+marca_por_modelo = {
+    modelo: marca
+    for marca, modelos in modelos_por_marca.items()
+    for modelo in modelos
+}
+
+# Lista de modelos válidos
 modelos_validos = list(marca_por_modelo.keys())
 
-def corregir_modelo(row):
-    modelo = row['Modelo']
-    marca = row['Marca']
+# Función principal
+def corregir_modelo(df):
+    df = df.copy()
+    nuevos_modelos = []
 
-    if pd.isna(modelo) or pd.isna(marca):
-        return np.nan
+    for _, row in df.iterrows():
+        modelo = row['Modelo']
+        marca = row['Marca']
 
-    modelo_clean = unidecode.unidecode(str(modelo)).lower().strip()
-    marca_clean = unidecode.unidecode(str(marca)).lower().strip()
+        if pd.isna(modelo) or pd.isna(marca):
+            nuevos_modelos.append('Otros')
+            continue
 
-    if modelo_clean in modelos_validos and marca_clean == marca_por_modelo.get(modelo_clean):
-        return modelo.title()
+        modelo_clean = unidecode.unidecode(str(modelo)).lower().strip()
+        marca_clean = unidecode.unidecode(str(marca)).lower().strip()
 
-    coincidencias = get_close_matches(modelo_clean, modelos_validos, n=1, cutoff=0.7)
-    if coincidencias:
-        modelo_sugerido = coincidencias[0]
-        marca_sugerida = marca_por_modelo.get(modelo_sugerido)
-        if marca_sugerida == marca_clean:
-            return modelo_sugerido.title()
+        if modelo_clean in modelos_validos and marca_clean == marca_por_modelo[modelo_clean]:
+            nuevos_modelos.append(modelo.title())
+        else:
+            modelos_de_marca = [m for m in modelos_validos if marca_por_modelo[m] == marca_clean]
+            coincidencias = get_close_matches(modelo_clean, modelos_de_marca, n=1, cutoff=0.7)
+            if coincidencias:
+                nuevos_modelos.append(coincidencias[0].title())
+            else:
+                nuevos_modelos.append('Otros')
 
-    return np.nan
+    df['Modelo'] = nuevos_modelos
+    return df
 
 
-
-def quitar_cilindrada(version):
-    if pd.isna(version):
-        return version
-    # Reemplazar coma decimal por punto (casos como "1,5" → "1.5")
-    version = version.replace(',', '.')
-    # Eliminar patrones tipo 1.5, 2.0T, 1.6L, etc.
-    version_limpia = re.sub(r'\b\d\.\d[A-Za-z]?\b', '', version)
-    # Limpiar espacios dobles o sobrantes
-    version_limpia = re.sub(r'\s{2,}', ' ', version_limpia).strip()
-    return version_limpia
-import re
 
 def extraer_hp(df):
     """
@@ -161,19 +189,20 @@ def extraer_traccion(df):
     return df
 
 
-terminos_transmision = [
+# Listas agrupadas por tipo
+automaticos = [
     'at', '6at', '8at', 'at6', 'atx', 'cvt', 'tiptronic', 'stronic',
-    'dsg', 'automática', 'automatic', 'tronic', 'aut',
-    'mt', '6mt', 'manual', 'automatico', 'automático'
+    'dsg', 'automática', 'automatic', 'tronic', 'aut', 'automatico', 'automático'
 ]
+manuales = ['mt', '6mt', 'manual']
 
-mapa_normalizado = {
-    'at': 'AUTOMÁTICA', '6at': 'AUTOMÁTICA', '8at': 'AUTOMÁTICA', 'at6': 'AUTOMÁTICA',
-    'atx': 'AUTOMÁTICA','cvt': 'AUTOMÁTICA', 'tiptronic': 'AUTOMÁTICA', 'stronic': 'AUTOMÁTICA',
-    'dsg': 'AUTOMÁTICA', 'automática': 'AUTOMÁTICA', 'automatic': 'AUTOMÁTICA',
-    'tronic': 'AUTOMÁTICA', 'aut': 'AUTOMÁTICA', 'automatico': 'AUTOMÁTICA', 'automático': 'AUTOMÁTICA',
-    'mt': 'MANUAL', '6mt': 'MANUAL', 'manual': 'MANUAL'
-}
+# Lista total de términos
+terminos_transmision = automaticos + manuales
+
+# Mapa de normalización generado automáticamente
+mapa_normalizado = {term: 'AUTOMÁTICA' for term in automaticos}
+mapa_normalizado.update({term: 'MANUAL' for term in manuales})
+
 
 def extraer_transmision(df):
     """
@@ -210,9 +239,10 @@ def quitar_tildes(texto):
 def limpiar_version(df):
     """
     Recibe un DataFrame con columnas 'Versión', 'Marca' y 'Modelo'.
-    Limpia el contenido de la columna 'Versión' directamente y devuelve el DataFrame modificado.
+    Guarda la versión original en 'Versión_prev', limpia 'Versión' y devuelve el DataFrame modificado.
     """
     df = df.copy()
+    df['Versión_prev'] = df['Versión']  # guardar versión original
 
     terminos_traccion = ['4x4','awd', '4matic', 'quattro', '4m', '4wd', 'xdrive',
                          '2x4','4x2','fwd', 'rwd', '2wd']
@@ -222,6 +252,18 @@ def limpiar_version(df):
         'dsg', 'automatica', 'automatic', 'tronic', 'aut',
         'mt', '6mt', 'manual', 'automatico', 'automático'
     ]
+
+
+    terminos_combustible = [
+        'electrico', 'electrica', 'electric', 'electrical',
+        'hibrido', 'hibrid', 'hybrid', 'hibrida', 'mhev', 'hev', 'phev', 'hv', 'mild hybrid',
+        'diesel', 'gasoil',
+        'nafta', 'naftero', 'nafta/gnc',
+        'gnc'
+    ]
+
+    # Regex para eliminar frases como "5p", "7 asientos", "3 puertas", etc.
+    regex_asientos = re.compile(r'\b[1-9]\s?(as|p|puertas|plazas|pasajeros|asientos|pas)\b', re.IGNORECASE)
 
     versiones_limpias = []
 
@@ -252,6 +294,12 @@ def limpiar_version(df):
         # Eliminar transmisión
         version_limpia = re.sub(r'\b(' + '|'.join(map(re.escape, terminos_transmision)) + r')\b', '', version_limpia)
 
+        # Eliminar motor y combustible
+        version_limpia = re.sub(r'\b(' + '|'.join(map(re.escape, terminos_combustible)) + r')\b', '', version_limpia)
+
+        # Eliminar expresiones de cantidad de asientos
+        version_limpia = regex_asientos.sub('', version_limpia)
+
         # Limpieza final de espacios
         version_limpia = re.sub(r'\s{2,}', ' ', version_limpia).strip()
 
@@ -259,6 +307,7 @@ def limpiar_version(df):
 
     df['Versión'] = versiones_limpias
     return df
+
 
 
 
@@ -323,3 +372,91 @@ def convertir_pesos_a_dolares(df, valor_dolar=1250):
     df.loc[mask, 'Precio'] = df.loc[mask, 'Precio'].round().astype(int)
 
     return df
+
+
+def revisar_tipos_combustible(df):
+    import re
+
+    tipos_config = {
+        'Eléctrico': ['electrico', 'electrica', 'electric', 'electrical'],
+        'Híbrido': ['hibrido', 'hibrid', 'hybrid', 'hibrida', 'mhev', 'hev', 'phev', 'hv', 'mild hybrid'],
+        'Diésel': ['diesel', 'gasoil'],
+        'Nafta': ['nafta', 'naftero'],
+        'Nafta/GNC': ['gnc']
+    }
+
+    prioridad = ['Eléctrico', 'Híbrido', 'Nafta/GNC', 'Diésel', 'Nafta']
+
+    regex_por_tipo = {
+        tipo: re.compile(r'\b(' + '|'.join(map(re.escape, palabras)) + r')\b', re.IGNORECASE)
+        for tipo, palabras in tipos_config.items()
+    }
+
+    df = df.copy()
+    df['Tipo original'] = df['Tipo de combustible']
+
+    # --- Paso 0: Normalizar valores atípicos en 'Tipo de combustible' ---
+    for idx, fila in df.iterrows():
+        tipo_actual = str(fila['Tipo de combustible']).lower()
+        tipo_actual_sin_tildes = quitar_tildes(tipo_actual)
+
+        tipos_detectados = []
+        for tipo, palabras in tipos_config.items():
+            for palabra in palabras:
+                if palabra in tipo_actual_sin_tildes:
+                    tipos_detectados.append(tipo)
+                    break
+
+        for tipo_prioritario in prioridad:
+            if tipo_prioritario in tipos_detectados:
+                df.at[idx, 'Tipo de combustible'] = tipo_prioritario
+                break
+        
+    df = df.copy()
+    df['Tipo original'] = df['Tipo de combustible']
+
+
+    # --- Parte 1: Detectar tipo a partir del texto completo ---
+    def detectar_tipo(fila):
+        texto = ' '.join(
+            quitar_tildes(str(v).lower())
+            for k, v in fila.items()
+            if k not in ['Descripción', 'Tipo de combustible', 'Tipo original'] and pd.notna(v)
+        )
+
+        tipos_detectados = [tipo for tipo, regex in regex_por_tipo.items() if regex.search(texto)]
+        for tipo_prioritario in prioridad:
+            if tipo_prioritario in tipos_detectados:
+                return tipo_prioritario
+
+        return fila['Tipo de combustible']
+
+    df['Tipo de combustible'] = df.apply(detectar_tipo, axis=1)
+
+    # --- Parte 2: Corregir falsos positivos conservadores ---
+    for tipo_objetivo in prioridad:
+        regex_tipo = regex_por_tipo[tipo_objetivo]
+        for idx, fila in df.iterrows():
+            if fila['Tipo original'] == tipo_objetivo and fila['Tipo de combustible'] == tipo_objetivo:
+                texto = ' '.join(
+                    quitar_tildes(str(v).lower())
+                    for k, v in fila.items()
+                    if k not in ['Descripción', 'Tipo de combustible', 'Tipo original'] and pd.notna(v)
+                )
+                if not regex_tipo.search(texto):
+                    filtro = (
+                        (df['Marca'] == fila['Marca']) &
+                        (df['Modelo'] == fila['Modelo']) &
+                        (df['Versión'] == fila['Versión']) &
+                        (df['Año'] == fila['Año']) &
+                        (df['Motor'] == fila['Motor']) &
+                        (df['Tipo de combustible'] != tipo_objetivo) &
+                        (df['Tipo de combustible'].notna())
+                    )
+                    tipo_mas_comun = df.loc[filtro, 'Tipo de combustible'].mode()
+                    if not tipo_mas_comun.empty:
+                        df.at[idx, 'Tipo de combustible'] = tipo_mas_comun.iloc[0]
+
+    return df
+
+
