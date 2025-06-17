@@ -1,3 +1,77 @@
+ # =======================
+ # VARIABLES GLOBALES
+ # =======================
+
+MARCAS_VALIDAS = [
+    'ford', 'jeep', 'volkswagen', 'chevrolet', 'renault', 'toyota',
+    'peugeot', 'nissan', 'citroen', 'bmw', 'honda', 'hyundai', 'audi',
+    'fiat', 'chery', 'kia', 'mercedesbenz', 'dodge', 'baic', 'suzuki',
+    'porsche', 'landrover', 'mitsubishi', 'volvo', 'ds', 'ssangyong',
+    'alfaromeo', 'jac', 'jetour', 'gwm', 'isuzu', 'lifan',
+    'lexus', 'subaru', 'daihatsu', 'mini', 'kaiyi', 'jaguar'
+]
+
+MODELOS_POR_MARCA = {
+    'ford': ['ecosport', 'territory', 'kuga', 'broncosport', 'explorer', 'bronco'],
+    'chevrolet': ['tracker', 'trailblazer', 'equinox', 'spin', 'blazer', 'grandblazer', 'grandvitara'],
+    'peugeot': ['2008', '3008', '4008'], 'renault': ['duster', 'captur', 'dusteroroch', 'koleos', 'sanderostepway'],
+    'jeep': ['compass', 'renegade', 'grandcherokee', 'commander', 'wrangler', 'cherokee', 'patriot'],
+    'nissan': ['kicks', 'xtrail', 'murano', 'pathfinder', 'xterra', 'terranoii'], 
+    'volkswagen': ['taos', 'tcross', 'tiguan', 'tiguanallspace', 'touareg', 'nivus'], 
+    'kaiyi': ['x3'], 'toyota': ['corollacross', 'hiluxsw4', 'sw4', 'rav4', 'landcruiser', '4runner'], 
+    'citroen': ['c4cactus', 'c3aircross', 'c5aircross', 'c3', 'c4aircross'], 
+    'hyundai': ['tucson', 'santafe', 'creta', 'x35', 'galloper', 'kona', 'grandsantafe'], 
+    'fiat': ['pulse', '500x'], 'honda': ['hrv', 'crv', 'pilot'], 
+    'bmw': ['x1', 'x3', 'x5', 'x6', 'x4', 'x2', 'serie4'], 
+    'audi': ['q5', 'q3', 'q2', 'q7', 'q3sportback', 'q8', 'sq5', 'q5sportback'], 
+    'kia': ['sportage', 'soul', 'sorento', 'seltos', 'mohave'], 
+    'baic': ['x55', 'x25', 'x35'], 'jac': ['s2'], 
+    'mercedesbenz': ['claseglc', 'clasegla', 'clasegle', 'claseglk', 'claseml', 'clasegl', 'ml'], 
+    'chery': ['tiggo', 'tiggo3', 'tiggo4pro', 'tiggo5', 'tiggo2', 'tiggo4', 'tiggo8pro'], 
+    'dodge': ['journey'], 'landrover': ['evoque', 'rangeroversport', 'discovery', 'rangerover', 'freelander', 'defender'], 
+    'suzuki': ['grandvitara', 'vitara', 'jimny', 'samurai'], 'porsche': ['cayenne', 'macan', 'panamera'], 
+    'volvo': ['xc60', 'xc40'], 
+    'ds': ['ds7crossback', 'ds7', 'ds3'], 
+    'ssangyong': ['musso', 'actyon'], 'alfaromeo': ['stelvio'], 'jetour': ['x70'], 
+    'gwm': ['jolion', 'h6'], 'isuzu': ['trooper'], 'lifan': ['myway', 'x70'], 
+    'lexus': ['ux', 'nx'], 'subaru': ['outback'], 'daihatsu': ['terios'], 
+    'mini': ['coopercountryman'], 'mitsubishi': ['outlander', 'montero', 'nativa'], 'jaguar': ['fpace']}
+
+
+
+MARCAS_VALIDAS = [
+    'ford', 'jeep', 'volkswagen', 'chevrolet', 'renault', 'toyota',
+    'peugeot', 'nissan', 'citroen', 'bmw', 'honda', 'hyundai', 'audi',
+    'fiat', 'chery', 'kia', 'mercedesbenz', 'dodge', 'baic', 'suzuki',
+    'porsche', 'landrover', 'mitsubishi', 'volvo', 'ds', 'ssangyong',
+    'alfaromeo', 'jac', 'jetour', 'gwm', 'isuzu', 'lifan',
+    'lexus', 'subaru', 'daihatsu', 'mini', 'kaiyi', 'jaguar'
+]
+
+TERMINOS_TRACCION = {
+    '4x4': ['4x4','awd','4matic','quattro','4m','4wd','xdrive'],
+    '4x2': ['2x4','4x2','fwd','rwd','2wd']
+}
+
+TERMINOS_TRANSMISION = {
+    'automatica': [
+        'at', '6at', '8at', 'at6', 'atx', 'cvt', 'tiptronic', 'stronic',
+        'dsg', 'automatica', 'automatic', 'tronic', 'aut', 'automatico', 'automático'
+    ],
+    'manual': ['mt', '6mt', 'manual']
+}
+
+TIPOS_COMBUSTIBLE = {
+    'Eléctrico': ['electrico', 'electrica', 'electric', 'electrical'],
+    'Híbrido': ['hibrido', 'hibrid', 'hybrid', 'hibrida', 'mhev', 'hev', 'phev', 'hv', 'mild hybrid'],
+    'Diésel': ['diesel', 'gasoil'],
+    'Nafta': ['nafta', 'naftero'],
+    'Nafta/GNC': ['gnc']
+}
+
+#=============================
+# IMPORTS
+#=============================
 
 import pandas as pd
 from difflib import get_close_matches
@@ -6,6 +80,9 @@ import re
 import numpy as np
 import datetime
 
+#=============================
+# FUNCIONES DE LIMPIEZA PRE-SPLIT
+#=============================
 
 def quitar_tildes(texto):
 
@@ -59,19 +136,10 @@ def normalizar(texto, eliminar_espacios=True):
     return texto
 
 
+
 def limpiar_marcas(df):
     df = df.copy()
     indices_a_eliminar = []
-
-    # Lista de marcas válidas normalizadas
-    marcas_validas = [
-        'ford', 'jeep', 'volkswagen', 'chevrolet', 'renault', 'toyota',
-        'peugeot', 'nissan', 'citroen', 'bmw', 'honda', 'hyundai', 'audi',
-        'fiat', 'chery', 'kia', 'mercedesbenz', 'dodge', 'baic', 'suzuki',
-        'porsche', 'landrover', 'mitsubishi', 'volvo', 'ds', 'ssangyong',
-        'alfaromeo', 'jac', 'jetour', 'gwm', 'isuzu', 'lifan',
-        'lexus', 'subaru', 'daihatsu', 'mini', 'kaiyi', 'jaguar'
-    ]
 
     for idx, row in df.iterrows():
         marca = str(row['Marca'])
@@ -82,13 +150,13 @@ def limpiar_marcas(df):
         titulo_norm = normalizar(titulo)
 
         # Paso 1: si la marca ya es válida
-        if marca_norm in marcas_validas:
+        if marca_norm in MARCAS_VALIDAS:
             df.at[idx, 'Marca'] = marca_norm
             continue
 
         # Paso 2: buscar una marca válida en el título
         encontrada = False
-        for m_valida in marcas_validas:
+        for m_valida in MARCAS_VALIDAS:
             if m_valida in titulo_norm:
                 df.at[idx, 'Marca'] = m_valida
                 encontrada = True
@@ -101,14 +169,14 @@ def limpiar_marcas(df):
         if pd.notna(modelo):
             subset = df[(df['Modelo'] == modelo) & (df.index != idx)]
             marcas_modelo = subset['Marca'].dropna().apply(normalizar).tolist()
-            marcas_frecuentes = [m for m in marcas_modelo if m in marcas_validas]
+            marcas_frecuentes = [m for m in marcas_modelo if m in MARCAS_VALIDAS]
             if marcas_frecuentes:
                 marca_mas_frecuente = Counter(marcas_frecuentes).most_common(1)[0][0]
                 df.at[idx, 'Marca'] = marca_mas_frecuente
                 continue
         '''
         # Paso 4: buscar por similitud
-        match = get_close_matches(marca_norm, marcas_validas, n=1, cutoff=0.7)
+        match = get_close_matches(marca_norm, MARCAS_VALIDAS, n=1, cutoff=0.7)
         if match:
             df.at[idx, 'Marca'] = match[0]
         else:
@@ -123,62 +191,17 @@ def limpiar_marcas(df):
 
 
 def limpiar_modelo(df):
-    from preprocessing import normalizar  # Asumiendo que esta función ya está implementada
 
     df = df.copy()
     df['modelo_prev'] = df['Modelo']  # Guardar versión original
 
-    modelos_raw = {
-        'ford': ['ecosport', 'territory', 'kuga', 'broncosport', 'explorer', 'bronco'],
-        'chevrolet': ['tracker', 'trailblazer', 'equinox', 'spin', 'blazer', 'grandblazer', 'grandvitara'],
-        'peugeot': ['2008', '3008', '4008'],
-        'renault': ['duster', 'captur', 'dusteroroch', 'koleos', 'sanderostepway'],
-        'jeep': ['compass', 'renegade', 'grandcherokee', 'commander', 'wrangler', 'cherokee', 'patriot'],
-        'nissan': ['kicks', 'xtrail', 'murano', 'pathfinder', 'xterra', 'terranoii'],
-        'volkswagen': ['taos', 'tcross', 'tiguan', 'tiguanallspace', 'touareg','nivus'],
-        'kaiyi': ['x3'],
-        'toyota': ['corollacross', 'hiluxsw4', 'sw4', 'rav4', 'land cruiser', '4runner'],
-        'citroen': ['c4cactus', 'c3aircross', 'c5aircross', 'c3', 'c4aircross'],
-        'hyundai': ['tucson', 'santafe', 'creta', 'x35', 'galloper', 'kona', 'grandsantafe'],
-        'fiat': ['pulse', '500x'],
-        'honda': ['hrv', 'crv', 'pilot'],
-        'bmw': ['x1', 'x3', 'x5', 'x6', 'x4', 'x2', 'serie4'],
-        'audi': ['q5', 'q3', 'q2', 'q7', 'q3sportback', 'q8', 'sq5', 'q5sportback'],
-        'kia': ['sportage', 'soul', 'sorento', 'seltos', 'mohave'],
-        'baic': ['x55', 'x25', 'x35'],
-        'jac': ['s2'],
-        'mercedesbenz': ['claseglc', 'clasegla', 'clasegle', 'claseglk', 'claseml', 'clasegl', 'ml'],
-        'chery': ['tiggo', 'tiggo3', 'tiggo4pro', 'tiggo5', 'tiggo2', 'tiggo4', 'tiggo8pro'],
-        'dodge': ['journey'],
-        'landrover': ['evoque', 'rangeroversport', 'discovery', 'rangerover', 'freelander', 'defender'],
-        'suzuki': ['grandvitara', 'vitara', 'jimny', 'samurai'],
-        'porsche': ['cayenne', 'macan', 'panamera'],
-        'volvo': ['xc60', 'xc40'],
-        'ds': ['ds7crossback', 'ds7', 'ds3'],
-        'ssangyong': ['musso', 'actyon'],
-        'alfaromeo': ['stelvio'],
-        'jetour': ['x70'],
-        'gwm': ['jolion','h6'],
-        'isuzu': ['trooper'],
-        'lifan': ['myway','x70'],
-        'lexus': ['ux', 'nx'],
-        'subaru': ['outback'],
-        'daihatsu': ['terios'],
-        'mini': ['cooper countryman'],
-        'mitsubishi': ['outlander', 'montero', 'nativa'],
-        'jaguar': ['fpace']
-    }
-
-    # Diccionarios auxiliares
-    modelos_por_marca = {
-        normalizar(marca): [normalizar(modelo) for modelo in modelos]
-        for marca, modelos in modelos_raw.items()
-    }
-
+    # Utilizar la variable global MODELOS_POR_MARCA
     marcas_por_modelo = defaultdict(list)
-    for marca, modelos in modelos_por_marca.items():
+    for marca, modelos in MODELOS_POR_MARCA.items():
+        marca_norm = normalizar(marca)
         for modelo in modelos:
-            marcas_por_modelo[modelo].append(marca)
+            modelo_norm = normalizar(modelo)
+            marcas_por_modelo[modelo_norm].append(marca_norm)
 
     modelos_validos = list(marcas_por_modelo.keys())
 
@@ -227,6 +250,38 @@ def limpiar_modelo(df):
     return df
 
 
+
+def limpiar_carroceria(df):
+    """
+    Se fija la columna 'Tipo de carrocería'. Para todos los valores en esta columna
+    que no sean 'SUV', revisar si el modelo está en el diccionario de MODELOS_POR_MARCA
+    para la marca correspondiente. Si hay coincidencia, asignar 'SUV' a la columna 'Tipo de carrocería'.
+    Si no hay coincidencia, eliminar la muestra ya que no es una SUV.
+    Luego, eliminar la columna 'Tipo de carrocería'.
+    """
+    df = df.copy()
+
+    indices_a_eliminar = []
+
+    for idx, row in df.iterrows():
+        tipo = str(row.get('Tipo de carrocería', '')).strip().lower()
+        marca = normalizar(row['Marca'])
+        modelo = normalizar(row['Modelo'])
+
+        if tipo == 'suv':
+            continue
+
+        if modelo in [normalizar(m) for m in MODELOS_POR_MARCA.get(marca, [])]:
+            df.at[idx, 'Tipo de carrocería'] = 'SUV'
+        else:
+            indices_a_eliminar.append(idx)
+
+    df.drop(index=indices_a_eliminar, inplace=True)
+    df.drop(columns=['Tipo de carrocería'], errors='ignore', inplace=True)
+
+    return df
+
+
 def extraer_hp(df):
     """
     Recibe un DataFrame y agrega una columna 'HP' con la potencia extraída 
@@ -257,14 +312,9 @@ def extraer_traccion(df):
     df = df.copy()
 
     # Términos por tipo
-    terminos_traccion = {
-        '4x4': ['4x4','awd','4matic','quattro','4m','4wd','xdrive'],
-        '4x2': ['2x4','4x2','fwd','rwd','2wd']
-    }
-
-    # Lista completa y mapa inverso
-    todos_los_terminos = sum(terminos_traccion.values(), [])
-    mapa_traccion = {t: tipo for tipo, lista in terminos_traccion.items() for t in lista}
+    # Usar TERMINOS_TRACCION
+    todos_los_terminos = sum(TERMINOS_TRACCION.values(), [])
+    mapa_traccion = {t: tipo for tipo, lista in TERMINOS_TRACCION.items() for t in lista}
 
     def detectar_traccion(fila):
         version = str(fila.get('Versión', '')).lower()
@@ -292,16 +342,9 @@ def limpiar_transmision(df):
     df = df.copy()
     df['transmision_prev'] = df['Transmisión']  # Guardar original
 
-    # Términos por tipo
-    automaticos = [
-        'at', '6at', '8at', 'at6', 'atx', 'cvt', 'tiptronic', 'stronic',
-        'dsg', 'automática', 'automatic', 'tronic', 'aut', 'automatico', 'automático'
-    ]
-    manuales = ['mt', '6mt', 'manual']
-
-    terminos_transmision = automaticos + manuales
-    mapa_normalizado = {term: 'automatica' for term in automaticos}
-    mapa_normalizado.update({term: 'manual' for term in manuales})
+    # Construir terminos_transmision y mapa_normalizado desde TERMINOS_TRANSMISION
+    terminos_transmision = sum(TERMINOS_TRANSMISION.values(), [])
+    mapa_normalizado = {term: tipo for tipo, lista in TERMINOS_TRANSMISION.items() for term in lista}
 
     def detectar_transmision(fila):
         transmision_original = str(fila.get('Transmisión', '')).lower()
@@ -337,23 +380,10 @@ def limpiar_version(df):
     df = df.copy()
     df['Versión_prev'] = df['Versión']  # guardar versión original
 
-    # Términos a remover
-    terminos_traccion = ['4x4','awd', '4matic', 'quattro', '4m', '4wd', 'xdrive',
-                         '2x4','4x2','fwd', 'rwd', '2wd']
-    
-    terminos_transmision = [
-        'at', '6at', '8at', 'at6', 'atx', 'cvt', 'tiptronic', 'stronic',
-        'dsg', 'automatica', 'automatic', 'tronic', 'aut',
-        'mt', '6mt', 'manual', 'automatico', 'automático'
-    ]
-
-    terminos_combustible = [
-        'electrico', 'electrica', 'electric', 'electrical',
-        'hibrido', 'hibrid', 'hybrid', 'hibrida', 'mhev', 'hev', 'phev', 'hv', 'mild hybrid',
-        'diesel', 'gasoil',
-        'nafta', 'naftero', 'nafta/gnc',
-        'gnc'
-    ]
+    # Términos a remover (usar las variables globales)
+    terminos_traccion = sum(TERMINOS_TRACCION.values(), [])
+    terminos_transmision = sum(TERMINOS_TRANSMISION.values(), [])
+    terminos_combustible = sum(TIPOS_COMBUSTIBLE.values(), [])
 
     regex_asientos = re.compile(r'\b[1-9]\s?(as|p|puertas|plazas|pasajeros|asientos|pas)\b', re.IGNORECASE)
 
@@ -434,19 +464,11 @@ def limpiar_motor(df):
 def limpiar_combustible(df):
     import re
 
-    tipos_config = {
-        'Eléctrico': ['electrico', 'electrica', 'electric', 'electrical'],
-        'Híbrido': ['hibrido', 'hibrid', 'hybrid', 'hibrida', 'mhev', 'hev', 'phev', 'hv', 'mild hybrid'],
-        'Diésel': ['diesel', 'gasoil'],
-        'Nafta': ['nafta', 'naftero'],
-        'Nafta/GNC': ['gnc']
-    }
-
-    prioridad = ['Eléctrico', 'Híbrido', 'Nafta/GNC', 'Diésel', 'Nafta']
+    prioridad = list(TIPOS_COMBUSTIBLE.keys())
 
     regex_por_tipo = {
         tipo: re.compile(r'\b(' + '|'.join(map(re.escape, palabras)) + r')\b', re.IGNORECASE)
-        for tipo, palabras in tipos_config.items()
+        for tipo, palabras in TIPOS_COMBUSTIBLE.items()
     }
 
     df = df.copy()
@@ -458,7 +480,7 @@ def limpiar_combustible(df):
         tipo_actual_sin_tildes = quitar_tildes(tipo_actual)
 
         tipos_detectados = []
-        for tipo, palabras in tipos_config.items():
+        for tipo, palabras in TIPOS_COMBUSTIBLE.items():
             for palabra in palabras:
                 if palabra in tipo_actual_sin_tildes:
                     tipos_detectados.append(tipo)
@@ -626,26 +648,79 @@ def limpiar_puertas(df):
     return df
 
 
+def limpiar_camara_de_retroceso(df):
+    '''
+    Revisar la columna de 'Con cámara de retroceso'.
+    Si aparece algo que no es 'Sí' o 'No', reemplazarlo por NaN.
+    Si es 'Sí', convertirlo a 1, y si es 'No', convertirlo a 0
+    '''
+    df = df.copy()
+    df['Con cámara de retroceso'] = df['Con cámara de retroceso'].str.strip().str.lower()
+    df['Con cámara de retroceso'] = df['Con cámara de retroceso'].map({'sí': 1, 'no': 0}).astype("Int64")
+
+    # Reemplazar cualquier otro valor que no sea 1 o 0 por NaN
+    df.loc[~df['Con cámara de retroceso'].isin([0, 1]), 'Con cámara de retroceso'] = np.nan
+
+    return df
+
+def limpiar_tipo_de_vendedor(df):
+    """
+    Revisa la columna 'Tipo de vendedor' y normaliza los valores.
+    Si el valor no es 'concesionaria', 'tienda' o 'particular', elimina la muestra.
+    """
+    df = df.copy()
+    df['Tipo de vendedor'] = df['Tipo de vendedor'].str.strip().str.lower()
+
+    tipos_validos = ['concesionaria', 'tienda', 'particular']
+    df = df[df['Tipo de vendedor'].isin(tipos_validos)]
+
+    return df
+
+#==============================
+#FUNCIÓN DE LIMPIEZA PRE-SPLIT COMPACTA
+#==============================
 
 
 def limpiar_dataset(df):
     """
     Limpia un DataFrame de vehículos aplicando varias funciones de limpieza.
+    Además, imprime la cantidad de muestras eliminadas por las funciones que eliminan filas.
     """
-#eliminar columnas de tipo de combustible, descripción y titulo
-    df = df.drop(columns=['Unnamed: 0', 'Descripción', 'Tipo de carrocería'], errors='ignore')
-    df = limpiar_marcas(df)
-    df = limpiar_modelo(df)
-    df = extraer_hp(df)
-    df = limpiar_transmision(df)
-    df = extraer_traccion(df)
-    df = limpiar_version(df)
-    df = limpiar_motor(df)
-    df = limpiar_combustible(df)
-    df = limpiar_precio(df)
-    df = limpiar_año(df)
-    df = limpiar_km(df)
-    df = limpiar_puertas(df)
-    df = df.drop(columns=['Título', 'modelo_prev', 'Tipo de carrocería', 'Moneda', 'transmision_prev', 'Motor_prev', 'Tipo original'], errors='ignore')
+    # Eliminar columnas de tipo de combustible, descripción y titulo
+    df = df.drop(columns=['Unnamed: 0', 'Descripción'], errors='ignore')
+
+    original_count = len(df)
+
+    # Lista de funciones de limpieza, con etiquetas
+    limpieza_funcs = [
+        ("limpiar_marcas", limpiar_marcas),
+        ("limpiar_modelo", limpiar_modelo),
+        ("limpiar_carroceria", limpiar_carroceria),
+        ("extraer_hp", extraer_hp),
+        ("limpiar_transmision", limpiar_transmision),
+        ("extraer_traccion", extraer_traccion),
+        ("limpiar_version", limpiar_version),
+        ("limpiar_motor", limpiar_motor),
+        ("limpiar_combustible", limpiar_combustible),
+        ("limpiar_precio", limpiar_precio),
+        ("limpiar_año", limpiar_año),
+        ("limpiar_km", limpiar_km),
+        ("limpiar_puertas", limpiar_puertas),
+        ("limpiar_camara_de_retroceso", limpiar_camara_de_retroceso),
+        ("limpiar_tipo_de_vendedor", limpiar_tipo_de_vendedor),
+    ]
+
+    for func_name, func in limpieza_funcs:
+        count_before = len(df)
+        df = func(df)
+        count_after = len(df)
+        if count_after < count_before:
+            print(f"[{func_name}] Muestras eliminadas: {count_before - count_after}")
+
+    # Eliminar columnas auxiliares
+    df = df.drop(columns=['Título', 'modelo_prev', 'Tipo de carrocería', 'Moneda', 'transmision_prev', 'Motor_prev', 'Tipo original','Versión_prev'], errors='ignore')
+
+    total_eliminadas = original_count - len(df)
+    print(f"[TOTAL] Muestras eliminadas en total: {total_eliminadas}")
 
     return df
