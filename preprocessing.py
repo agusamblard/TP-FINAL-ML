@@ -26,27 +26,37 @@ def quitar_tildes(texto):
     return texto
 
 
+
 def normalizar(texto, eliminar_espacios=True):
     if pd.isna(texto):
         return ''
     texto = str(texto).strip().lower()
 
-    # Reemplazo manual de tildes y otros caracteres especiales
+    # Reemplazo de tildes y diéresis
     reemplazos = {
         'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
-        'ä': 'a', 'ë': 'e', 'ï': 'i', 'ö': 'o', 'ü': 'u'
+        'ä': 'a', 'ë': 'e', 'ï': 'i', 'ö': 'o', 'ü': 'u',
+        'ñ': 'n'
     }
     texto = ''.join(reemplazos.get(c, c) for c in texto)
 
-    # Eliminar símbolos no deseados
-    simbolos_a_eliminar = ['-', '.', ',']
+    # Símbolos raros a eliminar
+    simbolos_a_eliminar = ['-', '.', ',', '"', "'", '“', '”', '’', '`',
+                           '(', ')', '[', ']', '{', '}', ':', ';', '!', '?', '#', '@', '°', 'º', 'ª', '/', '\\', '|']
+
     if eliminar_espacios:
         simbolos_a_eliminar.append(' ')
+
     for simbolo in simbolos_a_eliminar:
         texto = texto.replace(simbolo, '')
 
-    return texto
+    # Eliminar cualquier carácter no alfanumérico restante
+    if eliminar_espacios:
+        texto = re.sub(r'[^a-z0-9]', '', texto)
+    else:
+        texto = re.sub(r'[^a-z0-9 ]', '', texto)
 
+    return texto
 
 
 def limpiar_marcas(df):
@@ -322,12 +332,12 @@ def limpiar_transmision(df):
 
 def limpiar_version(df):
     """
-    Limpia la columna 'Versión', elimina las vacías y luego agrupa versiones similares por modelo usando DBSCAN.
-    El resultado final reemplaza directamente la columna 'Versión'.
+    Limpia la columna 'Versión', elimina los términos irrelevantes y deja solo el nombre distintivo.
     """
     df = df.copy()
     df['Versión_prev'] = df['Versión']  # guardar versión original
 
+    # Términos a remover
     terminos_traccion = ['4x4','awd', '4matic', 'quattro', '4m', '4wd', 'xdrive',
                          '2x4','4x2','fwd', 'rwd', '2wd']
     
@@ -348,7 +358,6 @@ def limpiar_version(df):
     regex_asientos = re.compile(r'\b[1-9]\s?(as|p|puertas|plazas|pasajeros|asientos|pas)\b', re.IGNORECASE)
 
     versiones_limpias = []
-    versiones_vacias = []
 
     for idx, row in df.iterrows():
         version = row['Versión']
@@ -356,16 +365,16 @@ def limpiar_version(df):
             versiones_limpias.append(version)
             continue
 
-        version_limpia = quitar_tildes(str(version).lower().replace(',', '.'))
+        version_limpia = normalizar(version, eliminar_espacios=False)
 
-        marca = quitar_tildes(str(row['Marca']).lower()) if pd.notna(row['Marca']) else ''
-        modelo = quitar_tildes(str(row['Modelo']).lower()) if pd.notna(row['Modelo']) else ''
+        marca = normalizar(row['Marca'], eliminar_espacios=False) if pd.notna(row['Marca']) else ''
+        modelo = normalizar(row['Modelo'], eliminar_espacios=False) if pd.notna(row['Modelo']) else ''
+        
         version_limpia = re.sub(rf'\b{re.escape(marca)}\b', '', version_limpia)
         version_limpia = re.sub(rf'\b{re.escape(modelo)}\b', '', version_limpia)
 
-        version_limpia = re.sub(r'\b\d{1,2}(\.\d)?\s*[lt]?\b', '', version_limpia)
+        version_limpia = re.sub(r'\b\d{1,2}(\.\d)?\s*[lt]?\b', '', version_limpia)  # 1.6, 2.0
         version_limpia = re.sub(r'\b\.\d\s*[lt]?\b', '', version_limpia)
-
         version_limpia = re.sub(r'\b\d{2,3}\s*(cv|hp)\b', '', version_limpia)
 
         version_limpia = re.sub(r'\b(' + '|'.join(map(re.escape, terminos_traccion)) + r')\b', '', version_limpia)
@@ -376,12 +385,11 @@ def limpiar_version(df):
         version_limpia = re.sub(r'\s{2,}', ' ', version_limpia).strip()
 
         versiones_limpias.append(version_limpia)
-        if version_limpia == "":
-            versiones_vacias.append(row['Versión_prev'])
 
     df['Versión'] = versiones_limpias
 
     return df
+
 
 def limpiar_motor(df):
     """
