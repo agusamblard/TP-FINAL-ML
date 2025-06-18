@@ -1,78 +1,8 @@
- # =======================
- # VARIABLES GLOBALES
- # =======================
-
-MARCAS_VALIDAS = [
-    'ford', 'jeep', 'volkswagen', 'chevrolet', 'renault', 'toyota',
-    'peugeot', 'nissan', 'citroen', 'bmw', 'honda', 'hyundai', 'audi',
-    'fiat', 'chery', 'kia', 'mercedesbenz', 'dodge', 'baic', 'suzuki',
-    'porsche', 'landrover', 'mitsubishi', 'volvo', 'ds', 'ssangyong',
-    'alfaromeo', 'jac', 'jetour', 'gwm', 'isuzu', 'lifan',
-    'lexus', 'subaru', 'daihatsu', 'mini', 'kaiyi', 'jaguar'
-]
-
-MODELOS_POR_MARCA = {
-    'ford': ['ecosport', 'territory', 'kuga', 'broncosport', 'explorer', 'bronco'],
-    'chevrolet': ['tracker', 'trailblazer', 'equinox', 'spin', 'blazer', 'grandblazer', 'grandvitara'],
-    'peugeot': ['2008', '3008', '4008'], 'renault': ['duster', 'captur', 'dusteroroch', 'koleos', 'sanderostepway'],
-    'jeep': ['compass', 'renegade', 'grandcherokee', 'commander', 'wrangler', 'cherokee', 'patriot'],
-    'nissan': ['kicks', 'xtrail', 'murano', 'pathfinder', 'xterra', 'terranoii'], 
-    'volkswagen': ['taos', 'tcross', 'tiguan', 'tiguanallspace', 'touareg', 'nivus'], 
-    'kaiyi': ['x3'], 'toyota': ['corollacross', 'hiluxsw4', 'sw4', 'rav4', 'landcruiser', '4runner'], 
-    'citroen': ['c4cactus', 'c3aircross', 'c5aircross', 'c3', 'c4aircross'], 
-    'hyundai': ['tucson', 'santafe', 'creta', 'x35', 'galloper', 'kona', 'grandsantafe'], 
-    'fiat': ['pulse', '500x'], 'honda': ['hrv', 'crv', 'pilot'], 
-    'bmw': ['x1', 'x3', 'x5', 'x6', 'x4', 'x2', 'serie4'], 
-    'audi': ['q5', 'q3', 'q2', 'q7', 'q3sportback', 'q8', 'sq5', 'q5sportback'], 
-    'kia': ['sportage', 'soul', 'sorento', 'seltos', 'mohave'], 
-    'baic': ['x55', 'x25', 'x35'], 'jac': ['s2'], 
-    'mercedesbenz': ['claseglc', 'clasegla', 'clasegle', 'claseglk', 'claseml', 'clasegl', 'ml'], 
-    'chery': ['tiggo', 'tiggo3', 'tiggo4pro', 'tiggo5', 'tiggo2', 'tiggo4', 'tiggo8pro'], 
-    'dodge': ['journey'], 'landrover': ['evoque', 'rangeroversport', 'discovery', 'rangerover', 'freelander', 'defender'], 
-    'suzuki': ['grandvitara', 'vitara', 'jimny', 'samurai'], 'porsche': ['cayenne', 'macan', 'panamera'], 
-    'volvo': ['xc60', 'xc40'], 
-    'ds': ['ds7crossback', 'ds7', 'ds3'], 
-    'ssangyong': ['musso', 'actyon'], 'alfaromeo': ['stelvio'], 'jetour': ['x70'], 
-    'gwm': ['jolion', 'h6'], 'isuzu': ['trooper'], 'lifan': ['myway', 'x70'], 
-    'lexus': ['ux', 'nx'], 'subaru': ['outback'], 'daihatsu': ['terios'], 
-    'mini': ['coopercountryman'], 'mitsubishi': ['outlander', 'montero', 'nativa'], 'jaguar': ['fpace']}
-
-
-
-MARCAS_VALIDAS = [
-    'ford', 'jeep', 'volkswagen', 'chevrolet', 'renault', 'toyota',
-    'peugeot', 'nissan', 'citroen', 'bmw', 'honda', 'hyundai', 'audi',
-    'fiat', 'chery', 'kia', 'mercedesbenz', 'dodge', 'baic', 'suzuki',
-    'porsche', 'landrover', 'mitsubishi', 'volvo', 'ds', 'ssangyong',
-    'alfaromeo', 'jac', 'jetour', 'gwm', 'isuzu', 'lifan',
-    'lexus', 'subaru', 'daihatsu', 'mini', 'kaiyi', 'jaguar'
-]
-
-TERMINOS_TRACCION = {
-    '4x4': ['4x4','awd','4matic','quattro','4m','4wd','xdrive'],
-    '4x2': ['2x4','4x2','fwd','rwd','2wd']
-}
-
-TERMINOS_TRANSMISION = {
-    'automatica': [
-        'at', '6at', '8at', 'at6', 'atx', 'cvt', 'tiptronic', 'stronic',
-        'dsg', 'automatica', 'automatic', 'tronic', 'aut', 'automatico', 'automático'
-    ],
-    'manual': ['mt', '6mt', 'manual']
-}
-
-TIPOS_COMBUSTIBLE = {
-    'Eléctrico': ['electrico', 'electrica', 'electric', 'electrical'],
-    'Híbrido': ['hibrido', 'hibrid', 'hybrid', 'hibrida', 'mhev', 'hev', 'phev', 'hv', 'mild hybrid'],
-    'Diésel': ['diesel', 'gasoil'],
-    'Nafta': ['nafta', 'naftero'],
-    'Nafta/GNC': ['gnc']
-}
 
 #=============================
 # IMPORTS
 #=============================
-
+from utils.diccionarios import MARCAS_VALIDAS, MODELOS_POR_MARCA, TERMINOS_TRACCION, TERMINOS_TRANSMISION, TIPOS_COMBUSTIBLE
 import pandas as pd
 from difflib import get_close_matches
 from collections import defaultdict
@@ -149,6 +79,11 @@ def limpiar_marcas(df):
         marca_norm = normalizar(marca)
         titulo_norm = normalizar(titulo)
 
+        # Paso 0: hardcodeo de "haval" → "gwm"
+        if marca_norm == "haval":
+            df.at[idx, 'Marca'] = "gwm"
+            continue
+
         # Paso 1: si la marca ya es válida
         if marca_norm in MARCAS_VALIDAS:
             df.at[idx, 'Marca'] = marca_norm
@@ -164,29 +99,17 @@ def limpiar_marcas(df):
         if encontrada:
             continue
 
-        # Paso 3: buscar la marca más frecuente para el mismo modelo
-        '''
-        if pd.notna(modelo):
-            subset = df[(df['Modelo'] == modelo) & (df.index != idx)]
-            marcas_modelo = subset['Marca'].dropna().apply(normalizar).tolist()
-            marcas_frecuentes = [m for m in marcas_modelo if m in MARCAS_VALIDAS]
-            if marcas_frecuentes:
-                marca_mas_frecuente = Counter(marcas_frecuentes).most_common(1)[0][0]
-                df.at[idx, 'Marca'] = marca_mas_frecuente
-                continue
-        '''
-        # Paso 4: buscar por similitud
+        # Paso 3: buscar por similitud
         match = get_close_matches(marca_norm, MARCAS_VALIDAS, n=1, cutoff=0.7)
         if match:
             df.at[idx, 'Marca'] = match[0]
         else:
             indices_a_eliminar.append(idx)
 
-    # Paso 5: las marcas que no se pudieron corregir se marcan como NaN
+    # Paso 4: las marcas que no se pudieron corregir se marcan como NaN
     df.loc[indices_a_eliminar, 'Marca'] = pd.NA
 
     return df
-
 
 
 
