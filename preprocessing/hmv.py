@@ -3,6 +3,12 @@ import pandas as pd
 from utils.diccionarios import MARCAS_VALIDAS, MODELOS_POR_MARCA
 from preprocessing.data_cleanse import normalizar, quitar_tildes
 import re
+
+
+
+
+
+
 def hmv_marca(df_train, df_to_input):
     """
     Imputa valores faltantes en la columna 'Marca' en df_to_input usando df_train como referencia.
@@ -12,9 +18,9 @@ def hmv_marca(df_train, df_to_input):
     - Luego intenta detectar marca en 'Título'
     - Si todo falla, elimina la fila
     Prints:
-    - Índices con marca faltante (+2)
+    - Índices con marca faltante
     - Coincidencias encontradas y marcas asignadas
-    - Índices de filas eliminadas (+2)
+    - Índices de filas eliminadas
     - Resumen final
     """
     df = df_to_input.copy()
@@ -322,7 +328,6 @@ def hmv_combustible(df_train, df_to_input):
     - Requiere al menos 'Modelo' o 'Versión' para imputar.
     - Busca coincidencias exactas con las columnas no nulas disponibles (Marca, Modelo, Versión, Año).
     - Si no encuentra coincidencias, reduce las columnas (manteniendo Modelo/Versión) hasta encontrar alguna.
-    - Si logra imputar, agrega la muestra al set de referencia.
     - Si no logra imputar, elimina la fila y la guarda en 'combustible_deleted.csv'.
     """
     import pandas as pd
@@ -383,7 +388,6 @@ def hmv_puertas(df_train, df_to_input):
     - Requiere al menos 'Modelo' o 'Versión' para imputar.
     - Busca coincidencias exactas con las columnas no nulas disponibles (Marca, Modelo, Versión, Año).
     - Si no encuentra coincidencias, reduce las columnas (manteniendo Modelo/Versión) hasta encontrar alguna.
-    - Si logra imputar, agrega la muestra al set de referencia.
     - Si no logra imputar, elimina la fila y la guarda en 'puertas_deleted.csv'.
     """
     import pandas as pd
@@ -444,7 +448,6 @@ def hmv_transmision(df_train, df_to_input):
     - Requiere al menos 'Modelo' o 'Versión' para poder imputar.
     - Busca coincidencias exactas con las columnas no nulas disponibles.
     - Si no encuentra coincidencias, reduce el conjunto de columnas (manteniendo Modelo/Versión) hasta encontrar alguna.
-    - Si logra imputar, agrega la muestra al set de referencia.
     - Si no logra imputar, elimina la fila y la guarda en 'transmision_deleted.csv'.
     """
     import pandas as pd
@@ -507,7 +510,6 @@ def hmv_motor(df_train, df_to_input):
     - Requiere al menos 'Modelo' o 'Versión' para poder imputar.
     - Busca coincidencias exactas con las columnas no nulas disponibles.
     - Si no encuentra coincidencias, reduce el conjunto de columnas (manteniendo Modelo/Versión) hasta encontrar alguna.
-    - Si logra imputar, la muestra se agrega al set de referencia para futuras imputaciones.
     - Si no logra imputar, elimina la fila y la guarda en 'motor_deleted.csv'.
     """
     import pandas as pd
@@ -569,7 +571,6 @@ def hmv_camara(df_train, df_to_input):
     - Busca coincidencias exactas con esas cuatro columnas en df_train o imputaciones anteriores.
     - Si hay coincidencias, asigna la moda.
     - Si no hay coincidencias, asigna 0.
-    - Imputaciones exitosas se agregan al set de referencia paso a paso.
     """
     import pandas as pd
 
@@ -627,7 +628,6 @@ def hmv_hp(df_train, df_to_input):
     - Requiere al menos uno entre 'Modelo', 'Versión' o 'Motor'.
     - Imputa la moda si encuentra coincidencias.
     - Si no encuentra coincidencias, elimina la muestra y la guarda en 'hp_deleted.csv'.
-    - Las imputaciones exitosas se agregan a la base de referencia en cada paso.
     """
     import pandas as pd
     from itertools import combinations
@@ -692,7 +692,6 @@ def hmv_traccion(df_train, df_to_input):
     - Requiere al menos 'Modelo' o 'Versión'.
     - Busca coincidencias exactas con combinaciones de columnas disponibles: Marca, Modelo, Versión, Año.
     - Evalúa combinaciones desde 4 hasta 1 columna.
-    - Si encuentra coincidencias, imputa la moda y actualiza el set de referencia.
     - Si no encuentra coincidencias, asigna "4x2" como valor por defecto.
     """
     import pandas as pd
@@ -813,42 +812,338 @@ def hmv_year(df_train, df_to_input):
     print(f"\n✔️ Años imputados por regresión: {imputados}")
     return df
 
-def hmv_km(df_train, df_to_input):
-    '''
-    HAY QUE IMPLEMENTARLO. QUIEOR ANALIZAR CORRELACION PARA VER SI SE PUEDE HACER UNA REGRESION
-    
-    '''
-    return df_to_input
+def hmv_km(df_train, df_to_input, min_size=15, max_ext=10):
+    """
+    Detecta outliers en 'Kilómetros' de df_to_input basándose en la distribución de df_train.
+    Marca los valores outlier como NaN en df_to_input y los imputa con la media del año
+    (expandiendo hacia años vecinos si es necesario).
 
-def hmv_precio(df_train, df_to_input):
-    '''
-    HAY QUE IMPLEMENTARLO. QUIEOR ANALIZAR CORRELACION PARA VER SI SE PUEDE HACER UNA REGRESION
-    
-    '''
-    return df_to_input
+    Returns:
+        df_result: copia de df_to_input con valores imputados en 'Kilómetros'
+    """
+    import pandas as pd
 
-def hmv_tipo_de_vendedor(df_train,df_to_input):
-    '''
-    HAY QUE IMPLEMENTARLO. QUIEOR ANALIZAR CORRELACION PARA VER SI SE PUEDE HACER UNA REGRESION
+    def ajustar_rangos_iqr(grupo, año):
+        """
+        Calcula límites de kilometraje adaptativos en función de la antigüedad del auto.
+        """
+        Q1 = grupo['Kilómetros'].quantile(0.30)
+        Q3 = grupo['Kilómetros'].quantile(0.70)
+        IQR = Q3 - Q1
+        antiguedad = 2025 - año
 
-    '''
-    return df_to_input
+        if antiguedad >= 30:
+            factor_lower = 1.5
+            factor_upper = 1.0
+        elif antiguedad >= 20:
+            factor_lower = 1.3
+            factor_upper = 1.2
+        elif antiguedad >= 10:
+            factor_lower = 1.1
+            factor_upper = 1.3
+        elif antiguedad >= 3:
+            factor_lower = 1.0
+            factor_upper = 1.5
+        else:
+            factor_lower = 0.8
+            factor_upper = 1.75
+
+        lower = max(0, Q1 - factor_lower * IQR)
+        upper = Q3 + factor_upper * IQR
+
+        if antiguedad <= 1:
+            upper = max(upper, 10000)
+
+        return lower, upper
+
+    df_result = df_to_input.copy()
+    años_unicos = sorted(df_result['Año'].dropna().unique())
+    evaluados = set()
+
+    outliers_total = 0
+    imputados_total = 0
+    no_imputados = 0
+
+    print("🚨 Paso 1: Detectando y marcando outliers según df_train...\n")
+
+    for año in años_unicos:
+        if año in evaluados:
+            continue
+
+        año = int(año)
+        ext = 0
+        grupo = pd.DataFrame()
+        while ext <= max_ext:
+            rango = list(range(año - ext, año + ext + 1))
+            grupo = df_train[df_train['Año'].isin(rango)]
+            if len(grupo) >= min_size:
+                break
+            ext += 1
+
+        if len(grupo) < min_size:
+            print(f"⚠️ Año {año}: No se encontró suficiente data en train ni con expansión ±{max_ext}. Se omite.")
+            continue
+
+        lower, upper = ajustar_rangos_iqr(grupo, año)
+        evaluados.update(rango)
+
+        print(f"✅ Año {año}: usando ventana ±{ext} → {len(grupo)} muestras | Rango: {int(lower)} – {int(upper)} km")
+
+        cond_outlier = (
+            (df_result['Año'] == año) &
+            ((df_result['Kilómetros'] < lower) | (df_result['Kilómetros'] > upper))
+        )
+        outliers_detectados = cond_outlier.sum()
+        outliers_total += outliers_detectados
+        df_result.loc[cond_outlier, 'Kilómetros'] = pd.NA
+
+        print(f"   ↳ {outliers_detectados} valores marcados como NaN en df_to_input\n")
+
+    print("🛠️ Paso 2: Imputando los NaN con medias de df_train...\n")
+
+    for idx, row in df_result[df_result['Kilómetros'].isna()].iterrows():
+        año = int(row['Año'])
+        ext = 0
+        grupo = pd.DataFrame()
+
+        while ext <= max_ext:
+            rango = list(range(año - ext, año + ext + 1))
+            grupo = df_train[
+                (df_train['Año'].isin(rango)) &
+                (df_train['Kilómetros'].notna())
+            ]
+            if len(grupo) >= min_size:
+                break
+            ext += 1
+
+        if len(grupo) >= min_size:
+            imputado = round(grupo['Kilómetros'].median())
+            df_result.at[idx, 'Kilómetros'] = imputado
+            imputados_total += 1
+            print(f"🔄 Imputado fila {idx} (año {año}) con media {imputado} km usando ventana ±{ext}")
+        else:
+            no_imputados += 1
+            print(f"⚠️ No se pudo imputar fila {idx} (año {año}): insuficiente data en train incluso con expansión")
+
+    print("\n📊 Estadísticas finales:")
+    print(f"🔍 Total de valores marcados como outliers: {outliers_total}")
+    print(f"🛠️ Total de valores imputados exitosamente: {imputados_total}")
+    print(f"🚫 Total de valores que quedaron como NaN: {no_imputados}")
+    print("\n✅ Proceso completo sin data leakage.\n")
+
+    return df_result
+
+
+
+def hmv_precio(df_train, df_to_input, min_size=10):
+    """
+    Detecta y reemplaza outliers en la columna 'Precio' en df_to_input,
+    usando como referencia df_train y segmentando por Marca, Modelo, Versión, Año y un rango dinámico de Kilómetros.
+
+    Los outliers son marcados y reemplazados por:
+    - mediana del grupo si hay suficientes datos.
+    - Si no hay suficientes datos, intenta con la mediana de Marca+Modelo+Versión+Año.
+    - Si aún así no hay datos, deja el valor como está.
+    - Si el valor original era NaN, se imputa con la mediana general del dataset.
+
+    Args:
+        df_train: DataFrame de referencia (train set sin data leakage).
+        df_to_input: DataFrame sobre el cual imputar outliers en 'Precio'.
+        min_size: mínimo de coincidencias necesarias para calcular IQR.
+
+    Returns:
+        df_result: copia de df_to_input con 'Precio' imputado/redondeado cuando era outlier o faltante.
+    """
+    import pandas as pd
+    import numpy as np
+
+    df_result = df_to_input.copy()
+    mediana_general = df_train['Precio'].median()
+
+    modificados = 0
+    imputados_fallback = 0
+    imputados_generales = 0
+
+    print("🚨 Detectando e imputando outliers en 'Precio'...\n")
+
+    for idx, row in df_result.iterrows():
+        marca, modelo, version, año, km, precio = row[['Marca', 'Modelo', 'Versión', 'Año', 'Kilómetros', 'Precio']]
+
+        if pd.isna(km) or pd.isna(año):
+            continue  # no se puede evaluar
+
+        # 🧠 Tolerancia de kilómetros según antigüedad
+        antiguedad = 2025 - int(año)
+        if km == 0:
+            km_tol = 0
+        elif antiguedad <= 1:
+            km_tol = 1500
+        elif antiguedad <= 5:
+            km_tol = 5000
+        elif antiguedad <= 10:
+            km_tol = 10000
+        else:
+            km_tol = 20000
+
+        # 🎯 Grupo para detectar outliers
+        grupo = df_train[
+            (df_train['Marca'] == marca) &
+            (df_train['Modelo'] == modelo) &
+            (df_train['Versión'] == version) &
+            (df_train['Año'] == año) &
+            (df_train['Kilómetros'].between(km - km_tol, km + km_tol)) &
+            (df_train['Precio'].notna())
+        ]
+
+        if not pd.isna(precio) and len(grupo) >= min_size:
+            Q1 = grupo['Precio'].quantile(0.25)
+            Q3 = grupo['Precio'].quantile(0.75)
+            IQR = Q3 - Q1
+            lower = Q1 - 1.5 * IQR
+            upper = Q3 + 1.5 * IQR
+
+            if precio < lower or precio > upper:
+                imputado = round(grupo['Precio'].median())
+                print(f"🔎 Fila {idx}: ${precio:,.0f} fuera de rango [{int(lower)} – {int(upper)}] → imputado con mediana del grupo: ${imputado}")
+                df_result.at[idx, 'Precio'] = imputado
+                modificados += 1
+        else:
+            # 🔁 Fallback con Marca+Modelo+Versión+Año
+            grupo_fallback = df_train[
+                (df_train['Marca'] == marca) &
+                (df_train['Modelo'] == modelo) &
+                (df_train['Versión'] == version) &
+                (df_train['Año'] == año) &
+                (df_train['Precio'].notna())
+            ]
+
+            if pd.isna(precio):
+                if not grupo_fallback.empty:
+                    imputado = round(grupo_fallback['Precio'].median())
+                    print(f"⚠️ Fila {idx}: Precio faltante → imputado con mediana del grupo fallback: ${imputado}")
+                    df_result.at[idx, 'Precio'] = imputado
+                    imputados_fallback += 1
+                else:
+                    imputado = round(mediana_general)
+                    print(f"⚠️ Fila {idx}: Precio faltante y sin fallback → imputado con mediana general: ${imputado}")
+                    df_result.at[idx, 'Precio'] = imputado
+                    imputados_generales += 1
+
+    n_total = len(df_result)
+    n_nan = df_result['Precio'].isna().sum()
+
+    print("\n📊 Estadísticas finales:")
+    print(f"🔧 Valores modificados por ser outliers: {modificados}")
+    print(f"🪛 Valores imputados por fallback (Marca+Modelo+Versión+Año): {imputados_fallback}")
+    print(f"🧮 Valores imputados con media general del dataset: {imputados_generales}")
+    print(f"❓ Valores que siguen como NaN: {n_nan} / {n_total}")
+
+    print("\n✅ Proceso completado sin data leakage.\n")
+    return df_result
+
+
+
+def hmv_tipo_de_vendedor(df_train, df_to_input):
+    """
+    Imputa valores faltantes en 'Tipo de vendedor' de df_to_input usando como referencia df_train.
+    Para cada valor NaN, busca la moda en el grupo coincidente por Marca + Modelo + Versión + Año.
+
+    Args:
+        df_train: DataFrame de referencia (con valores conocidos).
+        df_to_input: DataFrame a imputar.
+
+    Returns:
+        df_result: copia de df_to_input con imputaciones aplicadas.
+    """
+    import pandas as pd
+
+    df_result = df_to_input.copy()
+    imputados = 0
+
+    for idx, row in df_result[df_result['Tipo de vendedor'].isna()].iterrows():
+        marca = row['Marca']
+        modelo = row['Modelo']
+        version = row['Versión']
+        año = row['Año']
+
+        grupo = df_train[
+            (df_train['Marca'] == marca) &
+            (df_train['Modelo'] == modelo) &
+            (df_train['Versión'] == version) &
+            (df_train['Año'] == año) &
+            (df_train['Tipo de vendedor'].notna())
+        ]
+
+        if not grupo.empty:
+            moda = grupo['Tipo de vendedor'].mode().iloc[0]
+            df_result.at[idx, 'Tipo de vendedor'] = moda
+            imputados += 1
+
+    print(f"✅ Imputaciones completadas: {imputados} valores reemplazados.\n")
+    return df_result
+
 
 
 def hmv_color(df_train, df_to_input):
     """
-    Agrupa valores similares en la columna 'Color' basándose en tokens con similitud textual.
-    Luego imputa NaNs utilizando este orden de prioridad:
-    1. Moda de 'Color' para esa Versión
-    2. Moda de 'Color' para ese Modelo
-    3. Moda de 'Color' para esa Marca
+    Imputa valores faltantes en la columna 'Color' y agrupa valores similares basándose en tokens con similitud textual.
+    Orden de operaciones:
+    1. Imputación de valores faltantes en 'Color' en df_to_input usando df_train (prioridad: Versión > Modelo > Marca)
+    2. Reemplazo de 'morado' por 'violeta' en ambos datasets
+    3. Agrupamiento de colores por tokens similares usando df_train
+    4. Reemplazo de valores conocidos en df_to_input según el agrupamiento
     """
 
-    print("🎨 Paso 0: Reemplazando 'morado' por 'violeta' en ambos datasets...\n")
-    for df in [df_train, df_to_input]:
+    # Copia de df_to_input
+    df_result = df_to_input.copy()
+
+    # 🩹 Paso 1: Imputando valores faltantes con prioridad Versión → Modelo → Marca
+    print("🩹 Paso 1: Imputando valores faltantes con prioridad Versión → Modelo → Marca\n")
+    imputados = 0
+    for idx, row in df_result[df_result['Color'].isna()].iterrows():
+        version = row.get('Versión')
+        modelo = row.get('Modelo')
+        marca = row.get('Marca')
+
+        valor_color = None
+
+        # Intento 1: por versión (usar df_train)
+        if pd.notna(version):
+            coincidencias = df_train[df_train['Versión'] == version]['Color'].dropna()
+            if not coincidencias.empty:
+                valor_color = coincidencias.mode().iloc[0]
+                origen = 'versión'
+
+        # Intento 2: por modelo (usar df_train)
+        if valor_color is None and pd.notna(modelo):
+            coincidencias = df_train[df_train['Modelo'] == modelo]['Color'].dropna()
+            if not coincidencias.empty:
+                valor_color = coincidencias.mode().iloc[0]
+                origen = 'modelo'
+
+        # Intento 3: por marca (usar df_train)
+        if valor_color is None and pd.notna(marca):
+            coincidencias = df_train[df_train['Marca'] == marca]['Color'].dropna()
+            if not coincidencias.empty:
+                valor_color = coincidencias.mode().iloc[0]
+                origen = 'marca'
+
+        if valor_color is not None:
+            df_result.at[idx, 'Color'] = valor_color
+            imputados += 1
+            print(f"[{idx + 2}] 🖌️ Imputado color '{valor_color}' por {origen}")
+        else:
+            print(f"[{idx + 2}] ⚠️ No se pudo imputar. Se mantiene como NaN")
+
+    print(f"\n✅ Total de colores imputados por contexto: {imputados}\n")
+
+    # 🎨 Paso 2: Reemplazando 'morado' por 'violeta' en ambos datasets
+    print("🎨 Paso 2: Reemplazando 'morado' por 'violeta' en ambos datasets...\n")
+    for df in [df_train, df_result]:
         df['Color'] = df['Color'].apply(lambda c: 'violeta' if isinstance(c, str) and 'morado' in normalizar(c, eliminar_espacios=False) else c)
 
-    print("🔍 Paso 1: Agrupando colores por tokens similares...\n")
+    # 🔍 Paso 3: Agrupando colores por tokens similares
+    print("🔍 Paso 3: Agrupando colores por tokens similares...\n")
     colores = df_train['Color'].dropna().unique()
     token_map = {}
     color_groups = {}
@@ -872,53 +1167,15 @@ def hmv_color(df_train, df_to_input):
     for grupo, variantes in color_groups.items():
         print(f"🔗 Token base: '{grupo}' → {sorted(variantes)}")
 
-    print("\n🧼 Paso 2: Reemplazando valores conocidos en df_to_input...\n")
+    # 🧼 Paso 4: Reemplazando valores conocidos en df_to_input según agrupamiento
+    print("\n🧼 Paso 4: Reemplazando valores conocidos en df_to_input según agrupamiento...\n")
     color_map = {}
     for grupo, variantes in color_groups.items():
         for variante in variantes:
             color_map[variante] = grupo
 
-    df_result = df_to_input.copy()
     df_result['Color'] = df_result['Color'].map(lambda x: color_map.get(x, x))
 
-    print("🩹 Paso 3: Imputando valores faltantes con prioridad Versión → Modelo → Marca\n")
-    imputados = 0
-    for idx, row in df_result[df_result['Color'].isna()].iterrows():
-        version = row.get('Versión')
-        modelo = row.get('Modelo')
-        marca = row.get('Marca')
-
-        valor_color = None
-
-        # Intento 1: por versión
-        if pd.notna(version):
-            coincidencias = df_result[df_result['Versión'] == version]['Color'].dropna()
-            if not coincidencias.empty:
-                valor_color = coincidencias.mode().iloc[0]
-                origen = 'versión'
-
-        # Intento 2: por modelo
-        if valor_color is None and pd.notna(modelo):
-            coincidencias = df_result[df_result['Modelo'] == modelo]['Color'].dropna()
-            if not coincidencias.empty:
-                valor_color = coincidencias.mode().iloc[0]
-                origen = 'modelo'
-
-        # Intento 3: por marca
-        if valor_color is None and pd.notna(marca):
-            coincidencias = df_result[df_result['Marca'] == marca]['Color'].dropna()
-            if not coincidencias.empty:
-                valor_color = coincidencias.mode().iloc[0]
-                origen = 'marca'
-
-        if valor_color is not None:
-            df_result.at[idx, 'Color'] = valor_color
-            imputados += 1
-            print(f"[{idx + 2}] 🖌️ Imputado color '{valor_color}' por {origen}")
-        else:
-            print(f"[{idx + 2}] ⚠️ No se pudo imputar. Se mantiene como NaN")
-
-    print(f"\n✅ Total de colores imputados por contexto: {imputados}")
     return df_result
 
 
@@ -945,9 +1202,9 @@ def hmv_dataset(df_train, df_to_input):
         ("hmv_hp", hmv_hp),
         ("hmv_traccion", hmv_traccion),
         ("hmv_year", hmv_year),
-        ("hmv_km", hmv_km),  # aún sin implementar
-        ("hmv_precio", hmv_precio),  # aún sin implementar
-        ("hmv_tipo_de_vendedor", hmv_tipo_de_vendedor),  # aún sin implementar
+        ("hmv_km", hmv_km),
+        ("hmv_precio", hmv_precio),
+        ("hmv_tipo_de_vendedor", hmv_tipo_de_vendedor),  
         ("hmv_color", hmv_color),
     ]
 
