@@ -79,17 +79,17 @@ def limpiar_marcas(df):
         marca_norm = normalizar(marca)
         titulo_norm = normalizar(titulo)
 
-        # Paso 0: hardcodeo de "haval" → "gwm"
+        # Paso 0: hardcodeo de "haval" → "gwm" (son lo mismo, y comparten los mismos modelos)
         if marca_norm == "haval":
             df.at[idx, 'Marca'] = "gwm"
             continue
 
-        # Paso 1: si la marca ya es válida
+        # Paso 1: si la marca ya es válida, no hacer nada
         if marca_norm in MARCAS_VALIDAS:
             df.at[idx, 'Marca'] = marca_norm
             continue
 
-        # Paso 2: buscar una marca válida en el título
+        # Paso 2: Si no es valida, buscar una marca válida en el título
         encontrada = False
         for m_valida in MARCAS_VALIDAS:
             if m_valida in titulo_norm:
@@ -99,7 +99,7 @@ def limpiar_marcas(df):
         if encontrada:
             continue
 
-        # Paso 3: buscar por similitud
+        # Paso 3: buscar por similitud con el diccionario de marcas válidas
         match = get_close_matches(marca_norm, MARCAS_VALIDAS, n=1, cutoff=0.7)
         if match:
             df.at[idx, 'Marca'] = match[0]
@@ -118,7 +118,7 @@ def limpiar_modelo(df):
     df = df.copy()
     df['modelo_prev'] = df['Modelo']  # Guardar versión original
 
-    # Utilizar la variable global MODELOS_POR_MARCA
+    # Utilizar el diccionario MODELOS_POR_MARCA
     marcas_por_modelo = defaultdict(list)
     for marca, modelos in MODELOS_POR_MARCA.items():
         marca_norm = normalizar(marca)
@@ -234,7 +234,7 @@ def extraer_traccion(df):
     """
     df = df.copy()
 
-    # Términos por tipo
+
     # Usar TERMINOS_TRACCION
     todos_los_terminos = sum(TERMINOS_TRACCION.values(), [])
     mapa_traccion = {t: tipo for tipo, lista in TERMINOS_TRACCION.items() for t in lista}
@@ -431,32 +431,7 @@ def limpiar_combustible(df):
 
     df['Tipo de combustible'] = df.apply(detectar_tipo, axis=1)
 
-    # --- Paso 2: Corregir falsos positivos conservadores ---
-    '''
-    for tipo_objetivo in prioridad:
-        regex_tipo = regex_por_tipo[tipo_objetivo]
-        for idx, fila in df.iterrows():
-            if fila['Tipo original'] == tipo_objetivo and fila['Tipo de combustible'] == tipo_objetivo:
-                texto = ''
-                if 'Versión_prev' in fila and pd.notna(fila['Versión_prev']):
-                    texto += ' ' + quitar_tildes(str(fila['Versión_prev']).lower())
-                if 'Motor_prev' in fila and pd.notna(fila['Motor_prev']):
-                    texto += ' ' + quitar_tildes(str(fila['Motor_prev']).lower())
 
-                if not regex_tipo.search(texto):
-                    filtro = (
-                        (df['Marca'] == fila['Marca']) &
-                        (df['Modelo'] == fila['Modelo']) &
-                        (df['Versión'] == fila['Versión']) &
-                        (df['Año'] == fila['Año']) &
-                        (df['Motor'] == fila['Motor']) &
-                        (df['Tipo de combustible'] != tipo_objetivo) &
-                        (df['Tipo de combustible'].notna())
-                    )
-                    tipo_mas_comun = df.loc[filtro, 'Tipo de combustible'].mode()
-                    if not tipo_mas_comun.empty:
-                        df.at[idx, 'Tipo de combustible'] = tipo_mas_comun.iloc[0]
-'''
     return df
 
 

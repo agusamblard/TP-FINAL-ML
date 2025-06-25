@@ -1,27 +1,20 @@
 from difflib import get_close_matches
 import pandas as pd
 from utils.diccionarios import MARCAS_VALIDAS, MODELOS_POR_MARCA
-from preprocessing.data_cleanse import normalizar, quitar_tildes
+from preprocessing.data_cleanse import normalizar
 import re
-
-
-
 
 
 
 def hmv_marca(df_train, df_to_input):
     """
     Imputa valores faltantes en la columna 'Marca' en df_to_input usando df_train como referencia.
-    - Primero intenta imputar por fuzzy matching con 'Modelo' (cutoff alto)
-    - Luego intenta con 'Versión' (cutoff alto)
+    - Primero intenta imputar por fuzzy matching con 'Modelo'
+    - Luego intenta con 'Versión'
     - Si falla, intenta fuzzy con cutoff más bajo
     - Luego intenta detectar marca en 'Título'
     - Si todo falla, elimina la fila
-    Prints:
-    - Índices con marca faltante
-    - Coincidencias encontradas y marcas asignadas
-    - Índices de filas eliminadas
-    - Resumen final
+
     """
     df = df_to_input.copy()
     referencia = df_train[df_train['Marca'].notna()].copy()
@@ -50,7 +43,6 @@ def hmv_marca(df_train, df_to_input):
                 marcas = posibles[posibles['Modelo'].str.lower() == match_modelo]['Marca']
                 if not marcas.empty:
                     marca_inferida = marcas.mode().iloc[0]
-                    print(f"[{idx + 2}] Fuzzy por MODELO: '{modelo_norm}' ≈ '{match_modelo}' → Marca: {marca_inferida} ({marcas.value_counts().to_dict()})")
 
         # Paso 2: Fuzzy matching por VERSIÓN (cutoff alto)
         if not marca_inferida and version_norm:
@@ -61,7 +53,6 @@ def hmv_marca(df_train, df_to_input):
                 marcas = posibles[posibles['Versión'].str.lower() == match_version]['Marca']
                 if not marcas.empty:
                     marca_inferida = marcas.mode().iloc[0]
-                    print(f"[{idx + 2}] Fuzzy por VERSIÓN: '{version_norm}' ≈ '{match_version}' → Marca: {marca_inferida} ({marcas.value_counts().to_dict()})")
 
         # Paso 3: Segundo intento con cutoff más bajo en MODELO
         if not marca_inferida and modelo_norm:
@@ -71,14 +62,12 @@ def hmv_marca(df_train, df_to_input):
                 marcas = referencia[referencia['Modelo'].str.lower() == match_modelo]['Marca']
                 if not marcas.empty:
                     marca_inferida = marcas.mode().iloc[0]
-                    print(f"[{idx + 2}] Segundo intento MODELO (cutoff 0.5): '{modelo_norm}' ≈ '{match_modelo}' → Marca: {marca_inferida}")
 
         # Paso 4: Buscar en TÍTULO
         if not marca_inferida:
             for m in referencia['Marca'].unique():
                 if pd.notna(m) and m.lower() in titulo:
                     marca_inferida = m.lower()
-                    print(f"[{idx + 2}] Marca detectada en TÍTULO: '{marca_inferida}'")
                     break
 
         # Asignación o eliminación
@@ -89,6 +78,7 @@ def hmv_marca(df_train, df_to_input):
             df.drop(index=idx, inplace=True)
 
     df_result = df[df['Marca'].notna()]
+    print('MARCA')
     print(f"\n✔️ Muestras imputadas: {len(reemplazos)}")
     print(f"🗑️ Muestras eliminadas por no poder imputar: {total_before - df_result.shape[0]}")
     return df_result
@@ -158,8 +148,7 @@ def hmv_modelo(df_train, df_to_input):
 
 
 
-
-def hmv_version(df_train, df_to_input):
+def hmv_version_train(df_train, df_to_input):
     """
     Imputa y agrupa versiones en df_to_input utilizando df_train como referencia.
 
@@ -175,7 +164,6 @@ def hmv_version(df_train, df_to_input):
     Paso 3: Agrupamiento final entre versiones resultantes del mismo modelo
         - Reagrupa versiones normalizadas que aún sean similares entre sí
         - Usa fuzzy matching sobre strings completas
-
 
     COSAS A TENER EN CUENTA:
     - El paso 1 puede ser mejorado. Ahora solo aplica la moda, pero podría ser más sofisticado teniendo en cuenta el precio, año
@@ -314,11 +302,138 @@ def hmv_version(df_train, df_to_input):
 
         df['Versión'] = df.apply(ajustar_version_final, axis=1)
 
-
     print(f"\n✔️ Muestras imputadas: {len(reemplazos)}")
     print(f"🗑️ Muestras eliminadas por no poder imputar: {df_missing.shape[0] - len(reemplazos)}")
     return df
 
+def hmv_version(df_train, df_to_input):
+    """
+    Ejecuta limpieza y agrupamiento de versiones:
+    - Primero se aplica la función completa sobre df_train.
+    - Luego, se genera un diccionario de versiones válidas por marca y modelo.
+    - Finalmente, se corrige df_to_input con ese conocimiento (imputación y similitud).
+
+    Retorna df_to_input actualizado.
+    """
+    import pandas as pd
+    from difflib import get_close_matches
+
+    # ------------------------------
+    # PARTE A: Aprender desde train
+    # ------------------------------
+    df_train_limpio = hmv_version_train(df_train, df_train)
+
+    # Diccionario definitivo de versiones por (Marca, Modelo)
+    versiones_por_modelo = {}
+    for (marca, modelo), sub in df_train_limpio.groupby(['Marca', 'Modelo']):
+        versiones_por_modelo[(marca, modelo)] = (
+            sub['Versión'].dropna()
+               .value_counts()
+               .index
+               .tolist()  # ordenadas por frecuencia
+        )
+    # ------------------------------------------------------------------ #
+    # ---------  PARTE  B:  CORREGIR / IMPUTAR EN df_to_input ----------- #
+    # ------------------------------------------------------------------ #
+    df_val = df_to_input.copy()
+    referencia = df_train_limpio[df_train_limpio['Versión'].notna()].copy()
+
+    df_missing = df_val[df_val['Versión'].isna()].copy()
+    print(f"🔍 Paso 1 - Imputación de versiones faltantes")
+    print(f"   ➤ Total con versión faltante: {len(df_missing)}")
+    print(f"   ➤ Índices con versión faltante: {[i + 2 for i in df_missing.index.tolist()]}")
+
+    reemplazos = []
+    eliminar = []
+
+    # Paso 1: Imputar versiones faltantes según prioridad
+    for idx, row in df_missing.iterrows():
+        marca = str(row.get("Marca", "")).lower()
+        modelo = str(row.get("Modelo", "")).lower()
+
+        version_frecuente = None
+
+        if marca and modelo:
+            versiones_posibles = referencia[
+                (referencia["Marca"].str.lower() == marca) &
+                (referencia["Modelo"].str.lower() == modelo)
+            ]["Versión"].dropna()
+            contexto = "marca + modelo"
+
+        elif marca:
+            versiones_posibles = referencia[
+                referencia["Marca"].str.lower() == marca
+            ]["Versión"].dropna()
+            contexto = "solo marca"
+
+        elif modelo:
+            versiones_posibles = referencia[
+                referencia["Modelo"].str.lower() == modelo
+            ]["Versión"].dropna()
+            contexto = "solo modelo"
+
+        else:
+            versiones_posibles = pd.Series(dtype=str)
+            contexto = "sin marca ni modelo"
+
+        if not versiones_posibles.empty:
+            version_frecuente = versiones_posibles.mode().iloc[0]
+            df_val.at[idx, "Versión"] = version_frecuente
+            reemplazos.append(idx)
+            print(f"[{idx + 2}] ✅ Imputada versión: '{version_frecuente}' usando contexto: {contexto}")
+        else:
+            df_val.drop(index=idx, inplace=True)
+            print(f"[{idx + 2}] ❌ Eliminada → Sin versiones disponibles en contexto: {contexto}")
+
+    print(f"\n✔️ Paso 1 terminado:")
+    print(f"   ➤ Muestras imputadas: {len(reemplazos)}")
+    print(f"   ➤ Muestras eliminadas por no poder imputar: {df_missing.shape[0] - len(reemplazos)}")
+    # Paso 2: Corregir versiones no válidas usando similitud por token
+    print(f"\n🔍 Paso 2 - Corrección de versiones inválidas")
+
+    def tokens_similares(v1, v2, cutoff=0.75):
+        """
+        Devuelve True si al menos un token de v1 se parece (por fuzzy matching) a algún token de v2.
+        """
+        t1 = str(v1).replace('-', ' ').replace('_', ' ').lower().split()
+        t2 = str(v2).replace('-', ' ').replace('_', ' ').lower().split()
+        for token1 in t1:
+            if token1 in t2 or get_close_matches(token1, t2, n=1, cutoff=cutoff):
+                return True
+        return False
+
+    for idx, row in df_val.iterrows():
+        marca = row.get('Marca')
+        modelo = row.get('Modelo')
+        version = row.get('Versión')
+        key = (marca, modelo)
+        versiones_validas = versiones_por_modelo.get(key, [])
+
+        if not versiones_validas:
+            print(f"[{idx + 2}] ⚠️ Eliminada → No hay versiones válidas aprendidas para: {key}")
+            eliminar.append(idx)
+            continue
+
+        if version not in versiones_validas:
+            # Buscar por similitud de tokens
+            candidato = None
+            for v in versiones_validas:
+                if tokens_similares(version, v, cutoff=0.75):
+                    candidato = v
+                    break
+
+            if candidato:
+                print(f"[{idx + 2}] 🔄 Versión '{version}' corregida a '{candidato}' (por similitud de token)")
+                df_val.at[idx, 'Versión'] = candidato
+            else:
+                print(f"[{idx + 2}] ❌ Eliminada → Versión inválida sin similar para: '{version}' en {key}")
+                print(f"           🧩 Opciones válidas para {key}: {versiones_validas}")
+                eliminar.append(idx)
+
+    if eliminar:
+        df_val.drop(index=eliminar, inplace=True)
+        print(f"\n🗑️ Paso 2 terminado: Eliminadas {len(eliminar)} filas con versiones inválidas no corregibles.")
+    return df_val.reset_index(drop=True)
 
 def hmv_combustible(df_train, df_to_input):
     """
@@ -1082,9 +1197,7 @@ def hmv_tipo_de_vendedor(df_train, df_to_input):
     print(f"✅ Imputaciones completadas: {imputados} valores reemplazados.\n")
     return df_result
 
-
-
-def hmv_color(df_train, df_to_input):
+def hmv_color_train(df_train, df_to_input):
     """
     Imputa valores faltantes en la columna 'Color' y agrupa valores similares basándose en tokens con similitud textual.
     Orden de operaciones:
@@ -1175,6 +1288,118 @@ def hmv_color(df_train, df_to_input):
             color_map[variante] = grupo
 
     df_result['Color'] = df_result['Color'].map(lambda x: color_map.get(x, x))
+
+    return df_result
+
+
+def hmv_color(df_train, df_to_input):
+    """
+    Imputa valores faltantes en la columna 'Color' y agrupa valores similares basándose en tokens con similitud textual.
+    Orden de operaciones:
+    1. Imputación de valores faltantes en 'Color' en df_to_input usando df_train (prioridad: Versión > Modelo > Marca)
+    2. Reemplazo de 'morado' por 'violeta' en ambos datasets
+    3. Agrupamiento de colores por tokens similares usando df_train
+    4. Reemplazo de valores conocidos en df_to_input según el agrupamiento
+    """
+
+    # ------------------------------------------------------------------ #
+    # -----------------  PARTE A: APRENDER DESDE df_train --------------- #
+    # ------------------------------------------------------------------ #
+    # Limpiar df_train usando la misma función recursivamente
+    df_train_limpio = hmv_color_train(df_train, df_train)
+    colores_validos = df_train_limpio['Color'].dropna().unique().tolist()
+
+    # Copia de df_to_input
+    df_result = df_to_input.copy()
+
+    # 🩹 Paso 1: Imputando valores faltantes con prioridad Versión → Modelo → Marca
+    print("🩹 Paso 1: Imputando valores faltantes con prioridad Versión → Modelo → Marca\n")
+    imputados = 0
+    for idx, row in df_result[df_result['Color'].isna()].iterrows():
+        version = row.get('Versión')
+        modelo = row.get('Modelo')
+        marca = row.get('Marca')
+
+        valor_color = None
+
+        # Intento 1: por versión (usar df_train_limpio)
+        if pd.notna(version):
+            coincidencias = df_train_limpio[df_train_limpio['Versión'] == version]['Color'].dropna()
+            if not coincidencias.empty:
+                valor_color = coincidencias.mode().iloc[0]
+                origen = 'versión'
+
+        # Intento 2: por modelo (usar df_train_limpio)
+        if valor_color is None and pd.notna(modelo):
+            coincidencias = df_train_limpio[df_train_limpio['Modelo'] == modelo]['Color'].dropna()
+            if not coincidencias.empty:
+                valor_color = coincidencias.mode().iloc[0]
+                origen = 'modelo'
+
+        # Intento 3: por marca (usar df_train_limpio)
+        if valor_color is None and pd.notna(marca):
+            coincidencias = df_train_limpio[df_train_limpio['Marca'] == marca]['Color'].dropna()
+            if not coincidencias.empty:
+                valor_color = coincidencias.mode().iloc[0]
+                origen = 'marca'
+
+        if valor_color is not None:
+            df_result.at[idx, 'Color'] = valor_color
+            imputados += 1
+            print(f"[{idx + 2}] 🖌️ Imputado color '{valor_color}' por {origen}")
+        else:
+            print(f"[{idx + 2}] ⚠️ No se pudo imputar. Se mantiene como NaN")
+
+    print(f"\n✅ Total de colores imputados por contexto: {imputados}\n")
+
+    # 🎨 Paso 2: Reemplazando 'morado' por 'violeta' en ambos datasets
+    print("🎨 Paso 2: Reemplazando 'morado' por 'violeta' en ambos datasets...\n")
+    for df in [df_train_limpio, df_result]:
+        df['Color'] = df['Color'].apply(lambda c: 'violeta' if isinstance(c, str) and 'morado' in normalizar(c, eliminar_espacios=False) else c)
+
+    # 📚 Aprender colores válidos desde df_train_limpio ya procesado
+    print("📚 Aprendiendo colores limpios desde df_train...\n")
+    colores_validos = df_train_limpio['Color'].dropna().unique()
+    color_tokens = {}
+    for color in colores_validos:
+        tokens = normalizar(color, eliminar_espacios=False).split()
+        if not tokens:
+            continue
+        first_token = tokens[0]
+        color_tokens[color] = first_token
+
+    # 🧼 Paso 4: Corregir valores en df_to_input según similitud de tokens con colores válidos
+    print("\n🧼 Paso 4: Corrigiendo valores en df_to_input según similitud con colores válidos...\n")
+
+    def token_similar(c1, c2, cutoff=0.75):
+        t1 = normalizar(c1, eliminar_espacios=False).split()
+        t2 = normalizar(c2, eliminar_espacios=False).split()
+        for token1 in t1:
+            if token1 in t2 or get_close_matches(token1, t2, n=1, cutoff=cutoff):
+                return True
+        return False
+
+    colores_resultantes = []
+    for idx, val in df_result['Color'].items():
+        if pd.isna(val):
+            colores_resultantes.append(val)
+            continue
+        if val in colores_validos:
+            colores_resultantes.append(val)
+            continue
+        match = None
+        for c_valido in colores_validos:
+            if token_similar(val, c_valido, cutoff=0.75):
+                match = c_valido
+                break
+        if match:
+            print(f"[{idx + 2}] 🔄 Color '{val}' corregido a '{match}' por similitud")
+            colores_resultantes.append(match)
+        else:
+            print(f"[{idx + 2}] ⚠️ Color '{val}' no reconocido → asignado como 'otro'")
+            colores_resultantes.append("otro")
+
+    df_result['Color'] = colores_resultantes
 
     return df_result
 

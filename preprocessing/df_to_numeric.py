@@ -1,30 +1,37 @@
 import pandas as pd
 
-def df_to_numeric(df):
+def df_to_numeric(df_train, df_to_input):
     """
-    Transforma un DataFrame con columnas categóricas a formato numérico y aplica renombramientos específicos.
+    Transforma df_to_input a numérico usando mapeos aprendidos de df_train.
 
-    - Convierte a enteros las columnas: 'Marca', 'Modelo', 'Versión', 'Color', 'Tipo de combustible', 'Tipo de vendedor'
-    - Guarda los mapeos usados en 'conversiones.txt'
-    - Renombra 'Con cámara de retroceso' a 'tiene_camara'
-    - Mapea 'Tracción': '4x4' → 1, '4x2' → 0 → 'is_4x4'
-    - Mapea 'Transmisión': 'manual' → 1, 'automatica' → 0 → 'is_manual'
-    - Reporta columnas no numéricas restantes
+    - Convierte columnas categóricas a números según df_train.
+    - Valores no vistos en df_to_input se reemplazan por NaN.
+    - Guarda los mapeos en 'conversiones.txt'.
+    - Aplica transformaciones adicionales:
+        - 'Con cámara de retroceso' → 'tiene_camara'
+        - 'Tracción' → 'is_4x4'
+        - 'Transmisión' → 'is_manual'
+        - 'Puertas' (3 → coupé, 5 → no) → 'is_coupe'
+    - Retorna df_to_input transformado.
     """
     cols_a_mapear = ['Versión','Marca', 'Modelo', 'Color', 'Tipo de combustible', 'Tipo de vendedor']
     mapeos = {}
+    df_train = df_train.copy()
+    df_to_input = df_to_input.copy()
 
     for col in cols_a_mapear:
         if col == 'Versión':
-            versiones = df[['Marca', 'Modelo', 'Versión']].dropna().drop_duplicates()
+            versiones = df_train[['Marca', 'Modelo', 'Versión']].dropna().drop_duplicates()
             claves = [(row['Marca'], row['Modelo'], row['Versión']) for _, row in versiones.iterrows()]
             mapeo = {v: i for i, v in enumerate(sorted(claves))}
-            df['Versión'] = df.apply(lambda row: mapeo.get((row['Marca'], row['Modelo'], row['Versión'])), axis=1)
+            df_train['Versión'] = df_train.apply(lambda row: mapeo.get((row['Marca'], row['Modelo'], row['Versión'])), axis=1)
+            df_to_input['Versión'] = df_to_input.apply(lambda row: mapeo.get((row['Marca'], row['Modelo'], row['Versión'])), axis=1)
             mapeos['Versión'] = mapeo
         else:
-            valores = df[col].astype(str).unique()
+            valores = df_train[col].astype(str).unique()
             mapeo = {v: i for i, v in enumerate(sorted(valores))}
-            df[col] = df[col].map(mapeo)
+            df_train[col] = df_train[col].astype(str).map(mapeo)
+            df_to_input[col] = df_to_input[col].astype(str).map(mapeo)
             mapeos[col] = mapeo
 
     with open('conversiones.txt', 'w', encoding='utf-8') as f:
@@ -38,25 +45,31 @@ def df_to_numeric(df):
                     f.write(f'  {k} -> {v}\n')
             f.write('\n')
 
-    if 'Con cámara de retroceso' in df.columns:
-        df.rename(columns={'Con cámara de retroceso': 'tiene_camara'}, inplace=True)
+    def transformar(df):
+        if 'Con cámara de retroceso' in df.columns:
+            df.rename(columns={'Con cámara de retroceso': 'tiene_camara'}, inplace=True)
 
-    if 'Tracción' in df.columns:
-        df['is_4x4'] = df['Tracción'].map({'4x4': 1, '4x2': 0})
-        df.drop(columns=['Tracción'], inplace=True)
+        if 'Tracción' in df.columns:
+            df['is_4x4'] = df['Tracción'].map({'4x4': 1, '4x2': 0})
+            df.drop(columns=['Tracción'], inplace=True)
 
-    if 'Transmisión' in df.columns:
-        df['is_manual'] = df['Transmisión'].map({'manual': 1, 'automatica': 0})
-        df.drop(columns=['Transmisión'], inplace=True)
+        if 'Transmisión' in df.columns:
+            df['is_manual'] = df['Transmisión'].map({'manual': 1, 'automatica': 0})
+            df.drop(columns=['Transmisión'], inplace=True)
 
-    if 'Puertas' in df.columns:
-        df['is_coupe'] = df['Puertas'].map({3: 1, 5: 0})
-        df.drop(columns=['Puertas'], inplace=True)
+        if 'Puertas' in df.columns:
+            df['is_coupe'] = df['Puertas'].map({3: 1, 5: 0})
+            df.drop(columns=['Puertas'], inplace=True)
 
-    cols_no_numericas = df.select_dtypes(include=['object', 'category']).columns.tolist()
+        return df
+
+    df_to_input = transformar(df_to_input)
+
+    # Reporte final
+    cols_no_numericas = df_to_input.select_dtypes(include=['object', 'category']).columns.tolist()
     if cols_no_numericas:
-        print("Columnas no numéricas restantes:", cols_no_numericas)
+        print("df_to_input - Columnas no numéricas restantes:", cols_no_numericas)
     else:
-        print("No quedan columnas no numéricas.")
+        print("df_to_input - No quedan columnas no numéricas.")
 
-    return df
+    return df_to_input
