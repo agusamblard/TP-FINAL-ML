@@ -1,10 +1,9 @@
 from difflib import get_close_matches
 import pandas as pd
-from utils.diccionarios import MARCAS_VALIDAS, MODELOS_POR_MARCA
+from utils.diccionarios import MODELOS_POR_MARCA
 from preprocessing.data_cleanse import normalizar
-import re
-
-
+from sklearn.linear_model import LinearRegression
+from itertools import combinations
 
 def hmv_marca(df_train, df_to_input):
     """
@@ -306,6 +305,7 @@ def hmv_version_train(df_train, df_to_input):
     print(f"🗑️ Muestras eliminadas por no poder imputar: {df_missing.shape[0] - len(reemplazos)}")
     return df
 
+
 def hmv_version(df_train, df_to_input):
     """
     Ejecuta limpieza y agrupamiento de versiones:
@@ -315,12 +315,8 @@ def hmv_version(df_train, df_to_input):
 
     Retorna df_to_input actualizado.
     """
-    import pandas as pd
-    from difflib import get_close_matches
 
-    # ------------------------------
-    # PARTE A: Aprender desde train
-    # ------------------------------
+
     df_train_limpio = hmv_version_train(df_train, df_train)
 
     # Diccionario definitivo de versiones por (Marca, Modelo)
@@ -330,11 +326,8 @@ def hmv_version(df_train, df_to_input):
             sub['Versión'].dropna()
                .value_counts()
                .index
-               .tolist()  # ordenadas por frecuencia
+               .tolist()  
         )
-    # ------------------------------------------------------------------ #
-    # ---------  PARTE  B:  CORREGIR / IMPUTAR EN df_to_input ----------- #
-    # ------------------------------------------------------------------ #
     df_val = df_to_input.copy()
     referencia = df_train_limpio[df_train_limpio['Versión'].notna()].copy()
 
@@ -388,6 +381,7 @@ def hmv_version(df_train, df_to_input):
     print(f"\n✔️ Paso 1 terminado:")
     print(f"   ➤ Muestras imputadas: {len(reemplazos)}")
     print(f"   ➤ Muestras eliminadas por no poder imputar: {df_missing.shape[0] - len(reemplazos)}")
+
     # Paso 2: Corregir versiones no válidas usando similitud por token
     print(f"\n🔍 Paso 2 - Corrección de versiones inválidas")
 
@@ -443,10 +437,8 @@ def hmv_combustible(df_train, df_to_input):
     - Requiere al menos 'Modelo' o 'Versión' para imputar.
     - Busca coincidencias exactas con las columnas no nulas disponibles (Marca, Modelo, Versión, Año).
     - Si no encuentra coincidencias, reduce las columnas (manteniendo Modelo/Versión) hasta encontrar alguna.
-    - Si no logra imputar, elimina la fila y la guarda en 'combustible_deleted.csv'.
     """
-    import pandas as pd
-    from itertools import combinations
+
 
     df = df_to_input.copy()
     referencia = df_train[df_train['Tipo de combustible'].notna()].copy()
@@ -492,7 +484,7 @@ def hmv_combustible(df_train, df_to_input):
             df.drop(index=idx, inplace=True)
 
     print(f"\n✔️ Imputaciones realizadas: {imputados}")
-    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]} (guardadas en 'combustible_deleted.csv')")
+    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]} ")
     return df
 
 def hmv_puertas(df_train, df_to_input):
@@ -503,10 +495,8 @@ def hmv_puertas(df_train, df_to_input):
     - Requiere al menos 'Modelo' o 'Versión' para imputar.
     - Busca coincidencias exactas con las columnas no nulas disponibles (Marca, Modelo, Versión, Año).
     - Si no encuentra coincidencias, reduce las columnas (manteniendo Modelo/Versión) hasta encontrar alguna.
-    - Si no logra imputar, elimina la fila y la guarda en 'puertas_deleted.csv'.
     """
-    import pandas as pd
-    from itertools import combinations
+
 
     df = df_to_input.copy()
     referencia = df_train[df_train['Puertas'].notna()].copy()
@@ -552,7 +542,7 @@ def hmv_puertas(df_train, df_to_input):
             df.drop(index=idx, inplace=True)
 
     print(f"\n✔️ Imputaciones realizadas: {imputados}")
-    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]} (guardadas en 'puertas_deleted.csv')")
+    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]}")
     return df
 
 def hmv_transmision(df_train, df_to_input):
@@ -563,10 +553,8 @@ def hmv_transmision(df_train, df_to_input):
     - Requiere al menos 'Modelo' o 'Versión' para poder imputar.
     - Busca coincidencias exactas con las columnas no nulas disponibles.
     - Si no encuentra coincidencias, reduce el conjunto de columnas (manteniendo Modelo/Versión) hasta encontrar alguna.
-    - Si no logra imputar, elimina la fila y la guarda en 'transmision_deleted.csv'.
     """
-    import pandas as pd
-    from itertools import combinations
+
 
     df = df_to_input.copy()
     referencia = df_train[df_train['Transmisión'].notna()].copy()
@@ -612,7 +600,7 @@ def hmv_transmision(df_train, df_to_input):
             df.drop(index=idx, inplace=True)
 
     print(f"\n✔️ Imputaciones realizadas: {imputados}")
-    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]} (guardadas en 'transmision_deleted.csv')")
+    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]}")
     return df
 
 
@@ -625,10 +613,7 @@ def hmv_motor(df_train, df_to_input):
     - Requiere al menos 'Modelo' o 'Versión' para poder imputar.
     - Busca coincidencias exactas con las columnas no nulas disponibles.
     - Si no encuentra coincidencias, reduce el conjunto de columnas (manteniendo Modelo/Versión) hasta encontrar alguna.
-    - Si no logra imputar, elimina la fila y la guarda en 'motor_deleted.csv'.
     """
-    import pandas as pd
-    from itertools import combinations
 
     df = df_to_input.copy()
     referencia = df_train[df_train['Motor'].notna()].copy()
@@ -674,7 +659,7 @@ def hmv_motor(df_train, df_to_input):
             df.drop(index=idx, inplace=True)
 
     print(f"\n✔️ Imputaciones realizadas: {imputados}")
-    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]} (guardadas en 'motor_deleted.csv')")
+    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]}")
     return df
 
 def hmv_camara(df_train, df_to_input):
@@ -687,7 +672,6 @@ def hmv_camara(df_train, df_to_input):
     - Si hay coincidencias, asigna la moda.
     - Si no hay coincidencias, asigna 0.
     """
-    import pandas as pd
 
     df = df_to_input.copy()
     referencia = df_train[df_train['Con cámara de retroceso'].notna()].copy()
@@ -742,10 +726,7 @@ def hmv_hp(df_train, df_to_input):
     - Evalúa combinaciones desde 5 hasta 1 columna, priorizando las que incluyan 'Motor'.
     - Requiere al menos uno entre 'Modelo', 'Versión' o 'Motor'.
     - Imputa la moda si encuentra coincidencias.
-    - Si no encuentra coincidencias, elimina la muestra y la guarda en 'hp_deleted.csv'.
     """
-    import pandas as pd
-    from itertools import combinations
 
     df = df_to_input.copy()
     referencia = df_train[df_train['HP'].notna()].copy()
@@ -809,8 +790,6 @@ def hmv_traccion(df_train, df_to_input):
     - Evalúa combinaciones desde 4 hasta 1 columna.
     - Si no encuentra coincidencias, asigna "4x2" como valor por defecto.
     """
-    import pandas as pd
-    from itertools import combinations
 
     df = df_to_input.copy()
     referencia = df_train[df_train['Tracción'].notna()].copy()
@@ -876,9 +855,8 @@ def hmv_year(df_train, df_to_input):
     Retorna:
         pd.DataFrame con los valores imputados en la columna 'Año'.
     """
-    import pandas as pd
-    from sklearn.linear_model import LinearRegression
-    import numpy as np
+
+
 
     df = df_to_input.copy()
     referencia = df_train[df_train['Año'].notna()].copy()
@@ -927,6 +905,7 @@ def hmv_year(df_train, df_to_input):
     print(f"\n✔️ Años imputados por regresión: {imputados}")
     return df
 
+
 def hmv_km(df_train, df_to_input, min_size=15, max_ext=10):
     """
     Detecta outliers en 'Kilómetros' de df_to_input basándose en la distribución de df_train.
@@ -936,7 +915,7 @@ def hmv_km(df_train, df_to_input, min_size=15, max_ext=10):
     Returns:
         df_result: copia de df_to_input con valores imputados en 'Kilómetros'
     """
-    import pandas as pd
+
 
     def ajustar_rangos_iqr(grupo, año):
         """
@@ -1069,8 +1048,6 @@ def hmv_precio(df_train, df_to_input, min_size=10):
     Returns:
         df_result: copia de df_to_input con 'Precio' imputado/redondeado cuando era outlier o faltante.
     """
-    import pandas as pd
-    import numpy as np
 
     df_result = df_to_input.copy()
     mediana_general = df_train['Precio'].median()
@@ -1170,7 +1147,7 @@ def hmv_tipo_de_vendedor(df_train, df_to_input):
     Returns:
         df_result: copia de df_to_input con imputaciones aplicadas.
     """
-    import pandas as pd
+
 
     df_result = df_to_input.copy()
     imputados = 0

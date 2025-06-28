@@ -1,17 +1,9 @@
+algunas cosas a tener en cuenta:
+lo arme pensando que los datasets (tanto train val y test) se pasan por las dos funciones de data_cleanse y la de hmv
+puede tener sentido evaluar sobre un dataset al que no se le eliminan outliers? quizas, no se
+o sea, el flujo es:
+raw --> data cleanse --> handle missing values --> pasado a numerico (df_to_numeric)
 
-hacer clean predict
-
-
-
-todavia hay que:
--eliminar outliers. Una vez hecho, la limpieza es data_cleanse --> split --> outliers --> hmv
-✏️ Recomendación general
-	•	Entrenás con un df_train limpio (sin outliers).
-	•	Validás y testeás con los datos originales, para ver si el modelo generaliza.
-	•	Si ves que el desempeño es malo por valores extremos, ahí evaluás preprocesarlos en test (con reglas ya aprendidas).
-
-
-
--analisis de los datos. correlaciones y esas cosas
+habria que tener en cuenta que hay variables que en un principio tenian un monton de vlaores Nan (como camara de retroceso, HP o traccion). Muchos valores inferidos, por lo que puede traer problemas.
 
 
