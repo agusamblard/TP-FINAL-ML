@@ -572,18 +572,19 @@ def limpiar_tipo_de_vendedor(df):
 #FUNCIÓN DE LIMPIEZA PRE-SPLIT COMPACTA
 #==============================
 
-
-def limpiar_dataset(df):
+def limpiar_dataset(df, precio=True):
     """
     Limpia un DataFrame de vehículos aplicando varias funciones de limpieza.
     Además, imprime la cantidad de muestras eliminadas por las funciones que eliminan filas.
+    
+    Parámetros:
+        df (pd.DataFrame): El dataframe a limpiar.
+        precio (bool): Si es True, se aplica 'limpiar_precio'. Si es False, se omite.
     """
-    # Eliminar columnas de tipo de combustible, descripción y titulo
-    df = df.drop(columns=['Unnamed: 0', 'Descripción'], errors='ignore')
-
+    df = df.copy()
     original_count = len(df)
 
-    # Lista de funciones de limpieza, con etiquetas
+    # Lista de funciones de limpieza
     limpieza_funcs = [
         ("limpiar_marcas", limpiar_marcas),
         ("limpiar_modelo", limpiar_modelo),
@@ -594,13 +595,15 @@ def limpiar_dataset(df):
         ("limpiar_version", limpiar_version),
         ("limpiar_motor", limpiar_motor),
         ("limpiar_combustible", limpiar_combustible),
-        ("limpiar_precio", limpiar_precio),
         ("limpiar_año", limpiar_año),
         ("limpiar_km", limpiar_km),
         ("limpiar_puertas", limpiar_puertas),
         ("limpiar_camara_de_retroceso", limpiar_camara_de_retroceso),
         ("limpiar_tipo_de_vendedor", limpiar_tipo_de_vendedor),
     ]
+
+    if precio:
+        limpieza_funcs.insert(10, ("limpiar_precio", limpiar_precio))  # antes de limpiar_año
 
     for func_name, func in limpieza_funcs:
         count_before = len(df)
@@ -609,8 +612,12 @@ def limpiar_dataset(df):
         if count_after < count_before:
             print(f"[{func_name}] Muestras eliminadas: {count_before - count_after}")
 
-    # Eliminar columnas auxiliares
-    df = df.drop(columns=['Título', 'modelo_prev', 'Tipo de carrocería', 'Moneda', 'transmision_prev', 'Motor_prev', 'Tipo original','Versión_prev'], errors='ignore')
+
+    columnas_a_eliminar = [
+        'Unnamed: 0', 'Descripción', 'Título', 'modelo_prev', 'Tipo de carrocería',
+        'Moneda', 'transmision_prev', 'Motor_prev', 'Tipo original', 'Versión_prev'
+    ]
+    df = df.drop(columns=columnas_a_eliminar, errors='ignore')
 
     total_eliminadas = original_count - len(df)
     print(f"[TOTAL] Muestras eliminadas en total: {total_eliminadas}")
