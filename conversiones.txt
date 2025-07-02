@@ -3,407 +3,353 @@ Columna: Versión
   Marca: alfaromeo | Modelo: stelvio | Versión: ferrari quadrifoglio -> 1
   Marca: alfaromeo | Modelo: stelvio | Versión: new tributo italiano -> 2
   Marca: alfaromeo | Modelo: stelvio | Versión: q4 veloce -> 3
-  Marca: alfaromeo | Modelo: stelvio | Versión: super -> 4
-  Marca: audi | Modelo: q2 | Versión:  -> 5
-  Marca: audi | Modelo: q2 | Versión: tfsi sport -> 6
-  Marca: audi | Modelo: q3 | Versión: i -> 7
-  Marca: audi | Modelo: q3 | Versión: sportback -> 8
-  Marca: audi | Modelo: q3 | Versión: tfsi -> 9
-  Marca: audi | Modelo: q5 | Versión: advanced -> 10
-  Marca: audi | Modelo: q5 | Versión: i -> 11
-  Marca: audi | Modelo: q5 | Versión: security l18 -> 12
-  Marca: audi | Modelo: q5 | Versión: tfsi -> 13
-  Marca: audi | Modelo: q5sportback | Versión: 45tfsi s advanced -> 14
-  Marca: audi | Modelo: q7 | Versión: tdi -> 15
-  Marca: audi | Modelo: q7 | Versión: tfsi -> 16
-  Marca: audi | Modelo: q8 | Versión: tfsi -> 17
-  Marca: audi | Modelo: sq5 | Versión: tfsi -> 18
-  Marca: baic | Modelo: x25 | Versión: elite -> 19
-  Marca: baic | Modelo: x35 | Versión: confort turbo -> 20
-  Marca: baic | Modelo: x35 | Versión: luxury -> 21
-  Marca: baic | Modelo: x55 | Versión: beijing -> 22
-  Marca: baic | Modelo: x55 | Versión: elite -> 23
-  Marca: baic | Modelo: x55 | Versión: honor -> 24
-  Marca: baic | Modelo: x55 | Versión: ii luxury -> 25
-  Marca: baic | Modelo: x55 | Versión: il -> 26
-  Marca: baic | Modelo: x55 | Versión: plus -> 27
-  Marca: bmw | Modelo: x1 | Versión: 18i okm 2025 -> 28
-  Marca: bmw | Modelo: x1 | Versión: 25e -> 29
-  Marca: bmw | Modelo: x1 | Versión: 25i xline -> 30
-  Marca: bmw | Modelo: x1 | Versión: 28i executive -> 31
-  Marca: bmw | Modelo: x1 | Versión: i -> 32
-  Marca: bmw | Modelo: x1 | Versión: sdrive 20i sportline -> 33
-  Marca: bmw | Modelo: x3 | Versión:  -> 34
-  Marca: bmw | Modelo: x3 | Versión: 25si selective -> 35
-  Marca: bmw | Modelo: x3 | Versión: 30i xline -> 36
-  Marca: bmw | Modelo: x3 | Versión: 35i executive -> 37
-  Marca: bmw | Modelo: x3 | Versión: 35i m package -> 38
-  Marca: bmw | Modelo: x3 | Versión: advantage l -> 39
-  Marca: bmw | Modelo: x3 | Versión: i -> 40
-  Marca: bmw | Modelo: x3 | Versión: si limited edition -> 41
-  Marca: bmw | Modelo: x3 | Versión: x3m competition -> 42
-  Marca: bmw | Modelo: x4 | Versión: 20i -> 43
-  Marca: bmw | Modelo: x4 | Versión: 28i xline -> 44
-  Marca: bmw | Modelo: x4 | Versión: 30i -> 45
-  Marca: bmw | Modelo: x4 | Versión: 35i m package -> 46
-  Marca: bmw | Modelo: x4 | Versión: i -> 47
-  Marca: bmw | Modelo: x5 | Versión: 35i executive -> 48
-  Marca: bmw | Modelo: x5 | Versión: 40i -> 49
-  Marca: bmw | Modelo: x5 | Versión: 40m -> 50
-  Marca: bmw | Modelo: x5 | Versión: 50i m package -> 51
-  Marca: bmw | Modelo: x5 | Versión: is premium -> 52
-  Marca: chery | Modelo: tiggo | Versión: f2 confort -> 53
-  Marca: chery | Modelo: tiggo | Versión: luxury -> 54
-  Marca: chery | Modelo: tiggo2 | Versión: 2013 -> 55
-  Marca: chery | Modelo: tiggo2 | Versión: confort -> 56
-  Marca: chery | Modelo: tiggo2 | Versión: luxury -> 57
-  Marca: chery | Modelo: tiggo3 | Versión: confort -> 58
-  Marca: chery | Modelo: tiggo3 | Versión: luxury -> 59
-  Marca: chery | Modelo: tiggo4 | Versión: comfort -> 60
-  Marca: chery | Modelo: tiggo4pro | Versión: comfort -> 61
-  Marca: chery | Modelo: tiggo4pro | Versión: luxury -> 62
-  Marca: chery | Modelo: tiggo5 | Versión: comfort -> 63
-  Marca: chery | Modelo: tiggo5 | Versión: luxury -> 64
-  Marca: chery | Modelo: tiggo8pro | Versión: luxury -> 65
-  Marca: chevrolet | Modelo: blazer | Versión:  -> 66
-  Marca: chevrolet | Modelo: blazer | Versión: dlx -> 67
-  Marca: chevrolet | Modelo: blazer | Versión: tahoe lt -> 68
-  Marca: chevrolet | Modelo: blazer | Versión: turbo -> 69
-  Marca: chevrolet | Modelo: equinox | Versión: ls -> 70
-  Marca: chevrolet | Modelo: equinox | Versión: lt -> 71
-  Marca: chevrolet | Modelo: equinox | Versión: premier -> 72
-  Marca: chevrolet | Modelo: equinox | Versión: rs -> 73
-  Marca: chevrolet | Modelo: grandblazer | Versión: dlx -> 74
-  Marca: chevrolet | Modelo: grandvitara | Versión:  -> 75
-  Marca: chevrolet | Modelo: grandvitara | Versión: i -> 76
-  Marca: chevrolet | Modelo: spin | Versión: activ -> 77
-  Marca: chevrolet | Modelo: spin | Versión: lt -> 78
-  Marca: chevrolet | Modelo: spin | Versión: premier -> 79
-  Marca: chevrolet | Modelo: tracker | Versión:  -> 80
-  Marca: chevrolet | Modelo: tracker | Versión: ltz -> 81
-  Marca: chevrolet | Modelo: tracker | Versión: ltz4x4 -> 82
-  Marca: chevrolet | Modelo: tracker | Versión: premier -> 83
-  Marca: chevrolet | Modelo: tracker | Versión: rs -> 84
-  Marca: chevrolet | Modelo: tracker | Versión: turbo -> 85
-  Marca: chevrolet | Modelo: trailblazer | Versión: ctdi premier -> 86
-  Marca: chevrolet | Modelo: trailblazer | Versión: hc -> 87
-  Marca: chevrolet | Modelo: trailblazer | Versión: nueva ltz tdci -> 88
-  Marca: chevrolet | Modelo: trailblazer | Versión: td high country -> 89
-  Marca: citroen | Modelo: c3 | Versión: 16v vti 115 feel pack -> 90
-  Marca: citroen | Modelo: c3 | Versión: turbo -> 91
-  Marca: citroen | Modelo: c3aircross | Versión: 16v exclusive -> 92
-  Marca: citroen | Modelo: c3aircross | Versión: shine turbo 200 bitono -> 93
-  Marca: citroen | Modelo: c3aircross | Versión: urban edition -> 94
-  Marca: citroen | Modelo: c4aircross | Versión: tendence -> 95
-  Marca: citroen | Modelo: c4cactus | Versión: origins -> 96
-  Marca: citroen | Modelo: c4cactus | Versión: thp 165 shine -> 97
-  Marca: citroen | Modelo: c4cactus | Versión: vti 115 feel pk -> 98
-  Marca: daihatsu | Modelo: terios | Versión: sx -> 99
-  Marca: dodge | Modelo: journey | Versión: rt filasdvdtecho -> 100
-  Marca: dodge | Modelo: journey | Versión: se -> 101
-  Marca: dodge | Modelo: journey | Versión: sxt techo dvd nav -> 102
-  Marca: ds | Modelo: ds7crossback | Versión: automobiles ds7 thp etense bastille -> 103
-  Marca: ds | Modelo: ds7crossback | Versión: puretech performance line -> 104
-  Marca: ds | Modelo: ds7crossback | Versión: rivoli hdi -> 105
-  Marca: fiat | Modelo: 500x | Versión: 16v pop -> 106
-  Marca: fiat | Modelo: pulse | Versión: abarth -> 107
-  Marca: fiat | Modelo: pulse | Versión: audace -> 108
-  Marca: fiat | Modelo: pulse | Versión: drive gse -> 109
-  Marca: fiat | Modelo: pulse | Versión: impetus t3 -> 110
-  Marca: ford | Modelo: ecosport | Versión: freestyle -> 111
-  Marca: ford | Modelo: ecosport | Versión: gdi storm -> 112
-  Marca: ford | Modelo: ecosport | Versión: my10 xls -> 113
-  Marca: ford | Modelo: ecosport | Versión: s -> 114
-  Marca: ford | Modelo: ecosport | Versión: se -> 115
-  Marca: ford | Modelo: ecosport | Versión: titanium -> 116
-  Marca: ford | Modelo: explorer | Versión: xlt -> 117
-  Marca: ford | Modelo: kuga | Versión:  -> 118
-  Marca: ford | Modelo: kuga | Versión: platinum -> 119
-  Marca: ford | Modelo: kuga | Versión: sel -> 120
-  Marca: ford | Modelo: kuga | Versión: titanium -> 121
-  Marca: ford | Modelo: kuga | Versión: trend ku01ku04 -> 122
-  Marca: ford | Modelo: territory | Versión: ecoboost titanium -> 123
-  Marca: ford | Modelo: territory | Versión: sel -> 124
-  Marca: ford | Modelo: territory | Versión: trend gtdi -> 125
-  Marca: gwm | Modelo: h6 | Versión:  -> 126
-  Marca: gwm | Modelo: h6 | Versión: 3ra generacion -> 127
-  Marca: gwm | Modelo: h6 | Versión: coupe dignity -> 128
-  Marca: gwm | Modelo: jolion | Versión:  -> 129
-  Marca: honda | Modelo: crv | Versión: active -> 130
-  Marca: honda | Modelo: crv | Versión: advanced -> 131
-  Marca: honda | Modelo: crv | Versión: ex -> 132
-  Marca: honda | Modelo: crv | Versión: i scout -> 133
-  Marca: honda | Modelo: crv | Versión: lx -> 134
-  Marca: honda | Modelo: crv | Versión: si -> 135
-  Marca: honda | Modelo: hrv | Versión: aleron -> 136
-  Marca: honda | Modelo: hrv | Versión: exl -> 137
-  Marca: honda | Modelo: hrv | Versión: lx -> 138
-  Marca: honda | Modelo: pilot | Versión:  -> 139
-  Marca: honda | Modelo: pilot | Versión: ex -> 140
-  Marca: honda | Modelo: pilot | Versión: touring todo terreno -> 141
-  Marca: hyundai | Modelo: creta | Versión:  -> 142
-  Marca: hyundai | Modelo: creta | Versión: gl connect -> 143
-  Marca: hyundai | Modelo: creta | Versión: safety -> 144
-  Marca: hyundai | Modelo: creta | Versión: style -> 145
-  Marca: hyundai | Modelo: galloper | Versión:  -> 146
-  Marca: hyundai | Modelo: galloper | Versión: i exd -> 147
-  Marca: hyundai | Modelo: galloper | Versión: xl ll -> 148
-  Marca: hyundai | Modelo: grandsantafe | Versión: crdi premium gps -> 149
-  Marca: hyundai | Modelo: kona | Versión: safety -> 150
-  Marca: hyundai | Modelo: santafe | Versión: crdi aspre -> 151
-  Marca: hyundai | Modelo: santafe | Versión: premium -> 152
-  Marca: hyundai | Modelo: santafe | Versión: seguridad -> 153
-  Marca: hyundai | Modelo: tucson | Versión:  -> 154
-  Marca: hyundai | Modelo: tucson | Versión: 16v -> 155
-  Marca: hyundai | Modelo: tucson | Versión: 20n -> 156
-  Marca: hyundai | Modelo: tucson | Versión: crdi 4at -> 157
-  Marca: hyundai | Modelo: tucson | Versión: ctecho -> 158
-  Marca: hyundai | Modelo: tucson | Versión: gasolina -> 159
-  Marca: hyundai | Modelo: tucson | Versión: gl -> 160
-  Marca: hyundai | Modelo: tucson | Versión: n -> 161
-  Marca: hyundai | Modelo: tucson | Versión: new my2025 -> 162
-  Marca: hyundai | Modelo: tucson | Versión: premium -> 163
-  Marca: hyundai | Modelo: tucson | Versión: safety -> 164
-  Marca: hyundai | Modelo: tucson | Versión: style -> 165
-  Marca: hyundai | Modelo: tucson | Versión: tgdi tct -> 166
-  Marca: hyundai | Modelo: tucson | Versión: ultimate turbo dct -> 167
-  Marca: hyundai | Modelo: tucson | Versión: v6 -> 168
-  Marca: isuzu | Modelo: trooper | Versión: limited -> 169
-  Marca: jac | Modelo: s2 | Versión: intelligent -> 170
-  Marca: jac | Modelo: s2 | Versión: luxury -> 171
-  Marca: jeep | Modelo: cherokee | Versión: classic -> 172
-  Marca: jeep | Modelo: cherokee | Versión: liberty crd -> 173
-  Marca: jeep | Modelo: cherokee | Versión: limited -> 174
-  Marca: jeep | Modelo: cherokee | Versión: sport -> 175
-  Marca: jeep | Modelo: commander | Versión: t270 limited -> 176
-  Marca: jeep | Modelo: commander | Versión: td380 at9 overland -> 177
-  Marca: jeep | Modelo: compass | Versión: longitude plus -> 178
-  Marca: jeep | Modelo: compass | Versión: sport -> 179
-  Marca: jeep | Modelo: compass | Versión: t270 series -> 180
-  Marca: jeep | Modelo: compass | Versión: td at9 trailhawk -> 181
-  Marca: jeep | Modelo: grandcherokee | Versión: laredo -> 182
-  Marca: jeep | Modelo: grandcherokee | Versión: limited -> 183
-  Marca: jeep | Modelo: grandcherokee | Versión: overland -> 184
-  Marca: jeep | Modelo: grandcherokee | Versión: srt -> 185
-  Marca: jeep | Modelo: patriot | Versión:  -> 186
-  Marca: jeep | Modelo: patriot | Versión: sport -> 187
-  Marca: jeep | Modelo: renegade | Versión: longitude -> 188
-  Marca: jeep | Modelo: renegade | Versión: series -> 189
-  Marca: jeep | Modelo: renegade | Versión: sport -> 190
-  Marca: jeep | Modelo: renegade | Versión: t270 -> 191
-  Marca: jeep | Modelo: renegade | Versión: trailhawk at9 -> 192
-  Marca: jeep | Modelo: renegade | Versión: willys -> 193
-  Marca: jeep | Modelo: wrangler | Versión:  -> 194
-  Marca: jeep | Modelo: wrangler | Versión: hard top -> 195
-  Marca: jeep | Modelo: wrangler | Versión: rubicon -> 196
-  Marca: jeep | Modelo: wrangler | Versión: sport mtx -> 197
-  Marca: jeep | Modelo: wrangler | Versión: unlimited -> 198
-  Marca: jetour | Modelo: x70 | Versión:  -> 199
-  Marca: jetour | Modelo: x70 | Versión: asientos -> 200
-  Marca: jetour | Modelo: x70 | Versión: lt -> 201
-  Marca: jetour | Modelo: x70 | Versión: luxury at8 -> 202
-  Marca: jetour | Modelo: x70 | Versión: turbo 8v -> 203
-  Marca: kaiyi | Modelo: x3 | Versión:  -> 204
-  Marca: kia | Modelo: mohave | Versión:  -> 205
-  Marca: kia | Modelo: seltos | Versión: ex -> 206
-  Marca: kia | Modelo: seltos | Versión: lx -> 207
-  Marca: kia | Modelo: sorento | Versión: crdi -> 208
-  Marca: kia | Modelo: sorento | Versión: ex -> 209
-  Marca: kia | Modelo: soul | Versión: classic 5mt -> 210
-  Marca: kia | Modelo: soul | Versión: ex -> 211
-  Marca: kia | Modelo: soul | Versión: pop 4at -> 212
-  Marca: kia | Modelo: soul | Versión: rock -> 213
-  Marca: kia | Modelo: sportage | Versión:  -> 214
-  Marca: kia | Modelo: sportage | Versión: crdi -> 215
-  Marca: kia | Modelo: sportage | Versión: ex -> 216
-  Marca: kia | Modelo: sportage | Versión: i abs -> 217
-  Marca: kia | Modelo: sportage | Versión: lx mpi -> 218
-  Marca: kia | Modelo: sportage | Versión: tgdi xline -> 219
-  Marca: landrover | Modelo: defender | Versión: soft top -> 220
-  Marca: landrover | Modelo: defender | Versión: sw 110 7s -> 221
-  Marca: landrover | Modelo: discovery | Versión: i -> 222
-  Marca: landrover | Modelo: discovery | Versión: sport hse -> 223
-  Marca: landrover | Modelo: discovery | Versión: v8 es -> 224
-  Marca: landrover | Modelo: evoque | Versión: coupe -> 225
-  Marca: landrover | Modelo: evoque | Versión: hse dynamic -> 226
-  Marca: landrover | Modelo: evoque | Versión: prestige plus -> 227
-  Marca: landrover | Modelo: evoque | Versión: si4 -> 228
-  Marca: landrover | Modelo: freelander | Versión: hse -> 229
-  Marca: landrover | Modelo: freelander | Versión: xedi -> 230
-  Marca: landrover | Modelo: rangerover | Versión:  -> 231
-  Marca: landrover | Modelo: rangerover | Versión: 22sd4 evoque prestig -> 232
-  Marca: landrover | Modelo: rangerover | Versión: se -> 233
-  Marca: lifan | Modelo: myway | Versión: 16v -> 234
-  Marca: lifan | Modelo: myway | Versión: vvt -> 235
-  Marca: lifan | Modelo: x70 | Versión: vvti -> 236
-  Marca: mercedesbenz | Modelo: clasegla | Versión: gla200 urban -> 237
-  Marca: mercedesbenz | Modelo: clasegla | Versión: gla45 amg -> 238
-  Marca: mercedesbenz | Modelo: clasegla | Versión: progresive motor -> 239
-  Marca: mercedesbenz | Modelo: claseglc | Versión: glc250 300 atomatico -> 240
-  Marca: mercedesbenz | Modelo: claseglc | Versión: glc300 coupe -> 241
-  Marca: mercedesbenz | Modelo: claseglc | Versión: glc43 amg -> 242
-  Marca: mercedesbenz | Modelo: claseglk | Versión: glk300 city -> 243
-  Marca: mercedesbenz | Modelo: claseglk | Versión: sport -> 244
-  Marca: mercedesbenz | Modelo: claseml | Versión: ml270 cdi luxury -> 245
-  Marca: mercedesbenz | Modelo: claseml | Versión: ml350 sport befficiency -> 246
-  Marca: mercedesbenz | Modelo: ml | Versión: 350 -> 247
-  Marca: mercedesbenz | Modelo: ml | Versión: amg -> 248
-  Marca: mercedesbenz | Modelo: ml | Versión: ml320 cdi sport -> 249
-  Marca: mitsubishi | Modelo: montero | Versión: gls did tc cu -> 250
-  Marca: mitsubishi | Modelo: montero | Versión: glx -> 251
-  Marca: mitsubishi | Modelo: montero | Versión: metal top v6 -> 252
-  Marca: mitsubishi | Modelo: outlander | Versión: gls full -> 253
-  Marca: nissan | Modelo: kicks | Versión: advance -> 254
-  Marca: nissan | Modelo: kicks | Versión: exclusive -> 255
-  Marca: nissan | Modelo: kicks | Versión: sense -> 256
-  Marca: nissan | Modelo: kicks | Versión: special edition -> 257
-  Marca: nissan | Modelo: kicks | Versión: x play -> 258
-  Marca: nissan | Modelo: murano | Versión: exclusive -> 259
-  Marca: nissan | Modelo: murano | Versión: v6 -> 260
-  Marca: nissan | Modelo: pathfinder | Versión:  -> 261
-  Marca: nissan | Modelo: pathfinder | Versión: le 5at -> 262
-  Marca: nissan | Modelo: pathfinder | Versión: se -> 263
-  Marca: nissan | Modelo: terranoii | Versión: i -> 264
-  Marca: nissan | Modelo: xterra | Versión: se -> 265
-  Marca: nissan | Modelo: xtrail | Versión:  -> 266
-  Marca: nissan | Modelo: xtrail | Versión: acenta -> 267
-  Marca: nissan | Modelo: xtrail | Versión: exclusive xtronic -> 268
-  Marca: nissan | Modelo: xtrail | Versión: visia -> 269
-  Marca: peugeot | Modelo: 2008 | Versión:  -> 270
-  Marca: peugeot | Modelo: 2008 | Versión: active -> 271
-  Marca: peugeot | Modelo: 2008 | Versión: allure -> 272
-  Marca: peugeot | Modelo: 2008 | Versión: blindado rb3 -> 273
-  Marca: peugeot | Modelo: 2008 | Versión: crossway -> 274
-  Marca: peugeot | Modelo: 2008 | Versión: feline -> 275
-  Marca: peugeot | Modelo: 2008 | Versión: gt -> 276
-  Marca: peugeot | Modelo: 2008 | Versión: in concert -> 277
-  Marca: peugeot | Modelo: 2008 | Versión: thp sport -> 278
-  Marca: peugeot | Modelo: 2008 | Versión: turbo -> 279
-  Marca: peugeot | Modelo: 3008 | Versión: gtline thp -> 280
-  Marca: peugeot | Modelo: 3008 | Versión: hybrid4 -> 281
-  Marca: peugeot | Modelo: 4008 | Versión: allure -> 282
-  Marca: peugeot | Modelo: 4008 | Versión: feline -> 283
-  Marca: porsche | Modelo: cayenne | Versión: 958 -> 284
-  Marca: porsche | Modelo: cayenne | Versión: blindada rb3 -> 285
-  Marca: porsche | Modelo: cayenne | Versión: ehybrid -> 286
-  Marca: porsche | Modelo: cayenne | Versión: turbo -> 287
-  Marca: porsche | Modelo: cayenne | Versión: v6 -> 288
-  Marca: porsche | Modelo: cayenne | Versión: v8 s 957 -> 289
-  Marca: porsche | Modelo: macan | Versión:  -> 290
-  Marca: porsche | Modelo: macan | Versión: gts -> 291
-  Marca: porsche | Modelo: macan | Versión: s -> 292
-  Marca: porsche | Modelo: macan | Versión: t -> 293
-  Marca: porsche | Modelo: macan | Versión: turbo -> 294
-  Marca: renault | Modelo: captur | Versión: bose -> 295
-  Marca: renault | Modelo: captur | Versión: intens -> 296
-  Marca: renault | Modelo: captur | Versión: life -> 297
-  Marca: renault | Modelo: captur | Versión: zen -> 298
-  Marca: renault | Modelo: duster | Versión:  -> 299
-  Marca: renault | Modelo: duster | Versión: confort plus abs -> 300
-  Marca: renault | Modelo: duster | Versión: dakar -> 301
-  Marca: renault | Modelo: duster | Versión: dynamique -> 302
-  Marca: renault | Modelo: duster | Versión: expression -> 303
-  Marca: renault | Modelo: duster | Versión: hr16 intens -> 304
-  Marca: renault | Modelo: duster | Versión: luxe nav -> 305
-  Marca: renault | Modelo: duster | Versión: oroch emotion -> 306
-  Marca: renault | Modelo: duster | Versión: ph2 privilege -> 307
-  Marca: renault | Modelo: duster | Versión: tce turbo iconic xtronic -> 308
-  Marca: renault | Modelo: duster | Versión: tech road -> 309
-  Marca: renault | Modelo: duster | Versión: zen -> 310
-  Marca: renault | Modelo: dusteroroch | Versión: dynamique -> 311
-  Marca: renault | Modelo: dusteroroch | Versión: outsider plus -> 312
-  Marca: renault | Modelo: dusteroroch | Versión: privilege -> 313
-  Marca: renault | Modelo: koleos | Versión:  -> 314
-  Marca: renault | Modelo: koleos | Versión: dynamique -> 315
-  Marca: renault | Modelo: koleos | Versión: expression -> 316
-  Marca: renault | Modelo: koleos | Versión: intens -> 317
-  Marca: renault | Modelo: koleos | Versión: privilege -> 318
-  Marca: renault | Modelo: koleos | Versión: zen l18 -> 319
-  Marca: renault | Modelo: sanderostepway | Versión: 16v intense -> 320
-  Marca: renault | Modelo: sanderostepway | Versión: expression -> 321
-  Marca: renault | Modelo: sanderostepway | Versión: nuevo sandero stepway privilege -> 322
-  Marca: ssangyong | Modelo: actyon | Versión: equipamiento -> 323
-  Marca: ssangyong | Modelo: musso | Versión: 602 dti -> 324
-  Marca: subaru | Modelo: outback | Versión: 25i 5d -> 325
-  Marca: subaru | Modelo: outback | Versión: un 4at sawd -> 326
-  Marca: subaru | Modelo: outback | Versión: xs -> 327
-  Marca: suzuki | Modelo: grandvitara | Versión:  -> 328
-  Marca: suzuki | Modelo: grandvitara | Versión: gas -> 329
-  Marca: suzuki | Modelo: grandvitara | Versión: i -> 330
-  Marca: suzuki | Modelo: grandvitara | Versión: jiii -> 331
-  Marca: suzuki | Modelo: grandvitara | Versión: jlx 5mt -> 332
-  Marca: suzuki | Modelo: grandvitara | Versión: n -> 333
-  Marca: suzuki | Modelo: grandvitara | Versión: puertas 16v -> 334
-  Marca: suzuki | Modelo: jimny | Versión: gl -> 335
-  Marca: suzuki | Modelo: jimny | Versión: jlx -> 336
-  Marca: suzuki | Modelo: samurai | Versión: metallona -> 337
-  Marca: suzuki | Modelo: vitara | Versión:  -> 338
-  Marca: suzuki | Modelo: vitara | Versión: d -> 339
-  Marca: suzuki | Modelo: vitara | Versión: gl -> 340
-  Marca: suzuki | Modelo: vitara | Versión: gran tdi peugeot -> 341
-  Marca: suzuki | Modelo: vitara | Versión: jlx sidekick -> 342
-  Marca: toyota | Modelo: 4runner | Versión: 28d l -> 343
-  Marca: toyota | Modelo: 4runner | Versión: d -> 344
-  Marca: toyota | Modelo: 4runner | Versión: disel -> 345
-  Marca: toyota | Modelo: 4runner | Versión: v6 -> 346
-  Marca: toyota | Modelo: corollacross | Versión: 18seg my 2025 -> 347
-  Marca: toyota | Modelo: corollacross | Versión: grs -> 348
-  Marca: toyota | Modelo: corollacross | Versión: grsport -> 349
-  Marca: toyota | Modelo: corollacross | Versión: r -> 350
-  Marca: toyota | Modelo: corollacross | Versión: seg ecvt -> 351
-  Marca: toyota | Modelo: corollacross | Versión: xei -> 352
-  Marca: toyota | Modelo: corollacross | Versión: xli -> 353
-  Marca: toyota | Modelo: hiluxsw4 | Versión:  -> 354
-  Marca: toyota | Modelo: hiluxsw4 | Versión: diamond no ducatti yamaha kawasaki ktm -> 355
-  Marca: toyota | Modelo: hiluxsw4 | Versión: efi -> 356
-  Marca: toyota | Modelo: hiluxsw4 | Versión: grs -> 357
-  Marca: toyota | Modelo: hiluxsw4 | Versión: i runner -> 358
-  Marca: toyota | Modelo: hiluxsw4 | Versión: linea nueva asientos -> 359
-  Marca: toyota | Modelo: hiluxsw4 | Versión: mt4x4 -> 360
-  Marca: toyota | Modelo: hiluxsw4 | Versión: srv cuero -> 361
-  Marca: toyota | Modelo: hiluxsw4 | Versión: srx -> 362
-  Marca: toyota | Modelo: hiluxsw4 | Versión: tdi diamante ii -> 363
-  Marca: toyota | Modelo: hiluxsw4 | Versión: wide body -> 364
-  Marca: toyota | Modelo: landcruiser | Versión: 100 sw -> 365
-  Marca: toyota | Modelo: landcruiser | Versión: dl -> 366
-  Marca: toyota | Modelo: landcruiser | Versión: prado vx -> 367
-  Marca: toyota | Modelo: landcruiser | Versión: v6 -> 368
-  Marca: toyota | Modelo: rav4 | Versión:  -> 369
-  Marca: toyota | Modelo: rav4 | Versión: full -> 370
-  Marca: toyota | Modelo: rav4 | Versión: limited -> 371
-  Marca: toyota | Modelo: rav4 | Versión: sport -> 372
-  Marca: toyota | Modelo: rav4 | Versión: turbod4d -> 373
-  Marca: toyota | Modelo: rav4 | Versión: tx -> 374
-  Marca: toyota | Modelo: rav4 | Versión: vvti -> 375
-  Marca: toyota | Modelo: rav4 | Versión: vx -> 376
-  Marca: toyota | Modelo: rav4 | Versión: xle -> 377
-  Marca: toyota | Modelo: sw4 | Versión: diamond -> 378
-  Marca: toyota | Modelo: sw4 | Versión: gr -> 379
-  Marca: toyota | Modelo: sw4 | Versión: grsport -> 380
-  Marca: toyota | Modelo: sw4 | Versión: srv cuero i -> 381
-  Marca: toyota | Modelo: sw4 | Versión: srx -> 382
-  Marca: toyota | Modelo: sw4 | Versión: tdi diamante ii -> 383
-  Marca: toyota | Modelo: sw4 | Versión: vtv asientos -> 384
-  Marca: volkswagen | Modelo: nivus | Versión: 170 -> 385
-  Marca: volkswagen | Modelo: nivus | Versión: 200tsi -> 386
-  Marca: volkswagen | Modelo: nivus | Versión: tsi comfortline -> 387
-  Marca: volkswagen | Modelo: taos | Versión: 250 tsi highline -> 388
-  Marca: volkswagen | Modelo: tcross | Versión: 200 tsi trendline -> 389
-  Marca: volkswagen | Modelo: tcross | Versión: comfor -> 390
-  Marca: volkswagen | Modelo: tcross | Versión: comfortline -> 391
-  Marca: volkswagen | Modelo: tcross | Versión: highline -> 392
-  Marca: volkswagen | Modelo: tiguan | Versión:  -> 393
-  Marca: volkswagen | Modelo: tiguan | Versión: allspace comfortline l17 -> 394
-  Marca: volkswagen | Modelo: tiguan | Versión: blindado rbe -> 395
-  Marca: volkswagen | Modelo: tiguan | Versión: exclusive tip l12 2016 -> 396
-  Marca: volkswagen | Modelo: tiguan | Versión: sport style tsi -> 397
-  Marca: volkswagen | Modelo: tiguan | Versión: tdi motion -> 398
-  Marca: volkswagen | Modelo: tiguan | Versión: trendline -> 399
-  Marca: volkswagen | Modelo: tiguanallspace | Versión: tsi life 4motion -> 400
-  Marca: volvo | Modelo: xc60 | Versión: b5 plus -> 401
-  Marca: volvo | Modelo: xc60 | Versión: polestar t8 -> 402
-  Marca: volvo | Modelo: xc60 | Versión: t5 momentum -> 403
-  Marca: volvo | Modelo: xc60 | Versión: t6 high luxury -> 404
+  Marca: audi | Modelo: q2 | Versión:  -> 4
+  Marca: audi | Modelo: q2 | Versión: tfsi sport -> 5
+  Marca: audi | Modelo: q3 | Versión: i -> 6
+  Marca: audi | Modelo: q3 | Versión: sportback -> 7
+  Marca: audi | Modelo: q3 | Versión: tfsi -> 8
+  Marca: audi | Modelo: q5 | Versión: i -> 9
+  Marca: audi | Modelo: q5 | Versión: security l18 -> 10
+  Marca: audi | Modelo: q5 | Versión: tfsi -> 11
+  Marca: audi | Modelo: q5sportback | Versión: 45tfsi s sline -> 12
+  Marca: audi | Modelo: q7 | Versión: tdi -> 13
+  Marca: audi | Modelo: q7 | Versión: tfsi -> 14
+  Marca: audi | Modelo: q8 | Versión: tfsi -> 15
+  Marca: audi | Modelo: sq5 | Versión: tfsi -> 16
+  Marca: baic | Modelo: x25 | Versión: elite -> 17
+  Marca: baic | Modelo: x35 | Versión: confort turbo -> 18
+  Marca: baic | Modelo: x35 | Versión: luxury -> 19
+  Marca: baic | Modelo: x55 | Versión: beijing -> 20
+  Marca: baic | Modelo: x55 | Versión: elite -> 21
+  Marca: baic | Modelo: x55 | Versión: ii luxury -> 22
+  Marca: baic | Modelo: x55 | Versión: il -> 23
+  Marca: baic | Modelo: x55 | Versión: plus -> 24
+  Marca: bmw | Modelo: x1 | Versión: 25e -> 25
+  Marca: bmw | Modelo: x1 | Versión: 25i xline -> 26
+  Marca: bmw | Modelo: x1 | Versión: i -> 27
+  Marca: bmw | Modelo: x1 | Versión: sdrive 20i sportline -> 28
+  Marca: bmw | Modelo: x3 | Versión:  -> 29
+  Marca: bmw | Modelo: x3 | Versión: 25si selective -> 30
+  Marca: bmw | Modelo: x3 | Versión: 30i xline -> 31
+  Marca: bmw | Modelo: x3 | Versión: 35i executive -> 32
+  Marca: bmw | Modelo: x3 | Versión: advantage l -> 33
+  Marca: bmw | Modelo: x3 | Versión: i -> 34
+  Marca: bmw | Modelo: x3 | Versión: m40i mperformance -> 35
+  Marca: bmw | Modelo: x3 | Versión: m50 -> 36
+  Marca: bmw | Modelo: x3 | Versión: si limited edition blindada br3 360 -> 37
+  Marca: bmw | Modelo: x3 | Versión: x3m competition -> 38
+  Marca: bmw | Modelo: x4 | Versión: 30i -> 39
+  Marca: bmw | Modelo: x5 | Versión: 35i executive -> 40
+  Marca: bmw | Modelo: x5 | Versión: 40m -> 41
+  Marca: bmw | Modelo: x5 | Versión: 50i m package -> 42
+  Marca: chery | Modelo: tiggo | Versión: f2 confort -> 43
+  Marca: chery | Modelo: tiggo2 | Versión: 2013 -> 44
+  Marca: chery | Modelo: tiggo2 | Versión: confort -> 45
+  Marca: chery | Modelo: tiggo2 | Versión: luxury -> 46
+  Marca: chery | Modelo: tiggo3 | Versión: confort -> 47
+  Marca: chery | Modelo: tiggo3 | Versión: luxury -> 48
+  Marca: chery | Modelo: tiggo4pro | Versión: comfort -> 49
+  Marca: chery | Modelo: tiggo4pro | Versión: luxury -> 50
+  Marca: chery | Modelo: tiggo5 | Versión: comfort -> 51
+  Marca: chery | Modelo: tiggo5 | Versión: luxury -> 52
+  Marca: chery | Modelo: tiggo8pro | Versión: luxury -> 53
+  Marca: chevrolet | Modelo: blazer | Versión:  -> 54
+  Marca: chevrolet | Modelo: blazer | Versión: dlx -> 55
+  Marca: chevrolet | Modelo: blazer | Versión: tahoe lt -> 56
+  Marca: chevrolet | Modelo: blazer | Versión: turbo -> 57
+  Marca: chevrolet | Modelo: equinox | Versión: ls -> 58
+  Marca: chevrolet | Modelo: equinox | Versión: lt -> 59
+  Marca: chevrolet | Modelo: equinox | Versión: premier -> 60
+  Marca: chevrolet | Modelo: equinox | Versión: rs -> 61
+  Marca: chevrolet | Modelo: grandblazer | Versión: dlx -> 62
+  Marca: chevrolet | Modelo: grandvitara | Versión:  -> 63
+  Marca: chevrolet | Modelo: grandvitara | Versión: i -> 64
+  Marca: chevrolet | Modelo: spin | Versión: activ -> 65
+  Marca: chevrolet | Modelo: spin | Versión: lt -> 66
+  Marca: chevrolet | Modelo: spin | Versión: premier -> 67
+  Marca: chevrolet | Modelo: tracker | Versión:  -> 68
+  Marca: chevrolet | Modelo: tracker | Versión: ltz -> 69
+  Marca: chevrolet | Modelo: tracker | Versión: ltz4x4 -> 70
+  Marca: chevrolet | Modelo: tracker | Versión: rs -> 71
+  Marca: chevrolet | Modelo: tracker | Versión: turbo -> 72
+  Marca: chevrolet | Modelo: trailblazer | Versión: ctdi premier -> 73
+  Marca: chevrolet | Modelo: trailblazer | Versión: hc -> 74
+  Marca: chevrolet | Modelo: trailblazer | Versión: nueva ltz tdci -> 75
+  Marca: chevrolet | Modelo: trailblazer | Versión: td high country -> 76
+  Marca: citroen | Modelo: c3 | Versión: turbo -> 77
+  Marca: citroen | Modelo: c3aircross | Versión: 16v exclusive -> 78
+  Marca: citroen | Modelo: c3aircross | Versión: shine turbo 200 bitono -> 79
+  Marca: citroen | Modelo: c3aircross | Versión: urban edition -> 80
+  Marca: citroen | Modelo: c4cactus | Versión: feel pack plus -> 81
+  Marca: citroen | Modelo: c4cactus | Versión: origins -> 82
+  Marca: citroen | Modelo: c4cactus | Versión: puretech 110 rip curl -> 83
+  Marca: citroen | Modelo: c4cactus | Versión: thp 165 shine -> 84
+  Marca: daihatsu | Modelo: terios | Versión: sx -> 85
+  Marca: dodge | Modelo: journey | Versión: rt filasdvdtecho -> 86
+  Marca: dodge | Modelo: journey | Versión: se -> 87
+  Marca: dodge | Modelo: journey | Versión: sxt techo dvd nav -> 88
+  Marca: ds | Modelo: ds7crossback | Versión: e tense -> 89
+  Marca: ds | Modelo: ds7crossback | Versión: puretech performance line -> 90
+  Marca: ds | Modelo: ds7crossback | Versión: rivoli hdi -> 91
+  Marca: fiat | Modelo: 500x | Versión: 16v pop -> 92
+  Marca: fiat | Modelo: pulse | Versión: abarth -> 93
+  Marca: fiat | Modelo: pulse | Versión: audace -> 94
+  Marca: fiat | Modelo: pulse | Versión: drive gse -> 95
+  Marca: fiat | Modelo: pulse | Versión: impetus t3 -> 96
+  Marca: ford | Modelo: ecosport | Versión: freestyle -> 97
+  Marca: ford | Modelo: ecosport | Versión: gdi storm -> 98
+  Marca: ford | Modelo: ecosport | Versión: my10 xls -> 99
+  Marca: ford | Modelo: ecosport | Versión: s -> 100
+  Marca: ford | Modelo: ecosport | Versión: se -> 101
+  Marca: ford | Modelo: ecosport | Versión: titanium -> 102
+  Marca: ford | Modelo: ecosport | Versión: xlt plus -> 103
+  Marca: ford | Modelo: kuga | Versión:  -> 104
+  Marca: ford | Modelo: kuga | Versión: platinum -> 105
+  Marca: ford | Modelo: kuga | Versión: sel -> 106
+  Marca: ford | Modelo: kuga | Versión: titanium -> 107
+  Marca: ford | Modelo: kuga | Versión: trend ku01ku04 -> 108
+  Marca: ford | Modelo: territory | Versión: ecoboost titanium -> 109
+  Marca: ford | Modelo: territory | Versión: sel -> 110
+  Marca: ford | Modelo: territory | Versión: trend gtdi -> 111
+  Marca: gwm | Modelo: h6 | Versión: 3ra generacion -> 112
+  Marca: gwm | Modelo: h6 | Versión: coupe dignity -> 113
+  Marca: gwm | Modelo: jolion | Versión:  -> 114
+  Marca: honda | Modelo: crv | Versión: advanced -> 115
+  Marca: honda | Modelo: crv | Versión: ex -> 116
+  Marca: honda | Modelo: crv | Versión: i -> 117
+  Marca: honda | Modelo: crv | Versión: lx -> 118
+  Marca: honda | Modelo: crv | Versión: si -> 119
+  Marca: honda | Modelo: hrv | Versión: aleron -> 120
+  Marca: honda | Modelo: hrv | Versión: ex -> 121
+  Marca: honda | Modelo: hrv | Versión: lx -> 122
+  Marca: honda | Modelo: pilot | Versión:  -> 123
+  Marca: honda | Modelo: pilot | Versión: ex -> 124
+  Marca: honda | Modelo: pilot | Versión: touring todo terreno -> 125
+  Marca: hyundai | Modelo: creta | Versión:  -> 126
+  Marca: hyundai | Modelo: creta | Versión: gl connect -> 127
+  Marca: hyundai | Modelo: creta | Versión: safety -> 128
+  Marca: hyundai | Modelo: creta | Versión: style -> 129
+  Marca: hyundai | Modelo: galloper | Versión:  -> 130
+  Marca: hyundai | Modelo: galloper | Versión: i exd -> 131
+  Marca: hyundai | Modelo: kona | Versión: safety -> 132
+  Marca: hyundai | Modelo: santafe | Versión: crdi chapelco -> 133
+  Marca: hyundai | Modelo: santafe | Versión: gls premium -> 134
+  Marca: hyundai | Modelo: santafe | Versión: seguridad -> 135
+  Marca: hyundai | Modelo: tucson | Versión:  -> 136
+  Marca: hyundai | Modelo: tucson | Versión: 16v -> 137
+  Marca: hyundai | Modelo: tucson | Versión: 20n -> 138
+  Marca: hyundai | Modelo: tucson | Versión: ctecho -> 139
+  Marca: hyundai | Modelo: tucson | Versión: gasolina -> 140
+  Marca: hyundai | Modelo: tucson | Versión: gl -> 141
+  Marca: hyundai | Modelo: tucson | Versión: n -> 142
+  Marca: hyundai | Modelo: tucson | Versión: premium -> 143
+  Marca: hyundai | Modelo: tucson | Versión: safety -> 144
+  Marca: hyundai | Modelo: tucson | Versión: style -> 145
+  Marca: hyundai | Modelo: tucson | Versión: tgdi tct -> 146
+  Marca: hyundai | Modelo: tucson | Versión: ultimate turbo dct 4wf -> 147
+  Marca: hyundai | Modelo: tucson | Versión: v6 -> 148
+  Marca: isuzu | Modelo: trooper | Versión: limited -> 149
+  Marca: jac | Modelo: s2 | Versión: intelligent -> 150
+  Marca: jac | Modelo: s2 | Versión: luxury -> 151
+  Marca: jeep | Modelo: cherokee | Versión: classic -> 152
+  Marca: jeep | Modelo: cherokee | Versión: limited -> 153
+  Marca: jeep | Modelo: cherokee | Versión: sport -> 154
+  Marca: jeep | Modelo: commander | Versión: td380 at9 limited -> 155
+  Marca: jeep | Modelo: compass | Versión: blackhawk -> 156
+  Marca: jeep | Modelo: compass | Versión: longitude plus -> 157
+  Marca: jeep | Modelo: compass | Versión: sport -> 158
+  Marca: jeep | Modelo: compass | Versión: t270 series -> 159
+  Marca: jeep | Modelo: compass | Versión: td at9 trailhawk -> 160
+  Marca: jeep | Modelo: grandcherokee | Versión: crd laredo -> 161
+  Marca: jeep | Modelo: grandcherokee | Versión: limited -> 162
+  Marca: jeep | Modelo: grandcherokee | Versión: overland -> 163
+  Marca: jeep | Modelo: grandcherokee | Versión: srt -> 164
+  Marca: jeep | Modelo: patriot | Versión:  -> 165
+  Marca: jeep | Modelo: patriot | Versión: sport -> 166
+  Marca: jeep | Modelo: renegade | Versión: longitude -> 167
+  Marca: jeep | Modelo: renegade | Versión: series -> 168
+  Marca: jeep | Modelo: renegade | Versión: sport -> 169
+  Marca: jeep | Modelo: renegade | Versión: t270 -> 170
+  Marca: jeep | Modelo: renegade | Versión: trailhawk at9 -> 171
+  Marca: jeep | Modelo: renegade | Versión: willys -> 172
+  Marca: jeep | Modelo: wrangler | Versión:  -> 173
+  Marca: jeep | Modelo: wrangler | Versión: hard top -> 174
+  Marca: jeep | Modelo: wrangler | Versión: rubicon -> 175
+  Marca: jeep | Modelo: wrangler | Versión: sport mtx -> 176
+  Marca: jeep | Modelo: wrangler | Versión: unlimited -> 177
+  Marca: jetour | Modelo: x70 | Versión:  -> 178
+  Marca: jetour | Modelo: x70 | Versión: asientos -> 179
+  Marca: jetour | Modelo: x70 | Versión: luxury at8 -> 180
+  Marca: kaiyi | Modelo: x3 | Versión:  -> 181
+  Marca: kia | Modelo: seltos | Versión: ex -> 182
+  Marca: kia | Modelo: seltos | Versión: lx -> 183
+  Marca: kia | Modelo: sorento | Versión: crdi -> 184
+  Marca: kia | Modelo: sorento | Versión: ex -> 185
+  Marca: kia | Modelo: soul | Versión: classic 5mt -> 186
+  Marca: kia | Modelo: soul | Versión: ex -> 187
+  Marca: kia | Modelo: soul | Versión: pop 4at -> 188
+  Marca: kia | Modelo: soul | Versión: rock -> 189
+  Marca: kia | Modelo: sportage | Versión: ex -> 190
+  Marca: kia | Modelo: sportage | Versión: i abs -> 191
+  Marca: kia | Modelo: sportage | Versión: tgdi xline -> 192
+  Marca: landrover | Modelo: defender | Versión: soft top -> 193
+  Marca: landrover | Modelo: defender | Versión: sw 110 7s -> 194
+  Marca: landrover | Modelo: discovery | Versión: i -> 195
+  Marca: landrover | Modelo: discovery | Versión: sport hse -> 196
+  Marca: landrover | Modelo: evoque | Versión: coupe -> 197
+  Marca: landrover | Modelo: evoque | Versión: prestige plus -> 198
+  Marca: landrover | Modelo: evoque | Versión: se rdynamic -> 199
+  Marca: landrover | Modelo: evoque | Versión: si4 -> 200
+  Marca: landrover | Modelo: freelander | Versión: xedi -> 201
+  Marca: landrover | Modelo: rangerover | Versión:  -> 202
+  Marca: landrover | Modelo: rangerover | Versión: se -> 203
+  Marca: lifan | Modelo: myway | Versión: 16v -> 204
+  Marca: lifan | Modelo: myway | Versión: vvt -> 205
+  Marca: lifan | Modelo: x70 | Versión: vvti -> 206
+  Marca: mercedesbenz | Modelo: clasegla | Versión: gla 250 -> 207
+  Marca: mercedesbenz | Modelo: clasegla | Versión: gla200 urban -> 208
+  Marca: mercedesbenz | Modelo: clasegla | Versión: gla45 amg -> 209
+  Marca: mercedesbenz | Modelo: clasegla | Versión: progresive motor -> 210
+  Marca: mercedesbenz | Modelo: claseglc | Versión: glc250 300 atomatico -> 211
+  Marca: mercedesbenz | Modelo: claseglc | Versión: glc300 coupe -> 212
+  Marca: mercedesbenz | Modelo: claseglc | Versión: glc43 amg -> 213
+  Marca: mercedesbenz | Modelo: claseglk | Versión: glk300 city -> 214
+  Marca: mercedesbenz | Modelo: claseml | Versión: ml270 cdi luxury -> 215
+  Marca: mercedesbenz | Modelo: claseml | Versión: ml350 facelift -> 216
+  Marca: mitsubishi | Modelo: montero | Versión: gls did tc cu -> 217
+  Marca: mitsubishi | Modelo: montero | Versión: glx -> 218
+  Marca: mitsubishi | Modelo: montero | Versión: metal top v6 -> 219
+  Marca: mitsubishi | Modelo: outlander | Versión: gls full -> 220
+  Marca: nissan | Modelo: kicks | Versión: advance -> 221
+  Marca: nissan | Modelo: kicks | Versión: exclusive -> 222
+  Marca: nissan | Modelo: kicks | Versión: sense -> 223
+  Marca: nissan | Modelo: kicks | Versión: special edition -> 224
+  Marca: nissan | Modelo: kicks | Versión: x play -> 225
+  Marca: nissan | Modelo: murano | Versión: exclusive -> 226
+  Marca: nissan | Modelo: murano | Versión: v6 -> 227
+  Marca: nissan | Modelo: pathfinder | Versión: se -> 228
+  Marca: nissan | Modelo: terranoii | Versión: i -> 229
+  Marca: nissan | Modelo: xterra | Versión: se -> 230
+  Marca: nissan | Modelo: xtrail | Versión:  -> 231
+  Marca: nissan | Modelo: xtrail | Versión: acenta -> 232
+  Marca: nissan | Modelo: xtrail | Versión: exclusive xtronic -> 233
+  Marca: nissan | Modelo: xtrail | Versión: visia -> 234
+  Marca: peugeot | Modelo: 2008 | Versión:  -> 235
+  Marca: peugeot | Modelo: 2008 | Versión: active -> 236
+  Marca: peugeot | Modelo: 2008 | Versión: allure -> 237
+  Marca: peugeot | Modelo: 2008 | Versión: blindado rb3 -> 238
+  Marca: peugeot | Modelo: 2008 | Versión: crossway -> 239
+  Marca: peugeot | Modelo: 2008 | Versión: feline -> 240
+  Marca: peugeot | Modelo: 2008 | Versión: gt -> 241
+  Marca: peugeot | Modelo: 2008 | Versión: in concert -> 242
+  Marca: peugeot | Modelo: 2008 | Versión: thp sport -> 243
+  Marca: peugeot | Modelo: 2008 | Versión: turbo -> 244
+  Marca: peugeot | Modelo: 3008 | Versión: feline hdi -> 245
+  Marca: peugeot | Modelo: 3008 | Versión: gt pack hybrid4 -> 246
+  Marca: peugeot | Modelo: 3008 | Versión: gtline thp -> 247
+  Marca: peugeot | Modelo: 4008 | Versión: feline -> 248
+  Marca: porsche | Modelo: cayenne | Versión: 958 -> 249
+  Marca: porsche | Modelo: cayenne | Versión: blindada rb3 -> 250
+  Marca: porsche | Modelo: cayenne | Versión: ehybrid -> 251
+  Marca: porsche | Modelo: cayenne | Versión: v6 -> 252
+  Marca: porsche | Modelo: cayenne | Versión: v8 turbo s 957 -> 253
+  Marca: porsche | Modelo: macan | Versión:  -> 254
+  Marca: porsche | Modelo: macan | Versión: gts -> 255
+  Marca: porsche | Modelo: macan | Versión: s -> 256
+  Marca: porsche | Modelo: macan | Versión: t -> 257
+  Marca: porsche | Modelo: macan | Versión: turbo -> 258
+  Marca: renault | Modelo: captur | Versión: bose -> 259
+  Marca: renault | Modelo: captur | Versión: intens -> 260
+  Marca: renault | Modelo: captur | Versión: life -> 261
+  Marca: renault | Modelo: captur | Versión: zen -> 262
+  Marca: renault | Modelo: duster | Versión:  -> 263
+  Marca: renault | Modelo: duster | Versión: confort plus -> 264
+  Marca: renault | Modelo: duster | Versión: dakar -> 265
+  Marca: renault | Modelo: duster | Versión: expression -> 266
+  Marca: renault | Modelo: duster | Versión: hr16 intens -> 267
+  Marca: renault | Modelo: duster | Versión: luxe nav -> 268
+  Marca: renault | Modelo: duster | Versión: ph2 privilege -> 269
+  Marca: renault | Modelo: duster | Versión: tce turbo iconic xtronic -> 270
+  Marca: renault | Modelo: duster | Versión: tech road -> 271
+  Marca: renault | Modelo: duster | Versión: zen -> 272
+  Marca: renault | Modelo: dusteroroch | Versión: dynamique -> 273
+  Marca: renault | Modelo: dusteroroch | Versión: outsider plus -> 274
+  Marca: renault | Modelo: dusteroroch | Versión: privilege -> 275
+  Marca: renault | Modelo: koleos | Versión:  -> 276
+  Marca: renault | Modelo: koleos | Versión: dynamique -> 277
+  Marca: renault | Modelo: koleos | Versión: expression -> 278
+  Marca: renault | Modelo: koleos | Versión: intens -> 279
+  Marca: renault | Modelo: koleos | Versión: privilege -> 280
+  Marca: renault | Modelo: koleos | Versión: zen l18 -> 281
+  Marca: renault | Modelo: sanderostepway | Versión: 16v intense -> 282
+  Marca: renault | Modelo: sanderostepway | Versión: expression -> 283
+  Marca: renault | Modelo: sanderostepway | Versión: nuevo sandero stepway privilege -> 284
+  Marca: ssangyong | Modelo: actyon | Versión: equipamiento -> 285
+  Marca: ssangyong | Modelo: musso | Versión: 601 d -> 286
+  Marca: ssangyong | Modelo: musso | Versión: 602 dti -> 287
+  Marca: suzuki | Modelo: grandvitara | Versión:  -> 288
+  Marca: suzuki | Modelo: grandvitara | Versión: gas -> 289
+  Marca: suzuki | Modelo: grandvitara | Versión: i -> 290
+  Marca: suzuki | Modelo: grandvitara | Versión: jiii -> 291
+  Marca: suzuki | Modelo: grandvitara | Versión: jlx 5mt -> 292
+  Marca: suzuki | Modelo: grandvitara | Versión: n -> 293
+  Marca: suzuki | Modelo: grandvitara | Versión: puertas 16v -> 294
+  Marca: suzuki | Modelo: grandvitara | Versión: tdi mazda -> 295
+  Marca: suzuki | Modelo: jimny | Versión: gl -> 296
+  Marca: suzuki | Modelo: jimny | Versión: jlx -> 297
+  Marca: suzuki | Modelo: samurai | Versión: metallona -> 298
+  Marca: suzuki | Modelo: vitara | Versión: gl -> 299
+  Marca: suzuki | Modelo: vitara | Versión: gran tdi peugeot -> 300
+  Marca: suzuki | Modelo: vitara | Versión: jlx sidekick -> 301
+  Marca: toyota | Modelo: 4runner | Versión: 28d l -> 302
+  Marca: toyota | Modelo: 4runner | Versión: d -> 303
+  Marca: toyota | Modelo: corollacross | Versión: 18seg my 2025 -> 304
+  Marca: toyota | Modelo: corollacross | Versión: grs -> 305
+  Marca: toyota | Modelo: corollacross | Versión: grsport -> 306
+  Marca: toyota | Modelo: corollacross | Versión: r -> 307
+  Marca: toyota | Modelo: corollacross | Versión: seg ecvt -> 308
+  Marca: toyota | Modelo: corollacross | Versión: xei -> 309
+  Marca: toyota | Modelo: corollacross | Versión: xli -> 310
+  Marca: toyota | Modelo: hiluxsw4 | Versión:  -> 311
+  Marca: toyota | Modelo: hiluxsw4 | Versión: diamond no ducatti yamaha kawasaki ktm -> 312
+  Marca: toyota | Modelo: hiluxsw4 | Versión: srv cuero -> 313
+  Marca: toyota | Modelo: hiluxsw4 | Versión: srx -> 314
+  Marca: toyota | Modelo: hiluxsw4 | Versión: tdi diamante ii -> 315
+  Marca: toyota | Modelo: hiluxsw4 | Versión: wide body -> 316
+  Marca: toyota | Modelo: landcruiser | Versión: dl -> 317
+  Marca: toyota | Modelo: landcruiser | Versión: prado vx -> 318
+  Marca: toyota | Modelo: landcruiser | Versión: v6 -> 319
+  Marca: toyota | Modelo: rav4 | Versión:  -> 320
+  Marca: toyota | Modelo: rav4 | Versión: full -> 321
+  Marca: toyota | Modelo: rav4 | Versión: sport -> 322
+  Marca: toyota | Modelo: rav4 | Versión: tx -> 323
+  Marca: toyota | Modelo: rav4 | Versión: vvti -> 324
+  Marca: toyota | Modelo: rav4 | Versión: vx -> 325
+  Marca: toyota | Modelo: rav4 | Versión: xle -> 326
+  Marca: toyota | Modelo: sw4 | Versión: diamond 28tdi -> 327
+  Marca: toyota | Modelo: sw4 | Versión: gr -> 328
+  Marca: toyota | Modelo: sw4 | Versión: srv cuero i -> 329
+  Marca: toyota | Modelo: sw4 | Versión: srx -> 330
+  Marca: toyota | Modelo: sw4 | Versión: vtv asientos -> 331
+  Marca: volkswagen | Modelo: nivus | Versión: 170 -> 332
+  Marca: volkswagen | Modelo: nivus | Versión: highline g1 ar -> 333
+  Marca: volkswagen | Modelo: nivus | Versión: tsi comfortline -> 334
+  Marca: volkswagen | Modelo: taos | Versión: 250 tsi comfortline -> 335
+  Marca: volkswagen | Modelo: taos | Versión: highline -> 336
+  Marca: volkswagen | Modelo: tcross | Versión: 200 tsi comfortline -> 337
+  Marca: volkswagen | Modelo: tcross | Versión: comfor -> 338
+  Marca: volkswagen | Modelo: tcross | Versión: trendlinde -> 339
+  Marca: volkswagen | Modelo: tiguan | Versión:  -> 340
+  Marca: volkswagen | Modelo: tiguan | Versión: allspace trendline l17 -> 341
+  Marca: volkswagen | Modelo: tiguan | Versión: elegance i -> 342
+  Marca: volkswagen | Modelo: tiguan | Versión: exclusive tip l12 2016 -> 343
+  Marca: volkswagen | Modelo: tiguan | Versión: life -> 344
+  Marca: volkswagen | Modelo: tiguan | Versión: sport style tsi -> 345
+  Marca: volkswagen | Modelo: tiguan | Versión: tdi -> 346
+  Marca: volkswagen | Modelo: tiguanallspace | Versión: tsi life 4motion -> 347
+  Marca: volvo | Modelo: xc60 | Versión: t5 momentum -> 348
+  Marca: volvo | Modelo: xc60 | Versión: t6 high -> 349
+  Marca: volvo | Modelo: xc60 | Versión: t8 plug in -> 350
 
 Columna: Marca
   alfaromeo -> 0
@@ -436,11 +382,10 @@ Columna: Marca
   porsche -> 27
   renault -> 28
   ssangyong -> 29
-  subaru -> 30
-  suzuki -> 31
-  toyota -> 32
-  volkswagen -> 33
-  volvo -> 34
+  suzuki -> 30
+  toyota -> 31
+  volkswagen -> 32
+  volvo -> 33
 
 Columna: Modelo
   2008 -> 0
@@ -452,112 +397,105 @@ Columna: Modelo
   blazer -> 6
   c3 -> 7
   c3aircross -> 8
-  c4aircross -> 9
-  c4cactus -> 10
-  captur -> 11
-  cayenne -> 12
-  cherokee -> 13
-  clasegla -> 14
-  claseglc -> 15
-  claseglk -> 16
-  claseml -> 17
-  commander -> 18
-  compass -> 19
-  corollacross -> 20
-  creta -> 21
-  crv -> 22
-  defender -> 23
-  discovery -> 24
-  ds7crossback -> 25
-  duster -> 26
-  dusteroroch -> 27
-  ecosport -> 28
-  equinox -> 29
-  evoque -> 30
-  explorer -> 31
-  freelander -> 32
-  galloper -> 33
-  grandblazer -> 34
-  grandcherokee -> 35
-  grandsantafe -> 36
-  grandvitara -> 37
-  h6 -> 38
-  hiluxsw4 -> 39
-  hrv -> 40
-  jimny -> 41
-  jolion -> 42
-  journey -> 43
-  kicks -> 44
-  koleos -> 45
-  kona -> 46
-  kuga -> 47
-  landcruiser -> 48
-  macan -> 49
-  ml -> 50
-  mohave -> 51
-  montero -> 52
-  murano -> 53
-  musso -> 54
-  myway -> 55
-  nivus -> 56
-  outback -> 57
-  outlander -> 58
-  pathfinder -> 59
-  patriot -> 60
-  pilot -> 61
-  pulse -> 62
-  q2 -> 63
-  q3 -> 64
-  q5 -> 65
-  q5sportback -> 66
-  q7 -> 67
-  q8 -> 68
-  rangerover -> 69
-  rav4 -> 70
-  renegade -> 71
-  s2 -> 72
-  samurai -> 73
-  sanderostepway -> 74
-  santafe -> 75
-  seltos -> 76
-  sorento -> 77
-  soul -> 78
-  spin -> 79
-  sportage -> 80
-  sq5 -> 81
-  stelvio -> 82
-  sw4 -> 83
-  taos -> 84
-  tcross -> 85
-  terios -> 86
-  terranoii -> 87
-  territory -> 88
-  tiggo -> 89
-  tiggo2 -> 90
-  tiggo3 -> 91
-  tiggo4 -> 92
-  tiggo4pro -> 93
-  tiggo5 -> 94
-  tiggo8pro -> 95
-  tiguan -> 96
-  tiguanallspace -> 97
-  tracker -> 98
-  trailblazer -> 99
-  trooper -> 100
-  tucson -> 101
-  vitara -> 102
-  wrangler -> 103
-  x1 -> 104
-  x25 -> 105
-  x3 -> 106
-  x35 -> 107
-  x4 -> 108
-  x5 -> 109
-  x55 -> 110
-  x70 -> 111
-  xc60 -> 112
-  xterra -> 113
-  xtrail -> 114
+  c4cactus -> 9
+  captur -> 10
+  cayenne -> 11
+  cherokee -> 12
+  clasegla -> 13
+  claseglc -> 14
+  claseglk -> 15
+  claseml -> 16
+  commander -> 17
+  compass -> 18
+  corollacross -> 19
+  creta -> 20
+  crv -> 21
+  defender -> 22
+  discovery -> 23
+  ds7crossback -> 24
+  duster -> 25
+  dusteroroch -> 26
+  ecosport -> 27
+  equinox -> 28
+  evoque -> 29
+  freelander -> 30
+  galloper -> 31
+  grandblazer -> 32
+  grandcherokee -> 33
+  grandvitara -> 34
+  h6 -> 35
+  hiluxsw4 -> 36
+  hrv -> 37
+  jimny -> 38
+  jolion -> 39
+  journey -> 40
+  kicks -> 41
+  koleos -> 42
+  kona -> 43
+  kuga -> 44
+  landcruiser -> 45
+  macan -> 46
+  montero -> 47
+  murano -> 48
+  musso -> 49
+  myway -> 50
+  nivus -> 51
+  outlander -> 52
+  pathfinder -> 53
+  patriot -> 54
+  pilot -> 55
+  pulse -> 56
+  q2 -> 57
+  q3 -> 58
+  q5 -> 59
+  q5sportback -> 60
+  q7 -> 61
+  q8 -> 62
+  rangerover -> 63
+  rav4 -> 64
+  renegade -> 65
+  s2 -> 66
+  samurai -> 67
+  sanderostepway -> 68
+  santafe -> 69
+  seltos -> 70
+  sorento -> 71
+  soul -> 72
+  spin -> 73
+  sportage -> 74
+  sq5 -> 75
+  stelvio -> 76
+  sw4 -> 77
+  taos -> 78
+  tcross -> 79
+  terios -> 80
+  terranoii -> 81
+  territory -> 82
+  tiggo -> 83
+  tiggo2 -> 84
+  tiggo3 -> 85
+  tiggo4pro -> 86
+  tiggo5 -> 87
+  tiggo8pro -> 88
+  tiguan -> 89
+  tiguanallspace -> 90
+  tracker -> 91
+  trailblazer -> 92
+  trooper -> 93
+  tucson -> 94
+  vitara -> 95
+  wrangler -> 96
+  x1 -> 97
+  x25 -> 98
+  x3 -> 99
+  x35 -> 100
+  x4 -> 101
+  x5 -> 102
+  x55 -> 103
+  x70 -> 104
+  xc60 -> 105
+  xterra -> 106
+  xtrail -> 107
 
 Columna: Color
   acero -> 0
@@ -565,33 +503,30 @@ Columna: Color
   azul -> 2
   beige -> 3
   blanco -> 4
-  blue -> 5
-  bordo -> 6
-  cafe -> 7
-  carbon -> 8
-  celeste -> 9
-  cendre -> 10
-  champaing -> 11
-  cobre -> 12
-  dorado -> 13
-  grafito -> 14
-  gray -> 15
-  gris -> 16
-  marron -> 17
-  mineralweiss -> 18
-  moundaz -> 19
-  naranja -> 20
-  negro -> 21
-  noir -> 22
-  otro -> 23
-  plateado -> 24
-  rojo -> 25
-  rosa -> 26
-  skyscraper -> 27
-  steelblue -> 28
-  summit -> 29
-  verde -> 30
-  violeta -> 31
+  bordo -> 5
+  cafe -> 6
+  carbon -> 7
+  celeste -> 8
+  cendre -> 9
+  cobre -> 10
+  dorado -> 11
+  granite -> 12
+  gray -> 13
+  gris -> 14
+  marron -> 15
+  mineralweiss -> 16
+  moundaz -> 17
+  naranja -> 18
+  negro -> 19
+  otro -> 20
+  plateado -> 21
+  rojo -> 22
+  rosa -> 23
+  skyscraper -> 24
+  steelblue -> 25
+  summit -> 26
+  verde -> 27
+  violeta -> 28
 
 Columna: Tipo de combustible
   Diésel -> 0
