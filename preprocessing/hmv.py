@@ -4,6 +4,9 @@ from utils.diccionarios import MODELOS_POR_MARCA
 from preprocessing.data_cleanse import normalizar
 from sklearn.linear_model import LinearRegression
 from itertools import combinations
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.preprocessing import LabelEncoder
+import numpy as np
 
 def hmv_marca(df_train, df_to_input):
     """
@@ -307,87 +310,54 @@ def hmv_version_train(df_train, df_to_input):
 
 def hmv_version(df_train, df_to_input):
     """
-    Ejecuta limpieza y agrupamiento de versiones:
-    - Primero se aplica la función completa sobre df_train.
-    - Luego, se genera un diccionario de versiones válidas por marca y modelo.
-    - Finalmente, se corrige df_to_input con ese conocimiento (imputación y similitud).
-
-    Retorna df_to_input actualizado.
+    Imputa y corrige la columna 'Versión' usando contexto, similitud de tokens y moda por modelo.
+    No elimina ninguna muestra.
     """
-
-
     df_train_limpio = hmv_version_train(df_train, df_train)
 
-    # Diccionario definitivo de versiones por (Marca, Modelo)
+    # Diccionario de versiones válidas por (Marca, Modelo)
     versiones_por_modelo = {}
     for (marca, modelo), sub in df_train_limpio.groupby(['Marca', 'Modelo']):
         versiones_por_modelo[(marca, modelo)] = (
-            sub['Versión'].dropna()
-               .value_counts()
-               .index
-               .tolist()  
+            sub['Versión'].dropna().value_counts().index.tolist()
         )
+
     df_val = df_to_input.copy()
     referencia = df_train_limpio[df_train_limpio['Versión'].notna()].copy()
 
     df_missing = df_val[df_val['Versión'].isna()].copy()
-    #print(f"🔍 Paso 1 - Imputación de versiones faltantes")
-    #print(f"   ➤ Total con versión faltante: {len(df_missing)}")
-    #print(f"   ➤ Índices con versión faltante: {[i + 2 for i in df_missing.index.tolist()]}")
-
     reemplazos = []
-    eliminar = []
 
-    # Paso 1: Imputar versiones faltantes según prioridad
+    # Paso 1: Imputar versiones faltantes según contexto
     for idx, row in df_missing.iterrows():
         marca = str(row.get("Marca", "")).lower()
         modelo = str(row.get("Modelo", "")).lower()
-
-        version_frecuente = None
 
         if marca and modelo:
             versiones_posibles = referencia[
                 (referencia["Marca"].str.lower() == marca) &
                 (referencia["Modelo"].str.lower() == modelo)
             ]["Versión"].dropna()
-            contexto = "marca + modelo"
-
         elif marca:
             versiones_posibles = referencia[
                 referencia["Marca"].str.lower() == marca
             ]["Versión"].dropna()
-            contexto = "solo marca"
-
         elif modelo:
             versiones_posibles = referencia[
                 referencia["Modelo"].str.lower() == modelo
             ]["Versión"].dropna()
-            contexto = "solo modelo"
-
         else:
             versiones_posibles = pd.Series(dtype=str)
-            contexto = "sin marca ni modelo"
 
         if not versiones_posibles.empty:
             version_frecuente = versiones_posibles.mode().iloc[0]
             df_val.at[idx, "Versión"] = version_frecuente
             reemplazos.append(idx)
-            #print(f"[{idx + 2}] ✅ Imputada versión: '{version_frecuente}' usando contexto: {contexto}")
-        else:
-            df_val.drop(index=idx, inplace=True)
-            #print(f"[{idx + 2}] ❌ Eliminada → Sin versiones disponibles en contexto: {contexto}")
 
-    #print(f"\n✔️ Paso 1 terminado:")
-    print(f"   ➤ Versiones imputadas: {len(reemplazos)}")
-    print(f"   ➤ Muestras eliminadas por no poder imputar: {df_missing.shape[0] - len(reemplazos)}")
+    print(f"   ➤ Versiones imputadas por contexto: {len(reemplazos)}")
 
-    # Paso 2: Corregir versiones no válidas usando similitud por token
-    #print(f"\n🔍 Paso 2 - Corrección de versiones inválidas")
-
+    # Paso 2: Corregir versiones no válidas usando similitud de tokens
     def tokens_similares(v1, v2, cutoff=0.75):
-        """
-        Devuelve True si al menos un token de v1 se parece (por fuzzy matching) a algún token de v2.
-        """
         t1 = str(v1).replace('-', ' ').replace('_', ' ').lower().split()
         t2 = str(v2).replace('-', ' ').replace('_', ' ').lower().split()
         for token1 in t1:
@@ -395,6 +365,7 @@ def hmv_version(df_train, df_to_input):
                 return True
         return False
 
+    corregidas = 0
     for idx, row in df_val.iterrows():
         marca = row.get('Marca')
         modelo = row.get('Modelo')
@@ -403,30 +374,41 @@ def hmv_version(df_train, df_to_input):
         versiones_validas = versiones_por_modelo.get(key, [])
 
         if not versiones_validas:
-            #print(f"[{idx + 2}] ⚠️ Eliminada → No hay versiones válidas aprendidas para: {key}")
-            eliminar.append(idx)
             continue
 
         if version not in versiones_validas:
-            # Buscar por similitud de tokens
             candidato = None
             for v in versiones_validas:
                 if tokens_similares(version, v, cutoff=0.75):
                     candidato = v
                     break
-
             if candidato:
-                #print(f"[{idx + 2}] 🔄 Versión '{version}' corregida a '{candidato}' (por similitud de token)")
                 df_val.at[idx, 'Versión'] = candidato
+                corregidas += 1
             else:
-                #print(f"[{idx + 2}] ❌ Eliminada → Versión inválida sin similar para: '{version}' en {key}")
-                #print(f"           🧩 Opciones válidas para {key}: {versiones_validas}")
-                eliminar.append(idx)
+                df_val.at[idx, 'Versión'] = np.nan  # Marcar como faltante para el siguiente paso
 
-    if eliminar:
-        df_val.drop(index=eliminar, inplace=True)
-        print(f"\n🗑️ Paso 2 terminado: Eliminadas {len(eliminar)} filas con versiones inválidas no corregibles.")
+    print(f"   ➤ Versiones corregidas por similitud: {corregidas}")
+
+    # Paso 3: Imputar versión por moda del modelo (último recurso)
+    faltantes_finales = df_val[df_val['Versión'].isna()]
+    imputadas_por_modelo = 0
+
+    for idx, row in faltantes_finales.iterrows():
+        modelo = row.get("Modelo", None)
+        if modelo is not None:
+            versiones_modelo = referencia[
+                referencia["Modelo"] == modelo
+            ]["Versión"].dropna()
+            if not versiones_modelo.empty:
+                moda = versiones_modelo.mode().iloc[0]
+                df_val.at[idx, "Versión"] = moda
+                imputadas_por_modelo += 1
+
+    print(f"   ➤ Versiones imputadas por moda del modelo (último paso): {imputadas_por_modelo}")
+
     return df_val.reset_index(drop=True)
+
 
 def hmv_combustible(df_train, df_to_input):
     """
@@ -493,13 +475,15 @@ def hmv_puertas(df_train, df_to_input):
     Lógica:
     - Requiere al menos 'Modelo' o 'Versión' para imputar.
     - Busca coincidencias exactas con las columnas no nulas disponibles (Marca, Modelo, Versión, Año).
-    - Si no encuentra coincidencias, reduce las columnas (manteniendo Modelo/Versión) hasta encontrar alguna.
+    - Si no encuentra coincidencias, reduce las columnas hasta encontrar alguna.
+    - Si no logra imputar por coincidencia, usa la moda general del modelo como fallback.
     """
-
 
     df = df_to_input.copy()
     referencia = df_train[df_train['Puertas'].notna()].copy()
     imputados = 0
+    fallback_modelo = 0
+    fallback_global = 0
 
     columnas_importancia = ['Marca', 'Modelo', 'Versión', 'Año']
 
@@ -507,9 +491,8 @@ def hmv_puertas(df_train, df_to_input):
         disponibles = [col for col in columnas_importancia if pd.notna(row.get(col))]
 
         if not disponibles or not any(col in disponibles for col in ['Modelo', 'Versión']):
-            #print(f"[{idx + 2}] ❌ No se puede imputar sin Modelo o Versión.")
-            df.drop(index=idx, inplace=True)
-            continue
+            # No se puede imputar por contexto, se pasa al fallback
+            disponibles = []
 
         imputado = False
 
@@ -522,14 +505,10 @@ def hmv_puertas(df_train, df_to_input):
                 for col in subset:
                     filtro = filtro[filtro[col] == row[col]]
 
-                #print(f"[{idx + 2}] 🔍 Buscando con columnas: {', '.join(subset)}")
-                #print(f"   ↪️ Coincidencias encontradas: {len(filtro)}")
-
                 if not filtro.empty:
                     moda = filtro['Puertas'].mode()
                     if not moda.empty:
                         df.at[idx, 'Puertas'] = moda.iloc[0]
-                        #print(f"   ✅ Imputado con valor: {moda.iloc[0]}")
                         imputados += 1
                         imputado = True
                         break
@@ -537,11 +516,30 @@ def hmv_puertas(df_train, df_to_input):
                 break
 
         if not imputado:
-            #print(f"   ❌ No se pudo imputar, se eliminará.")
-            df.drop(index=idx, inplace=True)
+            # Fallback 1: usar moda del modelo si existe
+            modelo = row.get('Modelo')
+            if modelo:
+                posibles = referencia[referencia['Modelo'] == modelo]['Puertas']
+                if not posibles.empty:
+                    moda_modelo = posibles.mode()
+                    if not moda_modelo.empty:
+                        df.at[idx, 'Puertas'] = moda_modelo.iloc[0]
+                        fallback_modelo += 1
+                        continue
 
-    print(f"\n✔️ Imputaciones de puertas realizadas: {imputados}")
-    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]}")
+            # Fallback 2: usar moda global
+            moda_global = referencia['Puertas'].mode()
+            if not moda_global.empty:
+                df.at[idx, 'Puertas'] = moda_global.iloc[0]
+                fallback_global += 1
+
+    total = imputados + fallback_modelo + fallback_global
+    print(f"\n✔️ Imputaciones directas: {imputados}")
+    print(f"📦 Fallback por modelo: {fallback_modelo}")
+    print(f"🌍 Fallback global: {fallback_global}")
+    print(f"✅ Total imputado: {total}")
+    print(f"🗑️ Muestras eliminadas: 0")
+
     return df
 
 def hmv_transmision(df_train, df_to_input):
@@ -552,12 +550,14 @@ def hmv_transmision(df_train, df_to_input):
     - Requiere al menos 'Modelo' o 'Versión' para poder imputar.
     - Busca coincidencias exactas con las columnas no nulas disponibles.
     - Si no encuentra coincidencias, reduce el conjunto de columnas (manteniendo Modelo/Versión) hasta encontrar alguna.
+    - Si aún no puede imputar, usa la moda del modelo. Si tampoco, usa la moda global.
     """
-
 
     df = df_to_input.copy()
     referencia = df_train[df_train['Transmisión'].notna()].copy()
     imputados = 0
+    fallback_modelo = 0
+    fallback_global = 0
 
     columnas_importancia = ['Marca', 'Modelo', 'Versión', 'Año']
 
@@ -565,9 +565,7 @@ def hmv_transmision(df_train, df_to_input):
         disponibles = [col for col in columnas_importancia if pd.notna(row.get(col))]
 
         if not disponibles or not any(col in disponibles for col in ['Modelo', 'Versión']):
-            #print(f"[{idx + 2}] ❌ No se puede imputar sin Modelo o Versión.")
-            df.drop(index=idx, inplace=True)
-            continue
+            disponibles = []
 
         imputado = False
 
@@ -580,14 +578,10 @@ def hmv_transmision(df_train, df_to_input):
                 for col in subset:
                     filtro = filtro[filtro[col] == row[col]]
 
-                #print(f"[{idx + 2}] 🔍 Buscando con columnas: {', '.join(subset)}")
-                #print(f"   ↪️ Coincidencias encontradas: {len(filtro)}")
-
                 if not filtro.empty:
                     moda = filtro['Transmisión'].mode()
                     if not moda.empty:
                         df.at[idx, 'Transmisión'] = moda.iloc[0]
-                        #print(f"   ✅ Imputado con valor: {moda.iloc[0]}")
                         imputados += 1
                         imputado = True
                         break
@@ -595,11 +589,29 @@ def hmv_transmision(df_train, df_to_input):
                 break
 
         if not imputado:
-            #print(f"   ❌ No se pudo imputar, se eliminará.")
-            df.drop(index=idx, inplace=True)
+            modelo = row.get('Modelo')
+            if modelo:
+                posibles = referencia[referencia['Modelo'] == modelo]['Transmisión']
+                if not posibles.empty:
+                    moda_modelo = posibles.mode()
+                    if not moda_modelo.empty:
+                        df.at[idx, 'Transmisión'] = moda_modelo.iloc[0]
+                        fallback_modelo += 1
+                        continue
 
-    print(f"\n✔️ Imputaciones de transmision realizadas: {imputados}")
-    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]}")
+            # Si no hay datos del modelo, usar la moda global
+            moda_global = referencia['Transmisión'].mode()
+            if not moda_global.empty:
+                df.at[idx, 'Transmisión'] = moda_global.iloc[0]
+                fallback_global += 1
+
+    total = imputados + fallback_modelo + fallback_global
+    print(f"\n✔️ Imputaciones por coincidencia directa: {imputados}")
+    print(f"📦 Fallback por modelo: {fallback_modelo}")
+    print(f"🌍 Fallback global: {fallback_global}")
+    print(f"✅ Total imputado: {total}")
+    print(f"🗑️ Muestras eliminadas: 0")
+
     return df
 
 
@@ -611,12 +623,14 @@ def hmv_motor(df_train, df_to_input):
     Lógica:
     - Requiere al menos 'Modelo' o 'Versión' para poder imputar.
     - Busca coincidencias exactas con las columnas no nulas disponibles.
-    - Si no encuentra coincidencias, reduce el conjunto de columnas (manteniendo Modelo/Versión) hasta encontrar alguna.
+    - Si no encuentra coincidencias, usa la moda del modelo o la moda global.
     """
 
     df = df_to_input.copy()
     referencia = df_train[df_train['Motor'].notna()].copy()
     imputados = 0
+    fallback_modelo = 0
+    fallback_global = 0
 
     columnas_importancia = ['Marca', 'Modelo', 'Versión', 'Año']
 
@@ -624,29 +638,23 @@ def hmv_motor(df_train, df_to_input):
         disponibles = [col for col in columnas_importancia if pd.notna(row.get(col))]
 
         if not disponibles or not any(col in disponibles for col in ['Modelo', 'Versión']):
-            #print(f"[{idx + 2}] ❌ No se puede imputar sin Modelo o Versión.")
-            df.drop(index=idx, inplace=True)
-            continue
+            disponibles = []
 
         imputado = False
 
         for k in range(len(disponibles), 0, -1):
             for subset in combinations(disponibles, k):
                 if not any(col in subset for col in ['Modelo', 'Versión']):
-                    continue  # Requiere al menos Modelo o Versión
+                    continue
 
                 filtro = referencia.copy()
                 for col in subset:
                     filtro = filtro[filtro[col] == row[col]]
 
-                #print(f"[{idx + 2}] 🔍 Buscando con columnas: {', '.join(subset)}")
-                #print(f"   ↪️ Coincidencias encontradas: {len(filtro)}")
-
                 if not filtro.empty:
                     moda = filtro['Motor'].mode()
                     if not moda.empty:
                         df.at[idx, 'Motor'] = moda.iloc[0]
-                        #print(f"   ✅ Imputado con valor: {moda.iloc[0]}")
                         imputados += 1
                         imputado = True
                         break
@@ -654,13 +662,30 @@ def hmv_motor(df_train, df_to_input):
                 break
 
         if not imputado:
-            #print(f"   ❌ No se pudo imputar, se eliminará.")
-            df.drop(index=idx, inplace=True)
+            modelo = row.get('Modelo')
+            if modelo:
+                posibles = referencia[referencia['Modelo'] == modelo]['Motor']
+                if not posibles.empty:
+                    moda_modelo = posibles.mode()
+                    if not moda_modelo.empty:
+                        df.at[idx, 'Motor'] = moda_modelo.iloc[0]
+                        fallback_modelo += 1
+                        continue
 
-    print(f"\n✔️ Imputaciones de motor realizadas: {imputados}")
-    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]}")
+            # Último recurso: moda global
+            moda_global = referencia['Motor'].mode()
+            if not moda_global.empty:
+                df.at[idx, 'Motor'] = moda_global.iloc[0]
+                fallback_global += 1
+
+    total = imputados + fallback_modelo + fallback_global
+    print(f"\n✔️ Imputaciones de motor por coincidencia directa: {imputados}")
+    print(f"📦 Fallback por modelo: {fallback_modelo}")
+    print(f"🌍 Fallback global: {fallback_global}")
+    print(f"✅ Total imputado: {total}")
+    print(f"🗑️ Muestras eliminadas: 0")
+
     return df
-
 def hmv_camara(df_train, df_to_input):
     """
     Imputa valores faltantes en la columna 'Con cámara de retroceso' de df_to_input usando df_train como referencia.
@@ -724,12 +749,15 @@ def hmv_hp(df_train, df_to_input):
     - Busca combinaciones exactas con columnas: Motor, Versión, Modelo, Año, Marca (en ese orden de prioridad).
     - Evalúa combinaciones desde 5 hasta 1 columna, priorizando las que incluyan 'Motor'.
     - Requiere al menos uno entre 'Modelo', 'Versión' o 'Motor'.
-    - Imputa la moda si encuentra coincidencias.
+    - Si no encuentra coincidencias, usa la moda del modelo o la moda global.
     """
 
     df = df_to_input.copy()
     referencia = df_train[df_train['HP'].notna()].copy()
+
     imputados = 0
+    fallback_modelo = 0
+    fallback_global = 0
 
     columnas_importancia = ['Motor', 'Versión', 'Modelo', 'Año', 'Marca']
 
@@ -737,9 +765,7 @@ def hmv_hp(df_train, df_to_input):
         disponibles = [col for col in columnas_importancia if pd.notna(row.get(col))]
 
         if not disponibles or not any(col in disponibles for col in ['Modelo', 'Versión', 'Motor']):
-            #print(f"[{idx + 2}] ❌ No se puede imputar sin al menos Modelo, Versión o Motor.")
-            df.drop(index=idx, inplace=True)
-            continue
+            disponibles = []
 
         imputado = False
 
@@ -755,14 +781,10 @@ def hmv_hp(df_train, df_to_input):
                 for col in subset:
                     filtro = filtro[filtro[col] == row[col]]
 
-                #print(f"[{idx + 2}] 🔍 Buscando con columnas: {', '.join(subset)}")
-                #print(f"   ↪️ Coincidencias encontradas: {len(filtro)}")
-
                 if not filtro.empty:
                     moda = filtro['HP'].mode()
                     if not moda.empty:
                         df.at[idx, 'HP'] = moda.iloc[0]
-                        #print(f"   ✅ Imputado con valor: {moda.iloc[0]}")
                         imputados += 1
                         imputado = True
                         break
@@ -770,11 +792,29 @@ def hmv_hp(df_train, df_to_input):
                 break
 
         if not imputado:
-            #print(f"   ❌ No se pudo imputar. Se eliminará la muestra.")
-            df.drop(index=idx, inplace=True)
+            modelo = row.get('Modelo')
+            if modelo:
+                posibles = referencia[referencia['Modelo'] == modelo]['HP']
+                if not posibles.empty:
+                    moda_modelo = posibles.mode()
+                    if not moda_modelo.empty:
+                        df.at[idx, 'HP'] = moda_modelo.iloc[0]
+                        fallback_modelo += 1
+                        continue
 
-    print(f"\n✔️ Imputaciones HP realizadas: {imputados}")
-    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]} ")
+            # Último recurso: moda global
+            moda_global = referencia['HP'].mode()
+            if not moda_global.empty:
+                df.at[idx, 'HP'] = moda_global.iloc[0]
+                fallback_global += 1
+
+    total = imputados + fallback_modelo + fallback_global
+    print(f"\n✔️ Imputaciones HP por coincidencia directa: {imputados}")
+    print(f"📦 Fallback por modelo: {fallback_modelo}")
+    print(f"🌍 Fallback global: {fallback_global}")
+    print(f"✅ Total imputado: {total}")
+    print(f"🗑️ Muestras eliminadas: 0")
+
     return df
 
 
