@@ -506,9 +506,6 @@ def limpiar_km(df):
 def limpiar_puertas(df):
     df = df.copy()
 
-    # Normalizar versión_prev
-    versiones_norm = df['Versión_prev'].apply(lambda x: normalizar(x, eliminar_espacios=False) if pd.notna(x) else '')
-
     # Compilar patrones
     regex_3p = re.compile(r'\b(3p|3 puertas|3puertas|tres puertas|coupe)\b', re.IGNORECASE)
     regex_5p = re.compile(r'\b(5p|5 puertas|5puertas|cinco puertas)\b', re.IGNORECASE)
@@ -517,7 +514,7 @@ def limpiar_puertas(df):
 
     for idx, row in df.iterrows():
         puertas = row['Puertas']
-        version_texto = versiones_norm.iloc[idx]
+        version_texto = normalizar(row['Versión_prev'], eliminar_espacios=False) if pd.notna(row['Versión_prev']) else ''
 
         # Paso 1: invalidar valores no válidos (no 3 ni 5)
         if puertas not in [3, 5]:
