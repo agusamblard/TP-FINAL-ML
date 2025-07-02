@@ -842,22 +842,9 @@ def hmv_traccion(df_train, df_to_input):
 
     return df
 
+from sklearn.ensemble import RandomForestRegressor
+
 def hmv_year(df_train, df_to_input):
-    """
-    Imputa valores faltantes en la columna 'Año' de df_to_input usando regresión lineal
-    entrenada con muestras de df_train que coincidan en Marca, Modelo y Versión.
-
-    Requiere que Kilómetros y Precio estén presentes.
-
-    - Si hay al menos 5 coincidencias con año conocido, se entrena una regresión.
-    - Si no hay suficientes coincidencias o faltan predictores, se mantiene NaN.
-
-    Retorna:
-        pd.DataFrame con los valores imputados en la columna 'Año'.
-    """
-
-
-
     df = df_to_input.copy()
     referencia = df_train[df_train['Año'].notna()].copy()
     imputados = 0
@@ -865,44 +852,40 @@ def hmv_year(df_train, df_to_input):
     for idx, row in df[df['Año'].isna()].iterrows():
         print(f"\n[{idx + 2}] 🔍 Intentando imputar Año para muestra:")
 
-        if pd.isna(row['Kilómetros']) or pd.isna(row['Precio']):
-            print(f"   ⚠️ Faltan datos clave (Kilómetros o Precio). Se omite.")
+        if pd.isna(row['Kilómetros']) or pd.isna(row['Con cámara de retroceso']):
+            print(f"   ⚠️ Faltan datos clave (Kilómetros o tiene_camara). Se omite.")
             continue
-
-        print(f"   Marca: {row['Marca']}, Modelo: {row['Modelo']}, Versión: {row['Versión']}")
-        print(f"   Kilómetros: {row['Kilómetros']}, Precio: {row['Precio']}")
 
         condiciones = (
             (referencia['Marca'] == row['Marca']) &
             (referencia['Modelo'] == row['Modelo']) &
             (referencia['Versión'] == row['Versión']) &
             referencia['Kilómetros'].notna() &
-            referencia['Precio'].notna()
+            referencia['Con cámara de retroceso'].notna()
         )
 
         candidatos = referencia[condiciones]
-
         print(f"   ↪️ Coincidencias para regresión: {len(candidatos)}")
 
         if len(candidatos) < 5:
-            print("   ❌ No hay suficientes datos para entrenar regresión.")
+            print("   ❌ No hay suficientes datos para entrenar modelo.")
             continue
 
-        X = candidatos[['Kilómetros', 'Precio']]
+        X = candidatos[['Kilómetros', 'Con cámara de retroceso']]
         y = candidatos['Año']
 
-        modelo = LinearRegression()
+        modelo = RandomForestRegressor(random_state=42)
         modelo.fit(X, y)
 
-        pred = modelo.predict([[row['Kilómetros'], row['Precio']]])[0]
+        X_pred = [[row['Kilómetros'], row['Con cámara de retroceso']]]
+        pred = modelo.predict(X_pred)[0]
         pred_redondeado = int(round(pred))
 
-        print(f"   ✅ Predicción cruda: {pred:.2f} → Imputado como: {pred_redondeado}")
-
+        print(f"   ✅ Predicción: {pred:.2f} → Imputado como: {pred_redondeado}")
         df.at[idx, 'Año'] = pred_redondeado
         imputados += 1
 
-    print(f"\n✔️ Años imputados por regresión: {imputados}")
+    print(f"\n✔️ Años imputados sin leakage: {imputados}")
     return df
 
 
