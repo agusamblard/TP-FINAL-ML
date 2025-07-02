@@ -1,7 +1,3 @@
-
-#=============================
-# IMPORTS
-#=============================
 from utils.diccionarios import MARCAS_VALIDAS, MODELOS_POR_MARCA, TERMINOS_TRACCION, TERMINOS_TRANSMISION, TIPOS_COMBUSTIBLE
 import pandas as pd
 from difflib import get_close_matches
@@ -377,6 +373,7 @@ def limpiar_motor(df):
             motores_limpios.append(None)
 
     df['Motor'] = motores_limpios
+    df['Motor'] = df['Motor'].astype(float)
 
 
     return df
