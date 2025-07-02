@@ -1011,110 +1011,6 @@ def hmv_km(df_train, df_to_input, min_size=15, max_ext=10):
 
 
 
-def hmv_precio(df_train, df_to_input, min_size=10):
-    """
-    Detecta y reemplaza outliers en la columna 'Precio' en df_to_input,
-    usando como referencia df_train y segmentando por Marca, Modelo, Versión, Año y un rango dinámico de Kilómetros.
-
-    Los outliers son marcados y reemplazados por:
-    - mediana del grupo si hay suficientes datos.
-    - Si no hay suficientes datos, intenta con la mediana de Marca+Modelo+Versión+Año.
-    - Si aún así no hay datos, deja el valor como está.
-    - Si el valor original era NaN, se imputa con la mediana general del dataset.
-
-    Args:
-        df_train: DataFrame de referencia (train set sin data leakage).
-        df_to_input: DataFrame sobre el cual imputar outliers en 'Precio'.
-        min_size: mínimo de coincidencias necesarias para calcular IQR.
-
-    Returns:
-        df_result: copia de df_to_input con 'Precio' imputado/redondeado cuando era outlier o faltante.
-    """
-
-    df_result = df_to_input.copy()
-    mediana_general = df_train['Precio'].median()
-
-    modificados = 0
-    imputados_fallback = 0
-    imputados_generales = 0
-
-    #print("🚨 Detectando e imputando outliers en 'Precio'...\n")
-
-    for idx, row in df_result.iterrows():
-        marca, modelo, version, año, km, precio = row[['Marca', 'Modelo', 'Versión', 'Año', 'Kilómetros', 'Precio']]
-
-        if pd.isna(km) or pd.isna(año):
-            continue  # no se puede evaluar
-
-        # 🧠 Tolerancia de kilómetros según antigüedad
-        antiguedad = 2025 - int(año)
-        if km == 0:
-            km_tol = 0
-        elif antiguedad <= 1:
-            km_tol = 1500
-        elif antiguedad <= 5:
-            km_tol = 5000
-        elif antiguedad <= 10:
-            km_tol = 10000
-        else:
-            km_tol = 20000
-
-        # 🎯 Grupo para detectar outliers
-        grupo = df_train[
-            (df_train['Marca'] == marca) &
-            (df_train['Modelo'] == modelo) &
-            (df_train['Versión'] == version) &
-            (df_train['Año'] == año) &
-            (df_train['Kilómetros'].between(km - km_tol, km + km_tol)) &
-            (df_train['Precio'].notna())
-        ]
-
-        if not pd.isna(precio) and len(grupo) >= min_size:
-            Q1 = grupo['Precio'].quantile(0.25)
-            Q3 = grupo['Precio'].quantile(0.75)
-            IQR = Q3 - Q1
-            lower = Q1 - 1.5 * IQR
-            upper = Q3 + 1.5 * IQR
-
-            if precio < lower or precio > upper:
-                imputado = round(grupo['Precio'].median())
-                #print(f"🔎 Fila {idx}: ${precio:,.0f} fuera de rango [{int(lower)} – {int(upper)}] → imputado con mediana del grupo: ${imputado}")
-                df_result.at[idx, 'Precio'] = imputado
-                modificados += 1
-        else:
-            # 🔁 Fallback con Marca+Modelo+Versión+Año
-            grupo_fallback = df_train[
-                (df_train['Marca'] == marca) &
-                (df_train['Modelo'] == modelo) &
-                (df_train['Versión'] == version) &
-                (df_train['Año'] == año) &
-                (df_train['Precio'].notna())
-            ]
-
-            if pd.isna(precio):
-                if not grupo_fallback.empty:
-                    imputado = round(grupo_fallback['Precio'].median())
-                    #print(f"⚠️ Fila {idx}: Precio faltante → imputado con mediana del grupo fallback: ${imputado}")
-                    df_result.at[idx, 'Precio'] = imputado
-                    imputados_fallback += 1
-                else:
-                    imputado = round(mediana_general)
-                    #print(f"⚠️ Fila {idx}: Precio faltante y sin fallback → imputado con mediana general: ${imputado}")
-                    df_result.at[idx, 'Precio'] = imputado
-                    imputados_generales += 1
-
-    n_total = len(df_result)
-    n_nan = df_result['Precio'].isna().sum()
-
-    print("\n📊 Estadísticas finales precio:")
-    print(f"🔧 Valores modificados por ser outliers: {modificados}")
-    print(f"🪛 Valores imputados por fallback (Marca+Modelo+Versión+Año): {imputados_fallback}")
-    print(f"🧮 Valores imputados con media general del dataset: {imputados_generales}")
-    print(f"❓ Valores que siguen como NaN: {n_nan} / {n_total}")
-
-    #print("\n✅ Proceso completado sin data leakage.\n")
-    return df_result
-
 
 
 def hmv_tipo_de_vendedor(df_train, df_to_input):
@@ -1364,7 +1260,7 @@ def hmv_color(df_train, df_to_input):
 
 
 
-def hmv_dataset(df_train, df_to_input, precio = False):
+def hmv_dataset(df_train, df_to_input):
     """
     Ejecuta en orden todas las funciones hmv_* para imputar datos faltantes
     sobre df_to_input, utilizando df_train como referencia.
@@ -1386,15 +1282,11 @@ def hmv_dataset(df_train, df_to_input, precio = False):
         ("hmv_traccion", hmv_traccion),
         ("hmv_year", hmv_year),
         ("hmv_km", hmv_km),
-        ("hmv_precio", hmv_precio),
         ("hmv_tipo_de_vendedor", hmv_tipo_de_vendedor),  
         ("hmv_color", hmv_color),
     ]
 
     for func_name, func in hmv_funcs:
-        if precio and func_name == "hmv_precio":
-            # Si se especifica que no se debe ejecutar hmv_precio, saltar esta función
-            continue
         count_before = len(df)
         df = func(df_train, df)
         count_after = len(df)
