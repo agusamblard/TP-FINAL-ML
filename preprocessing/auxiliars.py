@@ -1,4 +1,6 @@
 import pandas as pd
+from preprocessing.data_cleanse import limpiar_dataset
+from preprocessing.hmv import hmv_dataset
 
 def df_to_numeric(df_train, df_to_input):
     """
@@ -71,5 +73,12 @@ def df_to_numeric(df_train, df_to_input):
         print("df_to_input - Columnas no numéricas restantes:", cols_no_numericas)
     else:
         print("df_to_input - No quedan columnas no numéricas.")
+
+    return df_to_input
+
+def preprocessing_full(df_to_input,train_complete=pd.read_csv('data/processed/train_processed.csv'), precio=False):
+    df_to_input = limpiar_dataset(df_to_input, precio=precio)
+    df_to_input = hmv_dataset(train_complete,df_to_input)
+    df_to_input = df_to_numeric(train_complete, df_to_input)
 
     return df_to_input

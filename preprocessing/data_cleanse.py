@@ -5,61 +5,7 @@ from collections import defaultdict
 import re
 import numpy as np
 import datetime
-
-#=============================
-# FUNCIONES DE LIMPIEZA PRE-SPLIT
-#=============================
-
-def quitar_tildes(texto):
-
-    """
-    Elimina tildes y caracteres especiales de un texto.
-    """
-    if pd.isna(texto):
-        return ''
-    texto = str(texto).strip().lower()
-
-    # Reemplazo manual de tildes y otros caracteres especiales
-    reemplazos = {
-        'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
-        'ä': 'a', 'ë': 'e', 'ï': 'i', 'ö': 'o', 'ü': 'u',
-    }
-    texto = ''.join(reemplazos.get(c, c) for c in texto)
-
-    return texto
-
-
-
-def normalizar(texto, eliminar_espacios=True):
-    if pd.isna(texto):
-        return ''
-    texto = str(texto).strip().lower()
-
-    # Reemplazo de tildes y diéresis
-    reemplazos = {
-        'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
-        'ä': 'a', 'ë': 'e', 'ï': 'i', 'ö': 'o', 'ü': 'u',
-        'ñ': 'n'
-    }
-    texto = ''.join(reemplazos.get(c, c) for c in texto)
-
-    # Símbolos raros a eliminar
-    simbolos_a_eliminar = ['-', '.', ',', '"', "'", '“', '”', '’', '`',
-                           '(', ')', '[', ']', '{', '}', ':', ';', '!', '?', '#', '@', '°', 'º', 'ª', '/', '\\', '|']
-
-    if eliminar_espacios:
-        simbolos_a_eliminar.append(' ')
-
-    for simbolo in simbolos_a_eliminar:
-        texto = texto.replace(simbolo, '')
-
-    # Eliminar cualquier carácter no alfanumérico restante
-    if eliminar_espacios:
-        texto = re.sub(r'[^a-z0-9]', '', texto)
-    else:
-        texto = re.sub(r'[^a-z0-9 ]', '', texto)
-
-    return texto
+from preprocessing.utils import normalizar, quitar_tildes
 
 
 
@@ -112,7 +58,7 @@ def limpiar_marcas(df):
 def limpiar_modelo(df):
 
     df = df.copy()
-    df['modelo_prev'] = df['Modelo']  # Guardar versión original
+    df['modelo_prev'] = df['Modelo']
 
     # Utilizar el diccionario MODELOS_POR_MARCA
     marcas_por_modelo = defaultdict(list)
@@ -259,9 +205,9 @@ def limpiar_transmision(df):
     Si no hay información clara o hay conflicto, marca como NaN.
     """
     df = df.copy()
-    df['transmision_prev'] = df['Transmisión']  # Guardar original
+    df['transmision_prev'] = df['Transmisión'] 
 
-    # Construir terminos_transmision y mapa_normalizado desde TERMINOS_TRANSMISION
+
     terminos_transmision = sum(TERMINOS_TRANSMISION.values(), [])
     mapa_normalizado = {term: tipo for tipo, lista in TERMINOS_TRANSMISION.items() for term in lista}
 
@@ -284,7 +230,7 @@ def limpiar_transmision(df):
         if len(tipos_detectados) == 1:
             return list(tipos_detectados)[0]
 
-        # No se puede determinar un único tipo de transmisión
+
         return np.nan
 
     df['Transmisión'] = df.apply(detectar_transmision, axis=1)
@@ -297,9 +243,8 @@ def limpiar_version(df):
     Limpia la columna 'Versión', elimina los términos irrelevantes y deja solo el nombre distintivo.
     """
     df = df.copy()
-    df['Versión_prev'] = df['Versión']  # guardar versión original
+    df['Versión_prev'] = df['Versión']  
 
-    # Términos a remover (usar las variables globales)
     terminos_traccion = sum(TERMINOS_TRACCION.values(), [])
     terminos_transmision = sum(TERMINOS_TRANSMISION.values(), [])
     terminos_combustible = sum(TIPOS_COMBUSTIBLE.values(), [])
@@ -348,7 +293,7 @@ def limpiar_motor(df):
     """
     df = df.copy()
 
-    #guardar los valores de motor originales
+    
     df['Motor_prev'] = df['Motor']
     motores_limpios = []
 
@@ -394,7 +339,7 @@ def limpiar_combustible(df):
     df = df.copy()
     df['Tipo original'] = df['Tipo de combustible']
 
-    # --- Paso 0: Normalizar valores atípicos ---
+  
     for idx, fila in df.iterrows():
         tipo_actual = str(fila['Tipo de combustible']).lower()
         tipo_actual_sin_tildes = quitar_tildes(tipo_actual)
@@ -411,7 +356,7 @@ def limpiar_combustible(df):
                 df.at[idx, 'Tipo de combustible'] = tipo_prioritario
                 break
 
-    # --- Paso 1: Detectar tipo solo desde 'Versión_prev' y 'Motor_prev' ---
+  
     def detectar_tipo(fila):
         texto = ''
         if 'Versión_prev' in fila and pd.notna(fila['Versión_prev']):
@@ -440,7 +385,7 @@ def limpiar_precio(df, valor_dolar=1250):
     """
     df = df.copy()
 
-    # Aplicar la conversión solo cuando la moneda es '$' y el precio no es nulo
+   
     mask = (df['Moneda'] == '$') & df['Precio'].notna()
     df.loc[mask, 'Precio'] = df.loc[mask, 'Precio'].astype(float) / valor_dolar
     df.loc[mask, 'Precio'] = df.loc[mask, 'Precio'].round().astype(int)
@@ -454,7 +399,7 @@ def limpiar_año(df):
     df = df.copy()
     año_actual = datetime.datetime.now().year
 
-    # Convertir a numérico, forzar errores como NaN
+ 
     df['Año'] = pd.to_numeric(df['Año'], errors='coerce')
 
     # Reemplazar años inválidos por NaN
@@ -476,19 +421,19 @@ def limpiar_km(df):
             return np.nan
 
         texto = str(val).lower().replace('km', '').strip()
-        texto = texto.replace(',', '.')  # primero: tratar comas como puntos
+        texto = texto.replace(',', '.') 
 
-        # Caso: más de un punto → probablemente separadores de miles: eliminar todos
+
         if texto.count('.') > 1:
             texto = texto.replace('.', '')
         elif texto.count('.') == 1:
             punto_pos = texto.index('.')
             digitos_despues = len(texto) - punto_pos - 1
-            # Si hay 3 dígitos después del punto y el resto son números → separador de miles
+       
             if digitos_despues == 3 and texto.replace('.', '').isdigit():
                 texto = texto.replace('.', '')
 
-        # Eliminar cualquier otro caracter que no sea dígito o punto
+     
         texto = re.sub(r'[^\d\.]', '', texto)
 
         try:
@@ -516,7 +461,7 @@ def limpiar_puertas(df):
         puertas = row['Puertas']
         version_texto = normalizar(row['Versión_prev'], eliminar_espacios=False) if pd.notna(row['Versión_prev']) else ''
 
-        # Paso 1: invalidar valores no válidos (no 3 ni 5)
+        # Paso 1: invalidar valores no válidos
         if puertas not in [3, 5]:
             puertas = np.nan
 
@@ -603,7 +548,7 @@ def limpiar_dataset(df, precio=True):
     ]
 
     if precio:
-        limpieza_funcs.insert(10, ("limpiar_precio", limpiar_precio))  # antes de limpiar_año
+        limpieza_funcs.insert(10, ("limpiar_precio", limpiar_precio))  
 
     for func_name, func in limpieza_funcs:
         count_before = len(df)
