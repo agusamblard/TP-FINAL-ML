@@ -6,6 +6,7 @@ citroen,c4cactus,2019.0,vti 115 feel pk,gris,Nafta,5.0,manual,1.6,1,95000.0,1432
 bmw,x1,2018.0,sdrive 20i sportline,gris,Nafta,5.0,manual,2.0,1,60000.0,35998.0,concesionaria,231.0,4x4
 audi,q3,2013.0,tfsi,negro,Nafta,5.0,automatica,2.0,0,110000.0,18500.0,concesionaria,211.0,4x4
 honda,hrv,2016.0,exl,blanco,Nafta,5.0,automatica,1.8,1,125000.0,20500.0,particular,121.0,4x2
+citroen,c5aircross,2024.0,thp eat6 feel pack,gris,Nafta,5.0,automatica,1.6,0,0.0,44000.0,concesionaria,115.0,4x2
 bmw,x4,2025.0,35i m package,negro,Nafta,5.0,automatica,3.0,1,0.0,106900.0,concesionaria,306.0,4x4
 chery,tiggo,2016.0,f2 confort,blanco,Nafta,5.0,manual,1.6,0,142000.0,11500.0,concesionaria,125.0,4x2
 peugeot,2008,2025.0,active,azul,Nafta,5.0,manual,1.0,1,0.0,25600.0,concesionaria,120.0,4x2
@@ -25,6 +26,7 @@ jeep,renegade,2025.0,series,gris,Nafta,5.0,automatica,1.3,1,0.0,29520.0,tienda,1
 peugeot,2008,2025.0,active,blanco,Nafta,5.0,manual,1.0,1,0.0,12800.0,tienda,120.0,4x2
 suzuki,vitara,1995.0,jlx sidekick,blanco,Nafta,3.0,manual,1.6,0,120000.0,17500.0,concesionaria,110.0,4x4
 audi,sq5,2018.0,tfsi,azul,Nafta,5.0,automatica,3.0,0,52000.0,70000.0,particular,354.0,4x4
+citroen,c5aircross,2020.0,thp eat6 feel pack,azul,Nafta,5.0,automatica,1.6,1,67000.0,27120.0,concesionaria,120.0,4x2
 chevrolet,tracker,2016.0,ltz,rojo,Nafta,5.0,manual,1.8,1,133000.0,12400.0,particular,140.0,4x2
 peugeot,2008,2020.0,feline,blanco,Nafta,5.0,manual,1.6,1,72000.0,15920.0,tienda,120.0,4x4
 jeep,compass,2019.0,longitude plus,blanco,Nafta,5.0,automatica,2.4,1,96000.0,26000.0,tienda,170.0,4x4
@@ -41,6 +43,7 @@ volkswagen,taos,2025.0,250 tsi highline,gris,Nafta,5.0,automatica,1.4,1,0.0,3576
 toyota,rav4,2012.0,,negro,Nafta,5.0,automatica,2.4,0,140000.0,18000.0,particular,185.0,4x4
 citroen,c4cactus,2021.0,vti 115 feel pk,gris,Nafta,5.0,automatica,1.6,1,101000.0,18000.0,tienda,165.0,4x2
 audi,q5,2017.0,tfsi,negro,Nafta,5.0,automatica,3.0,1,130000.0,30000.0,concesionaria,272.0,4x4
+citroen,c5aircross,2020.0,thp eat6 feel pack,gris,Nafta,5.0,automatica,1.6,1,81000.0,28390.0,concesionaria,120.0,4x2
 peugeot,3008,2018.0,gtline thp,azul,Diésel,5.0,automatica,2.0,1,107000.0,29500.0,concesionaria,143.0,4x4
 jeep,compass,2025.0,t270 series,negro,Nafta,5.0,automatica,1.3,1,0.0,32000.0,concesionaria,175.0,4x2
 toyota,hiluxsw4,2021.0,srx,gris,Diésel,5.0,automatica,2.8,0,107000.0,37600.0,particular,177.0,4x4
@@ -62,6 +65,7 @@ chevrolet,tracker,2015.0,ltz,gris,Nafta,5.0,manual,1.8,1,105000.0,11600.0,conces
 nissan,kicks,2023.0,advance,blanco,Nafta,5.0,automatica,1.6,1,33000.0,28000.0,particular,120.0,4x2
 jeep,compass,2025.0,t270 series,gris,Nafta,5.0,automatica,1.3,1,1000.0,42100.0,particular,175.0,4x2
 chevrolet,tracker,2025.0,turbo,blanco,Nafta,5.0,automatica,1.2,0,0.0,11999.0,tienda,132.0,4x4
+kia,sorento,2009.0,ex,negro,Diésel,5.0,manual,2.5,0,175000.0,12800.0,particular,170.0,4x4
 mitsubishi,montero,1993.0,metal top v6,rojo,Nafta,5.0,automatica,3.0,0,315000.0,6000.0,particular,190.0,4x2
 jeep,compass,2025.0,t270 series,blanco,Nafta,5.0,automatica,1.3,1,0.0,35992.0,tienda,175.0,4x2
 jeep,grandcherokee,2007.0,limited,azul,Diésel,5.0,manual,3.0,0,182000.0,13900.0,concesionaria,286.0,4x4
@@ -118,16 +122,18 @@ ford,ecosport,2013.0,freestyle,blanco,Nafta,5.0,manual,1.6,0,126000.0,12000.0,pa
 citroen,c4cactus,2018.0,thp 165 shine,blanco,Nafta,5.0,automatica,1.2,0,105000.0,14000.0,concesionaria,165.0,4x2
 audi,q5,2013.0,tfsi,blanco,Nafta,5.0,automatica,2.0,0,89000.0,23500.0,concesionaria,252.0,4x4
 nissan,kicks,2025.0,advance,gris,Nafta,5.0,automatica,1.6,0,0.0,25200.0,tienda,120.0,4x2
-toyota,hiluxsw4,2002.0,,gris,Diésel,5.0,manual,3.0,0,470000.0,18000.0,concesionaria,171.0,4x4
+toyota,hiluxsw4,2002.0,,gris,Diésel,5.0,manual,3.0,0,230432.0,18000.0,concesionaria,171.0,4x4
 chevrolet,tracker,2025.0,ltz,blanco,Nafta,5.0,automatica,1.2,1,0.0,24640.0,tienda,132.0,4x4
 jeep,compass,2024.0,t270 series,gris,Nafta,5.0,automatica,1.3,1,0.0,36400.0,tienda,175.0,4x2
 toyota,corollacross,2024.0,xli,azul,Nafta,5.0,automatica,2.0,1,0.0,33600.0,concesionaria,170.0,4x2
 renault,dusteroroch,2021.0,dynamique,gris,Nafta,5.0,manual,2.0,0,68000.0,20000.0,concesionaria,170.0,4x2
 jeep,renegade,2020.0,longitude,negro,Híbrido,5.0,automatica,1.8,0,57828.0,20960.0,tienda,130.0,4x2
+ford,broncosport,2023.0,wildtrak at8,gris,Nafta,5.0,automatica,2.0,1,17300.0,44000.0,concesionaria,170.0,4x4
 hyundai,tucson,2019.0,style,negro,Nafta,5.0,automatica,2.0,1,78000.0,20000.0,particular,154.0,4x2
-nissan,xterra,2005.0,se,gris,Diésel,5.0,manual,2.8,0,280000.0,13000.0,particular,177.0,4x4
+nissan,xterra,2005.0,se,gris,Diésel,5.0,manual,2.8,0,221400.0,13000.0,particular,177.0,4x4
 audi,q8,2025.0,tfsi,gris,Nafta,5.0,automatica,3.0,1,0.0,168800.0,tienda,340.0,4x4
 audi,q5sportback,2025.0,45tfsi s sline,gris,Nafta,5.0,automatica,2.0,1,0.0,89000.0,tienda,245.0,4x4
+bmw,x6,2016.0,35i sportive,gris,Nafta,5.0,automatica,3.0,1,62000.0,79900.0,particular,306.0,4x4
 volkswagen,tcross,2020.0,comfortline,negro,Nafta,5.0,manual,1.6,1,76000.0,18500.0,particular,110.0,4x2
 toyota,hiluxsw4,2025.0,srx,gris,Diésel,5.0,automatica,2.8,1,0.0,55200.0,concesionaria,204.0,4x4
 hyundai,tucson,2013.0,gl,gris,Nafta,5.0,automatica,2.0,0,120000.0,15000.0,concesionaria,154.0,4x4
@@ -210,6 +216,7 @@ jeep,renegade,2020.0,sport,negro,Nafta,5.0,manual,1.8,1,60000.0,19600.0,tienda,1
 chery,tiggo,2015.0,f2 confort,blanco,Nafta,5.0,automatica,2.0,0,170000.0,14000.0,particular,138.0,4x2
 citroen,c4cactus,2019.0,vti 115 feel pk,plateado,Nafta,5.0,manual,1.6,1,83000.0,15200.0,concesionaria,165.0,4x2
 volkswagen,nivus,2021.0,tsi comfortline,blanco,Nafta,5.0,automatica,1.0,1,60000.0,19500.0,particular,101.0,4x2
+ford,broncosport,2021.0,wildtrak at8,gris,Nafta,5.0,automatica,2.0,0,110000.0,34400.0,concesionaria,170.0,4x4
 jeep,commander,2025.0,t270 limited,gris,Nafta,5.0,automatica,1.3,1,0.0,38400.0,tienda,175.0,4x2
 chevrolet,tracker,2025.0,turbo,gris,Nafta,5.0,automatica,1.2,0,0.0,21360.0,tienda,132.0,4x4
 nissan,xterra,2008.0,se,negro,Diésel,5.0,manual,2.8,0,260000.0,9000.0,concesionaria,177.0,4x4
@@ -219,7 +226,7 @@ nissan,kicks,2025.0,advance,negro,Nafta,5.0,automatica,1.6,0,0.0,28860.0,concesi
 ford,kuga,2017.0,titanium,gris,Nafta,5.0,automatica,2.0,1,71700.0,20800.0,tienda,143.0,4x4
 mitsubishi,outlander,2025.0,gls full,rojo,Nafta,5.0,automatica,2.5,1,0.0,52500.0,concesionaria,184.0,4x4
 audi,q5,2010.0,tfsi,negro,Nafta,5.0,automatica,2.0,1,148000.0,19800.0,particular,211.0,4x4
-kia,soul,2013.0,pop 4at,blanco,Nafta,5.0,automatica,1.6,0,140000.0,12320.0,concesionaria,132.0,4x2
+kia,soul,2013.0,pop 4at,blanco,Nafta,5.0,automatica,1.6,0,85400.0,12320.0,concesionaria,132.0,4x2
 toyota,sw4,2024.0,srx,plateado,Diésel,5.0,automatica,2.8,1,0.0,53520.0,concesionaria,204.0,4x4
 ford,territory,2024.0,titanium,azul,Nafta,5.0,automatica,1.8,1,0.0,35200.0,particular,105.0,4x4
 peugeot,2008,2025.0,gt,blanco,Nafta,5.0,automatica,1.0,1,0.0,22112.0,tienda,120.0,4x2
@@ -229,6 +236,7 @@ audi,q3,2014.0,tfsi,blanco,Nafta,5.0,manual,2.0,0,98000.0,20000.0,concesionaria,
 ford,ecosport,2018.0,titanium,azul,Nafta,5.0,manual,2.0,1,75000.0,19000.0,particular,170.0,4x2
 jeep,renegade,2021.0,sport,negro,Nafta,5.0,manual,1.8,1,60000.0,21800.0,concesionaria,130.0,4x2
 volkswagen,nivus,2021.0,tsi comfortline,gris,Nafta,5.0,automatica,1.0,1,83000.0,26900.0,particular,101.0,4x2
+porsche,cayenne,2007.0,958,negro,Nafta,5.0,automatica,4.8,0,194913.0,29000.0,concesionaria,400.0,4x2
 ford,ecosport,2019.0,se,marron,Nafta,5.0,manual,2.0,1,62000.0,18800.0,concesionaria,170.0,4x2
 volkswagen,taos,2022.0,250 tsi highline,beige,Nafta,5.0,automatica,1.4,1,15235.0,31920.0,concesionaria,150.0,4x2
 hyundai,creta,2023.0,style,gris,Nafta,5.0,automatica,1.6,1,22000.0,11900.0,concesionaria,110.0,4x2
@@ -260,6 +268,7 @@ jeep,grandcherokee,1999.0,laredo,verde,Nafta,5.0,manual,4.0,0,231000.0,11000.0,p
 chevrolet,tracker,2025.0,rs,blanco,Nafta,5.0,automatica,1.2,1,0.0,27480.0,tienda,132.0,4x4
 jeep,compass,2007.0,sport,gris,Nafta,5.0,manual,2.4,0,194913.0,10500.0,particular,170.0,4x2
 volkswagen,nivus,2022.0,tsi comfortline,blanco,Nafta,5.0,manual,1.0,1,32000.0,23800.0,concesionaria,101.0,4x2
+bmw,x3,2010.0,35i executive,gris,Nafta,5.0,manual,2.5,0,185000.0,12400.0,concesionaria,306.0,4x4
 volkswagen,taos,2022.0,250 tsi highline,azul,Nafta,5.0,automatica,1.4,1,41000.0,30800.0,concesionaria,150.0,4x2
 jeep,compass,2021.0,longitude plus,gris,Nafta,5.0,manual,2.4,0,45000.0,25520.0,tienda,170.0,4x4
 toyota,landcruiser,2013.0,prado vx,gris,Nafta,5.0,automatica,4.0,1,140000.0,34000.0,particular,265.0,4x2
@@ -285,6 +294,7 @@ ford,ecosport,2011.0,my10 xls,negro,Nafta,5.0,manual,1.6,1,121000.0,9000.0,parti
 dodge,journey,2011.0,sxt techo dvd nav,dorado,Nafta,5.0,automatica,2.4,0,145000.0,12850.0,concesionaria,170.0,4x4
 mercedesbenz,claseglc,2018.0,glc250 300 atomatico,negro,Nafta,5.0,automatica,2.0,1,88000.0,69500.0,concesionaria,258.0,4x4
 mercedesbenz,claseml,2011.0,ml350 facelift,negro,Nafta,5.0,automatica,3.5,0,178400.0,21900.0,concesionaria,260.0,4x4
+toyota,hiluxsw4,1995.0,srx,rojo,Diésel,5.0,manual,2.7,0,215000.0,14384.0,concesionaria,171.0,4x4
 chevrolet,grandvitara,2002.0,,gris,Nafta,5.0,manual,2.0,0,273000.0,9000.0,particular,252.0,4x4
 ford,ecosport,2006.0,my10 xls,negro,Diésel,5.0,manual,1.4,0,227000.0,7600.0,concesionaria,123.0,4x2
 bmw,x1,2016.0,25i xline,blanco,Nafta,5.0,manual,2.0,1,130000.0,30900.0,particular,231.0,4x4
@@ -297,6 +307,8 @@ chevrolet,grandblazer,2000.0,dlx,negro,Diésel,5.0,manual,4.2,0,168000.0,14500.0
 peugeot,2008,2018.0,thp sport,blanco,Nafta,5.0,manual,1.6,1,73000.0,17200.0,particular,110.0,4x2
 bmw,x1,2017.0,sdrive 20i sportline,plateado,Nafta,5.0,manual,2.0,1,80000.0,30000.0,particular,192.0,4x4
 jeep,renegade,2025.0,series,blanco,Nafta,5.0,automatica,1.3,1,0.0,31192.0,concesionaria,175.0,4x2
+bmw,x6,2014.0,35i sportive,azul,Nafta,5.0,automatica,3.0,1,109000.0,48000.0,particular,306.0,4x4
+suzuki,vitara,1998.0,jlx sidekick,azul,Diésel,5.0,manual,2.0,0,106000.0,12000.0,particular,138.0,4x4
 ford,ecosport,2013.0,titanium,negro,Nafta,5.0,manual,2.0,0,111111.0,13000.0,concesionaria,143.0,4x2
 jeep,renegade,2019.0,longitude,azul,Nafta,5.0,automatica,1.8,1,108365.0,20193.0,tienda,130.0,4x2
 nissan,kicks,2019.0,advance,plateado,Nafta,5.0,automatica,1.6,1,99903.0,17600.0,tienda,120.0,4x2
@@ -359,6 +371,7 @@ peugeot,2008,2025.0,gt,blanco,Nafta,5.0,automatica,1.0,1,0.0,32720.0,tienda,120.
 chevrolet,tracker,2025.0,ltz,gris,Nafta,5.0,automatica,1.2,1,0.0,24793.0,tienda,132.0,4x4
 audi,q3,2024.0,tfsi,gris,Nafta,5.0,automatica,2.0,1,0.0,74400.0,concesionaria,180.0,4x4
 volkswagen,taos,2022.0,250 tsi highline,gris,Nafta,5.0,automatica,1.4,1,53576.0,30320.0,tienda,150.0,4x2
+renault,duster,2012.0,ph2 privilege,gris,Nafta,5.0,manual,1.6,0,156000.0,10500.0,concesionaria,110.0,4x2
 volkswagen,taos,2025.0,250 tsi highline,gris,Nafta,5.0,automatica,1.4,1,0.0,30000.0,tienda,150.0,4x2
 chevrolet,tracker,2024.0,turbo,rojo,Nafta,5.0,automatica,1.2,1,0.0,25855.0,concesionaria,132.0,4x4
 volkswagen,nivus,2025.0,tsi comfortline,blanco,Nafta,5.0,automatica,1.0,1,0.0,22400.0,concesionaria,101.0,4x2
@@ -430,6 +443,7 @@ renault,duster,2012.0,ph2 privilege,gris,Nafta,5.0,manual,2.0,0,140000.0,11040.0
 jeep,renegade,2025.0,series,blanco,Nafta,5.0,automatica,1.3,1,0.0,31120.0,tienda,175.0,4x2
 peugeot,2008,2019.0,crossway,gris,Nafta,5.0,manual,1.6,0,79000.0,14800.0,concesionaria,110.0,4x2
 volkswagen,taos,2023.0,250 tsi highline,azul,Nafta,5.0,automatica,1.4,1,39000.0,34800.0,particular,150.0,4x2
+volvo,xc40,2023.0,b4 plus,blanco,Híbrido,5.0,automatica,2.0,1,38000.0,59000.0,particular,170.0,4x2
 toyota,hiluxsw4,2011.0,srv cuero,beige,Diésel,5.0,manual,3.0,0,229000.0,28000.0,particular,171.0,4x4
 jeep,compass,2025.0,sport,gris,Nafta,5.0,automatica,1.3,1,0.0,33968.0,tienda,175.0,4x2
 honda,hrv,2015.0,lx,plateado,Nafta,5.0,manual,1.8,1,154000.0,19000.0,particular,185.0,4x2
@@ -442,7 +456,9 @@ chevrolet,tracker,2013.0,ltz,azul,Nafta,5.0,manual,1.8,0,165000.0,11160.0,partic
 peugeot,2008,2025.0,gt,negro,Nafta,5.0,automatica,1.0,1,1000.0,35000.0,particular,120.0,4x2
 jeep,wrangler,2008.0,sport unlimited,negro,Nafta,5.0,manual,3.8,1,200000.0,30000.0,particular,199.0,4x4
 peugeot,2008,2016.0,thp sport,blanco,Nafta,5.0,manual,1.6,1,106389.0,14500.0,concesionaria,110.0,4x2
+ford,broncosport,2025.0,wildtrak at8,blanco,Nafta,5.0,automatica,1.5,1,0.0,39938.0,tienda,150.0,4x4
 audi,q5,2025.0,tfsi,negro,Nafta,5.0,automatica,2.0,0,0.0,78800.0,tienda,252.0,4x4
+ford,broncosport,2022.0,wildtrak at8,verde,Nafta,5.0,automatica,2.0,1,14000.0,42000.0,particular,280.0,4x4
 fiat,pulse,2024.0,impetus t3,gris,Nafta,5.0,automatica,1.0,1,0.0,22640.0,tienda,120.0,4x2
 honda,crv,2012.0,ex,gris,Nafta,5.0,automatica,2.4,1,180000.0,21900.0,particular,185.0,4x4
 volkswagen,nivus,2025.0,tsi comfortline,celeste,Nafta,5.0,automatica,1.0,1,1000.0,29200.0,concesionaria,101.0,4x2
@@ -467,6 +483,7 @@ nissan,kicks,2019.0,advance,rojo,Nafta,5.0,automatica,1.6,1,71000.0,20000.0,conc
 dodge,journey,2010.0,sxt techo dvd nav,negro,Nafta,5.0,automatica,2.4,1,194000.0,12500.0,particular,170.0,4x4
 ford,ecosport,2010.0,my10 xls,gris,Nafta,5.0,manual,1.6,0,175000.0,9600.0,particular,110.0,4x2
 ford,territory,2025.0,titanium,azul,Nafta,5.0,automatica,1.8,0,0.0,39120.0,concesionaria,105.0,4x4
+bmw,x6,2011.0,m,blanco,Nafta,5.0,automatica,4.4,0,167000.0,60000.0,concesionaria,555.0,4x4
 toyota,corollacross,2022.0,xei,gris,Nafta,5.0,automatica,2.0,1,54200.0,29600.0,concesionaria,170.0,4x2
 honda,crv,2016.0,lx,blanco,Nafta,5.0,automatica,2.4,1,114000.0,27000.0,particular,185.0,4x2
 baic,x55,2021.0,ii luxury turbo,blanco,Nafta,5.0,automatica,1.5,1,60000.0,26500.0,particular,185.0,4x2
@@ -509,11 +526,13 @@ fiat,pulse,2024.0,drive gse,negro,Nafta,5.0,automatica,1.3,1,0.0,29500.0,particu
 volkswagen,tcross,2024.0,170 tsi,blanco,Nafta,5.0,automatica,1.0,1,0.0,24800.0,tienda,101.0,4x2
 jeep,compass,2025.0,t270 series,azul,Nafta,5.0,automatica,1.3,1,0.0,17512.0,concesionaria,175.0,4x2
 volkswagen,taos,2021.0,250 tsi highline,azul,Nafta,5.0,automatica,1.4,1,55000.0,29200.0,tienda,150.0,4x2
+mercedesbenz,claseglc,2019.0,glc250 300 atomatico,blanco,Nafta,5.0,automatica,3.0,1,65000.0,99999.0,particular,367.0,4x4
 toyota,corollacross,2024.0,xli,blanco,Nafta,5.0,automatica,2.0,1,8702.0,29889.0,tienda,170.0,4x2
 jeep,renegade,2024.0,longitude,blanco,Nafta,5.0,automatica,1.3,1,0.0,23549.0,tienda,175.0,4x2
 peugeot,2008,2018.0,thp sport,blanco,Nafta,5.0,manual,1.6,1,88000.0,15840.0,tienda,110.0,4x2
 suzuki,vitara,1995.0,jlx sidekick,rojo,Nafta,3.0,manual,1.6,0,190000.0,7000.0,concesionaria,110.0,4x4
 jeep,renegade,2024.0,sport,gris,Nafta,5.0,manual,1.8,1,6000.0,21600.0,concesionaria,130.0,4x2
+citroen,c5aircross,2022.0,thp eat6 feel pack,gris,Nafta,5.0,automatica,1.6,1,70000.0,25900.0,concesionaria,300.0,4x2
 hyundai,santafe,2016.0,seguridad,gris,Nafta,5.0,automatica,2.4,1,90000.0,26500.0,particular,175.0,4x2
 ford,territory,2025.0,titanium,gris,Nafta,5.0,automatica,1.8,0,0.0,37240.0,tienda,105.0,4x4
 ds,ds7crossback,2023.0,hdi rivoli,negro,Diésel,5.0,automatica,1.6,1,39200.0,47500.0,tienda,215.0,4x4
@@ -529,6 +548,7 @@ chevrolet,tracker,2021.0,turbo,gris,Nafta,5.0,automatica,1.2,1,85000.0,22800.0,c
 toyota,hiluxsw4,2019.0,srx,blanco,Diésel,5.0,automatica,2.8,1,120000.0,42000.0,particular,177.0,4x4
 jeep,compass,2024.0,t270 series,gris,Nafta,5.0,automatica,1.3,1,0.0,32000.0,tienda,175.0,4x2
 ford,ecosport,2008.0,my10 xls,negro,Nafta,5.0,manual,1.6,0,219700.0,9500.0,concesionaria,110.0,4x2
+renault,duster,2011.0,ph2 privilege,blanco,Nafta,5.0,manual,1.6,0,148000.0,10000.0,concesionaria,110.0,4x2
 peugeot,2008,2025.0,gt,blanco,Nafta,5.0,automatica,1.0,1,500.0,33200.0,concesionaria,120.0,4x2
 ford,ecosport,2020.0,se,azul,Nafta,5.0,manual,1.5,0,84965.0,14800.0,tienda,123.0,4x2
 kia,sorento,2013.0,ex,marron,Nafta,5.0,automatica,2.4,1,140000.0,19000.0,particular,185.0,4x4
@@ -541,22 +561,27 @@ renault,dusteroroch,2017.0,dynamique,gris,Nafta,5.0,manual,1.6,0,98000.0,15200.0
 fiat,pulse,2025.0,audace,blanco,Nafta,5.0,automatica,1.0,1,0.0,23280.0,tienda,101.0,4x2
 volkswagen,taos,2023.0,250 tsi highline,plateado,Nafta,5.0,automatica,1.4,1,24000.0,27200.0,concesionaria,150.0,4x2
 renault,duster,2015.0,confort plus abs,plateado,Nafta,5.0,manual,1.6,0,99000.0,11600.0,concesionaria,110.0,4x2
+porsche,cayenne,2025.0,ehybrid,gris,Híbrido,5.0,automatica,3.0,1,0.0,258000.0,tienda,353.0,4x2
 lifan,myway,2018.0,16v,rojo,Nafta,5.0,manual,1.8,1,77000.0,13600.0,particular,140.0,4x2
 ford,ecosport,2014.0,se,blanco,Nafta,5.0,manual,1.6,0,150000.0,11360.0,concesionaria,110.0,4x2
 hyundai,tucson,2016.0,gl,gris,Diésel,5.0,automatica,2.0,0,70000.0,32000.0,particular,154.0,4x4
 nissan,pathfinder,1998.0,se,dorado,Nafta,5.0,manual,3.3,0,260000.0,10000.0,particular,304.0,4x4
 jeep,renegade,2025.0,sport,negro,Nafta,5.0,automatica,1.8,1,0.0,23920.0,concesionaria,130.0,4x2
+bmw,x6,2025.0,m,gris,Nafta,5.0,automatica,4.4,1,0.0,268900.0,tienda,625.0,4x4
 chevrolet,tracker,2024.0,turbo,azul,Nafta,5.0,manual,1.2,1,0.0,23000.0,particular,132.0,4x4
 kia,soul,2011.0,classic 5mt,negro,Nafta,5.0,manual,1.6,0,167000.0,9600.0,particular,132.0,4x2
 dodge,journey,2011.0,sxt techo dvd nav,gris,Nafta,5.0,automatica,2.4,0,125000.0,9990.0,concesionaria,170.0,4x4
 volvo,xc60,2019.0,t5 momentum,gris,Nafta,5.0,automatica,2.5,0,110000.0,40900.0,concesionaria,240.0,4x4
 peugeot,2008,2020.0,allure,plateado,Nafta,5.0,manual,1.6,0,69850.0,15920.0,concesionaria,120.0,4x4
+jeep,compass,2013.0,t270 series,gris,Nafta,5.0,automatica,2.4,0,190000.0,12700.0,particular,170.0,4x2
 citroen,c4cactus,2018.0,thp 165 shine,negro,Nafta,5.0,automatica,1.2,1,92000.0,14800.0,particular,165.0,4x2
 chevrolet,tracker,2016.0,ltz,blanco,Nafta,5.0,automatica,1.8,1,92000.0,15500.0,concesionaria,140.0,4x4
 chery,tiggo3,2017.0,confort,blanco,Nafta,5.0,manual,1.6,1,70000.0,15000.0,concesionaria,125.0,4x2
 hyundai,tucson,2016.0,gl,blanco,Híbrido,5.0,automatica,2.0,0,88000.0,19272.0,tienda,154.0,4x4
 renault,duster,2017.0,ph2 privilege,gris,Nafta,5.0,manual,2.0,1,144000.0,16800.0,concesionaria,143.0,4x4
+citroen,c5aircross,2021.0,thp eat6 feel pack,azul,Nafta,5.0,automatica,1.6,1,37000.0,25600.0,particular,120.0,4x2
 citroen,c4cactus,2017.0,thp 165 shine,rojo,Nafta,5.0,automatica,1.2,0,80000.0,17200.0,concesionaria,165.0,4x2
+toyota,hiluxsw4,1998.0,srx,beige,Diésel,5.0,manual,3.0,0,290000.0,18500.0,particular,171.0,4x4
 fiat,pulse,2024.0,impetus t3,blanco,Nafta,5.0,automatica,1.0,1,0.0,20000.0,concesionaria,120.0,4x2
 citroen,c4cactus,2021.0,thp 165 shine,gris,Nafta,5.0,automatica,1.6,1,29000.0,19500.0,particular,165.0,4x2
 chery,tiggo2,2019.0,luxury,azul,Nafta,5.0,manual,1.5,0,45000.0,16000.0,concesionaria,123.0,4x4
@@ -579,7 +604,7 @@ peugeot,2008,2020.0,feline,blanco,Nafta,5.0,manual,1.6,1,67000.0,18799.0,concesi
 volkswagen,nivus,2025.0,tsi comfortline,gris,Nafta,5.0,automatica,1.0,1,0.0,27600.0,concesionaria,101.0,4x2
 toyota,corollacross,2025.0,xli,azul,Nafta,5.0,automatica,2.0,1,1111.0,34000.0,concesionaria,170.0,4x2
 peugeot,2008,2019.0,feline,gris,Nafta,5.0,manual,1.6,1,84000.0,16000.0,particular,110.0,4x4
-ford,ecosport,2009.0,my10 xls,dorado,Nafta,5.0,manual,1.6,0,183500.0,7120.0,concesionaria,110.0,4x2
+ford,ecosport,2009.0,my10 xls,dorado,Nafta,5.0,manual,1.6,0,134000.0,7120.0,concesionaria,110.0,4x2
 honda,hrv,2019.0,exl,plateado,Nafta,5.0,automatica,1.8,1,52200.0,25168.0,concesionaria,121.0,4x2
 peugeot,2008,2018.0,feline,blanco,Nafta,5.0,manual,1.6,1,93000.0,15992.0,concesionaria,110.0,4x4
 dodge,journey,2011.0,rt filasdvdtecho,negro,Nafta,5.0,automatica,2.7,1,165000.0,11200.0,particular,170.0,4x4
@@ -589,6 +614,7 @@ renault,dusteroroch,2018.0,privilege,gris,Nafta,5.0,manual,2.0,0,88000.0,14400.0
 citroen,c4cactus,2021.0,vti 115 feel pk,negro,Nafta,5.0,manual,1.6,1,92500.0,16000.0,particular,165.0,4x2
 audi,q5,2024.0,tfsi,gris,Nafta,5.0,automatica,2.0,1,0.0,85003.0,tienda,252.0,4x4
 peugeot,2008,2017.0,thp sport,blanco,Nafta,5.0,manual,1.6,1,79000.0,14392.0,concesionaria,110.0,4x2
+hyundai,galloper,2001.0,i exd,verde,Diésel,5.0,manual,2.5,0,200000.0,7900.0,concesionaria,170.0,4x4
 ford,ecosport,2014.0,titanium,naranja,Nafta,5.0,manual,1.6,0,101800.0,13440.0,concesionaria,110.0,4x2
 chevrolet,tracker,2025.0,rs,rojo,Nafta,5.0,automatica,1.2,1,0.0,27440.0,tienda,132.0,4x4
 ford,territory,2021.0,titanium,blanco,Nafta,5.0,automatica,1.5,1,75000.0,32000.0,concesionaria,123.0,4x4
@@ -611,6 +637,7 @@ toyota,corollacross,2021.0,xei,blanco,Nafta,5.0,automatica,2.0,1,70000.0,28000.0
 honda,crv,2012.0,ex,gris,Nafta,5.0,automatica,2.4,1,170000.0,21500.0,particular,185.0,4x4
 chevrolet,tracker,2017.0,ltz,gris,Nafta,5.0,manual,1.8,1,119000.0,10400.0,particular,140.0,4x4
 toyota,hiluxsw4,2014.0,srv cuero,azul,Diésel,5.0,automatica,3.0,0,132500.0,28800.0,concesionaria,171.0,4x4
+bmw,x6,2009.0,35i sportive,rojo,Nafta,5.0,automatica,3.0,0,140000.0,26000.0,concesionaria,306.0,4x4
 renault,captur,2019.0,intens,rojo,Nafta,5.0,automatica,1.6,1,117000.0,18400.0,concesionaria,110.0,4x2
 chevrolet,tracker,2016.0,ltz,gris,Nafta,5.0,automatica,1.8,1,122000.0,12400.0,particular,140.0,4x4
 volkswagen,tcross,2025.0,comfortline,negro,Nafta,5.0,automatica,1.6,0,0.0,28960.0,tienda,110.0,4x2
@@ -630,7 +657,7 @@ hyundai,tucson,2009.0,crdi 4at,gris,Diésel,5.0,manual,2.0,0,230000.0,8800.0,par
 volkswagen,nivus,2025.0,tsi comfortline,gris,Nafta,5.0,automatica,1.0,1,0.0,24400.0,concesionaria,101.0,4x2
 renault,koleos,2018.0,,blanco,Nafta,5.0,automatica,2.5,1,72000.0,25200.0,concesionaria,211.0,4x2
 jeep,grandcherokee,1999.0,limited,gris,Nafta,5.0,manual,4.7,1,347000.0,12500.0,concesionaria,286.0,4x4
-toyota,sw4,2012.0,srv cuero i,negro,Diésel,5.0,manual,3.0,1,158000.0,23500.0,concesionaria,171.0,4x4
+toyota,sw4,2012.0,srv cuero i,negro,Diésel,5.0,manual,3.0,1,226000.0,23500.0,concesionaria,171.0,4x4
 chery,tiggo5,2018.0,luxury,marron,Nafta,5.0,automatica,2.0,1,69000.0,16200.0,particular,127.0,4x4
 renault,duster,2016.0,ph2 privilege,blanco,Nafta,5.0,manual,1.6,1,107000.0,14400.0,particular,110.0,4x2
 ford,ecosport,2012.0,my10 xls,gris,Nafta,5.0,manual,1.6,0,148000.0,9000.0,concesionaria,110.0,4x2
@@ -638,11 +665,17 @@ chevrolet,tracker,2018.0,ltz,rojo,Nafta,5.0,manual,1.8,0,67000.0,14800.0,particu
 jeep,grandcherokee,2024.0,limited,negro,Nafta,5.0,automatica,3.6,1,8800.0,115000.0,tienda,293.0,4x4
 citroen,c4cactus,2024.0,vti 115 feel pk,gris,Nafta,5.0,automatica,1.6,1,5000.0,22800.0,concesionaria,165.0,4x2
 peugeot,2008,2025.0,allure,gris,Nafta,5.0,automatica,1.0,1,0.0,26560.0,concesionaria,120.0,4x4
+bmw,x6,2025.0,35i sportive,blanco,Nafta,5.0,automatica,3.0,0,0.0,190900.0,tienda,381.0,4x4
 dodge,journey,2013.0,sxt techo dvd nav,gris,Nafta,5.0,automatica,2.4,0,140000.0,13200.0,particular,170.0,4x4
 porsche,cayenne,2013.0,turbo,gris,Nafta,5.0,automatica,4.8,0,100000.0,69000.0,concesionaria,550.0,4x4
 peugeot,2008,2025.0,allure,blanco,Nafta,5.0,automatica,1.0,1,0.0,27360.0,tienda,120.0,4x4
+bmw,x6,2016.0,m,gris,Nafta,5.0,automatica,4.4,0,150000.0,74900.0,concesionaria,449.0,4x4
 volkswagen,taos,2022.0,250 tsi highline,blanco,Nafta,5.0,automatica,1.4,1,45000.0,30000.0,tienda,150.0,4x2
+jetour,x70,2023.0,,azul,Nafta,5.0,automatica,1.5,0,52138.0,23992.0,tienda,150.0,4x2
 nissan,xtrail,2025.0,exclusive xtronic,blanco,Nafta,5.0,automatica,2.5,1,0.0,50904.0,tienda,184.0,4x4
+mini,coopercountryman,2023.0,classic,rojo,Nafta,5.0,manual,2.5,0,0.0,46900.0,concesionaria,136.0,4x4
+ford,broncosport,2021.0,wildtrak at8,blanco,Nafta,5.0,automatica,1.5,0,52000.0,33500.0,particular,123.0,4x4
+volvo,xc40,2022.0,b4 plus,plateado,Nafta,5.0,automatica,2.0,0,33050.0,45000.0,particular,170.0,4x2
 jeep,compass,2025.0,t270 series,negro,Nafta,5.0,automatica,1.3,1,0.0,33440.0,tienda,175.0,4x2
 volkswagen,tcross,2021.0,trendlinde,gris,Nafta,5.0,manual,1.6,0,49900.0,21200.0,particular,110.0,4x2
 volkswagen,tcross,2024.0,170 tsi,gris,Nafta,5.0,manual,1.0,1,0.0,23840.0,particular,101.0,4x2
@@ -650,6 +683,7 @@ baic,x35,2025.0,luxury,gris,Nafta,5.0,automatica,1.5,1,900.0,9900.0,concesionari
 ford,ecosport,2020.0,se,blanco,Nafta,5.0,manual,1.5,0,99000.0,18400.0,tienda,123.0,4x2
 citroen,c3aircross,2025.0,vti feel pack,blanco,Nafta,5.0,manual,1.6,1,0.0,20320.0,tienda,115.0,4x2
 nissan,kicks,2017.0,advance,azul,Nafta,5.0,automatica,1.6,1,112000.0,18320.0,concesionaria,120.0,4x2
+suzuki,grandvitara,2005.0,xl7 v6,azul,Diésel,5.0,manual,2.7,0,232000.0,9300.0,particular,110.0,4x4
 ford,ecosport,2019.0,se,gris,Nafta,5.0,manual,1.5,1,85000.0,16800.0,concesionaria,123.0,4x2
 nissan,kicks,2025.0,x play,gris,Nafta,5.0,automatica,1.6,1,0.0,26800.0,concesionaria,120.0,4x2
 jeep,renegade,2024.0,series,gris,Nafta,5.0,automatica,1.3,1,3400.0,30400.0,concesionaria,175.0,4x2
@@ -697,20 +731,26 @@ jeep,compass,2021.0,longitude plus,blanco,Nafta,5.0,manual,2.4,0,104524.0,25600.
 suzuki,jimny,2022.0,gl,gris,Nafta,3.0,automatica,1.5,1,17000.0,38500.0,concesionaria,185.0,4x4
 volkswagen,tiguanallspace,2018.0,tsi life 4motion,blanco,Nafta,5.0,automatica,1.4,0,130020.0,23200.0,tienda,150.0,4x4
 ford,ecosport,2014.0,se,negro,Nafta,5.0,manual,1.6,0,118500.0,10960.0,particular,110.0,4x2
+bmw,x6,2011.0,m,blanco,Nafta,5.0,automatica,4.4,0,167000.0,130000.0,concesionaria,555.0,4x4
 jeep,renegade,2020.0,longitude,negro,Nafta,5.0,automatica,1.8,1,65000.0,23900.0,concesionaria,130.0,4x2
+jeep,compass,2020.0,t270 series,gris,Nafta,5.0,automatica,2.4,0,58000.0,34000.0,particular,170.0,4x2
 volkswagen,taos,2025.0,250 tsi highline,plateado,Nafta,5.0,automatica,1.4,1,0.0,30400.0,tienda,150.0,4x2
 bmw,x5,2025.0,50i m package,gris,Híbrido,5.0,manual,3.0,0,0.0,179900.0,concesionaria,306.0,4x4
 chevrolet,tracker,2024.0,ltz,gris,Nafta,5.0,automatica,1.2,0,0.0,24784.0,tienda,132.0,4x4
+renault,duster,2012.0,ph2 privilege,verde,Nafta,5.0,manual,1.6,0,158000.0,8000.0,particular,110.0,4x2
+renault,duster,2012.0,ph2 privilege,azul,Nafta,5.0,manual,1.6,0,150000.0,7840.0,particular,110.0,4x2
 peugeot,2008,2018.0,thp sport,gris,Nafta,5.0,manual,1.6,1,75000.0,14800.0,tienda,110.0,4x2
 chery,tiggo4pro,2023.0,comfort,celeste,Nafta,5.0,manual,1.5,0,14500.0,23000.0,tienda,185.0,4x2
 nissan,kicks,2020.0,special edition,blanco,Nafta,5.0,automatica,1.6,1,63857.0,22360.0,particular,120.0,4x2
 mitsubishi,outlander,2013.0,gls full,negro,Nafta,5.0,automatica,2.0,0,172000.0,16000.0,concesionaria,150.0,4x4
 nissan,kicks,2023.0,sense,blanco,Nafta,5.0,manual,1.6,0,24495.0,22400.0,concesionaria,120.0,4x2
 mercedesbenz,clasegla,2025.0,gla200 urban,negro,Nafta,5.0,automatica,1.3,1,0.0,65000.0,concesionaria,163.0,4x4
+jeep,compass,2019.0,t270 series,gris,Nafta,5.0,automatica,2.4,0,73000.0,27680.0,concesionaria,170.0,4x2
 nissan,kicks,2020.0,exclusive,plateado,Nafta,5.0,automatica,1.6,0,69850.0,21600.0,concesionaria,120.0,4x4
 volkswagen,tiguanallspace,2024.0,tsi life 4motion,plateado,Nafta,5.0,automatica,2.0,1,0.0,44000.0,concesionaria,200.0,4x2
+subaru,outback,2012.0,un 4at sawd,celeste,Nafta,5.0,automatica,2.5,0,164000.0,14000.0,particular,165.0,4x2
 ford,ecosport,2017.0,se,plateado,Nafta,5.0,manual,1.6,0,102077.0,15500.0,tienda,110.0,4x2
-volkswagen,taos,2022.0,250 tsi highline,azul,Nafta,5.0,automatica,1.6,0,45000.0,33900.0,concesionaria,300.0,4x2
+volkswagen,taos,2022.0,250 tsi highline,azul,Nafta,5.0,automatica,1.6,0,13000.0,33900.0,concesionaria,300.0,4x2
 volkswagen,taos,2024.0,250 tsi highline,dorado,Nafta,5.0,automatica,1.4,1,1111.0,41600.0,concesionaria,150.0,4x2
 citroen,c4cactus,2018.0,thp 165 shine,negro,Nafta,5.0,automatica,1.2,1,113000.0,12000.0,particular,165.0,4x2
 honda,hrv,2016.0,exl,blanco,Nafta,5.0,automatica,1.8,1,101000.0,19500.0,particular,121.0,4x2
@@ -740,7 +780,7 @@ chevrolet,tracker,2018.0,premier,rojo,Nafta,5.0,automatica,1.8,1,75000.0,18900.0
 peugeot,2008,2017.0,allure,gris,Nafta,5.0,manual,1.6,0,89000.0,13499.0,concesionaria,110.0,4x4
 renault,duster,2019.0,ph2 privilege,gris,Nafta,5.0,manual,2.0,1,105000.0,15999.0,tienda,143.0,4x2
 chery,tiggo,2013.0,f2 confort,negro,Nafta,5.0,manual,2.0,0,160000.0,10000.0,particular,138.0,4x2
-hyundai,tucson,2013.0,gl,gris,Nafta,5.0,manual,2.0,0,140000.0,16500.0,particular,154.0,4x2
+hyundai,tucson,2013.0,gl,gris,Nafta,5.0,manual,2.0,0,85000.0,16500.0,particular,154.0,4x2
 peugeot,2008,2018.0,feline,blanco,Nafta,5.0,manual,1.6,1,88000.0,17900.0,concesionaria,110.0,4x4
 volkswagen,tcross,2025.0,170 tsi,gris,Nafta,5.0,automatica,1.0,0,0.0,25592.0,tienda,101.0,4x2
 jeep,compass,2025.0,t270 series,gris,Nafta,5.0,automatica,1.3,1,900.0,38800.0,concesionaria,175.0,4x2
@@ -753,7 +793,7 @@ peugeot,2008,2021.0,in concert,blanco,Nafta,5.0,manual,1.6,0,60000.0,18399.0,con
 bmw,x1,2013.0,sdrive 20i sportline,negro,Nafta,5.0,manual,2.0,0,165000.0,17990.0,particular,184.0,4x4
 peugeot,2008,2021.0,allure,gris,Nafta,5.0,manual,1.6,0,45000.0,16400.0,concesionaria,120.0,4x4
 toyota,rav4,2013.0,,blanco,Nafta,5.0,automatica,2.4,0,140000.0,13592.0,particular,170.0,4x2
-toyota,landcruiser,2004.0,prado vx,gris,Diésel,5.0,manual,3.0,0,365000.0,22500.0,particular,171.0,4x2
+toyota,landcruiser,2004.0,prado vx,gris,Diésel,5.0,manual,3.0,0,241750.0,22500.0,particular,171.0,4x2
 jeep,compass,2025.0,t270 series,gris,Nafta,5.0,automatica,1.3,1,0.0,36800.0,tienda,175.0,4x2
 volkswagen,nivus,2025.0,tsi comfortline,gris,Nafta,5.0,manual,1.0,1,0.0,23360.0,concesionaria,101.0,4x2
 nissan,kicks,2025.0,sense,gris,Nafta,5.0,manual,1.6,1,0.0,23120.0,tienda,120.0,4x2
@@ -772,6 +812,7 @@ jeep,grandcherokee,2004.0,limited,gris,Diésel,5.0,automatica,2.7,0,200000.0,108
 peugeot,2008,2018.0,feline,gris,Nafta,5.0,manual,1.6,0,64500.0,14400.0,tienda,110.0,4x4
 jeep,patriot,2011.0,sport,negro,Nafta,5.0,manual,2.4,0,167000.0,8500.0,particular,170.0,4x4
 renault,duster,2025.0,tce turbo iconic xtronic,gris,Nafta,5.0,automatica,1.3,1,0.0,26400.0,tienda,155.0,4x4
+ford,broncosport,2021.0,wildtrak at8,gris,Nafta,5.0,automatica,1.5,0,105000.0,30500.0,particular,123.0,4x4
 hyundai,tucson,2008.0,n,negro,Nafta,5.0,manual,2.0,0,177000.0,6160.0,particular,154.0,4x2
 nissan,kicks,2020.0,exclusive,gris,Nafta,5.0,automatica,1.6,0,100000.0,22000.0,concesionaria,120.0,4x4
 nissan,kicks,2025.0,exclusive,rojo,Nafta,5.0,automatica,1.6,1,0.0,19640.0,tienda,120.0,4x4
@@ -794,6 +835,7 @@ chery,tiggo,2014.0,f2 confort,gris,Nafta,5.0,manual,2.0,0,99000.0,11000.0,conces
 chevrolet,tracker,2024.0,turbo,blanco,Nafta,5.0,automatica,1.2,1,8000.0,26000.0,particular,132.0,4x4
 baic,x25,2020.0,elite,naranja,Nafta,5.0,manual,1.5,1,54000.0,20000.0,particular,123.0,4x2
 renault,duster,2012.0,ph2 privilege,azul,Nafta,5.0,manual,2.0,0,175000.0,12000.0,particular,143.0,4x4
+mercedesbenz,clasegle,2016.0,gle400 sport coupe,gris,Nafta,3.0,automatica,3.0,0,91000.0,78000.0,concesionaria,333.0,4x4
 hyundai,tucson,2017.0,,gris,Nafta,5.0,automatica,2.0,1,128000.0,27500.0,concesionaria,252.0,4x2
 ford,ecosport,2015.0,se,negro,Nafta,5.0,manual,1.6,0,113000.0,12560.0,concesionaria,110.0,4x2
 jeep,compass,2025.0,t270 series,gris,Nafta,5.0,automatica,1.3,1,0.0,31200.0,tienda,175.0,4x2
@@ -846,8 +888,10 @@ chevrolet,trailblazer,2025.0,td high country,gris,Diésel,5.0,automatica,2.8,1,0
 kia,sportage,2025.0,ex,blanco,Nafta,5.0,automatica,1.6,0,0.0,49500.0,concesionaria,132.0,4x2
 ford,ecosport,2019.0,freestyle,azul,Nafta,5.0,manual,1.5,0,44500.0,15600.0,tienda,123.0,4x2
 jeep,renegade,2017.0,sport,rojo,Nafta,5.0,manual,1.8,1,114000.0,16000.0,particular,130.0,4x2
+volkswagen,touareg,2012.0,v6 i elegance,negro,Nafta,5.0,automatica,3.6,0,170000.0,24500.0,particular,240.0,4x2
 renault,captur,2020.0,intens,gris,Nafta,5.0,manual,2.0,1,97400.0,17520.0,concesionaria,143.0,4x2
 volkswagen,tcross,2025.0,170 tsi,negro,Nafta,5.0,automatica,1.0,0,0.0,27920.0,tienda,101.0,4x2
+porsche,cayenne,2011.0,958,negro,Diésel,5.0,automatica,3.0,1,120000.0,49900.0,concesionaria,245.0,4x2
 nissan,kicks,2020.0,exclusive,gris,Nafta,5.0,automatica,1.6,0,45000.0,23000.0,tienda,120.0,4x4
 chevrolet,tracker,2023.0,turbo,azul,Híbrido,5.0,automatica,1.2,0,14607.0,22048.0,tienda,132.0,4x4
 volkswagen,taos,2025.0,250 tsi highline,plateado,Nafta,5.0,automatica,1.4,1,0.0,37200.0,tienda,150.0,4x2
@@ -866,10 +910,13 @@ honda,crv,2009.0,ex,azul,Nafta,5.0,automatica,2.4,0,167000.0,13500.0,concesionar
 audi,q2,2024.0,tfsi sport,plateado,Nafta,5.0,automatica,1.5,1,0.0,55000.0,tienda,150.0,4x4
 toyota,rav4,2013.0,,blanco,Nafta,5.0,automatica,2.0,0,140000.0,17000.0,particular,252.0,4x2
 nissan,kicks,2020.0,advance,gris,Nafta,5.0,automatica,1.6,1,69850.0,20720.0,concesionaria,120.0,4x2
+jeep,wrangler,2025.0,sport unlimited,negro,Nafta,5.0,automatica,2.0,0,0.0,127000.0,concesionaria,272.0,4x4
 ford,ecosport,2020.0,titanium,plateado,Nafta,5.0,manual,1.5,1,55000.0,19960.0,concesionaria,123.0,4x2
 toyota,rav4,2019.0,full,blanco,Híbrido,5.0,automatica,2.5,1,125000.0,46500.0,particular,170.0,4x2
 volkswagen,tcross,2020.0,comfortline,marron,Nafta,5.0,automatica,1.6,1,99000.0,19600.0,tienda,110.0,4x2
 nissan,kicks,2021.0,sense,blanco,Nafta,5.0,manual,1.6,0,42000.0,20800.0,concesionaria,120.0,4x2
+kia,sorento,2009.0,ex,negro,Diésel,5.0,manual,2.5,0,224000.0,10500.0,particular,170.0,4x4
+bmw,x6,2014.0,35i sportive,blanco,Nafta,5.0,automatica,3.0,0,112000.0,45000.0,particular,306.0,4x4
 volkswagen,nivus,2024.0,tsi comfortline,negro,Nafta,5.0,manual,1.0,1,0.0,22528.0,particular,101.0,4x2
 peugeot,2008,2018.0,active,plateado,Nafta,5.0,manual,1.6,0,97700.0,14320.0,concesionaria,110.0,4x2
 honda,crv,2021.0,lx,gris,Nafta,5.0,automatica,2.4,0,60000.0,40000.0,concesionaria,175.0,4x2
@@ -881,7 +928,7 @@ volkswagen,taos,2025.0,250 tsi highline,blanco,Nafta,5.0,automatica,1.4,1,0.0,29
 ford,territory,2024.0,titanium,blanco,Nafta,5.0,automatica,1.8,0,1750.0,36000.0,particular,105.0,4x4
 volkswagen,taos,2023.0,250 tsi highline,gris,Nafta,5.0,automatica,1.4,1,42000.0,32400.0,particular,150.0,4x2
 chevrolet,tracker,2020.0,turbo,gris,Nafta,5.0,automatica,1.2,1,52000.0,20500.0,concesionaria,132.0,4x4
-ford,ecosport,2020.0,titanium,azul,Nafta,5.0,manual,2.0,1,38000.0,20499.0,particular,170.0,4x2
+ford,ecosport,2020.0,titanium,azul,Nafta,5.0,manual,2.0,1,69850.0,20499.0,particular,170.0,4x2
 chevrolet,tracker,2025.0,turbo,blanco,Nafta,5.0,automatica,1.2,0,0.0,22507.0,tienda,132.0,4x4
 nissan,kicks,2021.0,sense,rojo,Nafta,5.0,manual,1.6,1,23300.0,22400.0,tienda,120.0,4x2
 peugeot,2008,2018.0,allure,gris,Nafta,5.0,manual,1.6,0,87000.0,16300.0,concesionaria,110.0,4x4
@@ -899,8 +946,10 @@ ford,ecosport,2017.0,titanium,negro,Nafta,5.0,automatica,2.0,1,82000.0,13992.0,p
 renault,captur,2021.0,intens,grafito,Nafta,5.0,automatica,1.6,1,84200.0,21360.0,tienda,110.0,4x4
 nissan,kicks,2020.0,exclusive,gris,Nafta,5.0,automatica,1.6,1,69850.0,22400.0,concesionaria,120.0,4x4
 chevrolet,tracker,2025.0,ltz,rojo,Nafta,5.0,automatica,1.2,1,0.0,24400.0,tienda,132.0,4x4
+subaru,outback,2010.0,un 4at sawd,gris,Nafta,5.0,manual,2.5,0,170000.0,12500.0,particular,173.0,4x4
 honda,hrv,2019.0,exl,gris,Nafta,5.0,automatica,1.6,0,90000.0,23800.0,concesionaria,121.0,4x2
 toyota,hiluxsw4,2006.0,srv cuero,gris,Diésel,5.0,automatica,3.0,0,227000.0,17500.0,particular,171.0,4x4
+mercedesbenz,clasegle,2017.0,gle400 sport coupe,negro,Nafta,5.0,automatica,3.0,1,119000.0,56500.0,particular,333.0,4x4
 chevrolet,tracker,2025.0,turbo,blanco,Nafta,5.0,automatica,1.2,0,0.0,28240.0,tienda,132.0,4x4
 chevrolet,tracker,2018.0,ltz,plateado,Nafta,5.0,manual,1.8,0,85000.0,15960.0,concesionaria,140.0,4x4
 jeep,grandcherokee,2017.0,limited,gris,Nafta,5.0,automatica,3.6,0,98000.0,45000.0,particular,286.0,4x4
@@ -948,11 +997,13 @@ chevrolet,tracker,2025.0,turbo,plateado,Nafta,5.0,automatica,1.2,0,0.0,23828.0,t
 volkswagen,tiguanallspace,2018.0,tsi life 4motion,blanco,Nafta,5.0,automatica,1.4,0,88000.0,22800.0,particular,150.0,4x4
 hyundai,tucson,2006.0,crdi 4at,dorado,Diésel,5.0,automatica,2.0,0,200000.0,9440.0,concesionaria,154.0,4x4
 audi,q2,2025.0,tfsi sport,gris,Nafta,5.0,automatica,1.5,0,0.0,55400.0,tienda,150.0,4x4
+jeep,compass,2018.0,t270 series,gris,Nafta,5.0,automatica,2.4,0,112500.0,28000.0,concesionaria,170.0,4x4
 jeep,compass,2020.0,sport,blanco,Nafta,5.0,manual,2.4,1,55000.0,24000.0,particular,170.0,4x2
 honda,hrv,2018.0,lx,plateado,Nafta,5.0,automatica,1.8,1,100332.0,22000.0,particular,140.0,4x2
 chery,tiggo3,2016.0,confort,gris,Nafta,5.0,manual,1.6,1,160000.0,11000.0,particular,125.0,4x2
 chevrolet,tracker,2025.0,ltz,gris,Nafta,5.0,automatica,1.2,1,0.0,26640.0,tienda,132.0,4x4
 nissan,kicks,2022.0,x play,blanco,Nafta,5.0,automatica,1.6,0,51000.0,22400.0,concesionaria,120.0,4x2
+ford,broncosport,2023.0,wildtrak at8,gris,Nafta,5.0,automatica,2.0,1,10123.0,44500.0,particular,170.0,4x4
 chery,tiggo3,2017.0,confort,blanco,Nafta,5.0,manual,1.6,1,140000.0,12960.0,concesionaria,125.0,4x2
 peugeot,2008,2017.0,active,gris,Nafta,5.0,manual,1.6,0,142000.0,10160.0,concesionaria,110.0,4x2
 bmw,x1,2017.0,sdrive 20i sportline,gris,Nafta,5.0,automatica,2.0,1,105000.0,26000.0,concesionaria,192.0,4x4
@@ -969,7 +1020,7 @@ jeep,renegade,2025.0,longitude,gris,Nafta,5.0,automatica,1.3,1,0.0,29200.0,conce
 nissan,kicks,2023.0,advance,gris,Nafta,5.0,automatica,1.6,1,20000.0,26000.0,concesionaria,120.0,4x2
 toyota,sw4,2019.0,srx,blanco,Diésel,5.0,manual,2.8,1,66000.0,34400.0,particular,177.0,4x4
 jeep,renegade,2016.0,sport,blanco,Nafta,5.0,manual,1.8,0,119600.0,16500.0,concesionaria,130.0,4x2
-mercedesbenz,claseml,2008.0,ml350 facelift,negro,Nafta,5.0,automatica,5.5,0,200000.0,35000.0,particular,260.0,4x4
+mercedesbenz,claseml,2008.0,ml350 facelift,negro,Nafta,5.0,automatica,5.5,0,200000.0,35000.0,particular,110.0,4x4
 honda,hrv,2015.0,lx,plateado,Nafta,5.0,automatica,1.8,1,125000.0,18500.0,concesionaria,185.0,4x2
 baic,x35,2025.0,luxury,blanco,Nafta,5.0,automatica,1.5,1,0.0,28200.0,tienda,148.0,4x4
 chevrolet,tracker,2024.0,turbo,negro,Nafta,5.0,automatica,1.2,1,1000.0,20800.0,tienda,132.0,4x4
@@ -1004,16 +1055,21 @@ ford,ecosport,2018.0,s,blanco,Nafta,5.0,manual,1.5,0,85000.0,16800.0,concesionar
 bmw,x1,2017.0,25i xline,gris,Nafta,5.0,manual,2.0,1,119000.0,30300.0,particular,231.0,4x4
 volkswagen,taos,2021.0,250 tsi highline,azul,Nafta,5.0,automatica,1.4,1,54000.0,28720.0,concesionaria,150.0,4x2
 toyota,hiluxsw4,2019.0,srx,plateado,Diésel,5.0,automatica,2.8,1,119000.0,41000.0,particular,177.0,4x4
+ford,broncosport,2023.0,wildtrak at8,blanco,Nafta,5.0,automatica,1.5,1,27241.0,34400.0,particular,123.0,4x4
 toyota,corollacross,2025.0,xli,blanco,Nafta,5.0,automatica,2.0,1,0.0,30260.0,tienda,170.0,4x2
 suzuki,vitara,1990.0,jlx sidekick,blanco,Nafta,3.0,manual,1.6,0,150000.0,13500.0,particular,110.0,4x4
+lexus,ux,2020.0,250h luxury,blanco,Híbrido,5.0,automatica,2.5,1,69850.0,40000.0,particular,170.0,4x2
 bmw,x1,2017.0,sdrive 20i sportline,plateado,Nafta,5.0,manual,2.0,1,93000.0,29990.0,tienda,192.0,4x4
 toyota,sw4,2020.0,srx,blanco,Diésel,5.0,automatica,2.8,1,69850.0,65000.0,concesionaria,177.0,4x4
 chevrolet,tracker,2025.0,turbo,rojo,Nafta,5.0,automatica,1.2,0,0.0,21480.0,tienda,132.0,4x4
 chevrolet,tracker,2015.0,ltz,plateado,Nafta,5.0,manual,1.8,1,119000.0,13500.0,concesionaria,140.0,4x2
+bmw,x6,2012.0,35i sportive,blanco,Nafta,5.0,automatica,3.0,0,160000.0,38900.0,particular,306.0,4x4
 peugeot,2008,2018.0,thp sport,blanco,Nafta,5.0,manual,1.6,1,88000.0,14320.0,concesionaria,110.0,4x2
 nissan,kicks,2018.0,advance,plateado,Nafta,5.0,automatica,1.6,1,70000.0,17440.0,concesionaria,120.0,4x2
+alfaromeo,stelvio,2021.0,q4 veloce,blanco,Nafta,5.0,automatica,2.0,1,91389.0,55000.0,concesionaria,280.0,4x2
 chevrolet,tracker,2024.0,turbo,blanco,Nafta,5.0,automatica,1.2,1,0.0,27920.0,tienda,132.0,4x4
 peugeot,2008,2017.0,thp sport,marron,Nafta,5.0,manual,1.6,1,98000.0,13592.0,concesionaria,110.0,4x2
+bmw,x3,2019.0,35i executive,azul,Nafta,5.0,manual,2.0,1,78000.0,133000.0,particular,184.0,4x4
 peugeot,2008,2017.0,thp sport,blanco,Nafta,5.0,manual,1.6,1,103000.0,13200.0,particular,110.0,4x2
 volkswagen,tcross,2025.0,170 tsi,gris,Nafta,5.0,automatica,1.0,0,0.0,24960.0,concesionaria,101.0,4x2
 audi,q3,2012.0,tfsi,gris,Nafta,5.0,manual,2.0,0,120000.0,17800.0,particular,170.0,4x4
@@ -1025,6 +1081,7 @@ renault,captur,2019.0,zen,gris,Nafta,5.0,manual,2.0,1,83000.0,16000.0,concesiona
 honda,crv,2017.0,lx,gris,Nafta,5.0,automatica,2.4,1,126000.0,24500.0,particular,175.0,4x2
 chevrolet,tracker,2016.0,ltz,blanco,Nafta,5.0,automatica,1.8,1,92000.0,15500.0,concesionaria,140.0,4x4
 nissan,kicks,2020.0,advance,blanco,Nafta,5.0,automatica,1.6,1,89000.0,19999.0,concesionaria,120.0,4x2
+ford,broncosport,2025.0,wildtrak at8,blanco,Nafta,5.0,automatica,1.5,1,0.0,39920.0,tienda,150.0,4x4
 chevrolet,tracker,2025.0,ltz,verde,Nafta,5.0,automatica,1.2,1,0.0,23920.0,tienda,132.0,4x4
 jeep,compass,2024.0,t270 series,negro,Nafta,5.0,automatica,1.3,1,0.0,37360.0,concesionaria,175.0,4x2
 volkswagen,tiguanallspace,2025.0,tsi life 4motion,negro,Nafta,5.0,automatica,2.0,1,0.0,47120.0,tienda,200.0,4x4
@@ -1046,6 +1103,7 @@ peugeot,2008,2018.0,allure,blanco,Nafta,5.0,manual,1.6,0,56000.0,14400.0,particu
 honda,crv,2006.0,ex,gris,Nafta,5.0,manual,2.4,0,238780.0,12500.0,particular,185.0,4x4
 nissan,kicks,2025.0,exclusive,gris,Nafta,5.0,automatica,1.6,1,0.0,30308.0,tienda,120.0,4x4
 ford,ecosport,2017.0,titanium,gris,Nafta,5.0,manual,1.5,1,114008.0,14616.0,concesionaria,123.0,4x2
+jeep,compass,2017.0,t270 series,negro,Nafta,5.0,automatica,2.4,0,69000.0,26500.0,concesionaria,170.0,4x2
 citroen,c4cactus,2019.0,vti 115 feel pk,blanco,Nafta,5.0,automatica,1.6,1,78000.0,16000.0,concesionaria,165.0,4x2
 hyundai,creta,2025.0,,azul,Nafta,5.0,automatica,1.5,0,0.0,35920.0,concesionaria,115.0,4x2
 audi,q5,2021.0,tfsi,gris,Nafta,5.0,automatica,2.0,0,68000.0,66900.0,concesionaria,252.0,4x4
@@ -1059,6 +1117,7 @@ chevrolet,tracker,2015.0,ltz,gris,Nafta,5.0,manual,1.8,1,119000.0,12400.0,conces
 chevrolet,tracker,2025.0,turbo,blanco,Nafta,5.0,manual,1.2,0,0.0,20800.0,tienda,132.0,4x4
 citroen,c4cactus,2024.0,thp 165 shine,negro,Nafta,5.0,automatica,1.6,0,0.0,21520.0,particular,165.0,4x2
 toyota,corollacross,2025.0,seg ecvt,rojo,Híbrido,5.0,automatica,1.8,1,501.0,39600.0,concesionaria,140.0,4x2
+audi,q3sportback,2025.0,35tfsi sportback,plateado,Nafta,5.0,automatica,2.0,1,1000.0,85000.0,particular,190.0,4x4
 honda,hrv,2017.0,exl,blanco,Nafta,5.0,automatica,1.8,1,98000.0,18500.0,particular,121.0,4x2
 nissan,kicks,2025.0,exclusive,rojo,Nafta,5.0,automatica,1.6,1,0.0,28400.0,tienda,120.0,4x4
 ford,territory,2022.0,trend gtdi,blanco,Nafta,5.0,automatica,1.5,1,51500.0,29760.0,tienda,123.0,4x2
@@ -1066,11 +1125,14 @@ ford,ecosport,2014.0,se,dorado,Nafta,5.0,manual,1.6,0,147000.0,11184.0,concesion
 jeep,compass,2019.0,longitude plus,gris,Nafta,5.0,automatica,2.4,1,85000.0,25440.0,concesionaria,170.0,4x4
 audi,q2,2021.0,tfsi sport,gris,Nafta,5.0,automatica,1.4,0,60000.0,51500.0,tienda,150.0,4x4
 toyota,corollacross,2024.0,seg ecvt,gris,Híbrido,5.0,automatica,1.8,1,0.0,39500.0,concesionaria,140.0,4x2
+mitsubishi,nativa,2000.0,ls v6,negro,Diésel,5.0,automatica,2.5,0,225000.0,10400.0,particular,306.0,4x4
 nissan,kicks,2025.0,exclusive,azul,Nafta,5.0,automatica,1.6,1,0.0,28440.0,tienda,120.0,4x4
+kia,sportage,2007.0,ex,gris,Diésel,5.0,manual,2.0,0,194913.0,8000.0,particular,154.0,4x4
 ford,ecosport,2017.0,se,plateado,Nafta,5.0,manual,1.5,0,86000.0,14320.0,particular,123.0,4x2
 ford,territory,2025.0,titanium,blanco,Nafta,5.0,automatica,1.8,0,0.0,39680.0,tienda,105.0,4x4
 citroen,c3aircross,2025.0,shine turbo 200 bitono,rojo,Nafta,5.0,automatica,1.0,1,0.0,27040.0,tienda,120.0,4x2
 jeep,grandcherokee,2012.0,limited,negro,Nafta,5.0,automatica,3.6,0,175000.0,30000.0,concesionaria,286.0,4x4
+jaguar,fpace,2020.0,20d prestige,gris,Nafta,5.0,automatica,2.0,0,69850.0,64900.0,concesionaria,143.0,4x2
 nissan,kicks,2021.0,exclusive,gris,Nafta,5.0,automatica,1.6,1,40000.0,24800.0,concesionaria,120.0,4x4
 nissan,xterra,2007.0,se,gris,Diésel,5.0,manual,2.8,0,202000.0,11500.0,concesionaria,177.0,4x4
 jeep,compass,2020.0,sport,gris,Nafta,5.0,automatica,2.4,1,93000.0,23600.0,tienda,170.0,4x2
@@ -1080,14 +1142,14 @@ audi,q3,2013.0,tfsi,blanco,Nafta,5.0,automatica,2.0,1,143000.0,12960.0,concesion
 volkswagen,tiguan,2014.0,premium tsi,gris,Nafta,5.0,automatica,2.0,0,140000.0,19200.0,concesionaria,200.0,4x4
 hyundai,tucson,2013.0,gl,gris,Nafta,5.0,automatica,2.0,1,188000.0,13000.0,particular,154.0,4x2
 volkswagen,nivus,2025.0,tsi comfortline,gris,Nafta,5.0,automatica,1.0,1,0.0,19360.0,tienda,101.0,4x2
-ford,ecosport,2011.0,my10 xls,azul,Nafta,5.0,manual,1.6,0,167000.0,11679.0,concesionaria,110.0,4x2
+ford,ecosport,2011.0,my10 xls,azul,Nafta,5.0,manual,1.6,0,97000.0,11679.0,concesionaria,110.0,4x2
 nissan,kicks,2017.0,advance,blanco,Nafta,5.0,automatica,1.6,1,98000.0,18240.0,concesionaria,120.0,4x2
 peugeot,2008,2018.0,feline,blanco,Nafta,5.0,manual,1.6,1,115000.0,15500.0,particular,110.0,4x4
 volkswagen,tcross,2024.0,170 tsi,blanco,Nafta,5.0,automatica,1.0,1,0.0,31600.0,concesionaria,101.0,4x2
 chevrolet,tracker,2015.0,ltz,blanco,Nafta,5.0,automatica,1.8,1,120000.0,12000.0,particular,140.0,4x4
 ford,ecosport,2018.0,titanium,blanco,Nafta,5.0,manual,1.5,1,92300.0,18000.0,concesionaria,123.0,4x2
 nissan,kicks,2021.0,advance,gris,Nafta,5.0,automatica,1.6,1,50000.0,21520.0,concesionaria,120.0,4x2
-nissan,xterra,2008.0,se,gris,Diésel,5.0,manual,2.8,0,315000.0,11200.0,particular,177.0,4x4
+nissan,xterra,2008.0,se,gris,Diésel,5.0,manual,2.8,0,200000.0,11200.0,particular,177.0,4x4
 nissan,kicks,2025.0,exclusive,rojo,Nafta,5.0,automatica,1.6,1,0.0,28400.0,tienda,120.0,4x4
 toyota,rav4,2019.0,vx,gris,Nafta,5.0,automatica,2.5,0,72000.0,38640.0,particular,170.0,4x2
 bmw,x5,2013.0,35i executive,blanco,Nafta,5.0,manual,3.0,1,108000.0,33200.0,particular,306.0,4x4
@@ -1100,6 +1162,7 @@ volkswagen,tcross,2024.0,trendlinde,blanco,Nafta,5.0,manual,1.6,1,1111.0,22800.0
 toyota,hiluxsw4,2018.0,tdi diamante ii,gris,Diésel,5.0,automatica,2.8,1,130000.0,38000.0,tienda,177.0,4x4
 kia,sorento,2009.0,ex,gris,Diésel,5.0,automatica,2.5,0,165000.0,12400.0,concesionaria,170.0,4x4
 ford,ecosport,2014.0,titanium,blanco,Nafta,5.0,manual,1.6,1,132500.0,12400.0,concesionaria,110.0,4x2
+jeep,compass,2019.0,t270 series,gris,Nafta,5.0,automatica,2.4,0,84500.0,30000.0,tienda,170.0,4x2
 peugeot,2008,2022.0,feline,blanco,Nafta,5.0,manual,1.6,1,37000.0,18000.0,particular,300.0,4x4
 peugeot,2008,2017.0,allure,plateado,Nafta,5.0,manual,1.6,0,120000.0,13520.0,concesionaria,110.0,4x4
 jeep,compass,2024.0,t270 series,blanco,Nafta,5.0,automatica,1.3,1,1000.0,21600.0,particular,175.0,4x2
@@ -1136,11 +1199,15 @@ citroen,c3aircross,2025.0,shine turbo 200 bitono,blanco,Nafta,5.0,automatica,1.0
 fiat,pulse,2023.0,drive gse,blanco,Nafta,5.0,automatica,1.3,1,0.0,21120.0,tienda,155.0,4x2
 dodge,journey,2019.0,sxt techo dvd nav,negro,Nafta,5.0,automatica,2.4,1,55000.0,22800.0,particular,170.0,4x4
 peugeot,2008,2025.0,active,gris,Nafta,5.0,manual,1.0,1,0.0,19056.0,tienda,120.0,4x2
+jeep,compass,2017.0,t270 series,negro,Nafta,5.0,automatica,2.4,0,90110.0,26160.0,concesionaria,170.0,4x2
+jeep,compass,2018.0,t270 series,gris,Nafta,5.0,automatica,2.4,0,93000.0,25600.0,concesionaria,170.0,4x2
 nissan,kicks,2022.0,advance,negro,Nafta,5.0,automatica,1.6,1,51000.0,23920.0,concesionaria,120.0,4x2
 fiat,pulse,2025.0,drive gse,gris,Nafta,5.0,automatica,1.3,0,0.0,27200.0,tienda,155.0,4x2
+bmw,x3,2021.0,35i executive,negro,Nafta,5.0,manual,3.0,0,32000.0,70000.0,particular,306.0,4x4
 toyota,corollacross,2025.0,seg ecvt,gris,Híbrido,5.0,automatica,1.8,1,1111.0,43900.0,particular,140.0,4x2
 jeep,compass,2019.0,sport,negro,Nafta,5.0,manual,2.4,1,102000.0,22500.0,concesionaria,170.0,4x2
 volkswagen,tcross,2025.0,170 tsi,gris,Nafta,5.0,manual,1.0,0,0.0,23600.0,tienda,101.0,4x2
+bmw,x6,2017.0,35i sportive,plateado,Nafta,5.0,automatica,3.0,0,104000.0,59900.0,concesionaria,306.0,4x4
 kia,seltos,2024.0,lx,azul,Nafta,5.0,automatica,1.5,1,0.0,38000.0,concesionaria,185.0,4x2
 jeep,wrangler,2019.0,sport unlimited,negro,Nafta,3.0,automatica,3.6,0,52000.0,62000.0,concesionaria,284.0,4x4
 citroen,c3aircross,2025.0,vti feel pack,gris,Nafta,5.0,manual,1.6,1,0.0,20800.0,tienda,115.0,4x2
@@ -1148,7 +1215,7 @@ ford,ecosport,2019.0,se,blanco,Nafta,5.0,manual,1.5,1,75000.0,15920.0,concesiona
 citroen,c3aircross,2024.0,vti feel pack,negro,Nafta,5.0,manual,1.6,1,0.0,22320.0,tienda,120.0,4x2
 jeep,renegade,2025.0,willys,gris,Nafta,5.0,automatica,1.3,1,0.0,40088.0,tienda,175.0,4x4
 audi,q3,2021.0,tfsi,plateado,Nafta,5.0,manual,1.4,0,86500.0,44500.0,concesionaria,150.0,4x4
-ford,ecosport,2011.0,my10 xls,negro,Nafta,5.0,manual,1.6,0,167000.0,8800.0,concesionaria,110.0,4x2
+ford,ecosport,2011.0,my10 xls,negro,Nafta,5.0,manual,1.6,0,98000.0,8800.0,concesionaria,110.0,4x2
 toyota,rav4,2014.0,vx,rojo,Nafta,5.0,automatica,2.5,1,137062.0,23500.0,particular,170.0,4x4
 jeep,renegade,2018.0,sport,negro,Nafta,5.0,manual,1.8,1,106000.0,16999.0,particular,130.0,4x2
 chevrolet,tracker,2025.0,ltz,azul,Nafta,5.0,automatica,1.2,1,0.0,20000.0,tienda,132.0,4x4
@@ -1156,11 +1223,13 @@ jeep,compass,2018.0,longitude plus,negro,Nafta,5.0,manual,2.4,1,89000.0,22800.0,
 volkswagen,taos,2025.0,250 tsi highline,blanco,Nafta,5.0,automatica,1.4,1,0.0,31992.0,tienda,150.0,4x2
 volkswagen,tiguanallspace,2024.0,tsi life 4motion,blanco,Nafta,5.0,automatica,2.0,1,0.0,46240.0,concesionaria,200.0,4x2
 ford,ecosport,2016.0,s,gris,Nafta,5.0,manual,1.6,0,130000.0,6400.0,concesionaria,110.0,4x2
+bmw,x6,2017.0,m,negro,Nafta,5.0,automatica,4.4,0,98000.0,135000.0,particular,575.0,4x4
 renault,koleos,2024.0,,blanco,Nafta,5.0,automatica,2.5,1,0.0,37090.0,particular,170.0,4x4
 fiat,500x,2018.0,16v pop,blanco,Nafta,5.0,manual,1.4,1,88000.0,15190.0,tienda,150.0,4x2
 jeep,renegade,2017.0,sport,rojo,Nafta,5.0,automatica,1.8,1,96000.0,17500.0,concesionaria,130.0,4x2
 audi,q8,2024.0,tfsi,blanco,Nafta,5.0,automatica,3.0,0,0.0,175800.0,tienda,340.0,4x4
 jeep,compass,2025.0,t270 series,gris,Nafta,5.0,automatica,1.3,1,0.0,36400.0,tienda,175.0,4x2
+landrover,evoque,2012.0,prestige,gris,Nafta,5.0,automatica,2.0,0,160000.0,23500.0,particular,240.0,4x2
 volkswagen,tiguan,2011.0,premium tsi,negro,Nafta,5.0,automatica,2.0,0,170000.0,13900.0,concesionaria,200.0,4x4
 citroen,c4cactus,2019.0,thp 165 shine,rojo,Nafta,5.0,automatica,1.6,1,63000.0,15920.0,concesionaria,165.0,4x2
 toyota,hiluxsw4,2020.0,srx,gris,Diésel,5.0,automatica,2.8,1,60000.0,45000.0,particular,177.0,4x4
@@ -1176,7 +1245,7 @@ citroen,c3aircross,2016.0,vti feel pack,plateado,Nafta,5.0,manual,1.6,0,68000.0,
 peugeot,2008,2022.0,feline,negro,Nafta,5.0,manual,1.6,1,48000.0,20400.0,concesionaria,300.0,4x4
 bmw,x1,2022.0,sdrive 20i sportline,gris,Nafta,5.0,manual,2.0,1,16000.0,40000.0,particular,192.0,4x4
 nissan,kicks,2019.0,advance,negro,Nafta,5.0,automatica,1.6,1,48000.0,18400.0,concesionaria,120.0,4x2
-ford,ecosport,2010.0,my10 xls,plateado,Nafta,5.0,manual,1.6,0,170000.0,8500.0,concesionaria,110.0,4x2
+ford,ecosport,2010.0,my10 xls,plateado,Nafta,5.0,manual,1.6,0,110000.0,8500.0,concesionaria,110.0,4x2
 renault,duster,2024.0,hr16 intens,gris,Híbrido,5.0,manual,1.6,0,0.0,21368.0,tienda,115.0,4x4
 bmw,x1,2012.0,sdrive 20i sportline,azul,Nafta,5.0,manual,2.0,0,158000.0,19000.0,concesionaria,150.0,4x4
 jeep,compass,2025.0,t270 series,blanco,Nafta,5.0,automatica,1.3,1,0.0,37520.0,tienda,175.0,4x2
@@ -1184,9 +1253,11 @@ renault,duster,2013.0,luxe nav,negro,Nafta,5.0,manual,2.0,0,140000.0,12160.0,con
 honda,hrv,2017.0,exl,plateado,Nafta,5.0,automatica,1.8,1,120900.0,19360.0,concesionaria,121.0,4x2
 ford,ecosport,2013.0,titanium,plateado,Nafta,5.0,manual,1.6,0,140000.0,13500.0,particular,110.0,4x2
 volkswagen,tcross,2021.0,comfortline,azul,Nafta,5.0,automatica,1.6,0,52000.0,22000.0,particular,110.0,4x2
+jeep,compass,2017.0,t270 series,gris,Nafta,5.0,automatica,2.4,0,92000.0,26600.0,tienda,170.0,4x2
 ford,ecosport,2017.0,titanium,blanco,Nafta,5.0,manual,2.0,0,98000.0,16800.0,particular,143.0,4x2
 citroen,c4cactus,2020.0,vti 115 feel pk,blanco,Nafta,5.0,automatica,1.6,1,82300.0,18240.0,tienda,165.0,4x2
 fiat,pulse,2025.0,drive gse,negro,Nafta,5.0,automatica,1.3,0,0.0,28000.0,concesionaria,155.0,4x2
+ford,broncosport,2025.0,wildtrak at8,verde,Nafta,5.0,automatica,1.5,0,0.0,37942.0,tienda,150.0,4x4
 jeep,renegade,2025.0,trailhawk at9,gris,Nafta,5.0,automatica,1.3,1,0.0,33272.0,concesionaria,175.0,4x4
 ford,ecosport,2019.0,se,blanco,Nafta,5.0,manual,1.5,1,99738.0,17000.0,concesionaria,123.0,4x2
 ford,ecosport,2019.0,titanium,azul,Nafta,5.0,manual,1.5,1,90000.0,16800.0,particular,123.0,4x2
@@ -1196,8 +1267,10 @@ ford,ecosport,2015.0,se,gris,Nafta,5.0,manual,1.6,0,118000.0,12800.0,concesionar
 fiat,pulse,2023.0,impetus t3,gris,Nafta,5.0,automatica,1.0,0,25000.0,22360.0,particular,120.0,4x2
 ford,ecosport,2019.0,titanium,gris,Nafta,5.0,manual,2.0,1,42000.0,22800.0,concesionaria,170.0,4x2
 volkswagen,nivus,2025.0,tsi comfortline,azul,Nafta,5.0,automatica,1.0,1,0.0,27760.0,tienda,101.0,4x2
+jeep,compass,2011.0,t270 series,negro,Nafta,5.0,automatica,2.4,1,167000.0,11000.0,particular,170.0,4x2
 chery,tiggo,2016.0,f2 confort,gris,Nafta,5.0,manual,1.6,0,110000.0,12000.0,concesionaria,125.0,4x2
 fiat,pulse,2024.0,impetus t3,gris,Nafta,5.0,automatica,1.0,1,0.0,24880.0,concesionaria,120.0,4x2
+alfaromeo,stelvio,2024.0,q4 veloce,negro,Nafta,5.0,automatica,3.0,0,0.0,230000.0,concesionaria,510.0,4x2
 volkswagen,taos,2025.0,250 tsi highline,gris,Nafta,5.0,automatica,1.4,1,500.0,34980.0,concesionaria,150.0,4x2
 renault,duster,2025.0,tce turbo iconic xtronic,gris,Nafta,5.0,automatica,1.3,1,500.0,26800.0,particular,155.0,4x4
 ford,territory,2024.0,titanium,gris,Nafta,5.0,automatica,1.8,0,8500.0,43000.0,particular,105.0,4x4
@@ -1221,21 +1294,24 @@ chevrolet,tracker,2014.0,ltz,blanco,Nafta,5.0,automatica,1.8,0,130000.0,15400.0,
 peugeot,2008,2018.0,feline,plateado,Nafta,5.0,manual,1.6,1,88000.0,17000.0,concesionaria,110.0,4x4
 toyota,corollacross,2025.0,xei,gris,Nafta,5.0,automatica,2.0,1,0.0,38960.0,concesionaria,170.0,4x2
 chery,tiggo4,2022.0,comfort,azul,Nafta,5.0,automatica,2.0,0,50000.0,20800.0,concesionaria,170.0,4x2
-ford,ecosport,2009.0,my10 xls,negro,Nafta,5.0,manual,1.6,0,183500.0,8000.0,concesionaria,110.0,4x2
+ford,ecosport,2009.0,my10 xls,negro,Nafta,5.0,manual,1.6,0,134230.0,8000.0,concesionaria,110.0,4x2
 volkswagen,tcross,2024.0,highline,blanco,Nafta,5.0,automatica,1.6,1,1111.0,25080.0,particular,110.0,4x2
 peugeot,2008,2016.0,thp sport,gris,Nafta,5.0,manual,1.6,1,90000.0,14500.0,concesionaria,110.0,4x2
 peugeot,2008,2025.0,active,gris,Nafta,5.0,manual,1.0,1,0.0,25680.0,tienda,120.0,4x2
 audi,q2,2025.0,tfsi sport,gris,Nafta,5.0,automatica,1.5,0,0.0,49800.0,tienda,150.0,4x4
-hyundai,santafe,2009.0,premium,negro,Diésel,5.0,manual,2.2,0,135000.0,7200.0,concesionaria,190.0,4x4
+hyundai,santafe,2009.0,premium,negro,Diésel,5.0,automatica,2.2,0,135000.0,7200.0,concesionaria,190.0,4x4
 honda,hrv,2025.0,exl,blanco,Nafta,5.0,automatica,1.5,1,0.0,39550.0,concesionaria,121.0,4x2
+audi,q3sportback,2020.0,35tfsi sportback,gris,Nafta,5.0,automatica,1.4,1,95000.0,41500.0,tienda,150.0,4x4
+lexus,nx,2019.0,300h luxury,plateado,Nafta,5.0,automatica,3.0,0,64000.0,50000.0,concesionaria,170.0,4x2
 nissan,kicks,2018.0,exclusive,blanco,Nafta,5.0,automatica,1.6,1,68000.0,21800.0,particular,120.0,4x4
 nissan,kicks,2020.0,advance,rojo,Nafta,5.0,manual,1.6,1,88000.0,20046.0,concesionaria,120.0,4x2
 renault,duster,2025.0,tce turbo iconic xtronic,blanco,Nafta,5.0,automatica,1.3,1,0.0,25453.0,tienda,155.0,4x4
-nissan,xtrail,2003.0,,gris,Nafta,5.0,manual,2.5,0,234811.0,10464.0,particular,165.0,4x4
+nissan,xtrail,2003.0,,gris,Nafta,5.0,manual,2.5,0,379881.0,10464.0,particular,165.0,4x4
 jeep,renegade,2018.0,sport,rojo,Nafta,5.0,automatica,1.8,1,122000.0,17200.0,concesionaria,130.0,4x2
 renault,koleos,2024.0,,rojo,Nafta,5.0,automatica,2.5,1,3100.0,40000.0,particular,170.0,4x4
 renault,duster,2013.0,confort plus abs,plateado,Nafta,5.0,manual,1.6,0,148000.0,10200.0,concesionaria,110.0,4x2
 ford,ecosport,2018.0,titanium,blanco,Nafta,5.0,manual,1.5,1,90000.0,16800.0,concesionaria,123.0,4x2
+citroen,c5aircross,2025.0,thp eat6 feel pack,gris,Nafta,5.0,automatica,1.6,1,0.0,42400.0,concesionaria,110.0,4x2
 peugeot,2008,2018.0,thp sport,gris,Nafta,5.0,manual,1.6,1,110000.0,14800.0,particular,110.0,4x2
 chevrolet,tracker,2016.0,ltz,rojo,Nafta,5.0,manual,1.8,0,114000.0,13500.0,particular,140.0,4x4
 peugeot,2008,2025.0,gt,blanco,Nafta,5.0,automatica,1.0,1,0.0,17120.0,concesionaria,120.0,4x2
@@ -1268,8 +1344,10 @@ peugeot,2008,2025.0,allure,gris,Nafta,5.0,automatica,1.0,1,0.0,29040.0,tienda,12
 volkswagen,taos,2025.0,250 tsi highline,blanco,Nafta,5.0,automatica,1.4,1,0.0,23283.0,concesionaria,150.0,4x2
 renault,duster,2017.0,ph2 privilege,gris,Nafta,5.0,manual,1.6,1,98000.0,14000.0,concesionaria,110.0,4x2
 peugeot,2008,2024.0,active,blanco,Nafta,5.0,manual,1.0,1,0.0,23360.0,tienda,120.0,4x2
+ford,broncosport,2025.0,wildtrak at8,gris,Nafta,5.0,automatica,2.0,0,0.0,47680.0,tienda,272.0,4x4
 chevrolet,tracker,2019.0,ltz,blanco,Nafta,5.0,manual,1.8,1,52000.0,19600.0,particular,140.0,4x4
 chevrolet,tracker,2025.0,turbo,blanco,Nafta,5.0,automatica,1.2,0,0.0,20720.0,tienda,132.0,4x4
+bmw,x6,2013.0,35i sportive,blanco,Nafta,5.0,automatica,3.0,1,127000.0,44000.0,concesionaria,306.0,4x4
 peugeot,2008,2023.0,feline,plateado,Híbrido,5.0,manual,1.6,0,59709.0,17408.0,tienda,165.0,4x4
 hyundai,tucson,2024.0,ctecho,gris,Nafta,5.0,automatica,2.0,1,0.0,48000.0,concesionaria,154.0,4x2
 ford,ecosport,2010.0,my10 xls,gris,Nafta,5.0,manual,1.6,0,170000.0,9200.0,concesionaria,110.0,4x2
@@ -1298,6 +1376,7 @@ toyota,corollacross,2021.0,xei,blanco,Nafta,5.0,automatica,2.0,1,48000.0,29000.0
 chevrolet,tracker,2024.0,turbo,negro,Nafta,5.0,automatica,1.2,1,1000.0,22246.0,tienda,132.0,4x4
 toyota,hiluxsw4,2011.0,srv cuero,gris,Diésel,5.0,manual,3.0,0,167000.0,25600.0,concesionaria,171.0,4x4
 peugeot,2008,2025.0,gt,gris,Nafta,5.0,automatica,1.0,1,0.0,24560.0,concesionaria,120.0,4x2
+lifan,myway,2017.0,16v,rojo,Nafta,5.0,manual,1.8,0,105000.0,14900.0,particular,140.0,4x2
 honda,hrv,2024.0,lx,blanco,Nafta,5.0,automatica,1.5,1,0.0,32500.0,particular,121.0,4x2
 toyota,corollacross,2022.0,xli,negro,Nafta,5.0,automatica,2.0,1,45000.0,26800.0,tienda,170.0,4x2
 nissan,kicks,2019.0,advance,gris,Nafta,5.0,automatica,1.6,1,99300.0,19192.0,concesionaria,120.0,4x2
@@ -1305,6 +1384,7 @@ renault,captur,2018.0,intens,blanco,Diésel,5.0,manual,2.0,1,88000.0,17600.0,tie
 citroen,c4cactus,2018.0,vti 115 feel pk,blanco,Nafta,5.0,automatica,1.6,0,95000.0,15300.0,particular,165.0,4x2
 fiat,pulse,2024.0,impetus t3,gris,Nafta,5.0,automatica,1.0,1,0.0,26000.0,concesionaria,120.0,4x2
 jeep,compass,2019.0,sport,gris,Nafta,5.0,manual,2.4,0,58000.0,23128.0,concesionaria,170.0,4x2
+audi,q3sportback,2024.0,35tfsi sportback,gris,Nafta,5.0,automatica,1.4,1,0.0,62800.0,tienda,150.0,4x4
 jeep,compass,2025.0,t270 series,blanco,Nafta,5.0,automatica,1.3,1,0.0,33200.0,tienda,175.0,4x2
 ford,ecosport,2012.0,my10 xls,blanco,Nafta,5.0,manual,1.6,0,109000.0,9520.0,concesionaria,110.0,4x2
 jeep,commander,2024.0,t270 limited,gris,Nafta,5.0,automatica,1.3,1,0.0,46942.0,tienda,175.0,4x2
@@ -1320,6 +1400,7 @@ chery,tiggo,2011.0,f2 confort,gris,Nafta,5.0,manual,2.0,0,125000.0,8600.0,conces
 ford,ecosport,2017.0,freestyle,negro,Nafta,5.0,manual,2.0,1,108119.0,16080.0,concesionaria,143.0,4x4
 nissan,kicks,2018.0,advance,negro,Nafta,5.0,manual,1.6,1,104000.0,17600.0,particular,120.0,4x2
 toyota,sw4,2025.0,srx,blanco,Diésel,5.0,automatica,2.8,1,0.0,56950.0,tienda,204.0,4x4
+bmw,x2,2025.0,sdrive20i msportx,negro,Nafta,5.0,automatica,2.0,0,0.0,82900.0,tienda,192.0,4x4
 mercedesbenz,clasegla,2015.0,gla200 urban,blanco,Nafta,5.0,automatica,1.6,0,85000.0,26900.0,concesionaria,156.0,4x4
 ford,ecosport,2005.0,my10 xls,rojo,Nafta/GNC,5.0,manual,1.6,0,250000.0,6800.0,concesionaria,110.0,4x2
 volkswagen,taos,2024.0,250 tsi highline,plateado,Nafta,5.0,automatica,1.4,1,0.0,36000.0,concesionaria,150.0,4x2
@@ -1373,11 +1454,14 @@ volkswagen,taos,2025.0,250 tsi highline,negro,Nafta,5.0,automatica,1.4,1,0.0,327
 citroen,c4cactus,2021.0,vti 115 feel pk,blanco,Nafta,5.0,manual,1.6,1,40000.0,20000.0,particular,165.0,4x2
 citroen,c3aircross,2024.0,shine turbo 200 bitono,negro,Nafta,5.0,automatica,1.0,1,0.0,24640.0,concesionaria,120.0,4x2
 baic,x35,2023.0,luxury,marron,Nafta,5.0,automatica,1.5,1,0.0,27500.0,tienda,148.0,4x4
+chevrolet,spin,2017.0,lt,blanco,Nafta,5.0,manual,1.8,0,124700.0,13600.0,tienda,105.0,4x2
 ford,ecosport,2011.0,my10 xls,negro,Nafta,5.0,manual,2.0,0,167000.0,8240.0,particular,143.0,4x2
+toyota,hiluxsw4,1999.0,srx,rojo,Diésel,5.0,manual,3.0,0,232500.0,15000.0,particular,171.0,4x4
 renault,duster,2016.0,ph2 privilege,negro,Nafta,5.0,manual,2.0,1,72000.0,15200.0,particular,143.0,4x4
 jeep,compass,2020.0,longitude plus,blanco,Nafta,5.0,manual,2.4,1,61500.0,30500.0,particular,170.0,4x4
 ford,ecosport,2011.0,my10 xls,plateado,Nafta,5.0,manual,1.6,0,120000.0,10320.0,concesionaria,110.0,4x2
 volkswagen,taos,2022.0,250 tsi highline,azul,Nafta,5.0,automatica,1.4,1,35000.0,27200.0,concesionaria,150.0,4x2
+bmw,x6,2009.0,35i sportive,blanco,Nafta,5.0,automatica,4.4,0,183500.0,39000.0,concesionaria,407.0,4x4
 kia,sportage,2018.0,ex,gris,Nafta,5.0,automatica,2.0,0,122000.0,25600.0,concesionaria,154.0,4x2
 chevrolet,tracker,2025.0,,blanco,Nafta,5.0,manual,1.2,0,0.0,22080.0,tienda,132.0,4x4
 hyundai,santafe,2017.0,crdi aspre,marron,Diésel,5.0,automatica,2.2,0,98000.0,25920.0,concesionaria,190.0,4x4
@@ -1428,14 +1512,18 @@ ford,ecosport,2016.0,s,plateado,Nafta,5.0,manual,1.6,0,72000.0,12560.0,concesion
 jeep,compass,2024.0,t270 series,gris,Nafta,5.0,automatica,1.3,1,2000.0,30632.0,tienda,175.0,4x2
 jeep,compass,2025.0,t270 series,gris,Nafta,5.0,automatica,1.3,1,0.0,35992.0,tienda,175.0,4x2
 nissan,kicks,2020.0,advance,plateado,Nafta,5.0,manual,1.6,1,102000.0,17900.0,particular,120.0,4x2
+ford,broncosport,2024.0,wildtrak at8,gris,Nafta,5.0,automatica,1.5,0,7700.0,38400.0,concesionaria,185.0,4x4
+ford,broncosport,2021.0,wildtrak at8,plateado,Nafta,5.0,automatica,1.5,0,57000.0,33500.0,concesionaria,123.0,4x4
 jeep,compass,2021.0,longitude plus,negro,Nafta,5.0,manual,2.4,0,61000.0,25520.0,tienda,170.0,4x4
 ford,ecosport,2018.0,s,blanco,Nafta,5.0,manual,1.5,0,100000.0,15500.0,concesionaria,123.0,4x2
+isuzu,trooper,2000.0,i scout wagon,verde,Diésel,5.0,manual,3.1,0,300000.0,7600.0,particular,110.0,4x2
 toyota,rav4,2012.0,,plateado,Nafta,5.0,automatica,2.4,0,158000.0,15600.0,particular,185.0,4x2
 peugeot,2008,2022.0,feline,plateado,Nafta,5.0,manual,1.6,1,77000.0,16960.0,tienda,300.0,4x4
 renault,dusteroroch,2017.0,outsider plus,verde,Nafta,5.0,manual,2.0,1,98000.0,13600.0,particular,143.0,4x2
 fiat,pulse,2024.0,drive gse,rojo,Nafta,5.0,automatica,1.3,1,0.0,27499.0,tienda,155.0,4x2
 ford,territory,2025.0,titanium,azul,Nafta,5.0,automatica,1.8,0,0.0,37240.0,tienda,105.0,4x4
 suzuki,vitara,2017.0,glx,plateado,Nafta,5.0,automatica,1.6,1,134000.0,17000.0,particular,120.0,4x4
+citroen,c4cactus,2019.0,vti 115 feel pk,otro,Híbrido,5.0,manual,1.6,0,44118.0,16568.0,tienda,165.0,4x2
 ford,ecosport,2018.0,titanium,blanco,Nafta,5.0,manual,1.5,1,88000.0,17000.0,particular,123.0,4x2
 jeep,grandcherokee,2000.0,limited,azul,Diésel,5.0,manual,3.1,0,160000.0,8000.0,particular,286.0,4x4
 renault,duster,2019.0,ph2 privilege,marron,Nafta,5.0,manual,1.6,1,51000.0,17000.0,particular,110.0,4x2
@@ -1497,6 +1585,7 @@ volkswagen,nivus,2024.0,tsi comfortline,gris,Nafta,5.0,manual,1.0,1,0.0,23500.0,
 peugeot,2008,2024.0,gt,gris,Nafta,5.0,automatica,1.0,1,0.0,33128.0,concesionaria,120.0,4x2
 dodge,journey,2011.0,rt filasdvdtecho,gris,Nafta,5.0,automatica,2.7,1,156000.0,11500.0,concesionaria,170.0,4x4
 nissan,kicks,2025.0,exclusive,blanco,Nafta,5.0,automatica,1.6,1,0.0,32999.0,concesionaria,120.0,4x4
+ford,broncosport,2025.0,wildtrak at8,gris,Nafta,5.0,automatica,2.0,0,0.0,56000.0,concesionaria,272.0,4x4
 hyundai,tucson,2016.0,gl,blanco,Nafta,5.0,automatica,2.0,1,68000.0,22400.0,concesionaria,154.0,4x2
 peugeot,3008,2024.0,gtline thp,azul,Nafta,5.0,automatica,1.6,1,0.0,40900.0,particular,165.0,4x4
 nissan,kicks,2022.0,exclusive,rojo,Nafta,5.0,automatica,1.6,1,60000.0,29500.0,concesionaria,120.0,4x4
@@ -1529,6 +1618,7 @@ ford,ecosport,2020.0,titanium,gris,Nafta,5.0,manual,1.5,1,74000.0,19600.0,conces
 mercedesbenz,claseglc,2018.0,glc250 300 atomatico,negro,Nafta,5.0,automatica,2.0,1,89000.0,65000.0,concesionaria,258.0,4x4
 kia,soul,2012.0,rock,negro,Nafta,5.0,automatica,1.6,0,160000.0,13000.0,particular,132.0,4x2
 jeep,renegade,2025.0,longitude,gris,Nafta,5.0,automatica,1.3,1,0.0,30296.0,tienda,175.0,4x2
+landrover,evoque,2013.0,prestige,blanco,Nafta,3.0,automatica,2.0,0,132000.0,32000.0,concesionaria,240.0,4x2
 jeep,compass,2019.0,longitude plus,plateado,Nafta,5.0,automatica,2.4,1,91700.0,28700.0,particular,170.0,4x4
 ford,ecosport,2018.0,se,azul,Nafta,5.0,manual,1.5,1,83000.0,17500.0,concesionaria,123.0,4x2
 hyundai,santafe,2012.0,gls,azul,Nafta,5.0,manual,2.4,0,140000.0,17500.0,particular,185.0,4x4
@@ -1537,6 +1627,7 @@ jeep,grandcherokee,2008.0,limited,gris,Nafta,5.0,automatica,4.7,0,200000.0,13800
 chevrolet,tracker,2017.0,ltz,blanco,Nafta,5.0,manual,1.8,1,110000.0,17900.0,concesionaria,140.0,4x4
 peugeot,2008,2016.0,allure,negro,Nafta,5.0,manual,1.6,0,111111.0,12400.0,concesionaria,110.0,4x4
 volkswagen,taos,2025.0,250 tsi highline,plateado,Nafta,5.0,automatica,1.4,1,0.0,35480.0,tienda,150.0,4x2
+ds,ds3,2024.0,rivoli,negro,Nafta,5.0,automatica,1.2,1,0.0,39920.0,concesionaria,130.0,4x2
 peugeot,2008,2016.0,allure,blanco,Nafta,5.0,manual,1.6,0,78000.0,13520.0,concesionaria,110.0,4x4
 chevrolet,tracker,2023.0,turbo,plateado,Nafta,5.0,automatica,1.2,0,33000.0,20640.0,concesionaria,132.0,4x4
 volkswagen,nivus,2024.0,tsi comfortline,gris,Nafta,5.0,automatica,1.0,1,1000.0,23800.0,particular,101.0,4x2
@@ -1593,6 +1684,7 @@ renault,duster,2025.0,tce turbo iconic xtronic,gris,Nafta,5.0,manual,1.3,1,0.0,2
 hyundai,tucson,2012.0,gl,blanco,Nafta,5.0,automatica,2.0,1,146000.0,13200.0,concesionaria,154.0,4x2
 baic,x55,2025.0,plus,rojo,Nafta,5.0,automatica,1.5,1,0.0,44900.0,concesionaria,185.0,4x2
 toyota,corollacross,2024.0,seg ecvt,blanco,Nafta,5.0,automatica,2.0,1,0.0,39000.0,particular,170.0,4x2
+toyota,hiluxsw4,1999.0,srx,rojo,Diésel,5.0,manual,3.0,0,325000.0,15000.0,particular,171.0,4x4
 baic,x55,2025.0,il,blanco,Nafta,5.0,automatica,1.5,1,0.0,37900.0,concesionaria,185.0,4x2
 volkswagen,taos,2025.0,250 tsi highline,blanco,Nafta,5.0,automatica,1.4,1,0.0,30320.0,tienda,150.0,4x2
 volkswagen,taos,2025.0,250 tsi highline,gris,Nafta,5.0,automatica,1.4,1,0.0,35600.0,tienda,150.0,4x2
@@ -1600,6 +1692,7 @@ ford,ecosport,2016.0,se,dorado,Nafta,5.0,manual,1.6,0,137000.0,14000.0,concesion
 chery,tiggo,2013.0,f2 confort,negro,Nafta,5.0,manual,2.0,1,170000.0,8800.0,particular,127.0,4x2
 chevrolet,tracker,2024.0,turbo,blanco,Nafta,5.0,automatica,1.2,1,2000.0,22160.0,tienda,132.0,4x4
 hyundai,santafe,2012.0,premium,marron,Nafta,5.0,automatica,2.4,0,158000.0,15600.0,particular,185.0,4x4
+bmw,x2,2025.0,sdrive20i msportx,gris,Nafta,5.0,automatica,2.0,1,1000.0,98000.0,concesionaria,192.0,4x4
 toyota,hiluxsw4,2016.0,srx,plateado,Diésel,5.0,automatica,2.8,1,109000.0,34500.0,particular,177.0,4x4
 ford,ecosport,2018.0,titanium,blanco,Nafta,5.0,automatica,2.0,1,96432.0,17360.0,concesionaria,170.0,4x2
 citroen,c3aircross,2025.0,shine turbo 200 bitono,rojo,Nafta,5.0,automatica,1.0,1,0.0,21432.0,concesionaria,120.0,4x2
@@ -1625,6 +1718,7 @@ volkswagen,taos,2022.0,250 tsi highline,gris,Nafta,5.0,automatica,1.4,1,60000.0,
 chevrolet,tracker,2023.0,turbo,rojo,Nafta,5.0,automatica,1.2,0,44430.0,25200.0,tienda,132.0,4x4
 renault,duster,2013.0,confort plus abs,negro,Nafta,5.0,manual,1.6,0,155000.0,9200.0,particular,110.0,4x2
 chevrolet,tracker,2021.0,turbo,plateado,Nafta,5.0,automatica,1.2,1,52000.0,21200.0,particular,132.0,4x4
+ford,broncosport,2025.0,wildtrak at8,gris,Nafta,5.0,automatica,2.0,0,0.0,47680.0,tienda,272.0,4x4
 ford,ecosport,2018.0,titanium,gris,Nafta,5.0,manual,1.5,1,90000.0,16720.0,particular,123.0,4x2
 ford,kuga,2012.0,trend ku01ku04,negro,Nafta,5.0,manual,2.5,0,160000.0,11600.0,tienda,180.0,4x4
 renault,duster,2016.0,ph2 privilege,negro,Nafta,5.0,manual,2.0,0,150000.0,12800.0,concesionaria,143.0,4x2
@@ -1636,8 +1730,11 @@ renault,duster,2016.0,ph2 privilege,blanco,Nafta,5.0,manual,2.0,1,109000.0,12800
 volkswagen,taos,2024.0,250 tsi highline,gris,Nafta,5.0,automatica,1.4,1,0.0,30724.0,particular,150.0,4x2
 honda,hrv,2015.0,lx,plateado,Nafta,5.0,automatica,1.8,1,90000.0,18000.0,particular,185.0,4x2
 jeep,wrangler,2019.0,sport unlimited,gris,Nafta,5.0,automatica,3.6,0,47653.0,64990.0,concesionaria,284.0,4x4
+bmw,x2,2022.0,sdrive20i msportx,blanco,Nafta,5.0,automatica,2.0,0,36000.0,62700.0,particular,280.0,4x4
 chery,tiggo3,2017.0,confort,blanco,Nafta,5.0,manual,1.6,1,110000.0,12400.0,concesionaria,125.0,4x2
+gwm,h6,2024.0,3ra generacion,blanco,Nafta,5.0,automatica,2.0,1,0.0,36500.0,concesionaria,200.0,4x2
 chery,tiggo2,2018.0,luxury,naranja,Nafta,5.0,manual,1.5,1,74000.0,15402.0,concesionaria,123.0,4x4
+nissan,pathfinder,1995.0,d,gris,Diésel,5.0,manual,2.7,0,364000.0,8900.0,particular,110.0,4x4
 jeep,renegade,2025.0,longitude,blanco,Nafta,5.0,automatica,1.3,1,0.0,29832.0,tienda,175.0,4x2
 fiat,pulse,2022.0,drive gse,gris,Nafta,5.0,automatica,1.3,1,39000.0,19600.0,particular,155.0,4x2
 toyota,hiluxsw4,2013.0,srv cuero,negro,Diésel,5.0,automatica,3.0,0,140000.0,28792.0,concesionaria,171.0,4x4
@@ -1653,7 +1750,9 @@ renault,duster,2013.0,luxe nav,verde,Nafta,5.0,manual,2.0,1,138000.0,13000.0,con
 jeep,compass,2018.0,longitude plus,azul,Nafta,5.0,manual,2.4,1,67000.0,24500.0,particular,170.0,4x4
 chery,tiggo,2013.0,f2 confort,rojo,Nafta,5.0,manual,2.0,0,139800.0,10500.0,particular,138.0,4x2
 kia,soul,2014.0,rock,blanco,Nafta,5.0,automatica,1.6,0,105000.0,11600.0,concesionaria,132.0,4x2
+jeep,compass,2009.0,t270 series,negro,Nafta,5.0,manual,2.4,0,134000.0,12000.0,particular,170.0,4x2
 chevrolet,tracker,2018.0,ltz,gris,Nafta,5.0,manual,1.8,0,58000.0,20000.0,particular,140.0,4x4
+renault,duster,2012.0,ph2 privilege,negro,Nafta,5.0,manual,1.6,0,138000.0,10800.0,concesionaria,110.0,4x2
 kia,sportage,2018.0,ex,blanco,Nafta,5.0,automatica,2.0,0,91000.0,22800.0,concesionaria,154.0,4x2
 toyota,hiluxsw4,2025.0,tdi diamante ii,blanco,Diésel,5.0,automatica,2.8,0,1111.0,68000.0,concesionaria,177.0,4x4
 nissan,kicks,2020.0,advance,gris,Nafta,5.0,automatica,1.6,1,67000.0,19840.0,concesionaria,120.0,4x2
@@ -1677,9 +1776,10 @@ kia,sorento,2019.0,ex,negro,Diésel,5.0,automatica,2.2,1,62000.0,44999.0,concesi
 audi,q2,2018.0,tfsi sport,gris,Nafta,5.0,automatica,1.4,0,65622.0,32500.0,particular,150.0,4x4
 renault,duster,2017.0,ph2 privilege,negro,Nafta,5.0,manual,1.6,1,98000.0,11800.0,particular,110.0,4x2
 chevrolet,tracker,2023.0,turbo,blanco,Nafta,5.0,automatica,1.2,0,49000.0,24800.0,concesionaria,132.0,4x4
-ford,ecosport,2016.0,freestyle,gris,Nafta,5.0,manual,1.6,0,109000.0,14800.0,concesionaria,110.0,4x2
+ford,ecosport,2016.0,freestyle,gris,Nafta,5.0,manual,1.6,0,170000.0,14800.0,concesionaria,110.0,4x2
 nissan,kicks,2023.0,exclusive,gris,Nafta,5.0,automatica,1.6,0,15000.0,26800.0,concesionaria,120.0,4x4
 toyota,sw4,2022.0,tdi diamante ii,blanco,Diésel,5.0,automatica,2.8,1,45000.0,65000.0,particular,204.0,4x4
+bmw,x6,2010.0,35i sportive,negro,Nafta,5.0,automatica,3.0,1,120000.0,24000.0,concesionaria,306.0,4x4
 honda,hrv,2017.0,lx,gris,Nafta,5.0,automatica,1.8,1,140000.0,18100.0,concesionaria,175.0,4x2
 chevrolet,tracker,2025.0,,blanco,Nafta,5.0,automatica,1.2,0,0.0,21198.0,tienda,132.0,4x4
 porsche,cayenne,2013.0,v6,gris,Nafta,5.0,automatica,3.6,0,177000.0,35500.0,concesionaria,300.0,4x4
@@ -1699,6 +1799,7 @@ toyota,hiluxsw4,2014.0,srv cuero,gris,Diésel,5.0,manual,3.0,0,143000.0,28000.0,
 volkswagen,taos,2024.0,250 tsi highline,azul,Nafta,5.0,automatica,1.4,1,7100.0,36960.0,particular,150.0,4x2
 toyota,hiluxsw4,2018.0,srx,gris,Diésel,5.0,automatica,2.8,1,88000.0,44000.0,concesionaria,177.0,4x4
 toyota,sw4,2024.0,srx,gris,Diésel,5.0,automatica,2.8,1,0.0,56950.0,tienda,204.0,4x4
+audi,q3sportback,2021.0,35tfsi sportback,gris,Nafta,5.0,automatica,1.4,0,22400.0,51000.0,particular,150.0,4x4
 chevrolet,tracker,2018.0,ltz,gris,Nafta,5.0,manual,1.8,0,58000.0,19840.0,concesionaria,140.0,4x4
 fiat,pulse,2025.0,audace,blanco,Nafta,5.0,automatica,1.0,1,1111.0,23200.0,concesionaria,101.0,4x2
 volkswagen,taos,2022.0,250 tsi highline,gris,Nafta,5.0,automatica,1.4,1,45000.0,26800.0,particular,150.0,4x2
@@ -1741,12 +1842,14 @@ nissan,kicks,2021.0,advance,rojo,Nafta,5.0,automatica,1.6,1,92600.0,20280.0,conc
 jeep,renegade,2025.0,sport,blanco,Nafta,5.0,automatica,1.8,1,0.0,23967.0,tienda,130.0,4x2
 chevrolet,tracker,2024.0,turbo,rojo,Nafta,5.0,manual,1.2,1,0.0,23363.0,concesionaria,132.0,4x4
 hyundai,tucson,2017.0,premium,blanco,Diésel,5.0,automatica,2.0,1,99500.0,29500.0,concesionaria,154.0,4x4
+porsche,cayenne,2012.0,958,azul,Híbrido,5.0,automatica,3.0,0,162000.0,51000.0,concesionaria,380.0,4x2
 renault,duster,2015.0,confort plus abs,negro,Nafta,5.0,manual,1.6,0,152515.0,10960.0,concesionaria,110.0,4x2
 chevrolet,tracker,2025.0,ltz,rojo,Nafta,5.0,automatica,1.2,1,0.0,24400.0,tienda,132.0,4x4
 fiat,500x,2018.0,16v pop,negro,Nafta,5.0,manual,1.4,1,71000.0,23800.0,particular,150.0,4x2
 toyota,corollacross,2025.0,seg ecvt,blanco,Híbrido,5.0,automatica,1.8,1,0.0,38400.0,concesionaria,140.0,4x2
 jeep,compass,2025.0,t270 series,negro,Nafta,5.0,automatica,1.3,1,0.0,35992.0,tienda,175.0,4x2
 fiat,pulse,2025.0,audace,gris,Nafta,5.0,automatica,1.0,1,0.0,22891.0,tienda,101.0,4x2
+mercedesbenz,clasegle,2024.0,gle400 sport coupe,gris,Híbrido,5.0,automatica,3.0,0,0.0,220000.0,concesionaria,381.0,4x4
 chevrolet,tracker,2017.0,ltz,blanco,Nafta,5.0,manual,1.8,0,130000.0,14000.0,particular,140.0,4x4
 peugeot,3008,2024.0,gtline thp,gris,Nafta,5.0,automatica,1.6,0,8000.0,46000.0,concesionaria,165.0,4x4
 toyota,corollacross,2022.0,seg ecvt,negro,Nafta,5.0,automatica,2.0,1,18000.0,31920.0,concesionaria,170.0,4x2
@@ -1763,11 +1866,13 @@ kia,soul,2015.0,ex,blanco,Nafta,5.0,automatica,1.6,1,107000.0,15700.0,particular
 audi,q5,2020.0,tfsi,gris,Nafta,5.0,automatica,2.0,0,44000.0,56000.0,concesionaria,252.0,4x4
 renault,koleos,2012.0,privilege,blanco,Nafta,5.0,automatica,2.5,0,203000.0,12698.0,particular,138.0,4x4
 ford,territory,2022.0,titanium,azul,Nafta,5.0,automatica,1.5,1,48000.0,32900.0,concesionaria,123.0,4x4
+suzuki,grandvitara,2006.0,xl7 v6,dorado,Nafta,5.0,manual,2.7,0,227000.0,13500.0,concesionaria,110.0,4x4
 toyota,rav4,2011.0,,blanco,Nafta,5.0,automatica,2.4,0,144000.0,18500.0,particular,170.0,4x4
 honda,hrv,2016.0,exl,gris,Nafta,5.0,automatica,1.8,1,165000.0,17000.0,particular,121.0,4x2
 kia,sportage,2020.0,ex,gris,Nafta,5.0,automatica,2.0,1,72000.0,28000.0,concesionaria,154.0,4x2
 fiat,pulse,2024.0,drive gse,negro,Nafta,5.0,automatica,1.3,1,0.0,28000.0,tienda,155.0,4x2
 ford,ecosport,2019.0,titanium,negro,Nafta,5.0,manual,2.0,1,77000.0,20800.0,concesionaria,170.0,4x2
+peugeot,3008,2017.0,gtline thp,negro,Diésel,5.0,automatica,2.0,0,130000.0,18400.0,concesionaria,143.0,4x4
 volkswagen,taos,2025.0,250 tsi highline,blanco,Nafta,5.0,automatica,1.4,1,0.0,29200.0,tienda,150.0,4x2
 chevrolet,trailblazer,2018.0,nueva ltz tdci,marron,Diésel,5.0,automatica,2.8,1,74500.0,29200.0,particular,200.0,4x4
 peugeot,2008,2020.0,feline,violeta,Nafta,5.0,manual,1.6,1,44000.0,17500.0,concesionaria,120.0,4x4
@@ -1777,10 +1882,11 @@ jeep,compass,2020.0,sport,gris,Nafta,5.0,manual,2.4,1,108000.0,23500.0,particula
 volkswagen,taos,2024.0,250 tsi highline,plateado,Nafta,5.0,automatica,1.4,1,0.0,30960.0,concesionaria,150.0,4x2
 nissan,kicks,2022.0,exclusive,gris,Nafta,5.0,automatica,1.6,1,55000.0,26500.0,particular,120.0,4x4
 chevrolet,tracker,2020.0,,plateado,Nafta,5.0,automatica,1.2,0,80000.0,19120.0,concesionaria,132.0,4x4
+mercedesbenz,clasegle,2017.0,gle400 sport coupe,negro,Nafta,5.0,automatica,3.0,1,135000.0,65000.0,concesionaria,333.0,4x4
 volkswagen,nivus,2024.0,tsi comfortline,negro,Nafta,5.0,automatica,1.0,1,9700.0,25360.0,concesionaria,101.0,4x2
 dodge,journey,2012.0,se,negro,Nafta,5.0,automatica,2.4,0,114000.0,10400.0,particular,170.0,4x4
 jeep,compass,2025.0,t270 series,gris,Nafta,5.0,automatica,1.3,1,0.0,39600.0,concesionaria,175.0,4x2
-volkswagen,tiguan,2010.0,elegance i,gris,Diésel,5.0,automatica,2.0,0,170000.0,14800.0,concesionaria,140.0,4x4
+volkswagen,tiguan,2010.0,elegance i,gris,Diésel,5.0,automatica,2.0,0,248000.0,14800.0,concesionaria,140.0,4x4
 toyota,corollacross,2025.0,seg ecvt,blanco,Híbrido,5.0,automatica,1.8,1,0.0,41200.0,concesionaria,140.0,4x2
 ford,ecosport,2020.0,titanium,plateado,Nafta,5.0,manual,1.5,1,69850.0,19200.0,concesionaria,123.0,4x2
 bmw,x1,2021.0,sdrive 20i sportline,blanco,Nafta,5.0,manual,2.0,0,60000.0,46000.0,concesionaria,192.0,4x4
@@ -1800,7 +1906,9 @@ volkswagen,taos,2025.0,250 tsi highline,plateado,Nafta,5.0,automatica,1.4,1,1000
 toyota,corollacross,2025.0,xei,blanco,Nafta,5.0,automatica,2.0,1,1000.0,38300.0,particular,170.0,4x2
 renault,koleos,2013.0,dynamique,negro,Nafta,5.0,manual,2.5,0,140000.0,10000.0,particular,110.0,4x4
 jeep,compass,2025.0,t270 series,blanco,Nafta,5.0,automatica,1.3,1,0.0,35840.0,tienda,175.0,4x2
+peugeot,3008,2017.0,gtline thp,marron,Diésel,5.0,automatica,2.0,0,126463.0,15920.0,concesionaria,143.0,4x4
 jeep,commander,2022.0,t270 limited,plateado,Diésel,5.0,automatica,2.0,0,48653.0,41600.0,tienda,272.0,4x4
+bmw,x6,2010.0,35i sportive,negro,Nafta,5.0,automatica,3.0,1,170000.0,38000.0,particular,306.0,4x4
 chery,tiggo,2011.0,luxury,dorado,Nafta,5.0,manual,2.0,0,140000.0,8400.0,concesionaria,127.0,4x4
 fiat,pulse,2024.0,drive gse,rojo,Nafta,5.0,automatica,1.3,1,0.0,25826.0,tienda,155.0,4x2
 chevrolet,tracker,2025.0,turbo,negro,Nafta,5.0,automatica,1.2,0,0.0,30353.0,tienda,132.0,4x4
@@ -1810,6 +1918,7 @@ honda,hrv,2018.0,exl,gris,Nafta,5.0,automatica,1.8,1,120000.0,19200.0,concesiona
 nissan,kicks,2020.0,special edition,blanco,Nafta,5.0,automatica,1.6,1,85000.0,21600.0,concesionaria,120.0,4x2
 ford,ecosport,2015.0,se,plateado,Nafta,5.0,manual,1.6,0,114714.0,12400.0,tienda,110.0,4x2
 chevrolet,tracker,2017.0,ltz,gris,Nafta,5.0,manual,1.8,1,80000.0,17799.0,particular,140.0,4x2
+jeep,compass,2012.0,t270 series,blanco,Nafta,5.0,automatica,2.4,1,220000.0,14640.0,particular,170.0,4x2
 ford,ecosport,2018.0,freestyle,blanco,Nafta,5.0,manual,1.5,0,95000.0,14400.0,tienda,123.0,4x2
 hyundai,creta,2021.0,safety,dorado,Nafta,5.0,automatica,1.6,1,50000.0,21440.0,concesionaria,120.0,4x2
 toyota,hiluxsw4,2013.0,srv cuero,plateado,Diésel,5.0,manual,3.0,0,140000.0,28000.0,concesionaria,171.0,4x4
@@ -1827,6 +1936,7 @@ jeep,grandcherokee,2001.0,limited,negro,Diésel,5.0,manual,3.1,0,268000.0,10500.
 bmw,x5,2020.0,50i m package,gris,Nafta,5.0,manual,3.0,0,44000.0,116000.0,concesionaria,340.0,4x4
 citroen,c3aircross,2025.0,shine turbo 200 bitono,gris,Nafta,5.0,automatica,1.0,1,0.0,23769.0,tienda,120.0,4x2
 honda,crv,2008.0,ex,negro,Nafta,5.0,automatica,2.4,0,170000.0,13500.0,particular,185.0,4x4
+ds,ds7,2024.0,pallas,gris,Nafta,5.0,automatica,1.6,1,0.0,52000.0,concesionaria,215.0,4x2
 toyota,corollacross,2023.0,seg ecvt,gris,Híbrido,5.0,automatica,1.8,1,22000.0,34500.0,particular,140.0,4x2
 chevrolet,tracker,2024.0,turbo,negro,Nafta,5.0,automatica,1.2,1,1000.0,22480.0,tienda,132.0,4x4
 citroen,c3aircross,2024.0,shine turbo 200 bitono,blanco,Nafta,5.0,automatica,1.0,1,0.0,26000.0,concesionaria,120.0,4x2
@@ -1846,6 +1956,7 @@ nissan,kicks,2023.0,advance,blanco,Nafta,5.0,automatica,1.6,1,18000.0,18000.0,co
 nissan,kicks,2022.0,sense,gris,Nafta,5.0,manual,1.6,0,19400.0,23000.0,particular,120.0,4x2
 jac,s2,2025.0,intelligent,blanco,Nafta,5.0,manual,1.5,1,0.0,8000.0,concesionaria,150.0,4x2
 renault,duster,2020.0,ph2 privilege,gris,Nafta,5.0,manual,1.6,1,84983.0,15992.0,tienda,110.0,4x2
+mercedesbenz,clasegle,2016.0,gle400 sport coupe,gris,Nafta,5.0,automatica,3.0,0,109000.0,69000.0,concesionaria,333.0,4x4
 jeep,compass,2025.0,t270 series,plateado,Nafta,5.0,automatica,1.3,1,0.0,35840.0,concesionaria,175.0,4x2
 citroen,c3aircross,2024.0,shine turbo 200 bitono,blanco,Nafta,5.0,automatica,1.0,1,9750.0,23200.0,particular,120.0,4x2
 jeep,compass,2025.0,t270 series,blanco,Nafta,5.0,automatica,1.3,1,600.0,42500.0,concesionaria,175.0,4x2
@@ -1857,6 +1968,7 @@ nissan,kicks,2025.0,exclusive,blanco,Nafta,5.0,automatica,1.6,1,0.0,29280.0,conc
 audi,q5,2013.0,tfsi,gris,Nafta,5.0,automatica,2.0,0,111000.0,23000.0,concesionaria,225.0,4x4
 toyota,hiluxsw4,2022.0,srx,gris,Diésel,5.0,automatica,2.8,1,60000.0,46000.0,particular,177.0,4x4
 ford,ecosport,2018.0,titanium,gris,Nafta,5.0,manual,1.6,0,77300.0,19920.0,concesionaria,170.0,4x2
+ford,broncosport,2023.0,wildtrak at8,gris,Nafta,5.0,automatica,2.0,1,9500.0,44000.0,particular,170.0,4x4
 ford,ecosport,2012.0,my10 xls,negro,Nafta,5.0,manual,1.6,0,200000.0,10000.0,concesionaria,110.0,4x2
 peugeot,2008,2025.0,gt,blanco,Nafta,5.0,automatica,1.0,1,0.0,30320.0,tienda,120.0,4x2
 jeep,compass,2022.0,t270 series,negro,Nafta,5.0,automatica,1.3,1,47000.0,29600.0,particular,175.0,4x2
@@ -1900,6 +2012,7 @@ volkswagen,taos,2022.0,250 tsi highline,azul,Nafta,5.0,automatica,1.4,1,52000.0,
 citroen,c4cactus,2022.0,vti 115 feel pk,blanco,Nafta,5.0,manual,1.6,1,29000.0,21000.0,particular,165.0,4x2
 jeep,renegade,2025.0,sport,negro,Nafta,5.0,automatica,1.8,1,0.0,24000.0,concesionaria,130.0,4x2
 peugeot,2008,2016.0,thp sport,blanco,Nafta,5.0,manual,1.6,0,104000.0,13200.0,particular,110.0,4x2
+ds,ds3,2024.0,rivolli,gris,Nafta,5.0,automatica,1.2,1,0.0,46392.0,concesionaria,135.0,4x2
 nissan,xterra,2006.0,se,amarillo,Diésel,5.0,manual,2.8,0,230000.0,17500.0,particular,177.0,4x4
 audi,q7,2025.0,tfsi,gris,Híbrido,5.0,automatica,3.0,1,0.0,152900.0,tienda,333.0,4x4
 jeep,compass,2025.0,t270 series,negro,Nafta,5.0,automatica,1.3,1,0.0,36720.0,concesionaria,175.0,4x2
@@ -1907,6 +2020,7 @@ ford,ecosport,2017.0,titanium,blanco,Nafta,5.0,manual,2.0,1,111000.0,14000.0,tie
 volkswagen,tcross,2025.0,170 tsi,gris,Nafta,5.0,automatica,1.0,0,0.0,23600.0,tienda,101.0,4x2
 volkswagen,taos,2025.0,250 tsi highline,blanco,Nafta,5.0,automatica,1.4,1,0.0,36720.0,concesionaria,150.0,4x2
 chery,tiggo4pro,2025.0,luxury,rojo,Nafta,5.0,automatica,1.5,1,0.0,27920.0,concesionaria,150.0,4x4
+bmw,x6,2011.0,m,blanco,Nafta,5.0,automatica,4.4,0,167000.0,60000.0,concesionaria,555.0,4x4
 ford,territory,2022.0,titanium,blanco,Nafta,5.0,automatica,1.5,1,53000.0,32500.0,concesionaria,123.0,4x4
 chevrolet,trailblazer,2025.0,td high country,gris,Diésel,5.0,automatica,2.8,1,0.0,48720.0,tienda,200.0,4x4
 ford,ecosport,2003.0,my10 xls,negro,Nafta,5.0,manual,1.6,0,220000.0,4640.0,concesionaria,110.0,4x2
@@ -1914,17 +2028,19 @@ kia,sportage,2025.0,tgdi xline,blanco,Nafta,5.0,automatica,1.6,1,0.0,57000.0,con
 ford,territory,2021.0,titanium,blanco,Nafta,5.0,automatica,1.5,1,50000.0,27120.0,tienda,123.0,4x4
 fiat,pulse,2025.0,audace,gris,Nafta,5.0,automatica,1.0,1,0.0,24800.0,tienda,101.0,4x2
 ford,ecosport,2010.0,my10 xls,negro,Nafta,5.0,manual,1.6,0,140000.0,8900.0,particular,110.0,4x2
-jeep,cherokee,2001.0,classic,plateado,Diésel,5.0,manual,2.5,0,231311.0,19500.0,particular,205.0,4x4
+jeep,cherokee,2001.0,classic,plateado,Diésel,5.0,manual,2.5,0,246250.0,19500.0,particular,205.0,4x4
 jeep,grandcherokee,2013.0,overland,negro,Nafta,5.0,automatica,3.6,1,140000.0,39800.0,concesionaria,286.0,4x4
 peugeot,2008,2020.0,allure,gris,Nafta,5.0,manual,1.6,0,51000.0,16640.0,concesionaria,120.0,4x4
 renault,dusteroroch,2016.0,outsider plus,rojo,Nafta,5.0,manual,2.0,0,124000.0,14480.0,particular,143.0,4x2
 chevrolet,tracker,2025.0,ltz,rojo,Nafta,5.0,automatica,1.2,1,0.0,24400.0,tienda,132.0,4x4
+citroen,c5aircross,2020.0,thp eat6 feel pack,gris,Nafta,5.0,automatica,1.6,1,70500.0,25200.0,concesionaria,120.0,4x2
 volkswagen,tcross,2025.0,170 tsi,gris,Híbrido,5.0,automatica,1.0,0,1003.0,25810.0,tienda,101.0,4x2
 jeep,cherokee,2008.0,limited,negro,Nafta,5.0,automatica,3.7,0,179000.0,15000.0,concesionaria,205.0,4x4
 ford,kuga,2017.0,sel,plateado,Nafta,5.0,automatica,2.0,0,103125.0,22400.0,concesionaria,143.0,4x4
 volkswagen,nivus,2025.0,tsi comfortline,blanco,Nafta,5.0,automatica,1.0,1,0.0,22720.0,tienda,101.0,4x2
 chevrolet,tracker,2019.0,ltz,rojo,Nafta,5.0,manual,1.8,1,73000.0,15900.0,concesionaria,140.0,4x2
 jeep,wrangler,2021.0,rubicon,rojo,Nafta,3.0,automatica,3.6,1,60000.0,105000.0,concesionaria,284.0,4x4
+bmw,x6,2012.0,35i sportive,gris,Nafta,5.0,automatica,3.0,0,187000.0,34900.0,concesionaria,306.0,4x4
 fiat,500x,2018.0,16v pop,gris,Nafta,5.0,manual,1.4,1,100000.0,15192.0,concesionaria,150.0,4x2
 nissan,kicks,2024.0,exclusive,blanco,Nafta,5.0,automatica,1.6,1,5800.0,28800.0,tienda,120.0,4x4
 ford,territory,2025.0,titanium,gris,Nafta,5.0,automatica,1.8,1,0.0,37240.0,tienda,105.0,4x4
@@ -1955,6 +2071,7 @@ volkswagen,nivus,2025.0,tsi comfortline,beige,Nafta,5.0,automatica,1.0,1,0.0,220
 volkswagen,nivus,2025.0,tsi comfortline,gris,Nafta,5.0,automatica,1.0,1,0.0,25400.0,concesionaria,101.0,4x2
 hyundai,creta,2025.0,,gris,Nafta,5.0,automatica,1.5,0,0.0,35920.0,concesionaria,115.0,4x2
 ford,territory,2025.0,titanium,gris,Nafta,5.0,automatica,1.8,0,0.0,36800.0,concesionaria,105.0,4x4
+bmw,x6,2013.0,35i sportive,azul,Nafta,5.0,automatica,3.0,1,108800.0,45000.0,concesionaria,306.0,4x4
 hyundai,santafe,2010.0,premium,negro,Nafta,5.0,automatica,2.4,0,200000.0,13000.0,particular,170.0,4x4
 toyota,sw4,2024.0,srx,blanco,Diésel,5.0,automatica,2.8,1,4200.0,59200.0,concesionaria,204.0,4x4
 toyota,corollacross,2021.0,xli,blanco,Nafta,5.0,automatica,2.0,1,36000.0,31290.0,concesionaria,170.0,4x2
@@ -1978,6 +2095,7 @@ audi,q5,2013.0,tfsi,blanco,Nafta,5.0,automatica,2.0,1,118000.0,22900.0,particula
 honda,hrv,2017.0,exl,blanco,Nafta,5.0,automatica,1.8,1,75000.0,21900.0,particular,121.0,4x2
 volkswagen,nivus,2025.0,tsi comfortline,azul,Nafta,5.0,automatica,1.0,1,1111.0,28000.0,concesionaria,101.0,4x2
 ford,ecosport,2014.0,se,dorado,Nafta,5.0,manual,1.6,0,143000.0,11800.0,concesionaria,110.0,4x2
+chevrolet,blazer,1994.0,dlx,blanco,Nafta,5.0,manual,4.3,0,225000.0,10500.0,particular,200.0,4x4
 mercedesbenz,clasegla,2018.0,gla45 amg,azul,Nafta,5.0,manual,2.0,1,74000.0,35900.0,particular,381.0,4x4
 nissan,xtrail,2020.0,exclusive xtronic,plateado,Nafta,5.0,automatica,2.5,0,89000.0,39000.0,particular,170.0,4x4
 peugeot,2008,2022.0,feline,gris,Nafta,5.0,manual,1.6,1,22000.0,21000.0,particular,300.0,4x4
@@ -2029,6 +2147,7 @@ renault,captur,2018.0,intens,beige,Nafta,5.0,manual,2.0,1,121000.0,12240.0,tiend
 toyota,corollacross,2022.0,seg ecvt,blanco,Híbrido,5.0,automatica,1.8,1,68282.0,32700.0,tienda,140.0,4x2
 hyundai,tucson,2008.0,n,dorado,Nafta,5.0,manual,2.0,0,268000.0,8000.0,tienda,154.0,4x2
 ford,territory,2021.0,titanium,celeste,Nafta,5.0,automatica,1.5,1,55000.0,28500.0,particular,123.0,4x4
+bmw,x2,2019.0,sdrive20i msportx,azul,Nafta,5.0,automatica,2.0,1,76000.0,49000.0,concesionaria,192.0,4x4
 chevrolet,tracker,2025.0,,gris,Nafta,5.0,automatica,1.2,0,0.0,21360.0,tienda,132.0,4x4
 fiat,pulse,2025.0,drive gse,gris,Nafta,5.0,automatica,1.3,1,0.0,21520.0,tienda,155.0,4x2
 renault,duster,2015.0,ph2 privilege,marron,Nafta,5.0,manual,1.6,1,112900.0,14990.0,concesionaria,110.0,4x2
@@ -2076,19 +2195,23 @@ ford,ecosport,2019.0,se,rojo,Nafta,5.0,manual,1.5,1,85000.0,15192.0,concesionari
 chevrolet,tracker,2025.0,turbo,plateado,Nafta,5.0,automatica,1.2,0,0.0,30504.0,tienda,132.0,4x4
 peugeot,2008,2016.0,allure,marron,Nafta,5.0,manual,1.6,0,124000.0,13000.0,particular,110.0,4x4
 ds,ds7crossback,2022.0,automobiles ds7 thp etense bastille,negro,Híbrido,5.0,automatica,1.6,1,67000.0,50000.0,particular,300.0,4x4
+bmw,x2,2022.0,m35i mpa,blanco,Nafta,5.0,automatica,2.0,1,45000.0,75000.0,particular,192.0,4x4
 chevrolet,tracker,2025.0,ltz,azul,Nafta,5.0,automatica,1.2,1,0.0,23200.0,tienda,132.0,4x4
 volkswagen,taos,2021.0,250 tsi highline,blanco,Nafta,5.0,automatica,1.4,1,71208.0,30600.0,tienda,150.0,4x2
 citroen,c3aircross,2025.0,shine turbo 200 bitono,gris,Nafta,5.0,automatica,1.0,1,0.0,22568.0,tienda,120.0,4x2
 renault,duster,2013.0,confort plus abs,negro,Nafta,5.0,manual,1.6,0,140000.0,15500.0,particular,110.0,4x2
 chevrolet,tracker,2023.0,turbo,blanco,Nafta,5.0,automatica,1.2,1,40000.0,23200.0,concesionaria,132.0,4x4
 renault,duster,2013.0,luxe nav,negro,Nafta,5.0,manual,2.0,0,120000.0,12499.0,concesionaria,138.0,4x2
+renault,koleos,2018.0,,gris,Nafta,5.0,automatica,2.5,1,107000.0,23600.0,concesionaria,211.0,4x2
 renault,captur,2020.0,intens,bordo,Nafta,5.0,automatica,1.6,1,69850.0,18000.0,concesionaria,110.0,4x2
 audi,q5,2010.0,tfsi,negro,Nafta,5.0,automatica,2.0,1,170000.0,17500.0,particular,211.0,4x4
 volkswagen,taos,2024.0,250 tsi highline,blanco,Nafta,5.0,automatica,1.4,1,0.0,36720.0,concesionaria,150.0,4x2
 jeep,compass,2021.0,sport,blanco,Nafta,5.0,manual,2.4,1,74000.0,24000.0,particular,170.0,4x2
 dodge,journey,2013.0,sxt techo dvd nav,rojo,Nafta,5.0,automatica,2.4,0,140000.0,12000.0,particular,170.0,4x4
+jetour,x70,2022.0,,azul,Nafta,5.0,automatica,1.5,1,45000.0,29600.0,concesionaria,150.0,4x2
 bmw,x1,2010.0,28i executive,gris,Nafta,5.0,manual,3.0,0,140000.0,19900.0,particular,265.0,4x4
 jeep,compass,2018.0,longitude plus,negro,Nafta,5.0,manual,2.4,1,98000.0,32900.0,concesionaria,170.0,4x4
+bmw,x6,2013.0,35i sportive,negro,Nafta,5.0,automatica,3.0,1,101200.0,39999.0,concesionaria,306.0,4x4
 ford,ecosport,2015.0,titanium,rojo,Nafta,5.0,manual,2.0,0,168787.0,12400.0,concesionaria,143.0,4x2
 nissan,kicks,2020.0,exclusive,negro,Nafta,5.0,automatica,1.6,0,69850.0,20400.0,concesionaria,120.0,4x4
 volkswagen,taos,2024.0,250 tsi highline,negro,Nafta,5.0,automatica,1.4,1,0.0,31200.0,concesionaria,150.0,4x2
@@ -2118,6 +2241,7 @@ renault,duster,2013.0,confort plus abs,blanco,Nafta,5.0,manual,1.6,0,140000.0,12
 chevrolet,tracker,2024.0,turbo,negro,Nafta,5.0,automatica,1.2,1,1000.0,22016.0,tienda,132.0,4x4
 citroen,c4cactus,2020.0,thp 165 shine,gris,Nafta,5.0,automatica,1.6,1,62000.0,17600.0,concesionaria,165.0,4x2
 volkswagen,tcross,2025.0,170 tsi,azul,Nafta,5.0,manual,1.0,0,0.0,23061.0,tienda,101.0,4x2
+mercedesbenz,clasegle,2018.0,gle400 sport coupe,azul,Nafta,3.0,automatica,3.0,1,90000.0,89900.0,concesionaria,333.0,4x4
 chevrolet,tracker,2025.0,ltz,rojo,Nafta,5.0,automatica,1.2,1,0.0,23760.0,tienda,132.0,4x4
 chevrolet,tracker,2016.0,ltz,blanco,Nafta,5.0,automatica,1.8,1,109000.0,14800.0,particular,140.0,4x4
 mercedesbenz,claseglc,2017.0,glc250 300 atomatico,marron,Nafta,5.0,automatica,2.0,1,98000.0,53000.0,particular,258.0,4x4
@@ -2151,6 +2275,7 @@ renault,duster,2017.0,ph2 privilege,negro,Nafta,5.0,manual,1.6,1,84000.0,15600.0
 fiat,pulse,2024.0,drive gse,gris,Nafta,5.0,automatica,1.3,1,1300.0,30000.0,tienda,155.0,4x2
 renault,duster,2012.0,ph2 privilege,gris,Nafta,5.0,manual,2.0,0,126000.0,12400.0,concesionaria,138.0,4x2
 renault,duster,2017.0,ph2 privilege,rojo,Nafta,5.0,manual,1.6,1,139000.0,13200.0,tienda,110.0,4x2
+bmw,x6,2013.0,35i sportive,blanco,Nafta,5.0,automatica,3.0,1,91000.0,48000.0,concesionaria,306.0,4x4
 audi,q5,2012.0,i,gris,Diésel,5.0,automatica,2.0,0,138000.0,22500.0,particular,170.0,4x4
 ford,ecosport,2022.0,se,gris,Nafta,5.0,manual,1.5,1,32700.0,19200.0,particular,123.0,4x2
 peugeot,2008,2017.0,feline,blanco,Nafta,5.0,manual,1.6,1,111000.0,14950.0,concesionaria,110.0,4x4
@@ -2159,9 +2284,11 @@ ford,ecosport,2016.0,titanium,plateado,Nafta,5.0,manual,1.6,0,80000.0,15520.0,pa
 volkswagen,tcross,2020.0,highline,negro,Nafta,5.0,automatica,1.6,1,66000.0,21200.0,particular,110.0,4x2
 audi,q5,2016.0,tfsi,blanco,Nafta,5.0,automatica,2.0,0,150000.0,25500.0,particular,211.0,4x4
 toyota,corollacross,2022.0,seg ecvt,blanco,Híbrido,5.0,automatica,1.8,1,70000.0,31120.0,concesionaria,140.0,4x2
+volkswagen,touareg,2017.0,v8 premium,blanco,Nafta,5.0,automatica,4.2,0,98000.0,36000.0,particular,240.0,4x2
 chevrolet,tracker,2014.0,ltz,blanco,Nafta,5.0,manual,1.8,0,150000.0,11600.0,concesionaria,140.0,4x2
 bmw,x1,2018.0,sdrive 20i sportline,blanco,Nafta,5.0,manual,2.0,1,67500.0,59000.0,particular,231.0,4x4
 peugeot,2008,2025.0,allure,negro,Nafta,5.0,automatica,1.0,1,0.0,28320.0,tienda,120.0,4x4
+bmw,x3,2025.0,35i executive,rojo,Nafta,5.0,manual,3.0,0,1000.0,148000.0,concesionaria,398.0,4x4
 ford,ecosport,2017.0,se,plateado,Nafta,5.0,manual,1.6,0,98000.0,13952.0,particular,110.0,4x2
 honda,hrv,2016.0,exl,plateado,Nafta,5.0,automatica,1.8,1,88589.0,21000.0,particular,121.0,4x2
 volkswagen,tcross,2025.0,comfortline,gris,Nafta,5.0,automatica,1.0,1,0.0,28800.0,tienda,101.0,4x2
@@ -2207,7 +2334,10 @@ bmw,x1,2012.0,i,blanco,Nafta,5.0,manual,1.8,0,119000.0,16000.0,particular,150.0,
 renault,duster,2016.0,ph2 privilege,negro,Nafta,5.0,manual,1.6,1,135000.0,12800.0,concesionaria,110.0,4x2
 chevrolet,trailblazer,2025.0,td high country,gris,Diésel,5.0,automatica,2.8,1,0.0,46800.0,tienda,200.0,4x4
 volkswagen,taos,2025.0,250 tsi highline,blanco,Nafta,5.0,automatica,1.4,1,0.0,35920.0,tienda,150.0,4x2
+renault,duster,2011.0,ph2 privilege,gris,Nafta,5.0,manual,1.6,0,200000.0,10240.0,particular,110.0,4x2
 toyota,corollacross,2025.0,seg ecvt,blanco,Híbrido,5.0,automatica,1.8,1,0.0,42399.0,concesionaria,140.0,4x2
+landrover,evoque,2013.0,prestige,blanco,Nafta,3.0,automatica,2.0,0,150000.0,38800.0,concesionaria,240.0,4x2
+mercedesbenz,claseml,2004.0,ml270 cdi luxury,celeste,Diésel,5.0,automatica,3.0,0,210000.0,14000.0,concesionaria,110.0,4x4
 fiat,pulse,2022.0,impetus t3,blanco,Nafta,5.0,automatica,1.0,1,19000.0,22400.0,tienda,120.0,4x2
 ford,ecosport,2016.0,freestyle,blanco,Nafta,5.0,manual,1.6,0,114000.0,13832.0,concesionaria,110.0,4x2
 honda,hrv,2017.0,exl,gris,Nafta,5.0,automatica,1.8,1,88000.0,20500.0,particular,121.0,4x2
@@ -2258,6 +2388,7 @@ chery,tiggo,2010.0,f2 confort,negro,Nafta,5.0,manual,2.0,0,185000.0,10584.0,conc
 baic,x55,2023.0,ii luxury turbo,celeste,Nafta,5.0,manual,1.5,1,0.0,38900.0,tienda,185.0,4x2
 citroen,c4cactus,2020.0,thp 165 shine,rojo,Nafta,5.0,automatica,1.6,1,83000.0,15600.0,particular,165.0,4x2
 renault,duster,2013.0,confort plus abs,negro,Nafta,5.0,manual,1.6,0,140000.0,10400.0,particular,110.0,4x2
+renault,duster,2011.0,ph2 privilege,negro,Nafta,5.0,manual,1.6,0,167000.0,7840.0,particular,110.0,4x2
 renault,duster,2018.0,ph2 privilege,rojo,Nafta,5.0,manual,1.6,1,100000.0,15920.0,concesionaria,110.0,4x2
 baic,x55,2018.0,elite,blanco,Nafta,5.0,automatica,1.5,1,99800.0,17440.0,tienda,185.0,4x2
 jeep,compass,2008.0,sport,negro,Nafta,5.0,automatica,2.4,1,268000.0,9000.0,concesionaria,170.0,4x4
@@ -2292,6 +2423,7 @@ peugeot,2008,2024.0,active,negro,Nafta,5.0,manual,1.0,1,0.0,23920.0,tienda,120.0
 ford,ecosport,2011.0,my10 xls,gris,Nafta,5.0,manual,2.0,0,149000.0,9520.0,concesionaria,143.0,4x2
 chevrolet,tracker,2020.0,turbo,blanco,Nafta,5.0,automatica,1.2,1,91000.0,23000.0,concesionaria,132.0,4x4
 renault,duster,2017.0,ph2 privilege,negro,Nafta,5.0,manual,1.6,0,69000.0,17200.0,concesionaria,110.0,4x2
+ford,broncosport,2023.0,wildtrak at8,gris,Nafta,5.0,automatica,2.0,1,30000.0,39000.0,particular,170.0,4x4
 ford,kuga,2019.0,sel,rojo,Nafta,5.0,automatica,2.0,0,120000.0,20400.0,concesionaria,170.0,4x4
 renault,captur,2018.0,life,blanco,Nafta,5.0,manual,1.6,0,110000.0,14720.0,concesionaria,110.0,4x4
 nissan,xtrail,2025.0,exclusive xtronic,azul,Nafta,5.0,automatica,2.5,1,0.0,53718.0,concesionaria,184.0,4x4
@@ -2310,6 +2442,7 @@ nissan,kicks,2022.0,exclusive,blanco,Nafta,5.0,automatica,1.6,1,48000.0,23500.0,
 chevrolet,tracker,2020.0,turbo,blanco,Nafta,5.0,automatica,1.2,1,65000.0,20400.0,concesionaria,132.0,4x4
 chevrolet,trailblazer,2019.0,nueva ltz tdci,gris,Diésel,5.0,automatica,2.8,1,78000.0,27200.0,particular,200.0,4x4
 chery,tiggo3,2016.0,confort,blanco,Nafta,5.0,manual,1.6,1,124000.0,11920.0,concesionaria,125.0,4x2
+gwm,h6,2025.0,3ra generacion,blanco,Nafta,5.0,automatica,2.0,1,0.0,37027.0,concesionaria,200.0,4x2
 honda,hrv,2018.0,exl,gris,Nafta,5.0,automatica,1.8,1,126000.0,20900.0,particular,121.0,4x2
 volkswagen,tiguan,2009.0,premium tsi,negro,Nafta,5.0,automatica,2.0,0,168000.0,11900.0,particular,200.0,4x4
 jeep,commander,2025.0,t270 limited,violeta,Nafta,5.0,automatica,1.3,1,0.0,39992.0,tienda,175.0,4x2
@@ -2317,6 +2450,7 @@ renault,duster,2013.0,confort plus abs,negro,Nafta,5.0,manual,1.6,0,175000.0,120
 citroen,c4cactus,2021.0,vti 115 feel pk,gris,Nafta,5.0,manual,1.6,1,36000.0,18500.0,concesionaria,165.0,4x2
 citroen,c4cactus,2018.0,thp 165 shine,negro,Nafta,5.0,automatica,1.2,1,80000.0,14320.0,concesionaria,165.0,4x2
 ford,territory,2025.0,titanium,blanco,Nafta,5.0,automatica,1.5,0,0.0,39120.0,concesionaria,123.0,4x4
+bmw,x6,2018.0,35i sportive,blanco,Nafta,5.0,automatica,3.0,0,112000.0,64000.0,concesionaria,306.0,4x4
 jeep,compass,2025.0,t270 series,negro,Nafta,5.0,automatica,1.3,1,2000.0,35920.0,tienda,175.0,4x2
 volkswagen,taos,2025.0,250 tsi highline,gris,Nafta,5.0,automatica,1.4,1,0.0,31200.0,concesionaria,150.0,4x2
 jeep,compass,2025.0,t270 series,blanco,Nafta,5.0,automatica,1.3,1,0.0,37076.0,tienda,175.0,4x2
@@ -2384,6 +2518,7 @@ volkswagen,tiguan,2009.0,premium tsi,blanco,Nafta,5.0,manual,2.0,0,163000.0,1200
 chevrolet,equinox,2021.0,ls,blanco,Nafta,5.0,automatica,1.5,0,30000.0,25900.0,concesionaria,123.0,4x2
 chevrolet,tracker,2021.0,ltz,rojo,Nafta,5.0,automatica,1.2,1,100000.0,22080.0,concesionaria,132.0,4x4
 volkswagen,taos,2024.0,250 tsi highline,negro,Nafta,5.0,automatica,1.4,1,0.0,35900.0,concesionaria,150.0,4x2
+renault,duster,2012.0,ph2 privilege,gris,Nafta,5.0,manual,1.6,0,104000.0,10960.0,concesionaria,110.0,4x2
 mercedesbenz,clasegla,2017.0,gla200 urban,plateado,Nafta,5.0,automatica,1.6,0,100000.0,28000.0,particular,156.0,4x4
 volkswagen,nivus,2025.0,tsi comfortline,blanco,Nafta,5.0,automatica,1.0,1,3100.0,24400.0,particular,101.0,4x2
 kia,sorento,2011.0,ex,negro,Nafta,5.0,automatica,2.4,1,194000.0,15500.0,concesionaria,185.0,4x4
@@ -2394,13 +2529,16 @@ jeep,grandcherokee,2006.0,laredo,gris,Diésel,5.0,manual,3.0,0,227000.0,14000.0,
 chevrolet,tracker,2025.0,ltz,gris,Nafta,5.0,automatica,1.2,1,0.0,24720.0,tienda,132.0,4x4
 mercedesbenz,claseglc,2019.0,glc250 300 atomatico,gris,Nafta,5.0,automatica,2.0,1,119000.0,43000.0,concesionaria,258.0,4x4
 jeep,compass,2025.0,t270 series,gris,Nafta,5.0,automatica,1.3,1,0.0,41840.0,tienda,175.0,4x2
+audi,q3sportback,2020.0,35tfsi sportback,gris,Nafta,5.0,automatica,1.4,1,73000.0,44000.0,particular,150.0,4x4
 volkswagen,tiguan,2013.0,premium tsi,blanco,Nafta,5.0,manual,2.0,1,160000.0,18500.0,concesionaria,200.0,4x4
 honda,crv,1998.0,si,negro,Nafta,5.0,manual,2.0,1,279000.0,7200.0,particular,148.0,4x4
 fiat,pulse,2025.0,audace,azul,Nafta,5.0,automatica,1.0,1,0.0,22880.0,tienda,101.0,4x2
 ford,ecosport,2015.0,titanium,amarillo,Nafta,5.0,manual,1.6,0,95000.0,11200.0,concesionaria,110.0,4x2
 nissan,xtrail,2010.0,acenta,plateado,Nafta,5.0,manual,2.5,0,150000.0,11200.0,particular,140.0,4x4
 volkswagen,taos,2024.0,250 tsi highline,blanco,Nafta,5.0,automatica,1.4,1,0.0,30000.0,tienda,150.0,4x2
+renault,duster,2015.0,ph2 privilege,blanco,Nafta/GNC,5.0,manual,1.6,1,130000.0,13520.0,concesionaria,110.0,4x2
 volkswagen,taos,2022.0,250 tsi highline,plateado,Nafta,5.0,automatica,1.4,1,70000.0,27800.0,particular,150.0,4x2
+jeep,patriot,2012.0,sport,negro,Nafta,5.0,automatica,2.4,0,211000.0,13000.0,concesionaria,170.0,4x4
 nissan,kicks,2020.0,exclusive,gris,Nafta,5.0,automatica,1.6,0,69000.0,19200.0,concesionaria,120.0,4x4
 ford,ecosport,2008.0,my10 xls,negro,Nafta,5.0,manual,2.0,0,200000.0,7600.0,particular,143.0,4x2
 peugeot,2008,2017.0,thp sport,plateado,Nafta,5.0,manual,1.6,1,87000.0,15000.0,particular,110.0,4x2
@@ -2437,6 +2575,7 @@ ford,ecosport,2017.0,se,plateado,Nafta,5.0,manual,1.5,0,123032.0,14720.0,concesi
 chevrolet,tracker,2017.0,ltz,gris,Nafta,5.0,manual,1.8,1,72000.0,17900.0,concesionaria,140.0,4x2
 chevrolet,tracker,2016.0,ltz,gris,Nafta,5.0,manual,1.8,1,146000.0,12160.0,concesionaria,140.0,4x2
 bmw,x1,2018.0,sdrive 20i sportline,blanco,Nafta,5.0,manual,2.0,1,113000.0,28990.0,concesionaria,192.0,4x4
+citroen,c5aircross,2021.0,thp eat6 feel pack,blanco,Nafta,5.0,automatica,1.6,1,30000.0,28960.0,concesionaria,120.0,4x2
 peugeot,2008,2018.0,thp sport,gris,Nafta,5.0,manual,1.6,1,54900.0,16800.0,particular,110.0,4x2
 chevrolet,tracker,2022.0,ltz,rojo,Nafta,5.0,automatica,1.2,1,45000.0,20560.0,concesionaria,132.0,4x4
 nissan,kicks,2025.0,exclusive,rojo,Nafta,5.0,automatica,1.6,1,0.0,28360.0,tienda,120.0,4x4
@@ -2457,6 +2596,7 @@ jeep,grandcherokee,2018.0,overland,gris,Nafta,5.0,automatica,3.6,0,71000.0,46400
 ford,territory,2025.0,titanium,gris,Nafta,5.0,automatica,1.8,0,1111.0,39990.0,particular,105.0,4x4
 nissan,murano,2012.0,v6,gris,Nafta,5.0,automatica,3.5,1,149000.0,14400.0,concesionaria,260.0,4x4
 renault,duster,2016.0,ph2 privilege,marron,Nafta,5.0,manual,2.0,1,98700.0,15600.0,particular,143.0,4x4
+jetour,x70,2024.0,,rojo,Nafta,5.0,automatica,1.5,1,0.0,29520.0,concesionaria,185.0,4x2
 chevrolet,tracker,2024.0,turbo,negro,Nafta,5.0,automatica,1.2,1,1000.0,20800.0,tienda,132.0,4x4
 chevrolet,tracker,2015.0,ltz,gris,Nafta,5.0,manual,1.8,1,100000.0,13500.0,particular,140.0,4x2
 volkswagen,tcross,2020.0,comfortline,azul,Nafta,5.0,manual,1.6,0,62000.0,20000.0,particular,110.0,4x2
@@ -2488,7 +2628,7 @@ jeep,compass,2020.0,sport,negro,Nafta,5.0,manual,2.4,1,114000.0,24000.0,concesio
 nissan,kicks,2025.0,exclusive,gris,Nafta,5.0,automatica,1.6,1,0.0,29850.0,concesionaria,120.0,4x4
 volkswagen,taos,2025.0,250 tsi highline,gris,Nafta,5.0,automatica,1.4,1,0.0,36792.0,tienda,150.0,4x2
 chevrolet,spin,2016.0,lt,blanco,Nafta,5.0,manual,1.8,0,122683.0,12605.0,tienda,105.0,4x2
-ford,explorer,1997.0,xlt,gris,Nafta,5.0,manual,4.0,1,260000.0,7500.0,particular,550.0,4x4
+ford,explorer,1997.0,xlt,gris,Nafta,5.0,manual,4.0,1,216000.0,7500.0,particular,550.0,4x4
 ford,territory,2021.0,titanium,blanco,Nafta,5.0,automatica,2.0,1,60000.0,30000.0,concesionaria,143.0,4x4
 bmw,x5,2012.0,50i m package,gris,Nafta,5.0,manual,4.4,1,158000.0,36500.0,particular,407.0,4x4
 renault,duster,2025.0,tce turbo iconic xtronic,gris,Nafta,5.0,automatica,1.3,1,0.0,23992.0,tienda,155.0,4x4
@@ -2499,6 +2639,7 @@ citroen,c4cactus,2024.0,vti 115 feel pk,gris,Nafta,5.0,automatica,1.6,1,2100.0,2
 dodge,journey,2012.0,sxt techo dvd nav,negro,Nafta,5.0,automatica,2.4,0,160000.0,12500.0,particular,170.0,4x4
 chevrolet,tracker,2015.0,ltz,blanco,Nafta,5.0,automatica,1.8,1,113333.0,14900.0,particular,140.0,4x4
 audi,q5,2013.0,tfsi,gris,Nafta,5.0,automatica,2.0,1,118000.0,20640.0,concesionaria,225.0,4x4
+kia,sportage,2021.0,ex,gris,Nafta,5.0,automatica,2.0,0,59000.0,30000.0,concesionaria,154.0,4x2
 volkswagen,tcross,2025.0,170 tsi,blanco,Nafta,5.0,automatica,1.0,0,0.0,24720.0,concesionaria,101.0,4x2
 toyota,corollacross,2024.0,seg ecvt,blanco,Híbrido,5.0,automatica,1.8,1,2500.0,38400.0,particular,140.0,4x2
 ford,ecosport,2012.0,my10 xls,negro,Nafta,5.0,manual,1.6,0,134245.0,9200.0,concesionaria,110.0,4x2
@@ -2508,7 +2649,7 @@ volkswagen,tiguan,2014.0,premium tsi,dorado,Nafta,5.0,manual,2.0,0,143000.0,1752
 fiat,pulse,2024.0,audace,gris,Nafta,5.0,automatica,1.0,0,0.0,22240.0,particular,120.0,4x2
 renault,captur,2017.0,intens,blanco,Nafta,5.0,manual,2.0,1,98000.0,18300.0,concesionaria,143.0,4x2
 toyota,rav4,2013.0,,blanco,Nafta,5.0,automatica,2.4,1,190000.0,24000.0,particular,170.0,4x4
-ford,ecosport,2010.0,my10 xls,violeta,Nafta,5.0,manual,2.0,0,170000.0,10080.0,particular,143.0,4x2
+ford,ecosport,2010.0,my10 xls,violeta,Nafta,5.0,manual,2.0,0,99800.0,10080.0,particular,143.0,4x2
 peugeot,2008,2025.0,active,gris,Nafta,5.0,manual,1.0,1,0.0,26440.0,tienda,120.0,4x2
 peugeot,2008,2019.0,allure,gris,Nafta,5.0,manual,1.6,0,45000.0,16000.0,particular,110.0,4x4
 ford,territory,2022.0,sel,blanco,Nafta,5.0,automatica,1.5,1,46500.0,33000.0,concesionaria,123.0,4x4
@@ -2550,6 +2691,7 @@ ford,ecosport,2011.0,my10 xls,negro,Nafta,5.0,manual,1.6,0,123000.0,12500.0,part
 chevrolet,tracker,2025.0,turbo,gris,Nafta,5.0,automatica,1.2,0,0.0,21159.0,tienda,132.0,4x4
 volkswagen,taos,2022.0,250 tsi highline,gris,Nafta,5.0,automatica,1.4,1,63000.0,32400.0,concesionaria,150.0,4x2
 mitsubishi,montero,1991.0,glx,verde,Diésel,3.0,automatica,2.5,0,250000.0,11000.0,concesionaria,184.0,4x4
+mercedesbenz,clasegle,2019.0,gle400 sport coupe,blanco,Nafta,5.0,automatica,3.0,0,115000.0,119000.0,concesionaria,333.0,4x4
 volkswagen,nivus,2022.0,tsi comfortline,gris,Nafta,5.0,manual,1.0,1,22000.0,24000.0,particular,101.0,4x2
 chevrolet,tracker,2017.0,ltz,blanco,Nafta,5.0,automatica,1.8,1,75000.0,18560.0,concesionaria,140.0,4x4
 peugeot,2008,2025.0,gt,negro,Nafta,5.0,automatica,1.0,1,0.0,28640.0,tienda,120.0,4x2
@@ -2558,9 +2700,10 @@ renault,koleos,2011.0,dynamique,negro,Nafta,5.0,manual,2.5,0,125000.0,9360.0,par
 nissan,kicks,2018.0,advance,gris,Nafta,5.0,automatica,1.6,1,84900.0,18000.0,concesionaria,120.0,4x2
 toyota,corollacross,2024.0,xli,gris,Nafta,5.0,automatica,2.0,0,0.0,34520.0,concesionaria,170.0,4x2
 ford,kuga,2020.0,sel,blanco,Híbrido,5.0,automatica,2.0,0,69850.0,33000.0,concesionaria,170.0,4x4
+ford,broncosport,2024.0,wildtrak at8,gris,Nafta,5.0,automatica,2.0,0,0.0,51000.0,concesionaria,245.0,4x4
 peugeot,2008,2017.0,feline,blanco,Nafta,5.0,manual,1.6,1,80000.0,14800.0,particular,110.0,4x4
 toyota,sw4,2016.0,srx,marron,Diésel,5.0,manual,2.8,0,145000.0,32800.0,concesionaria,177.0,4x4
-ssangyong,musso,2006.0,601 dti,gris,Diésel,5.0,manual,2.9,1,210000.0,10400.0,particular,150.0,4x2
+ssangyong,musso,2006.0,601 dti,gris,Diésel,5.0,manual,2.9,1,210000.0,10400.0,particular,110.0,4x2
 peugeot,2008,2016.0,thp sport,rojo,Nafta,5.0,manual,1.6,1,109000.0,10800.0,particular,110.0,4x2
 jeep,renegade,2024.0,longitude,gris,Nafta,5.0,automatica,1.3,1,0.0,30296.0,tienda,175.0,4x2
 volkswagen,taos,2025.0,250 tsi highline,gris,Nafta,5.0,automatica,1.4,1,0.0,30392.0,tienda,150.0,4x2
@@ -2576,13 +2719,13 @@ peugeot,2008,2019.0,thp sport,rojo,Nafta,5.0,manual,1.6,1,70000.0,19000.0,partic
 mercedesbenz,claseglc,2017.0,glc250 300 atomatico,marron,Nafta,5.0,automatica,2.0,1,98000.0,60000.0,concesionaria,258.0,4x4
 volkswagen,taos,2023.0,250 tsi highline,gris,Nafta,5.0,automatica,1.4,1,24000.0,28960.0,tienda,150.0,4x2
 fiat,pulse,2025.0,drive gse,blanco,Nafta,5.0,automatica,1.3,1,0.0,23007.0,tienda,155.0,4x2
-nissan,xterra,2005.0,se,gris,Diésel,5.0,manual,2.8,0,280000.0,13000.0,particular,177.0,4x4
+nissan,xterra,2005.0,se,gris,Diésel,5.0,manual,2.8,0,221400.0,13000.0,particular,177.0,4x4
 renault,duster,2017.0,ph2 privilege,blanco,Nafta,5.0,manual,1.6,1,117000.0,14400.0,particular,110.0,4x2
 chevrolet,tracker,2024.0,ltz,gris,Nafta,5.0,automatica,1.2,0,1000.0,27440.0,tienda,132.0,4x4
 renault,duster,2019.0,ph2 privilege,rojo,Nafta,5.0,manual,2.0,1,112000.0,20400.0,concesionaria,143.0,4x2
 toyota,sw4,2021.0,srx,gris,Diésel,5.0,automatica,2.8,1,66900.0,55000.0,particular,204.0,4x4
 baic,x35,2025.0,luxury,blanco,Nafta,5.0,automatica,1.5,1,0.0,27000.0,concesionaria,148.0,4x4
-bmw,x3,2013.0,35i executive,blanco,Nafta,5.0,manual,3.0,1,140000.0,28000.0,concesionaria,306.0,4x4
+bmw,x3,2013.0,35i executive,blanco,Nafta,5.0,manual,3.0,1,200000.0,28000.0,concesionaria,306.0,4x4
 chevrolet,tracker,2022.0,ltz,negro,Nafta,5.0,automatica,1.2,1,45000.0,23500.0,concesionaria,132.0,4x4
 jeep,compass,2019.0,sport,gris,Nafta,5.0,manual,2.4,1,92059.0,20792.0,tienda,170.0,4x2
 mercedesbenz,claseglk,2013.0,glk300 city,blanco,Nafta,5.0,automatica,3.5,0,169000.0,22000.0,particular,247.0,4x4
@@ -2612,10 +2755,13 @@ citroen,c3aircross,2025.0,vti feel pack,gris,Nafta,5.0,manual,1.6,1,0.0,19832.0,
 volkswagen,taos,2025.0,250 tsi highline,plateado,Nafta,5.0,automatica,1.4,1,0.0,30000.0,concesionaria,150.0,4x2
 nissan,kicks,2020.0,special edition,blanco,Nafta,5.0,automatica,1.6,1,65000.0,22000.0,particular,120.0,4x2
 porsche,cayenne,2013.0,v6,marron,Nafta,5.0,automatica,3.6,0,93000.0,43000.0,concesionaria,300.0,4x4
+jeep,compass,2019.0,t270 series,negro,Nafta,5.0,automatica,2.4,0,49050.0,31500.0,particular,170.0,4x2
+ford,broncosport,2022.0,wildtrak at8,gris,Nafta,5.0,automatica,1.5,1,45000.0,35840.0,concesionaria,123.0,4x4
 chery,tiggo,2015.0,f2 confort,blanco,Nafta,5.0,manual,2.0,0,106000.0,9600.0,concesionaria,138.0,4x2
 citroen,c4cactus,2022.0,vti 115 feel pk,blanco,Nafta,5.0,automatica,1.6,1,52300.0,18400.0,particular,165.0,4x2
 chevrolet,tracker,2017.0,ltz,negro,Nafta,5.0,manual,1.8,1,132700.0,14900.0,concesionaria,140.0,4x4
 ford,territory,2023.0,sel,blanco,Nafta,5.0,automatica,1.8,0,34000.0,32500.0,particular,140.0,4x4
+isuzu,trooper,1999.0,ls,verde,Diésel,5.0,manual,3.1,0,278500.0,10500.0,particular,110.0,4x2
 jeep,renegade,2021.0,sport,blanco,Nafta,5.0,manual,1.8,1,81000.0,23500.0,concesionaria,130.0,4x2
 audi,q5,2017.0,tfsi,blanco,Nafta,5.0,automatica,2.0,1,120000.0,31000.0,particular,225.0,4x4
 chevrolet,tracker,2025.0,ltz,rojo,Nafta,5.0,automatica,1.2,1,0.0,26800.0,tienda,132.0,4x4
@@ -2664,6 +2810,7 @@ volkswagen,tiguanallspace,2025.0,tsi life 4motion,gris,Nafta,5.0,automatica,2.0,
 hyundai,tucson,2008.0,n,plateado,Nafta,5.0,manual,2.0,0,254000.0,7800.0,particular,154.0,4x2
 audi,q5sportback,2025.0,45tfsi s sline,negro,Nafta,5.0,automatica,2.0,1,0.0,108000.0,tienda,245.0,4x4
 nissan,xterra,2005.0,se,negro,Diésel,5.0,manual,2.8,0,227000.0,11800.0,particular,177.0,4x4
+audi,q3sportback,2024.0,35tfsi sportback,plateado,Nafta,5.0,automatica,1.4,1,0.0,62800.0,tienda,150.0,4x4
 kia,sportage,2017.0,ex,negro,Nafta,5.0,manual,2.0,1,86384.0,19900.0,concesionaria,154.0,4x4
 bmw,x1,2022.0,sdrive 20i sportline,blanco,Nafta,5.0,manual,2.0,0,27965.0,39024.0,tienda,192.0,4x4
 bmw,x1,2013.0,sdrive 20i sportline,blanco,Nafta,5.0,manual,2.0,0,96500.0,22500.0,particular,184.0,4x4
@@ -2717,6 +2864,7 @@ chevrolet,trailblazer,2017.0,nueva ltz tdci,gris,Diésel,5.0,automatica,2.8,1,98
 jeep,renegade,2025.0,longitude,negro,Nafta,5.0,automatica,1.3,1,0.0,29592.0,tienda,175.0,4x2
 fiat,pulse,2025.0,drive gse,gris,Nafta,5.0,manual,1.3,0,0.0,20720.0,concesionaria,155.0,4x2
 renault,duster,2013.0,luxe nav,gris,Nafta,5.0,manual,2.0,0,150000.0,13500.0,particular,138.0,4x2
+hyundai,grandsantafe,2017.0,crdi premium gps,gris,Nafta,5.0,automatica,3.3,0,110000.0,28000.0,concesionaria,190.0,4x2
 jeep,commander,2025.0,t270 limited,azul,Nafta,5.0,automatica,1.3,1,0.0,39672.0,concesionaria,175.0,4x2
 ford,ecosport,2022.0,se,blanco,Nafta,5.0,manual,1.5,1,21900.0,19600.0,concesionaria,123.0,4x2
 chevrolet,tracker,2023.0,turbo,rojo,Nafta,5.0,manual,1.2,0,0.0,22240.0,concesionaria,132.0,4x4
@@ -2725,6 +2873,7 @@ fiat,pulse,2025.0,impetus t3,blanco,Nafta,5.0,automatica,1.0,0,0.0,10800.0,conce
 citroen,c4cactus,2018.0,thp 165 shine,violeta,Nafta,5.0,automatica,1.2,1,92000.0,13500.0,particular,165.0,4x2
 jeep,grandcherokee,2012.0,limited,negro,Nafta,5.0,automatica,3.6,0,180000.0,19900.0,concesionaria,286.0,4x4
 nissan,xtrail,2025.0,exclusive xtronic,blanco,Nafta,5.0,automatica,2.5,1,0.0,51704.0,tienda,184.0,4x4
+mercedesbenz,claseglc,2017.0,glc250 300 atomatico,negro,Nafta,5.0,automatica,3.0,1,98000.0,95000.0,concesionaria,367.0,4x4
 nissan,kicks,2019.0,advance,gris,Nafta,5.0,automatica,1.6,1,57000.0,20000.0,particular,120.0,4x2
 volkswagen,taos,2025.0,250 tsi highline,blanco,Nafta,5.0,automatica,1.4,1,0.0,31760.0,concesionaria,150.0,4x2
 volkswagen,nivus,2024.0,tsi comfortline,gris,Nafta,5.0,automatica,1.0,0,0.0,23040.0,tienda,101.0,4x2
