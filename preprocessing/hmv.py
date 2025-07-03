@@ -2,25 +2,16 @@ from difflib import get_close_matches
 import pandas as pd
 from utils.diccionarios import MODELOS_POR_MARCA
 from preprocessing.data_cleanse import normalizar
-from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
 from itertools import combinations
 
 def hmv_marca(df_train, df_to_input):
-    """
-    Imputa valores faltantes en la columna 'Marca' en df_to_input usando df_train como referencia.
-    - Primero intenta imputar por fuzzy matching con 'Modelo'
-    - Luego intenta con 'Versión'
-    - Si falla, intenta fuzzy con cutoff más bajo
-    - Luego intenta detectar marca en 'Título'
-    - Si todo falla, elimina la fila
 
-    """
     df = df_to_input.copy()
     referencia = df_train[df_train['Marca'].notna()].copy()
     total_before = df.shape[0]
 
     df_missing = df[df['Marca'].isna()].copy()
-    #print(f"🔍 Índices con marca faltante: {[i + 2 for i in df_missing.index.tolist()]}")
 
     reemplazos = []
     for idx, row in df_missing.iterrows():
@@ -77,8 +68,7 @@ def hmv_marca(df_train, df_to_input):
             df.drop(index=idx, inplace=True)
 
     df_result = df[df['Marca'].notna()]
-    print(f"\n✔️ Marcas imputadas: {len(reemplazos)}")
-    print(f"🗑️ Muestras eliminadas por no poder imputar: {total_before - df_result.shape[0]}")
+
     return df_result
 
 
@@ -97,7 +87,7 @@ def hmv_modelo(df_train, df_to_input):
     total_before = df.shape[0]
 
     df_missing = df[df['Modelo'].isna()].copy()
-    #print(f"🔍 Índices con modelo faltante: {[i + 2 for i in df_missing.index.tolist()]}")
+
 
     reemplazos = []
     for idx, row in df_missing.iterrows():
@@ -131,7 +121,6 @@ def hmv_modelo(df_train, df_to_input):
             modelos_encontrados = subset[subset['Versión'].str.lower() == match_version]['Modelo']
             if not modelos_encontrados.empty:
                 modelo_inferido = modelos_encontrados.mode().iloc[0]
-                #print(f"[{idx + 2}] Fuzzy por VERSIÓN {'(con marca)' if marca in MODELOS_POR_MARCA else '(sin marca)'}: '{version}' ≈ '{match_version}' → Modelo: {modelo_inferido} ({modelos_encontrados.value_counts().to_dict()})")
 
         if modelo_inferido:
             df.at[idx, 'Modelo'] = modelo_inferido
@@ -140,8 +129,6 @@ def hmv_modelo(df_train, df_to_input):
             df.drop(index=idx, inplace=True)
 
     df_result = df[df['Modelo'].notna()]
-    print(f"\n✔️ Modelos imputados: {len(reemplazos)}")
-    print(f"🗑️ Muestras eliminadas por no poder imputar: {total_before - df_result.shape[0]}")
     return df_result
 
 
@@ -174,7 +161,6 @@ def hmv_version_train(df_train, df_to_input):
     referencia = df_train[df_train['Versión'].notna()].copy()
 
     df_missing = df[df['Versión'].isna()].copy()
-    #print(f"🔍 Índices con versión faltante: {[i + 2 for i in df_missing.index.tolist()]}")
 
     reemplazos = []
     for idx, row in df_missing.iterrows():
@@ -197,7 +183,6 @@ def hmv_version_train(df_train, df_to_input):
         version_frecuente = versiones_posibles.mode().iloc[0]
         df.at[idx, "Versión"] = version_frecuente
         reemplazos.append(idx)
-        #print(f"[{idx + 2}] Imputada versión: '{version_frecuente}' usando contexto de {'modelo' if modelo else 'marca'}")
 
     df = df[df['Versión'].notna()]  # Eliminar filas sin imputar
 
@@ -219,7 +204,6 @@ def hmv_version_train(df_train, df_to_input):
         versiones = sub['Versión'].dropna().unique().tolist()
         mapeo = {}
 
-        #print(f"\n🔄 Clustering de versiones para modelo: {modelo} ({len(versiones)} versiones distintas)")
 
         while versiones:
             base = versiones.pop(0)
@@ -235,8 +219,7 @@ def hmv_version_train(df_train, df_to_input):
             subset = sub[sub['Versión'].isin(grupo)]
             version_mas_comun = subset['Versión'].mode().iloc[0]
 
-            # if len(grupo) > 1:
-                #print(f"👥 Agrupadas: {grupo} → 🏷️ '{version_mas_comun}'")
+
 
             for v in grupo:
                 mapeo[v] = version_mas_comun
@@ -252,7 +235,6 @@ def hmv_version_train(df_train, df_to_input):
     df['Versión'] = df.apply(reemplazar_version, axis=1)
 
     # Paso 3: Agrupamiento final entre versiones ya normalizadas (por modelo)
-    #print("\n🧩 Paso final: Agrupamiento entre versiones ya normalizadas")
 
     def tokens_similares(v1, v2, cutoff=0.8):
         """
@@ -271,7 +253,6 @@ def hmv_version_train(df_train, df_to_input):
         versiones_finales = sub['Versión'].unique().tolist()
         finales_map = {}
 
-        #print(f"\n🔍 Agrupamiento final para modelo: {modelo} ({len(versiones_finales)} versiones)")
 
         while versiones_finales:
             base = versiones_finales.pop(0)
@@ -287,8 +268,6 @@ def hmv_version_train(df_train, df_to_input):
             subset = sub[sub['Versión'].isin(grupo)]
             version_final = subset['Versión'].mode().iloc[0]
 
-            # if len(grupo) > 1:
-                #print(f"🔗 Agrupadas finales por token: {grupo} → 🏷️ '{version_final}'")
 
             for v in grupo:
                 finales_map[(modelo, v)] = version_final
@@ -300,8 +279,6 @@ def hmv_version_train(df_train, df_to_input):
 
         df['Versión'] = df.apply(ajustar_version_final, axis=1)
 
-    print(f"\n✔️ Muestras version train imputadas: {len(reemplazos)}")
-    print(f"🗑️ Muestras eliminadas por no poder imputar: {df_missing.shape[0] - len(reemplazos)}")
     return df
 
 
@@ -331,9 +308,7 @@ def hmv_version(df_train, df_to_input):
     referencia = df_train_limpio[df_train_limpio['Versión'].notna()].copy()
 
     df_missing = df_val[df_val['Versión'].isna()].copy()
-    #print(f"🔍 Paso 1 - Imputación de versiones faltantes")
-    #print(f"   ➤ Total con versión faltante: {len(df_missing)}")
-    #print(f"   ➤ Índices con versión faltante: {[i + 2 for i in df_missing.index.tolist()]}")
+
 
     reemplazos = []
     eliminar = []
@@ -372,17 +347,12 @@ def hmv_version(df_train, df_to_input):
             version_frecuente = versiones_posibles.mode().iloc[0]
             df_val.at[idx, "Versión"] = version_frecuente
             reemplazos.append(idx)
-            #print(f"[{idx + 2}] ✅ Imputada versión: '{version_frecuente}' usando contexto: {contexto}")
         else:
             df_val.drop(index=idx, inplace=True)
-            #print(f"[{idx + 2}] ❌ Eliminada → Sin versiones disponibles en contexto: {contexto}")
 
-    #print(f"\n✔️ Paso 1 terminado:")
-    print(f"   ➤ Versiones imputadas: {len(reemplazos)}")
-    print(f"   ➤ Muestras eliminadas por no poder imputar: {df_missing.shape[0] - len(reemplazos)}")
 
-    # Paso 2: Corregir versiones no válidas usando similitud por token
-    #print(f"\n🔍 Paso 2 - Corrección de versiones inválidas")
+
+
 
     def tokens_similares(v1, v2, cutoff=0.75):
         """
@@ -403,7 +373,6 @@ def hmv_version(df_train, df_to_input):
         versiones_validas = versiones_por_modelo.get(key, [])
 
         if not versiones_validas:
-            #print(f"[{idx + 2}] ⚠️ Eliminada → No hay versiones válidas aprendidas para: {key}")
             eliminar.append(idx)
             continue
 
@@ -416,16 +385,12 @@ def hmv_version(df_train, df_to_input):
                     break
 
             if candidato:
-                #print(f"[{idx + 2}] 🔄 Versión '{version}' corregida a '{candidato}' (por similitud de token)")
                 df_val.at[idx, 'Versión'] = candidato
             else:
-                #print(f"[{idx + 2}] ❌ Eliminada → Versión inválida sin similar para: '{version}' en {key}")
-                #print(f"           🧩 Opciones válidas para {key}: {versiones_validas}")
                 eliminar.append(idx)
 
     if eliminar:
         df_val.drop(index=eliminar, inplace=True)
-        print(f"\n🗑️ Paso 2 terminado: Eliminadas {len(eliminar)} filas con versiones inválidas no corregibles.")
     return df_val.reset_index(drop=True)
 
 def hmv_combustible(df_train, df_to_input):
@@ -449,7 +414,6 @@ def hmv_combustible(df_train, df_to_input):
         disponibles = [col for col in columnas_importancia if pd.notna(row.get(col))]
 
         if not disponibles or not any(col in disponibles for col in ['Modelo', 'Versión']):
-            #print(f"[{idx + 2}] ❌ No se puede imputar sin Modelo o Versión.")
             df.drop(index=idx, inplace=True)
             continue
 
@@ -464,14 +428,11 @@ def hmv_combustible(df_train, df_to_input):
                 for col in subset:
                     filtro = filtro[filtro[col] == row[col]]
 
-                #print(f"[{idx + 2}] 🔍 Buscando con columnas: {', '.join(subset)}")
-                #print(f"   ↪️ Coincidencias encontradas: {len(filtro)}")
 
                 if not filtro.empty:
                     moda = filtro['Tipo de combustible'].mode()
                     if not moda.empty:
                         df.at[idx, 'Tipo de combustible'] = moda.iloc[0]
-                        #print(f"   ✅ Imputado con valor: {moda.iloc[0]}")
                         imputados += 1
                         imputado = True
                         break
@@ -479,11 +440,8 @@ def hmv_combustible(df_train, df_to_input):
                 break
 
         if not imputado:
-            #print(f"   ❌ No se pudo imputar, se eliminará.")
             df.drop(index=idx, inplace=True)
 
-    print(f"\n✔️ Imputaciones Combustible realizadas: {imputados}")
-    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]} ")
     return df
 
 def hmv_puertas(df_train, df_to_input):
@@ -507,7 +465,6 @@ def hmv_puertas(df_train, df_to_input):
         disponibles = [col for col in columnas_importancia if pd.notna(row.get(col))]
 
         if not disponibles or not any(col in disponibles for col in ['Modelo', 'Versión']):
-            #print(f"[{idx + 2}] ❌ No se puede imputar sin Modelo o Versión.")
             df.drop(index=idx, inplace=True)
             continue
 
@@ -522,14 +479,11 @@ def hmv_puertas(df_train, df_to_input):
                 for col in subset:
                     filtro = filtro[filtro[col] == row[col]]
 
-                #print(f"[{idx + 2}] 🔍 Buscando con columnas: {', '.join(subset)}")
-                #print(f"   ↪️ Coincidencias encontradas: {len(filtro)}")
 
                 if not filtro.empty:
                     moda = filtro['Puertas'].mode()
                     if not moda.empty:
                         df.at[idx, 'Puertas'] = moda.iloc[0]
-                        #print(f"   ✅ Imputado con valor: {moda.iloc[0]}")
                         imputados += 1
                         imputado = True
                         break
@@ -537,11 +491,8 @@ def hmv_puertas(df_train, df_to_input):
                 break
 
         if not imputado:
-            #print(f"   ❌ No se pudo imputar, se eliminará.")
             df.drop(index=idx, inplace=True)
 
-    print(f"\n✔️ Imputaciones de puertas realizadas: {imputados}")
-    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]}")
     return df
 
 def hmv_transmision(df_train, df_to_input):
@@ -565,7 +516,6 @@ def hmv_transmision(df_train, df_to_input):
         disponibles = [col for col in columnas_importancia if pd.notna(row.get(col))]
 
         if not disponibles or not any(col in disponibles for col in ['Modelo', 'Versión']):
-            #print(f"[{idx + 2}] ❌ No se puede imputar sin Modelo o Versión.")
             df.drop(index=idx, inplace=True)
             continue
 
@@ -580,14 +530,11 @@ def hmv_transmision(df_train, df_to_input):
                 for col in subset:
                     filtro = filtro[filtro[col] == row[col]]
 
-                #print(f"[{idx + 2}] 🔍 Buscando con columnas: {', '.join(subset)}")
-                #print(f"   ↪️ Coincidencias encontradas: {len(filtro)}")
 
                 if not filtro.empty:
                     moda = filtro['Transmisión'].mode()
                     if not moda.empty:
                         df.at[idx, 'Transmisión'] = moda.iloc[0]
-                        #print(f"   ✅ Imputado con valor: {moda.iloc[0]}")
                         imputados += 1
                         imputado = True
                         break
@@ -595,11 +542,8 @@ def hmv_transmision(df_train, df_to_input):
                 break
 
         if not imputado:
-            #print(f"   ❌ No se pudo imputar, se eliminará.")
             df.drop(index=idx, inplace=True)
 
-    print(f"\n✔️ Imputaciones de transmision realizadas: {imputados}")
-    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]}")
     return df
 
 
@@ -624,7 +568,6 @@ def hmv_motor(df_train, df_to_input):
         disponibles = [col for col in columnas_importancia if pd.notna(row.get(col))]
 
         if not disponibles or not any(col in disponibles for col in ['Modelo', 'Versión']):
-            #print(f"[{idx + 2}] ❌ No se puede imputar sin Modelo o Versión.")
             df.drop(index=idx, inplace=True)
             continue
 
@@ -633,20 +576,17 @@ def hmv_motor(df_train, df_to_input):
         for k in range(len(disponibles), 0, -1):
             for subset in combinations(disponibles, k):
                 if not any(col in subset for col in ['Modelo', 'Versión']):
-                    continue  # Requiere al menos Modelo o Versión
+                    continue  
 
                 filtro = referencia.copy()
                 for col in subset:
                     filtro = filtro[filtro[col] == row[col]]
 
-                #print(f"[{idx + 2}] 🔍 Buscando con columnas: {', '.join(subset)}")
-                #print(f"   ↪️ Coincidencias encontradas: {len(filtro)}")
 
                 if not filtro.empty:
                     moda = filtro['Motor'].mode()
                     if not moda.empty:
                         df.at[idx, 'Motor'] = moda.iloc[0]
-                        #print(f"   ✅ Imputado con valor: {moda.iloc[0]}")
                         imputados += 1
                         imputado = True
                         break
@@ -654,11 +594,8 @@ def hmv_motor(df_train, df_to_input):
                 break
 
         if not imputado:
-            #print(f"   ❌ No se pudo imputar, se eliminará.")
             df.drop(index=idx, inplace=True)
 
-    print(f"\n✔️ Imputaciones de motor realizadas: {imputados}")
-    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]}")
     return df
 
 def hmv_camara(df_train, df_to_input):
@@ -679,7 +616,6 @@ def hmv_camara(df_train, df_to_input):
 
     for idx, row in df[df['Con cámara de retroceso'].isna()].iterrows():
         if any(pd.isna(row[col]) for col in ['Marca', 'Modelo', 'Versión', 'Año']):
-            #print(f"[{idx + 2}] ❌ Faltan columnas clave. Se asigna 0.")
             df.at[idx, 'Con cámara de retroceso'] = 0
             default_0 += 1
             continue
@@ -691,27 +627,24 @@ def hmv_camara(df_train, df_to_input):
             (referencia['Año'] == row['Año'])
         ]
 
-        #print(f"[{idx + 2}] 🔍 Buscando coincidencias exactas en Marca, Modelo, Versión y Año")
-        #print(f"   ↪️ Coincidencias encontradas: {len(filtro)}")
+
 
         if not filtro.empty:
             moda = filtro['Con cámara de retroceso'].mode()
             if not moda.empty:
                 valor = moda.iloc[0]
                 df.at[idx, 'Con cámara de retroceso'] = valor
-                #print(f"   ✅ Imputado con valor: {valor}")
+
                 imputados += 1
             else:
                 df.at[idx, 'Con cámara de retroceso'] = 0
-                #print(f"   ⚠️ Sin moda. Se asigna 0.")
+
                 default_0 += 1
         else:
             df.at[idx, 'Con cámara de retroceso'] = 0
-            #print(f"   ❌ Sin coincidencias. Se asigna 0.")
+
             default_0 += 1
 
-    print(f"\n✔️ Imputaciones de camara realizadas por coincidencia exacta: {imputados}")
-    print(f"🔧 Muestras sin coincidencias (asignadas 0): {default_0}")
 
     return df
 
@@ -737,7 +670,6 @@ def hmv_hp(df_train, df_to_input):
         disponibles = [col for col in columnas_importancia if pd.notna(row.get(col))]
 
         if not disponibles or not any(col in disponibles for col in ['Modelo', 'Versión', 'Motor']):
-            #print(f"[{idx + 2}] ❌ No se puede imputar sin al menos Modelo, Versión o Motor.")
             df.drop(index=idx, inplace=True)
             continue
 
@@ -755,14 +687,11 @@ def hmv_hp(df_train, df_to_input):
                 for col in subset:
                     filtro = filtro[filtro[col] == row[col]]
 
-                #print(f"[{idx + 2}] 🔍 Buscando con columnas: {', '.join(subset)}")
-                #print(f"   ↪️ Coincidencias encontradas: {len(filtro)}")
 
                 if not filtro.empty:
                     moda = filtro['HP'].mode()
                     if not moda.empty:
                         df.at[idx, 'HP'] = moda.iloc[0]
-                        #print(f"   ✅ Imputado con valor: {moda.iloc[0]}")
                         imputados += 1
                         imputado = True
                         break
@@ -770,11 +699,8 @@ def hmv_hp(df_train, df_to_input):
                 break
 
         if not imputado:
-            #print(f"   ❌ No se pudo imputar. Se eliminará la muestra.")
             df.drop(index=idx, inplace=True)
 
-    print(f"\n✔️ Imputaciones HP realizadas: {imputados}")
-    print(f"🗑️ Muestras eliminadas: {df_to_input.shape[0] - df.shape[0]} ")
     return df
 
 
@@ -801,7 +727,6 @@ def hmv_traccion(df_train, df_to_input):
         disponibles = [col for col in columnas_importancia if pd.notna(row.get(col))]
 
         if not disponibles or not any(col in disponibles for col in ['Modelo', 'Versión']):
-            #print(f"[{idx + 2}] ❌ No se puede imputar sin Modelo o Versión. Se asigna '4x2'.")
             df.at[idx, 'Tracción'] = '4x2'
             asignados_default += 1
             continue
@@ -811,20 +736,17 @@ def hmv_traccion(df_train, df_to_input):
         for k in range(len(disponibles), 0, -1):
             for subset in combinations(disponibles, k):
                 if not any(c in subset for c in ['Modelo', 'Versión']):
-                    continue  # Requiere al menos Modelo o Versión
+                    continue 
 
                 filtro = referencia.copy()
                 for col in subset:
                     filtro = filtro[filtro[col] == row[col]]
 
-                #print(f"[{idx + 2}] 🔍 Buscando con columnas: {', '.join(subset)}")
-                #print(f"   ↪️ Coincidencias encontradas: {len(filtro)}")
 
                 if not filtro.empty:
                     moda = filtro['Tracción'].mode()
                     if not moda.empty:
                         df.at[idx, 'Tracción'] = moda.iloc[0]
-                        #print(f"   ✅ Imputado con valor: {moda.iloc[0]}")
                         imputados += 1
                         imputado = True
                         break
@@ -833,15 +755,12 @@ def hmv_traccion(df_train, df_to_input):
 
         if not imputado:
             df.at[idx, 'Tracción'] = '4x2'
-            #print(f"   ❌ No se pudo imputar. Se asigna valor por defecto: '4x2'.")
             asignados_default += 1
 
-    print(f"\n✔️ Imputaciones traccion realizadas por coincidencia: {imputados}")
-    print(f"🔧 Asignaciones por defecto ('4x2'): {asignados_default}")
 
     return df
 
-from sklearn.ensemble import RandomForestRegressor
+
 
 def hmv_year(df_train, df_to_input):
     df = df_to_input.copy()
@@ -849,10 +768,9 @@ def hmv_year(df_train, df_to_input):
     imputados = 0
 
     for idx, row in df[df['Año'].isna()].iterrows():
-        #print(f"\n[{idx + 2}] 🔍 Intentando imputar Año para muestra:")
+
 
         if pd.isna(row['Kilómetros']) or pd.isna(row['Con cámara de retroceso']):
-            #print(f"   ⚠️ Faltan datos clave (Kilómetros o tiene_camara). Se omite.")
             continue
 
         condiciones = (
@@ -864,10 +782,8 @@ def hmv_year(df_train, df_to_input):
         )
 
         candidatos = referencia[condiciones]
-        #print(f"   ↪️ Coincidencias para regresión: {len(candidatos)}")
 
         if len(candidatos) < 5:
-            #print("   ❌ No hay suficientes datos para entrenar modelo.")
             continue
 
         X = candidatos[['Kilómetros', 'Con cámara de retroceso']]
@@ -880,11 +796,9 @@ def hmv_year(df_train, df_to_input):
         pred = modelo.predict(X_pred)[0]
         pred_redondeado = int(round(pred))
 
-        #print(f"   ✅ Predicción: {pred:.2f} → Imputado como: {pred_redondeado}")
         df.at[idx, 'Año'] = pred_redondeado
         imputados += 1
 
-    print(f"\n✔️ Años imputados sin leakage: {imputados}")
     return df
 
 
@@ -940,7 +854,6 @@ def hmv_km(df_train, df_to_input, min_size=15, max_ext=10):
     imputados_total = 0
     no_imputados = 0
 
-    #print("🚨 Paso 1: Detectando y marcando outliers según df_train...\n")
 
     for año in años_unicos:
         if año in evaluados:
@@ -957,13 +870,11 @@ def hmv_km(df_train, df_to_input, min_size=15, max_ext=10):
             ext += 1
 
         if len(grupo) < min_size:
-            #print(f"⚠️ Año {año}: No se encontró suficiente data en train ni con expansión ±{max_ext}. Se omite.")
             continue
 
         lower, upper = ajustar_rangos_iqr(grupo, año)
         evaluados.update(rango)
 
-        #print(f"✅ Año {año}: usando ventana ±{ext} → {len(grupo)} muestras | Rango: {int(lower)} – {int(upper)} km")
 
         cond_outlier = (
             (df_result['Año'] == año) &
@@ -973,9 +884,7 @@ def hmv_km(df_train, df_to_input, min_size=15, max_ext=10):
         outliers_total += outliers_detectados
         df_result.loc[cond_outlier, 'Kilómetros'] = pd.NA
 
-        #print(f"   ↳ {outliers_detectados} valores marcados como NaN en df_to_input\n")
 
-    #print("🛠️ Paso 2: Imputando los NaN con medias de df_train...\n")
 
     for idx, row in df_result[df_result['Kilómetros'].isna()].iterrows():
         año = int(row['Año'])
@@ -996,16 +905,10 @@ def hmv_km(df_train, df_to_input, min_size=15, max_ext=10):
             imputado = round(grupo['Kilómetros'].median())
             df_result.at[idx, 'Kilómetros'] = imputado
             imputados_total += 1
-            #print(f"🔄 Imputado fila {idx} (año {año}) con media {imputado} km usando ventana ±{ext}")
         else:
             no_imputados += 1
-            #print(f"⚠️ No se pudo imputar fila {idx} (año {año}): insuficiente data en train incluso con expansión")
 
-    print("\n📊 Estadísticas finales KM:")
-    print(f"🔍 Total de valores marcados como outliers: {outliers_total}")
-    print(f"🛠️ Total de valores imputados exitosamente: {imputados_total}")
-    print(f"🚫 Total de valores que quedaron como NaN: {no_imputados}")
-    # print("\n✅ Proceso completo sin data leakage.\n")
+
 
     return df_result
 
@@ -1049,7 +952,7 @@ def hmv_tipo_de_vendedor(df_train, df_to_input):
             df_result.at[idx, 'Tipo de vendedor'] = moda
             imputados += 1
 
-    print(f"✅ Imputaciones  vendedor completadas: {imputados} valores reemplazados.\n")
+
     return df_result
 
 def hmv_color_train(df_train, df_to_input):
@@ -1065,8 +968,8 @@ def hmv_color_train(df_train, df_to_input):
     # Copia de df_to_input
     df_result = df_to_input.copy()
 
-    # 🩹 Paso 1: Imputando valores faltantes con prioridad Versión → Modelo → Marca
-    #print("🩹 Paso 1: Imputando valores faltantes con prioridad Versión → Modelo → Marca\n")
+    #Paso 1: Imputando valores faltantes con prioridad Versión → Modelo → Marca
+
     imputados = 0
     for idx, row in df_result[df_result['Color'].isna()].iterrows():
         version = row.get('Versión')
@@ -1099,18 +1002,14 @@ def hmv_color_train(df_train, df_to_input):
         if valor_color is not None:
             df_result.at[idx, 'Color'] = valor_color
             imputados += 1
-            #print(f"[{idx + 2}] 🖌️ Imputado color '{valor_color}' por {origen}")
 
 
-    print(f"\n✅ Total de colores imputados por contexto: {imputados}\n")
 
-    # 🎨 Paso 2: Reemplazando 'morado' por 'violeta' en ambos datasets
-    #print("🎨 Paso 2: Reemplazando 'morado' por 'violeta' en ambos datasets...\n")
+    #  Reemplazando 'morado' por 'violeta' en ambos datasets. sino me lo escribe como dorado y esta mal
     for df in [df_train, df_result]:
         df['Color'] = df['Color'].apply(lambda c: 'violeta' if isinstance(c, str) and 'morado' in normalizar(c, eliminar_espacios=False) else c)
 
     # 🔍 Paso 3: Agrupando colores por tokens similares
-    print("🔍 Paso 3: Agrupando colores por tokens similares...\n")
     colores = df_train['Color'].dropna().unique()
     token_map = {}
     color_groups = {}
@@ -1130,12 +1029,9 @@ def hmv_color_train(df_train, df_to_input):
         token_map[first_token] = group_key
         color_groups.setdefault(group_key, set()).add(color)
 
-    print(f"📦 Grupos de colores formados: {len(color_groups)}")
-    for grupo, variantes in color_groups.items():
-        print(f"🔗 Token base: '{grupo}' → {sorted(variantes)}")
 
-    # 🧼 Paso 4: Reemplazando valores conocidos en df_to_input según agrupamiento
-    #print("\n🧼 Paso 4: Reemplazando valores conocidos en df_to_input según agrupamiento...\n")
+
+
     color_map = {}
     for grupo, variantes in color_groups.items():
         for variante in variantes:
@@ -1166,8 +1062,7 @@ def hmv_color(df_train, df_to_input):
     # Copia de df_to_input
     df_result = df_to_input.copy()
 
-    # 🩹 Paso 1: Imputando valores faltantes con prioridad Versión → Modelo → Marca
-    #print("🩹 Paso 1: Imputando valores faltantes con prioridad Versión → Modelo → Marca\n")
+    # Paso 1: Imputando valores faltantes con prioridad Versión → Modelo → Marca
     imputados = 0
     for idx, row in df_result[df_result['Color'].isna()].iterrows():
         version = row.get('Versión')
@@ -1200,19 +1095,13 @@ def hmv_color(df_train, df_to_input):
         if valor_color is not None:
             df_result.at[idx, 'Color'] = valor_color
             imputados += 1
-            #print(f"[{idx + 2}] 🖌️ Imputado color '{valor_color}' por {origen}")
-        # else:
-        #     print(f"[{idx + 2}] ⚠️ No se pudo imputar. Se mantiene como NaN")
 
-    print(f"\n✅ Total de colores imputados por contexto: {imputados}\n")
 
-    # 🎨 Paso 2: Reemplazando 'morado' por 'violeta' en ambos datasets
-    #print("🎨 Paso 2: Reemplazando 'morado' por 'violeta' en ambos datasets...\n")
+
     for df in [df_train_limpio, df_result]:
         df['Color'] = df['Color'].apply(lambda c: 'violeta' if isinstance(c, str) and 'morado' in normalizar(c, eliminar_espacios=False) else c)
 
-    # 📚 Aprender colores válidos desde df_train_limpio ya procesado
-    print("📚 Aprendiendo colores limpios desde df_train...\n")
+    #  Aprender colores válidos desde df_train_limpio ya procesado
     colores_validos = df_train_limpio['Color'].dropna().unique()
     color_tokens = {}
     for color in colores_validos:
@@ -1222,8 +1111,7 @@ def hmv_color(df_train, df_to_input):
         first_token = tokens[0]
         color_tokens[color] = first_token
 
-    # 🧼 Paso 4: Corregir valores en df_to_input según similitud de tokens con colores válidos
-    #print("\n🧼 Paso 4: Corrigiendo valores en df_to_input según similitud con colores válidos...\n")
+
 
     def token_similar(c1, c2, cutoff=0.75):
         t1 = normalizar(c1, eliminar_espacios=False).split()
@@ -1247,10 +1135,10 @@ def hmv_color(df_train, df_to_input):
                 match = c_valido
                 break
         if match:
-            #print(f"[{idx + 2}] 🔄 Color '{val}' corregido a '{match}' por similitud")
+
             colores_resultantes.append(match)
         else:
-            #print(f"[{idx + 2}] ⚠️ Color '{val}' no reconocido → asignado como 'otro'")
+
             colores_resultantes.append("otro")
 
     df_result['Color'] = colores_resultantes
@@ -1290,10 +1178,8 @@ def hmv_dataset(df_train, df_to_input):
         count_before = len(df)
         df = func(df_train, df)
         count_after = len(df)
-        if count_after < count_before:
-            print(f"[{func_name}] Muestras eliminadas: {count_before - count_after}")
 
-    total_eliminadas = original_count - len(df)
-    print(f"[TOTAL] Muestras eliminadas en total: {total_eliminadas}")
+
+
 
     return df

@@ -608,9 +608,8 @@ def limpiar_dataset(df, precio=True):
     for func_name, func in limpieza_funcs:
         count_before = len(df)
         df = func(df)
-        count_after = len(df)
-        if count_after < count_before:
-            print(f"[{func_name}] Muestras eliminadas: {count_before - count_after}")
+
+
 
 
     columnas_a_eliminar = [
@@ -619,7 +618,6 @@ def limpiar_dataset(df, precio=True):
     ]
     df = df.drop(columns=columnas_a_eliminar, errors='ignore')
 
-    total_eliminadas = original_count - len(df)
-    print(f"[TOTAL] Muestras eliminadas en total: {total_eliminadas}")
+
 
     return df
